@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Framework
+Bundle-SymbolicName: com.bichler.astudio.device.module;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.device.module.ModuleActivator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui;bundle-version="3.113.0",
+ com.bichler.astudio.device.core;bundle-version="1.0.0",
+ com.bichler.astudio.utils;bundle-version="1.0.0",
+ com.bichler.astudio.filesystem;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: com.bichler.astudio.device.framework
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Export-Package: com.bichler.astudio.device.module.wizard

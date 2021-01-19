@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.bichler.astudio.device.installmodule"
+            name="Install Module">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.astudio.device.module.handler.InstallModuleHandler"
+            commandId="com.bichler.astudio.device.installmodule">
+         <enabledWhen>
+            <reference
+                  definitionId="IsDatahubSelected">
+            </reference>
+         </enabledWhen>
+      </handler>
+   </extension>
+
+</plugin>
