@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="AutomationStudio" uid="com.bichler.astudio.product.feature" id="com.bichler.astudio.product" application="com.bichler.astudio.application" version="2.0.5.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="/com.bichler.astudio/icons/welcome_finish.png"/>
+      <text>
+         Automation Studio v2.0.1_00520200908
+
+(c) Copyright Bichler Technologies GmbH 2018. All rights reserved.
+For further information visit http://www.bichler.tech
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-Dosgi.framework.extensions=org.eclipse.fx.osgi
+-Defxclipse.osgi.hook.debug=true
+-data @noDefault
+-nl en
+      </programArgs>
+      <vmArgs>-Xms512m
+-Xmx6144m
+      </vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="icons/splash_16x16.png" i32="icons/splash_32x32.png" i48="icons/splash_48x48.png" i64="icons/splash_64x64.png" i128="icons/splash_128x128.png" i256="icons/splash_256x256.png"/>
+
+   <splash
+      location="com.bichler.astudio"
+      startupProgressRect="5,275,445,20"
+      startupMessageRect="7,252,445,20"
+      startupForegroundColor="FFFFFF" />
+   <launcher name="AutomationStudio">
+      <win useIco="true">
+         <ico path="/com.bichler.astudio/icons/splash.ico"/>
+         <bmp
+            winSmallHigh="icons/splash_16x16.bmp"
+            winSmallLow="icons/splash_16x16_8.bmp"
+            winMediumHigh="icons/splash_32x32.bmp"
+            winMediumLow="icons/splash_32x32_8.bmp"
+            winLargeHigh="icons/splash_48x48.bmp"
+            winLargeLow="icons/splash_48x48_8.bmp"
+            winExtraLargeHigh="icons/splash_256x256.bmp"/>
+      </win>
+   </launcher>
+
+   <intro introId="com.bichler.astudio.intro"/>
+
+   <vm>
+      <windows include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
+   </vm>
+
+   <license>
+        <url>http://www.bichler.tech/as/license</url>
+        <text>
+   END-USER LICENSE AGREEMENT (Rev Jan/2018)
+
+IMPORTANT-READ THIS AGREEMENT CAREFULLY: This End-User License Agreement (&quot;EULA&quot;) is a legal contract between you (either an individual or a single entity) (&quot;You or Licensee&quot;) and Bichler Technologies GmbH (&quot;BTech&quot;) for the software product or products that BTech licenses to You, which includes computer software, technology and may include associated media (&quot;Software&quot;).  BTech may also license to You printed materials, and &quot;online&quot; or electronic documentation (&quot;Documentation&quot;). An amendment or addendum to this EULA may accompany the Software.  BTech IS WILLING TO LICENSE THE SOFTWARE AND DOCUMENTATION TO YOU ONLY ON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS AND CONDITIONS IN THIS AGREEMENT. YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS OF THIS EULA BY INSTALLING, COPYING, OR OTHERWISE USING THE SOFTWARE.  IF YOU ARE ACCEPTING THESE TERMS ON BEHALF OF ANOTHER PERSON, COMPANY, OR OTHER LEGAL ENTITY, YOU REPRESENT AND WARRANT THAT YOU HAVE FULL AUTHORITY TO BIND THAT PERSON, COMPANY, OR LEGAL ENTITY TO THESE TERMS.  IF YOU DO NOT AGREE TO THESE TERMS, DO NOT DOWNLOAD, INSTALL, COPY, ACCESS, OR USE THE SOFTWARE, AND PROMPTLY RETURN THE SOFTWARE WITH ALL ACCOMPANYING ITEMS TO YOUR PLACE OF PURCHASE FOR A FULL REFUND, OR IF YOU DOWNLOADED THE PROGRAM, CONTACT THE PARTY FROM WHOM YOU ACQUIRED IT.
+
+This Software is licensed to You -- not sold.  Your rights to use the Software are only those rights specified in this EULA.  
+
+GRANT OF LICENSE
+
+Provided You comply with all the terms and conditions of this EULA, BTech and its third party licensors grant You a non-exclusive license to install and use the Software on a single computer, a network server, or on multiple computers owned or leased by the Licensee provided the number of installations and users is not greater than the number of valid software activations purchased.
+
+If the Software You have acquired is a client application utilizing CometStudio® Activation and You have acquired a concurrent activation, You may distribute and install an unrestricted number of copies of the client Software on computers or networks owned or leased by the Licensee provided the number of users accessing or using the Software concurrently does not exceed the number of valid software activations You purchased.
+
+If the Software You have acquired is a server application, You are permitted to create or access a single instance of the server application.  You are not permitted to install multiple instances of the server application unless You have purchased multiple server activations.
+
+If the Software You have acquired is licensed to You based upon a capacity or runtime measurement, including but not limited to a specific number of users, units, processors, assets, active tags or screens, You agree not to take any actions to exceed this capacity.  If You desire additional capacity for your Software, You agree to purchase such additional capacity only from BTech or its authorized distributors and resellers.
+
+If the Software You have acquired is used in a virtualized environment, whether in a client or server application, the number of concurrently used virtual environments or instances may not exceed the number of valid software activations You purchased.
+
+If the Software You have acquired is used in conjunction with Mysql Server, You may be provided with a Oracle Mysql Server license during installation. If the Software includes limited license rights for Mysql Server, You agree to only use such Oracle Mysql Server in conjunction with the Software, and You will acquire from Oracle any licenses to Oracle Mysql Server that exceeds the rights provided to You under this Software. 
+
+This License does not grant You the right to provide or utilize the Software as an application service provider or the like.  Any attempted sublicense, rental, sale, lease, transfer or commercial hosting of the Software is prohibited.  If the Software requires a software activation process, such as CometStudio® Activation, You agree to follow this activation process as part of the license to You under this EULA.  
+
+If this Software is an upgrade or update to a previous version of a BTech product, You may not transfer the prior version to another user.  This EULA supersedes any prior license with respect to Your use of the Software.
+
+The Software and the Documentation are copyrighted. Unauthorized copying, reverse assembly, reverse engineering, decompilation, and creating derivative works based on the Software are prohibited. You may make a copy of the Software provided that any such copy is only for archival purposes to internally back-up the Software, or is created as an essential step in the internal installation of Software within Your organization for concurrent activation of Software You have acquired that utilizes CometStudio® Activation.  You may not make any other copies of the Software. You may not copy the Documentation.
+
+LIMITED WARRANTY
+
+The Software is warranted for ninety days after its initial delivery to You that it will substantially conform with its Documentation supplied by BTech at the time of initial delivery of the Software. Defective media will be replaced without charge if returned during the warranty period. This warranty shall be void if You attempt to modify the Software in any way. BTech makes no representation or warranty, express or implied, that the operation of the Software will be uninterrupted or error free, or that the functions contained in the Software will meet or satisfy Your intended use or requirements; You assume complete responsibility for decisions made or actions taken based on information obtained using the Software.
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW THE FOREGOING LIMITED WARRANTY IS IN LIEU OF ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, AND BTech DISCLAIMS ANY AND ALL IMPLIED WARRANTIES OR CONDITIONS, INCLUDING (WITHOUT LIMITATION) ANY WARRANTY OF TITLE, NONINFRINGEMENT OF THIRD PARTY RIGHTS, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE OR ANY WARRANTY UNDER UCITA.
+
+SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO THE ABOVE EXCLUSION MAY NOT APPLY TO YOU.  THIS WARRANTY GIVES YOU SPECIFIC LEGAL RIGHTS, AND YOU MAY ALSO HAVE OTHER RIGHTS WHICH VARY FROM JURISDICTION TO JURISDICTION.
+
+LIMITATION OF REMEDIES
+
+BTech&apos;s entire liability and Your exclusive remedy for breach of the Limited Warranty shall be:
+
+1. The replacement of the Software not meeting the Limited Warranty specified above which is returned with proof of purchase; or
+
+2. If BTech is unable to deliver replacement Software which meets the Limited Warranty specified above, You may terminate this EULA by returning or destroying the Software as provided herein, and BTech or its reseller will refund Your purchase price. 
+
+LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL BTech OR ITS THIRD PARTY LICENSORS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, PUNITIVE, OR CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS OR CONFIDENTIAL OR OTHER INFORMATION, FOR BUSINESS INTERRUPTION, FOR LOST SAVINGS, FOR LOSS OF PRIVACY, AND FOR ANY OTHER PECUNIARY OR OTHER LOSS WHATSOEVER) ARISING OUT OF OR IN ANY WAY RELATED TO THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF BTech OR ITS RESELLER HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+
+SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU.  BTech&apos;S MAXIMUM CUMULATIVE LIABILITY RELATIVE TO ALL CLAIMS AND LIABILITIES, INCLUDING THAT WITH RESPECT TO DIRECT DAMAGES AND OBLIGATIONS UNDER ANY INDEMNITY, WHETHER OR NOT INSURED, WILL NOT EXCEED THE COST OF THE SOFTWARE GIVING RISE TO THE CLAIM OR LIABILITY.  ALL OF THESE DISCLAIMERS AND LIMITATIONS OF REMEDIES AND/OR LIABILITY WILL APPLY REGARDLESS OF ANY OTHER CONTRARY PROVISION OF THIS EULA OR ANY OTHER AGREEMENT BETWEEN YOU AND BTech AND REGARDLESS OF THE FORM OF ACTION, WHETHER IN CONTRACT, TORT OR OTHERWISE, AND FURTHER WILL EXTEND TO THE BENEFIT OF BTech&apos;S VENDORS, APPOINTED DISTRIBUTORS AND OTHER AUTHORIZED RESELLERS AS THIRD-PARTY BENEFICIARIES.
+
+TERM AND TERMINATION
+
+This EULA takes effect upon Your use of the Software and remains effective until terminated for any reason.  You may terminate it at any time by destroying all copies of the Software and Documentation in Your possession.  It will also automatically terminate if You fail to comply with any term or condition of this EULA.  You agree upon termination of this EULA to either return to BTech or destroy all copies of the Software and Documentation in Your possession.  If this Software has been licensed to You as part of a subscription service, this EULA shall terminate after the period of the subscription has lapsed.
+
+THIS SOFTWARE WILL CEASE TO OPERATE AT THE EXPIRATION OF YOUR LICENSE TERM, OR WHENEVER THE SOFTWARE IS UNABLE TO LOCATE A COMETSTUDIO® ACTIVATION.  THIS SOFTWARE WILL CONTINUE TO OPERATE FOR 7 DAYS WITHOUT A COMETSTUDIO® ACTIVATION TO PROVIDE USERS A GRACE PERIOD FOR RENEWING APPLICABLE LICENSES OR RESOLVING YOUR COMETSTUDIO® ACTIVATION ISSUE.  IMPORTANT:  DURING THE GRACE PERIOD, PRODUCT FEATURES IN EXCESS OF THAT ORIGINALLY LICENSED MAY BE ACCESSIBLE.  LICENSEE IS NOT AUTHORIZED TO USE FEATURES IN EXCESS OF THOSE ORIGINALLY LICENSED.
+
+
+ACADEMIC USE
+
+If this Software was purchased for academic or research use by an educational institution, it may be used for teaching and research purposes only. Commercial use of the Software is prohibited if the software was intended for educational use. Only the instructor/professor registered to the Software is eligible to contact BTech for technical support and product updates. If this Software is Comet server simulation software: (i) You have the right to make copies of the Software (the media excluding activation) solely for academic, teaching and research purposes; and (ii)  You also agree to comply with the terms of the Comet Server Software Academic License Guidelines provided at the end of this EULA.
+PREPRODUCTION RELEASES
+
+As an accommodation to Licensee, BTech may provide Licensee with a preproduction release of the Software (often labeled a &quot;beta release&quot;).  These releases are not suitable for production use.  Such releases are provided on an &quot;as is&quot; basis.  BTech does not warrant preproduction releases.
+
+SAMPLES
+
+The Software may include samples, plug-ins, UI components and/or reports that are provided as an accommodation to You (&quot;Samples&quot;). These Samples are intended to be used for example purposes or to provide additional complimentary features. The Samples may be contained in the Software, Documentation (electronic or printed) or downloaded from the BTech website. BTech and its third party licensors make no representations or warranties regarding Your use of the Samples and related Documentation. All such Samples are provided &quot;as is&quot;. BTech disclaims all warranties with regard to this information, including all implied warranties and conditions of merchantability, fitness for a particular purpose, title and non-infringement.
+
+AUDIT
+
+You agree that BTech may audit Your use of the Software for compliance with these terms, upon reasonable notice.  In the event that such audit reveals any use of the Software by You other than in full compliance with the terms of this EULA, You shall reimburse BTech for all reasonable expenses related to such audit in addition to any other liabilities You may incur as a result of such non-compliance.
+
+OWNERSHIP
+
+The Software and Documentation are protected by copyright and other intellectual property laws and treaties.  BTech or its licensors own the title, copyright, and other intellectual property rights in the Software and Documentation.  The Software and Documentation is licensed, not sold.  Nothing in this EULA constitutes a waiver of our rights under U.S. or international copyright law or any other law.
+MISCELLANEOUS.
+
+This EULA shall be governed by the laws of the State of Wisconsin, without regard to any conflict of laws provisions. The United Nations Convention on the International Sale of Goods will not apply.  You agree to bring any action in connection with this EULA or the Software exclusively in the state or federal courts of Wisconsin, and You further agree to the jurisdiction of the state and federal courts of Wisconsin for any action that BTech brings against You.
+
+You may not separate component parts of the Software for independent use. The Software may contain third party software which requires notices and/or additional terms and conditions.  Such required third party notices and/or additional terms and conditions are identified in the help or about screens and license.txt or readme text files of the Software and are made a part of and incorporated by reference into this EULA.  By accepting this EULA, You agree to review such terms and conditions set forth therein, if any, and Your use of the Software will be deemed to be Your acceptance thereof.
+  
+This EULA, and any amendment or addendum to this EULA that accompanies the Software is the complete and exclusive agreement between BTech and You, and supersedes all prior agreements, whether written or oral, relating to the Software provided and the Documentation. This EULA may not be changed or modified except by an instrument in writing signed by a duly authorized representative of BTech.  If for any reason a court of competent jurisdiction finds any provision of this EULA or portion thereof, to be unenforceable, that provision of the EULA shall be enforced to the maximum extent permissible so as to affect the intent of the parties, and the remainder of this EULA shall continue in full force and effect.
+
+The parties acknowledge that they have required the EULA to be drafted in English. In the event of a conflict between the English and other language versions, the English version will prevail.
+
+PLEASE NOTE: BTech does not include debugging or troubleshooting services for custom applications as a part of our standard support.
+
+LICENSE ADDENDUM TO END USER LICENSE AGREEMENT FOR COMPLIMENTARY SOFTWARE
+
+The Software may include additional software tools or utilities, including, but not limited to the following:  Connected Components Workbench™ programming and configuration software, RSLogix Command Line Tool, BootP-DHCP Server, Combination Generator Control Module (CGCM), ClearKeeper, Devicenet Node Commissioning Tool, Logix CPU Security Tool, Logix5000 Clock Update Tool, Logix5000 PLM Sync Utility, Logix5000 Task Monitor Tool, RSLogix 5000 Compare Tool, RSLogix 5000 DeviceNet Tag Generator, RSLogix 5000 Data Preserve Download Tool, RSLogix 5000 Faceplates, RSLogix 5000 IEC61131-3 Translation Tool, Tag Data Monitor Tool, Tag Import Utility, and Tag Upload Download Tool.
+
+Provided You are an authorized licensee of a RSLogix5000 or other BTech software product and fully comply with this Agreement and any amendments and addendums, You have been provided with a license to these software tools or utilities under this Agreement on a complimentary basis in &quot;AS IS&quot; condition for Licensee&apos;s internal use without any representation, support or warranty whatsoever.  Licensee assumes the entire risk of using these additional complimentary software tools and utilities.  
+
+LICENSE ADDENDUM TO END USER LICENSE AGREEMENT FOR COMETSTUDIO SOFTWARE
+
+The runtime feature of CometStudio permits non-licensed users within Your organization to execute certain models created by this Software (some restrictions may apply to the number of modeling constructs and the users&apos; ability to revise a model). Runtime models may be executed only if the organization owns an active commercial Comet license or the individual has access to the separately purchased runtime activation.
+
+LICENSE ADDENDUM TO RSTRAINER END USER LICENSE AGREEMENT
+
+The RSTRAINER documentation, whether, illustrative, printed, &quot;online&quot; or electronic (hereinafter &quot;Training Documentation&quot;) is intended for use only as a learning aid when using BTech approved demonstration hardware, software and firmware.  The Training Documentation should only be used as a learning tool by qualified professionals.  
+
+The variety of uses for the hardware, software and firmware (hereinafter &quot;Products&quot;) described in this Training Documentation, mandates that those responsible for the application and use of those Products must satisfy themselves that all necessary steps have been taken to ensure that each application and actual use meets all performance and safety requirements, including any applicable laws, regulations, codes and standards in addition to any applicable technical documents.
+
+
+
+LICENSE ADDENDUM TO END USER LICENSE AGREEMENT FOR COMETSTUDIO SOFTWARE ACADEMIC LICENSE GUIDELINES 
+
+This addendum only applies to Software that is CometStudio simulation software.
+
+The educating of new users and the research conducted with Comet simulation software is invaluable to BTech.  This is one reason why BTech will continue to offer Comet to academic users at a significant discount.  In order to enable us to continue to our academic program, we take our end user license agreement (EULA) very seriously and expect our users to abide by the established academic use of the software for strictly educational and research purposes.  This document is meant to provide guidelines for using CometStudio&apos;s Academic Licensing.
+
+DEFINITION OF ACADEMIC
+
+An academic license may be purchased by any accredited institution where the main focus is on educating students and/or providing research.  Many commercial organizations also have an academic component that offers training or teaching, such as service companies and hospitals. The organization&apos;s focus cannot be on supporting external systems, such as non-profit / for-profit hospitals, technology institutes, or think tanks. Unless education is the primary service delivered by the institution, it will be considered to be commercial unless prior written authorization from BTech is obtained.
+
+ACADEMIC USERS
+
+Use of the license seats are bound to the college/department that has purchased the seats (for example, if the engineering department purchased the seats, the software can be used only by that college, not shared with the business college).  Only currently enrolled and/or registered students and currently employed professors and staff within the purchasing college/department are authorized to use CometStudio academic software.  This includes currently enrolled and/or registered students who are currently enrolled in a course in the license-owning college or in a multidisciplinary course included in the license-owning college.  Upon request by BTech, You agree to provide proof of such enrollment and/or employment.
+
+COMMERCIAL USE
+
+Use of the academic-licensed software for commercial use is a violation of the end user license agreement (EULA).  The use of the CometStudio academic licensed software is not permitted for commercial, professional, commercial training, or other for-profit purposes.  While it is common for sponsoring corporations to provide funding for projects, that funding should be in the form of a grant to the academic institution and not to the individual groups, professors/advisors guiding the research or student project work, or other affiliated groups established by or employing the professors/advisors within the institution. This includes instances where the academic user has an ongoing relationship (other research projects) with the corporate sponsor.  Money transfer can also be characterized where an internal &quot;cost equalization&quot; takes place between departments or organizations.  Use of the academic license for commercial purposes could result in revocation of the academic-licensed software.
+
+DISTRIBUTION OF MODEL, TEMPLATES, AND MODEL DATA
+
+The distribution of the model (.xml, .jar), module file (.com) for a study is prohibited without approval by BTech.  Data and visuals (including displaying animations that use file types like .avi, .wav, etc.) may be presented as part of analysis that is publicly shared (e.g., contained within a published thesis or paper).  If the commercial institution and/or organization outside of the license-holding college participating in the research or study request the model and/or templates for the study, please contact the BTech sales representative for assistance on how to transfer the model legally.
+
+RESEARCH
+
+BTech encourages the use of CometStudio software for conducting independent academic research.  The CometStudio academic version can be used for not-for-profit research outside of the classroom setting, where the primary goal of the research is to solve a general problem with the results being publicly shared and published.  Research outside of these bounds including for-profit and/or outside of the classroom setting where the research is conducted to solve a specific problem for an organization (both internal and external) is not permissible use of the CometStudio academic software.  For clarification and/or should research be outside of academic use research guidelines, please contact your  sales representative for information on the appropriate university research licensing.
+
+UNDERGRADUATE SENIOR PROJECTS AND GRADUATE WORK 
+
+BTech encourages the use of CometStudio for senior and other classroom-related projects.  These projects include undergraduate, graduate and doctorate theses.  This experience enables students to use simulation to solve real-world problems and exposes recipient companies to the benefits derived from the use of simulation.  These efforts must be undertaken as not-for-profit to comply with academic-use guidelines.  Distribution of model(jar) and/or modules(com) must also adhere to the aforementioned guidelines. 
+
+CO-OPERATIVE EDUCATION AND INTERNSHIP ASSIGNMENTS
+
+BTech encourages the use of CometStudio in students&apos; cooperative education and internship assignments.  This experience provides a valuable learning tool in utilizing simulation in solving real-world problems.  However, the use of academic licensing for these assignments is forbidden.  It is the responsibility of the company (including adjoining institutes, hospitals, technology institutes, etc.) sponsoring the assignment to obtain the appropriate commercial licensing.  The use of the evaluation version is permitted.
+         </text>
+   </license>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="com.bichler.astudio.feature" installMode="root"/>
+   </features>
+
+   <configurations>
+      <plugin id="com.bichler.astudio" autoStart="true" startLevel="5" />
+      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+   </configurations>
+
+   <repositories>
+      <repository location="http://bichler.tech/automation_studio/update" enabled="true" />
+      <repository location="http://localhost/repository" enabled="true" />
+   </repositories>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>

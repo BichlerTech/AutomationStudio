@@ -1,0 +1,4 @@
+## tycho automatic module detection
+com.bichler.automationstudio.configuration
+com.bichler.automationstudio.product
+com.bichler.astudio.target
