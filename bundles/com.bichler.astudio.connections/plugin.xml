@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.astudio.connections.handlers.AddHostHandler"
+            commandId="com.hbsoft.comet.connections.addhost">
+      </handler>
+      <handler
+            class="com.bichler.astudio.connections.handlers.DeleteHostHandler"
+            commandId="com.hbsoft.comet.connections.deletehost">
+      </handler>
+      <handler
+            class="com.bichler.astudio.connections.handlers.Connect2HostHandler"
+            commandId="com.hbsoft.comet.connections.connect2host">
+      </handler>
+      <handler
+            class="com.bichler.astudio.connections.handlers.UploadToHostHandler"
+            commandId="com.hbsoft.comet.connections.upload2host">
+      </handler>
+      <handler
+            class="com.bichler.astudio.connections.handlers.HostPropertyHandler"
+            commandId="com.hbsoft.comet.connections.hostproperties">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.hbsoft.comet.connections.addhost"
+            name="Add Remote Host">
+      </command>
+      <command
+            id="com.hbsoft.comet.connections.deletehost"
+            name="Delete Remote Host">
+      </command>
+      <command
+            id="com.hbsoft.comet.connections.connect2host"
+            name="Connect 2 Host">
+      </command>
+      <command
+            id="com.hbsoft.comet.connections.hostproperties"
+            name="Remote Host Properties">
+      </command>
+      <command
+            id="com.hbsoft.comet.connections.upload2host"
+            name="Upload to Host">
+      </command>
+   </extension>
+</plugin>

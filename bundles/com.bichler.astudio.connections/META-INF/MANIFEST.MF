@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Automation Studio Filesystem Connections
+Bundle-SymbolicName: com.bichler.astudio.connections;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ com.bichler.astudio.navigation,
+ com.bichler.astudio.filesystem,
+ com.bichler.astudio.utils,
+ com.bichler.astudio.utils.ui;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Activator: com.bichler.astudio.connections.ConnectionsActivator
+Export-Package: com.bichler.astudio.connections;
+  uses:="com.hbsoft.comet.filesystem,
+   org.eclipse.jface.resource,
+   org.eclipse.ui.plugin,
+   org.osgi.framework",
+ com.bichler.astudio.connections.enums,
+ com.bichler.astudio.connections.nodes,
+ com.bichler.astudio.connections.utils,
+ com.bichler.astudio.connections.wizards,
+ com.bichler.astudio.connections.wizards.listener
+Automatic-Module-Name: com.bichler.astudio.connections

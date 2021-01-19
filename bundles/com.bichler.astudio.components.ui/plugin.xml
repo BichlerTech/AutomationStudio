@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.bichler.astudio.components.ui.preferences.General_Path_Selection"
+            id="com.bichler.astudio"
+            name="Automation Studio">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="IsNavRoot">
+         <iterate
+               ifEmpty="false"
+               operator="or">
+            <adapt
+                  type="com.bichler.astudio.navigation.nodes.StudioModelNode">
+               <test
+                     property="com.bichler.astudio.components.isNavRoot">
+               </test>
+            </adapt>
+         </iterate>
+      </definition>
+   </extension>
+</plugin>

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: User
+Bundle-SymbolicName: com.bichler.astudio.core.user;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.core.user.UserActivator
+Bundle-Vendor: Bichler Technologies GmbH
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: com.bichler.astudio.core.user
+Import-Package: org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.15.300",
+ org.eclipse.ui;bundle-version="3.113.0",
+ com.bichler.astudio.utils;bundle-version="1.0.0",
+ org.eclipse.core.expressions;bundle-version="3.6.400"
+Export-Package: com.bichler.astudio.core.user.util

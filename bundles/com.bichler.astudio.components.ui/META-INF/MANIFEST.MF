@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Automation Studio Components
+Bundle-SymbolicName: com.bichler.astudio.components.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ com.bichler.astudio.utils
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ libs/sqlite-jdbc-3.7.15-M1.jar
+Bundle-Activator: com.bichler.astudio.components.ui.ComponentsUIActivator
+Export-Package: com.bichler.astudio.components.ui,
+ com.bichler.astudio.components.ui.dialogs,
+ com.bichler.astudio.components.ui.file.filter,
+ com.bichler.astudio.components.ui.handler,
+ com.bichler.astudio.components.ui.preferences,
+ org.eclipse.wb.swt
+Automatic-Module-Name: com.bichler.astudio.components

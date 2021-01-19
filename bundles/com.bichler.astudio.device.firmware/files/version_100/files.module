@@ -1,0 +1,3 @@
+#DatahubCmd:echo 4 > /cometintern/watchdog/server.state
+ledstatecheck.sh:/hbin
+#DatahubCmd:echo 0 > /cometintern/watchdog/server.state

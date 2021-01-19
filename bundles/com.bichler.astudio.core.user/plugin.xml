@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="com.bichler.astudio"
+            class="com.bichler.astudio.core.user.preference.UserPreferencePage"
+            id="com.bichler.astudio.user"
+            name="Login User">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="com.bichler.astudio.core.user.tester.UserRightsPropertyTester"
+            id="com.bichler.astudio.core.user.userRightsTester"
+            namespace="com.bichler.astudio.core.user"
+            properties="isUserRights"
+            type="java.lang.Object">
+      </propertyTester>
+   </extension>
+
+</plugin>

@@ -1,0 +1,4 @@
+#DatahubCmd:echo 4 > /cometintern/watchdog/server.state
+nmap:/btbin
+#DatahubCmd:chmod 755 /btech/nmap/nmap
+#DatahubCmd:echo 0 > /cometintern/watchdog/server.state
