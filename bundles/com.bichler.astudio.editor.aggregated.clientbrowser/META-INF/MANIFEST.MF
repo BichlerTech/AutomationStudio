@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Aggregated client browser
+Bundle-SymbolicName: com.bichler.astudio.editor.aggregated.clientbrowser;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.editor.aggregated.clientbrowser.Activator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.views;bundle-version="3.6.0",
+ com.bichler.astudio.utils,
+ com.bichler.astudio.opcua.libs,
+ com.bichler.astudio.opcua,
+ com.bichler.astudio.view.drivermodel;bundle-version="1.0.0",
+ com.bichler.astudio.images.opcua;bundle-version="1.0.0",
+ com.bichler.opc.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bichler.astudio.editor.aggregated.clientbrowser,
+ com.bichler.astudio.editor.aggregated.clientbrowser.adapter,
+ com.bichler.astudio.editor.aggregated.clientbrowser.link,
+ com.bichler.astudio.editor.aggregated.clientbrowser.model,
+ com.bichler.astudio.editor.aggregated.clientbrowser.properties,
+ com.bichler.astudio.editor.aggregated.clientbrowser.provider,
+ com.bichler.astudio.editor.aggregated.clientbrowser.resource,
+ com.bichler.astudio.editor.aggregated.clientbrowser.util
+Automatic-Module-Name: com.bichler.astudio.editor.aggregated.clientbrowser
+Import-Package: com.bichler.astudio.view.drivermodel.handler.util

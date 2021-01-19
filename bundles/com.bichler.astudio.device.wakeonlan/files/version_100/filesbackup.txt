@@ -1,0 +1,12 @@
+#DatahubCmd:echo 4 > /cometintern/watchdog/server.state
+#DatahubCmd:invoke-rc.d node.sh stop
+#DatahubCmd:update-rc.d -f node.sh remove
+nmap:/btech
+etherwake:/btech
+#DatahubCmd:chmod 755 /btech/etherwake
+version.txt:/btech/nmap
+libstdc++.so.6:/usr/lib
+#DatahubCmd:chmod 755 /etc/init.d/node.sh			
+#DatahubCmd:update-rc.d node.sh defaults
+#DatahubCmd:update-rc.d node.sh start 2 3 4 5 . stop 0 1 6 .
+#DatahubCmd:echo 0 > /cometintern/watchdog/server.state

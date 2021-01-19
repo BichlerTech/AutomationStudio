@@ -1,0 +1,6 @@
+package com.bichler.astudio.editor.xml_da.driver.datatype;
+
+public enum XML_DA_DATATYPE
+{
+  ANY, BOOL, BYTE, SHORT, INT, DINT, LONG, STRING, DOUBLE, REAL, UNSIGNEDSHORT, UNSIGNEDINT, UNSIGNEDLONG, UNSIGNEDBYTE, WORD, DWORD, TIME;
+}

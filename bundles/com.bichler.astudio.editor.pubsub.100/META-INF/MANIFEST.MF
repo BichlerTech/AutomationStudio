@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PubSub Editor
+Bundle-SymbolicName: com.bichler.astudio.editor.pubsub.1.0.0;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.editor.pubsub.PubSubActivator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.views,
+ com.bichler.astudio.opcua,
+ com.bichler.astudio.opcua.libs,
+ com.bichler.astudio.opcua.components.ui,
+ com.bichler.astudio.filesystem,
+ com.bichler.astudio.opcua.modeler,
+ com.bichler.astudio.components.ui,
+ com.bichler.astudio.utils,
+ com.bichler.astudio.view.drivermodel;bundle-version="1.0.0",
+ com.bichler.astudio.images.opcua;bundle-version="1.0.0",
+ com.bichler.opc.server,
+ com.bichler.opc.core,
+ org.eclipse.core.expressions;bundle-version="3.6.400",
+ com.bichler.astudio.opcua.addressspace.model,
+ com.bichler.astudio.device.opcua,
+ com.bichler.astudio.navigation,
+ com.bichler.astudio.opcua.navigation,
+ com.bichler.astudio.connections,
+ com.bichler.astudio.components
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ lib/gson-2.8.6.jar
+Automatic-Module-Name: com.bichler.astudio.editor.events.1.0.0

@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Siemens Editor
+Bundle-SymbolicName: com.bichler.astudio.editor.siemens.1.0.1;singleton:=true
+Bundle-Version: 1.0.1.20180420
+Bundle-Activator: com.bichler.astudio.editor.siemens.SiemensActivator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms;bundle-version="3.5.101",
+ org.eclipse.ui.views;bundle-version="3.6.0",
+ com.bichler.astudio.utils;bundle-version="1.0.0",
+ com.bichler.astudio.opcua,
+ com.bichler.astudio.opcua.libs,
+ com.bichler.astudio.components.ui,
+ com.bichler.astudio.opcua.modeler,
+ com.bichler.astudio.filesystem,
+ com.bichler.astudio.opcua.components.ui,
+ com.bichler.astudio.view.drivermodel;bundle-version="1.0.0",
+ org.eclipse.ui.workbench.texteditor;bundle-version="3.12.0",
+ com.bichler.opc.server,
+ com.bichler.opc.core,
+ com.bichler.opc.driver.siemens.101,
+ com.bichler.opc.comdrv,
+ com.bichler.astudio.components;bundle-version="1.0.0",
+ com.bichler.astudio.utils.ui;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bichler.astudio.editor.siemens
+Bundle-ClassPath: .
+Import-Package: org.eclipse.core.expressions
+Automatic-Module-Name: com.bichler.astudio.editor.siemens.1.0.1

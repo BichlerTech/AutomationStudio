@@ -1,0 +1,6 @@
+package com.bichler.astudio.editor.pubsub.xml;
+
+public enum PUBSUBENTRYTYPE
+{
+  CONNECTION, PUBLISHEDDATASET, WRITERGROUP, DATASETWRITER, READERGROUP, DATASETFIELD;
+}

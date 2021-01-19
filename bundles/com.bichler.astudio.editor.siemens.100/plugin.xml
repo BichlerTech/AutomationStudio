@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="%siemens.editor.dp"
+            extensions=".dp"
+            icon="icons/img_16/driver.png"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="com.bichler.astudio.editor.siemens.SiemensDPEditor"
+            id="com.bichler.astudio.editor.siemens.1.0.0.SiemensDPEditor">
+      </editor>
+      <editor
+            class="com.bichler.astudio.editor.siemens.SiemensDriverEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions=".dp"
+            icon="icons/img_16/driver.png"
+            id="com.bichler.astudio.editor.siemens.1.0.0.SiemensDriverEditor"
+            name="%siemens.editor.driver">
+      </editor>
+      <editor
+            class="com.bichler.astudio.editor.siemens.SiemensAdvancedDriverConfigEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions=".dp"
+            icon="icons/img_16/dp.png"
+            id="com.bichler.astudio.editor.siemens.1.0.0.SiemensAdvancedDriverConfigEditor"
+            name="%siemens.editor.advanced">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.bichler.astudio.editor.siemens.1.0.0.createdrivercommand"
+            name="Create Driver">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.siemens.1.0.0.activate"
+            name="Activate">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.siemens.1.0.0.disactivate"
+            name="Disactivate">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.siemens.1.0.0.update.namespacetable"
+            name="Update OPCUA namespace table">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.siemens.1.0.0.import"
+            name="Siemens Dp Reader">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.siemens.1.0.0.export"
+            name="Siemens Dp Writer">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.siemens.1.0.0.validate"
+            name="Validate Siemens">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.siemens.1.0.0.opendrivermodel"
+            name="Open siemens driver model browser">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.siemens.1.0.0.opendrivermodel"
+            name="Open driver model">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.siemens.1.0.0.update.nodeid"
+            name="Update nodeid">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.siemens.1.0.0.upgradedrivercommand"
+            name="Upgrade Driver">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.astudio.editor.siemens.handlers.CreateOPCUADriverHandler"
+            commandId="com.bichler.astudio.editor.siemens.1.0.0.createdrivercommand">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.siemens.handlers.ActivateChildrenHandler"
+            commandId="com.bichler.astudio.editor.siemens.1.0.0.activate">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.siemens.handlers.DisactivateChildrenHandler"
+            commandId="com.bichler.astudio.editor.siemens.1.0.0.disactivate">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.siemens.handlers.OPCUASiemensUpdateNamespaceTableHandler"
+            commandId="com.bichler.astudio.editor.siemens.1.0.0.update.namespacetable">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.siemens.handlers.SiemensDpReaderHandler"
+            commandId="com.bichler.astudio.editor.siemens.1.0.0.import">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.siemens.handlers.SiemensDpWriterHandler"
+            commandId="com.bichler.astudio.editor.siemens.1.0.0.export">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.siemens.handlers.OPCUASiemensValidationHandler"
+            commandId="com.bichler.astudio.editor.siemens.1.0.0.validate">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.siemens.handlers.OpenSiemensDriverModelHandler"
+            commandId="com.bichler.astudio.editor.siemens.1.0.0.opendrivermodel">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.siemens.handlers.OPCUASiemensUpdateNodeIdHandler"
+            commandId="com.bichler.astudio.editor.siemens.1.0.0.update.nodeid">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.siemens.handlers.UpgradeOPCUADriverHandler"
+            commandId="com.bichler.astudio.editor.siemens.1.0.0.upgradedrivercommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="com.bichler.astudio.editor.siemens.xml.SiemensEntryModelNode"
+            class="com.bichler.astudio.editor.siemens.adapter.SiemensPropertyAdapter">
+         <adapter
+               type="org.eclipse.ui.views.properties.IPropertySource">
+         </adapter>
+      </factory>
+   </extension>
+</plugin>

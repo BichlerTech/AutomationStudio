@@ -1,0 +1,18 @@
+## Treiber Beschreibung, 
+#drvdescription
+Aggregated server which connects to many opc ua servers as multiple client connections. The server contains its own user defined information model.
+
+## webseite mit zusaetzlichen infos ueber den treiber, kann auch eine komplette Treiberkonfiguration und online Hilfe sein.
+#drvweb
+http://www.hb-sofltsolution.com/comet/driver/event_v100
+
+## version des installierten Teibers
+#drvversion
+v.1.0.0
+
+## Erstellungsdatum im Format yyyy-MM-dd 
+#drvbuilddate
+2015-01-22 11:59:59.000
+
+#drvrevision
+1

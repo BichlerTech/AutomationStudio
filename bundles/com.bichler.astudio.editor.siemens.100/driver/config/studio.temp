@@ -1,0 +1,43 @@
+driverid
+1
+
+# here we define the driver type
+# following names are valid 
+# omron, siemens, beckhoff, mitsubishi, ..
+# cpu types and additional type specific configuration should
+# we insert into the next section
+drivertype
+siemens
+
+# here we define the version of the configured driver
+driverversion
+1.0.0
+
+# namespace name for that driver
+drvns
+http://bichler.tech/siemens
+
+# here we can add additional driver properties
+# specifies if the driver directly creates the opc ua address space model
+drvproperties
+max_bytecount=220
+
+# here we can define all driver specific properties
+connection properties
+
+# here we can add complex data point types
+complexTypes
+DB; FB; FC; SFC
+
+#
+redundancy no
+
+# interval to scan the siemens device
+scancyclic
+true;1000
+
+deviceaddress
+ISOTCPS7_300;localhost;102;0;0
+
+reconnecttimeout
+1000

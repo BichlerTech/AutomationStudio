@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="%calculation.editor.dp"
+            extensions=".dp"
+            icon="icons/img_16/driver.png"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="com.bichler.astudio.editor.calculation.CalculationDPEditor"
+            id="com.bichler.astudio.editor.calculation.1.0.0.CalculationDPEditor">
+      </editor>
+      <editor
+            class="com.bichler.astudio.editor.calculation.CalculationDriverEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions=".dp"
+            icon="icons/img_16/driver.png"
+            id="com.bichler.astudio.editor.calculation.1.0.0.CalculationDriverEditor"
+            name="%calculation.editor.driver">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.bichler.astudio.editor.calculation.1.0.0.createdrivercommand"
+            name="Create Driver">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.calculation.1.0.0.activate"
+            name="Activate">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.calculation.1.0.0.disactivate"
+            name="Disactivate">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.calculation.1.0.0.update.namespacetable"
+            name="Update OPCUA namespace table">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.calculation.1.0.0.import"
+            name="Calculation Dp Reader">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.calculation.1.0.0.export"
+            name="Calculation Dp Writer">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.calculation.1.0.0.validate"
+            name="Validate Calculation">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.calculation.1.0.0.opendrivermodel"
+            name="Open calculation driver model browser">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.calculation.1.0.0.opendrivermodel"
+            name="Open driver model">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.calculation.1.0.0.update.nodeid"
+            name="Update nodeid">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.astudio.editor.calculation.handlers.CreateOPCUADriverHandler"
+            commandId="com.bichler.astudio.editor.calculation.1.0.0.createdrivercommand">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.calculation.handlers.OPCUACalculationUpdateNamespaceTableHandler"
+            commandId="com.bichler.astudio.editor.calculation.1.0.0.update.namespacetable">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.calculation.handlers.CalculationDpReaderHandler"
+            commandId="com.bichler.astudio.editor.calculation.1.0.0.import">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.calculation.handlers.CalculationDpWriterHandler"
+            commandId="com.bichler.astudio.editor.calculation.1.0.0.export">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.calculation.handlers.OPCUACalculationValidationHandler"
+            commandId="com.bichler.astudio.editor.calculation.1.0.0.validate">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.calculation.handlers.OpenCalculationDriverModelHandler"
+            commandId="com.bichler.astudio.editor.calculation.1.0.0.opendrivermodel">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.calculation.handlers.OPCUACalculationUpdateNodeIdHandler"
+            commandId="com.bichler.astudio.editor.calculation.1.0.0.update.nodeid">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="com.hbsoft.comet.calculation.CalculationObject"
+            class="com.bichler.astudio.editor.calculation.adapter.CalculationPropertiesAdapter">
+         <adapter
+               type="org.eclipse.ui.views.properties.IPropertySource">
+         </adapter>
+      </factory>
+      <factory
+            adaptableType="com.hbsoft.comet.calculation.CalculationDP"
+            class="com.bichler.astudio.editor.calculation.adapter.CalculationTargetPropertiesAdapter">
+         <adapter
+               type="org.eclipse.ui.views.properties.IPropertySource">
+         </adapter>
+      </factory>
+   </extension>
+</plugin>

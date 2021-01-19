@@ -1,0 +1,7 @@
+#DatahubCmd:echo 4 > /cometintern/watchdog/server.state
+nmap:/btbin
+#DatahubCmd:chmod 755 /btbin/nmap/nmap
+etherwake:/btbin
+#DatahubCmd:chmod 755 /btbin/etherwake/etherwake
+libstdc++.so.6:/usr/lib
+#DatahubCmd:echo 0 > /cometintern/watchdog/server.state

@@ -1,0 +1,20 @@
+## Treiber Beschreibung, 
+#drvdescription
+Kommunikations Treiber fuer Siemens PLC, moegliche Kommunikation ueber ISO TCP, Netlink PRO Adapter(standard Slot 3)
+supported PLCs Siemens S7 200/300/1200/1500
+supported datatypes 
+
+## webseite mit zusaetzlichen infos ueber den treiber, kann auch eine komplette Treiberkonfiguration und online Hilfe sein.
+#drvweb
+http://www.hb-sofltsolution.com/comet/driver/siemens_v100
+
+## version des installierten Teibers
+#drvversion
+v.1.0.1
+
+## Erstellungsdatum im Format yyyy-MM-dd 
+#drvbuilddate
+2018-04-10 11:59:59.000
+
+#drvrevision only for internal use
+001

@@ -1,0 +1,5 @@
+#DatahubCmd:echo 4 > /cometintern/watchdog/server.state
+#DatahubCmd:sh /etc/init.d/thttpd stop
+www:/hbin
+#DatahubCmd:sh /etc/init.d/thttpd restart
+#DatahubCmd:echo 0 > /cometintern/watchdog/server.state

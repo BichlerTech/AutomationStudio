@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OPC UA Events editor
+Bundle-SymbolicName: com.bichler.astudio.editor.events.1.0.0;singleton:=true
+Bundle-Version: 1.0.0.20170810
+Bundle-Activator: com.bichler.astudio.editor.events.EventsActivator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.views,
+ com.bichler.astudio.opcua,
+ com.bichler.astudio.opcua.libs,
+ com.bichler.astudio.opcua.components.ui,
+ com.bichler.astudio.filesystem,
+ com.bichler.astudio.opcua.modeler,
+ com.bichler.astudio.components.ui,
+ com.bichler.astudio.utils,
+ com.bichler.astudio.view.drivermodel;bundle-version="1.0.0",
+ com.bichler.astudio.images.opcua;bundle-version="1.0.0",
+ com.bichler.opc.server,
+ com.bichler.opc.core,
+ com.bichler.astudio.components;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ lib/com.hbsoft.driver.events.jar
+Automatic-Module-Name: com.bichler.astudio.editor.events.1.0.0

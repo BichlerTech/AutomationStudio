@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="%allenbradley.editor.dp"
+            extensions=".dp"
+            icon="icons/img_16/driver.png"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="com.bichler.astudio.editor.allenbradley.AllenBradleyDPEditor"
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.AllenBradleyDPEditor">
+      </editor>
+      <editor
+            class="com.bichler.astudio.editor.allenbradley.AllenBradleyDriverEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions=".dp"
+            icon="icons/img_16/driver.png"
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.AllenBradleyDriverEditor"
+            name="%allenbradley.editor.driver">
+      </editor>
+      <editor
+            class="com.bichler.astudio.editor.allenbradley.AllenBradleyAdvancedDriverConfigEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions=".dp"
+            icon="icons/img_16/dp.png"
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.AllenBradleyAdvancedDriverConfigEditor"
+            name="%editor.advanced">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.createdrivercommand"
+            name="Create Driver">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.activate"
+            name="Activate">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.disactivate"
+            name="Disactivate">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.update.namespacetable"
+            name="Update OPCUA namespace table">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.import"
+            name="AllenBradley Dp Reader">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.export"
+            name="AllenBradley Dp Writer">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.validate"
+            name="Validate AllenBradley">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.opendrivermodel"
+            name="Open allenbradley driver model browser">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.opendrivermodel"
+            name="Open driver model">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.update.nodeid"
+            name="Update nodeid">
+      </command>
+      <command
+            id="com.bichler.astudio.editor.allenbradley.1.0.0.upgradedrivercommand"
+            name="Upgrade Driver">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.astudio.editor.allenbradley.handlers.CreateOPCUADriverHandler"
+            commandId="com.bichler.astudio.editor.allenbradley.1.0.0.createdrivercommand">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.allenbradley.handlers.ActivateChildrenHandler"
+            commandId="com.bichler.astudio.editor.allenbradley.1.0.0.activate">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.allenbradley.handlers.DisactivateChildrenHandler"
+            commandId="com.bichler.astudio.editor.allenbradley.1.0.0.disactivate">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.allenbradley.handlers.OPCUAAllenBradleyUpdateNamespaceTableHandler"
+            commandId="com.bichler.astudio.editor.allenbradley.1.0.0.update.namespacetable">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.allenbradley.handlers.AllenBradleyDpReaderHandler"
+            commandId="com.bichler.astudio.editor.allenbradley.1.0.0.import">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.allenbradley.handlers.AllenBradleyDpWriterHandler"
+            commandId="com.bichler.astudio.editor.allenbradley.1.0.0.export">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.allenbradley.handlers.OPCUAAllenBradleyValidationHandler"
+            commandId="com.bichler.astudio.editor.allenbradley.1.0.0.validate">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.allenbradley.handlers.OpenAllenBradleyDriverModelHandler"
+            commandId="com.bichler.astudio.editor.allenbradley.1.0.0.opendrivermodel">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.allenbradley.handlers.OPCUAAllenBradleyUpdateNodeIdHandler"
+            commandId="com.bichler.astudio.editor.allenbradley.1.0.0.update.nodeid">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.allenbradley.handlers.UpgradeOPCUADriverHandler"
+            commandId="com.bichler.astudio.editor.allenbradley.1.0.0.upgradedrivercommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="com.bichler.astudio.editor.allenbradley.xml.allenbradleyEntryModelNode"
+            class="com.bichler.astudio.editor.allenbradley.adapter.allenbradleyPropertyAdapter">
+         <adapter
+               type="org.eclipse.ui.views.properties.IPropertySource">
+         </adapter>
+      </factory>
+   </extension>
+
+</plugin>

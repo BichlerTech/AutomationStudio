@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.bichler.astudio.editor.aggregated.clientbrowser.display.ClientConnectionView"
+            icon="icons/blue-wifi-link.png"
+            id="com.bichler.astudio.view.clientbrowser.view"
+            name="ClientBrowserView"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="com.bichler.astudio.editor.aggregated.clientbrowser.model.AbstractCCModel"
+            class="com.bichler.astudio.editor.aggregated.clientbrowser.adapter.ClientPropertyAdapterFactory">
+         <adapter
+               type="org.eclipse.ui.views.properties.IPropertySource">
+         </adapter>
+      </factory>
+   </extension>
+
+</plugin>
