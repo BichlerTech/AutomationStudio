@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Components
+Bundle-SymbolicName: com.bichler.astudio.components
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.components.ComponentsActivator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.core.runtime,
+ com.bichler.astudio.utils;bundle-version="1.0.0",
+ com.bichler.astudio.filesystem;bundle-version="1.0.0",
+ org.eclipse.ui.workbench;bundle-version="3.118.0",
+ javax.annotation;bundle-version="1.2.0"
+Automatic-Module-Name: com.bichler.astudio.components
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.core.internal.filesystem.local
+Export-Package: com.bichler.astudio.components.file
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
