@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_tyApEM2ZEeqIOOebPkUJpA" name="testcase11">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_tzB8wM2ZEeqIOOebPkUJpA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_u208EM2ZEeqIOOebPkUJpA" name="Statemachine" URI="http://testcase.com/bichler/">
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_6X8O0M2ZEeqIOOebPkUJpA" name="StateMachine">
+      <generalization xmi:type="uml:Generalization" xmi:id="_LCOa0M2aEeqIOOebPkUJpA">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZFUIrXkEeq6aKVUZFYG3w"/>
+      </generalization>
+      <region xmi:type="uml:Region" xmi:id="_60qnEM2ZEeqIOOebPkUJpA" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="__fVmcM2ZEeqIOOebPkUJpA" source="_9MFKYM2ZEeqIOOebPkUJpA" target="_97iRYM2ZEeqIOOebPkUJpA"/>
+        <transition xmi:type="uml:Transition" xmi:id="_AC_GEM2aEeqIOOebPkUJpA" source="_97iRYM2ZEeqIOOebPkUJpA" target="_-j88QM2ZEeqIOOebPkUJpA">
+          <trigger xmi:type="uml:Trigger" xmi:id="_VHEj4M2aEeqIOOebPkUJpA" name="switchState1ToState2" event="_U2OEcM2aEeqIOOebPkUJpA"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_AnF4sM2aEeqIOOebPkUJpA" source="_-j88QM2ZEeqIOOebPkUJpA" target="_97iRYM2ZEeqIOOebPkUJpA"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_9MFKYM2ZEeqIOOebPkUJpA" name="Initial"/>
+        <subvertex xmi:type="uml:State" xmi:id="_97iRYM2ZEeqIOOebPkUJpA" name="State1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_-j88QM2ZEeqIOOebPkUJpA" name="State2"/>
+      </region>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_U2OEcM2aEeqIOOebPkUJpA" name="CallEvent1"/>
+  </packagedElement>
+</uml:Model>

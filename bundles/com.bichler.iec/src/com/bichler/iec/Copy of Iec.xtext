@@ -1,0 +1,698 @@
+grammar com.buz.iec.Iec with org.eclipse.xtext.common.Terminals
+
+generate iec "http://www.bichler.com/iec/Iec"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Model:
+	modelElement+=ModelElement*;
+	
+ModelElement:
+	LibraryElement | LibraryElementDeclaration | ('constant' Constant) | ('variable' Variable)
+;
+
+//library_element_name ::= data_type_name | function_name | function_block_type_name |program_type_name
+//| resource_type_name | configuration_name
+LibraryElement:
+	DataType | FunctionDeclaration
+;
+
+//library_element_declaration ::= data_type_declaration
+//| function_declaration | function_block_declaration | program_declaration | configuration_declaration
+LibraryElementDeclaration:
+	DataTypeDeclaration | FunctionBlockDeclaration
+;
+
+/* Types */
+// =====================================================================================================================
+	
+DataType:
+	NonGenericType | GenericType
+;
+
+NonGenericType:
+	ElementaryType | DerivedType
+;
+
+ElementaryType:
+	NumericType | DateType | BitStringType | StringType | typeName='WSTRING' |  typeName='TIME'
+;
+
+StringType: {StringType}
+	'STRING'
+;
+
+NumericType:
+	IntegerType | RealType
+;
+
+IntegerType :
+	SignedIntegerType | PlainIntegerType | UnsignedIntegerType 
+;
+
+
+
+SignedIntegerType:
+	typeName = 'SINT' | 
+	//typeName = 'INT' | 
+	typeName = 'DINT' |
+	typeName = 'LINT'
+;
+
+PlainIntegerType: {SignedIntegerType}
+	'INT'
+;
+
+UnsignedIntegerType:
+	typeName ='USINT' | 
+	typeName = 'UINT' | 
+	typeName = 'UDINT' |
+	typeName = 'ULINT'
+;
+
+RealType:  
+    typeName = 'REAL' | 
+    typeName = 'LREAL'
+;
+
+DateType:
+	typeName = 'DATE' | 
+	typeName = 'TIME_OF_DAY' | 
+	typeName = 'TOD' | 
+	typeName = 'DATE_AND_TIME' | 
+    typeName = 'DT'
+;
+
+BitStringType:
+	typeName = 'BOOL' | 
+	typeName = 'BYTE' | 
+	typeName = 'WORD' | 
+	typeName = 'DWORD' | 
+    typeName = 'LWORD'
+;
+
+GenericType:
+	typeName = 'ANY' |
+	typeName = 'ANY_DERIVED' |
+	typeName = 'ANY_ELEMENTARY' |
+	typeName = 'ANY_MAGNITUDE' |
+	typeName = 'ANY_NUM' |
+	typeName = 'ANY_REAL' |
+	typeName = 'ANY_INT' |
+	typeName = 'ANY_BIT' |
+	typeName = 'ANY_STRING' |
+	typeName = 'ANY_DATE'
+;
+
+DerivedType:
+	name=ID
+;
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+DataTypeDeclaration:
+	'TYPE' 
+	 typeDeclaration+=TypeDeclaration ';' (typeDeclaration+=TypeDeclaration ';')*
+	'END_TYPE'
+;
+
+TypeDeclaration:
+	SimpleTypeDeclaration | RangeDeclaration | EnumDeclaration | ArrayDeclaration | StructureTypeDeclaration  | StringDeclaration
+;
+
+SimpleTypeDeclaration:
+	derivedType=DerivedType ':' specInit=SpecInit
+;
+
+SpecInit:
+	(baseType=ElementaryType | baseType=DerivedType) (':=' (constant=Constant | constant=EnumeratedValue | constant=ArrayInitialization))?
+;
+
+RangeDeclaration:
+	derivedType=DerivedType ':' baseType=ElementaryType ('(' range=SubRangeWithSign')') (':=' constant=SignedInteger)?
+;
+
+EnumDeclaration:
+	derivedType=DerivedType ':' '('  enumeration=Enumeration ')'  (':=' constant=EnumeratedValue)?
+;
+
+ArrayDeclaration:
+	derivedType=DerivedType ':' 'ARRAY' '[' ranges+=SubRangeWithSign (',' ranges+=SubRangeWithSign)* ']' 'OF' baseType=NonGenericType (':=' constant=ArrayInitialization)?
+;
+
+SubRangeWithSign hidden():
+	 ('+' | '-')? SUB_RANGE
+;
+
+Enumeration:
+	values+=EnumeratedValue (',' values+=EnumeratedValue)*
+;
+
+EnumeratedValue:
+	derivedType=DerivedType '#' name=ID
+;
+
+ArrayInitialization:
+	'[' initialElements+=ArrayInitialElements (',' initialElements+=ArrayInitialElements)* ']'
+;
+
+ArrayInitialElements:
+	(initialElement=InitialElement | index=INT '(' initialElement=InitialElement ')')
+;
+
+InitialElement:
+	Constant | EnumeratedValue | ArrayInitialization | StructureInitialization
+;
+
+StructureTypeDeclaration:
+	derivedType=DerivedType ':' (declaration=StructureDeclaration   | initialization=InitializedStructure   )
+;
+
+
+StructureDeclaration: 
+	'STRUCT'
+	structureElement+=StructureElementDeclaration (';') (structureElement+=StructureElementDeclaration (';'))*
+	'END_STRUCT'
+;
+
+StructureElementDeclaration:
+	name=ID ':' specInit=SpecInit
+;
+
+InitializedStructure:
+	derivedType=DerivedType ':=' initialization=StructureInitialization
+;
+
+StructureInitialization: 
+		'(' initialElements+=StructureElementInitialization (',' initialElements+=StructureElementInitialization)* ')'
+;
+
+StructureElementInitialization:
+	name=ID ':=' value=InitialElement
+;
+
+StringDeclaration:
+	derivedType=DerivedType ':' ('STRING' | 'WSTRING') ('[' size=INT ']')  (':=' initialValue=CharacterString)?
+;
+
+/* Variables */
+// =====================================================================================================================
+
+Variable:
+	DirectVariable | SymbolicVariable
+;
+
+DirectVariable:
+	name=DIRECT_VARIABLE_ID
+;
+
+SymbolicVariable:
+    NamedVariable | MultiElementVariable
+;
+
+NamedVariable:
+	name=Identifier
+;
+
+MultiElementVariable:
+	ArrayVariable | StructuredVariable
+;
+
+ArrayVariable:
+	subscriptedVariable=[SymbolicVariable] '[' subscripts+=Expression (',' subscripts+=Expression)* ']'
+;
+
+StructuredVariable:
+	recordVariable=[SymbolicVariable] fieldSelector=FIELD_SELECTOR
+;
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+
+
+/* Expressions */
+// =====================================================================================================================
+
+Expression:
+	OrExpression 
+ ;
+ 
+OrExpression returns Expression:
+	XorExpression ({BinaryExpression.left=current} operator='OR' right=XorExpression)*
+;
+
+XorExpression returns Expression:
+	AndExpression ({BinaryExpression.left=current} operator='XOR' right=AndExpression)*
+;
+
+AndExpression returns Expression:
+	Comparison ({BinaryExpression.left=current} operator=('&' | 'AND') right=Comparison)*
+;
+
+Comparison returns Expression:
+	AddExpression ({BinaryExpression.left=current} operator=('=' | '<>' | '<' | '>' | '<=' | '>=') right=AddExpression)*
+;
+
+AddExpression returns Expression:
+	Term ({BinaryExpression.left=current} operator=( '-' | '+') right=Term)*
+;
+
+Term returns Expression:
+	PowerExpression ({BinaryExpression.left=current} operator=('*' | '/' | 'MOD') right=PowerExpression)*
+;
+
+PowerExpression returns Expression:
+	UnaryExpression ({BinaryExpression.left=current} operator='**' right=UnaryExpression)*
+;
+
+UnaryExpression returns Expression:
+	{UnaryExpression} operator=('NOT' | '-' ) expression=UnaryExpression | 
+	=> PrimaryExpression
+;
+
+PrimaryExpression returns Expression:
+	Constant |
+	// EnumeratedValue | 
+	variable=[Variable] |
+	ParenthesesExpression |
+	(fbname=[FunctionDeclaration] '('  paramassignment += ParamAssignment (',' paramassignment += ParamAssignment)* ')')
+;
+
+ParenthesesExpression returns Expression:
+	'(' expression=Expression ')'
+;
+
+ ParamAssignment:
+ 	((variablename=[NamedVariable] ':=')? expression=Expression) |
+ 	((not?='NOT')? variable1=[NamedVariable] ':>' variable2=[Variable])
+ ;
+
+
+/* Functions */
+// =====================================================================================================================
+
+FunctionDeclaration:
+	'FUNCTION' name=ID ':' type=[NonGenericType]
+	(ioVarDeclarations+=IoVarDeclarations)*
+	body=FunctionBody
+	'END_FUNCTION'
+;
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+IoVarDeclarations:
+	InputDeclarations | OutputDeclarations | InputOutputDeclarations
+;
+
+InputDeclarations:
+    'VAR_INPUT' ('RETAIN' | 'NON_RETAIN')?
+       declarations+=InputDeclaration ';'
+       (declarations+=InputDeclaration ';')*
+    'END_VAR'
+; 
+
+InputDeclaration:
+	var1List=Var1List ':' declSpecification=DeclSpecification
+;
+
+EdgeDeclaration:
+	var1List=Var1List ':' 'BOOL' ('R_EDGE' | 'F_EDGE')
+;
+
+DeclSpecification:
+	VarDeclSpecification | EdgeDeclSpecification
+;
+
+VarDeclSpecification:
+  specInit=SpecInit
+;
+
+EdgeDeclSpecification:
+	'BOOL' (rEdge?='R_EDGE' | fEdge?='F_EDGE')
+;
+
+Var1List:
+	variables+=Variable (',' variables+=Variable)*
+;
+
+OutputDeclarations:
+	'VAR_OUTPUT' ('RETAIN' | 'NON_RETAIN')?
+         initDecls+=VarInitDecl ';'
+         (initDecls+=VarInitDecl ';')*
+    'END_VAR'
+; 
+
+VarInitDecl:
+ var1List=Var1List ':' specInit=SpecInit
+;
+
+InputOutputDeclarations:
+	'VAR_IN_OUT'
+         initDecls+=VarInitDecl ';'
+         (initDecls+=VarInitDecl ';')*
+    'END_VAR'
+;
+
+VarDeclaration:
+	'var_declaration'
+;
+
+// ---------------------------------------------------------------------------------------------------------------------
+ FunctionBody:
+ 	InstructionList | StatementList
+ ;
+ 
+ // ---------------------------------------------------------------------------------------------------------------------
+ 
+ InstructionList:
+ 	instructions+=Instruction (instructions+=Instruction)*
+ ;
+ 
+ Instruction:
+ 	(label=Label ':')? instruction=Operation
+ ;
+ 
+ Label:
+ 	name=ID
+ ;
+ 
+ Operation:
+ 	SimpleOperation | ExpressionOperation | JmpOperation
+ ;
+ 
+ SimpleOperation:
+ 	operator=SimpleOperator (operand=Operand)?
+ ;
+ 
+ ExpressionOperation:
+ 	operator=ExpressionOperator '(' (operand=Operand)? (simpleInstructionList=SimpleInstructionList)?')'
+ ;
+ 
+JmpOperation:
+ 	operator=JmpOperator label=[Label]
+ ;
+ 
+ SimpleOperator:
+ 	'LD' | 'LDN'
+ ;
+ 
+ ExpressionOperator:
+ 	'AND' | '&' | 'ADD'
+ ;
+ 
+ JmpOperator:
+ 	 'JMP' | 'JMPC' | 'JMPCN'
+ ;
+ 
+ Operand:
+ 	constant=Constant | reference=[ReferencedOperand]
+ ;
+ 
+ ReferencedOperand:
+ 	Variable | EnumeratedValue
+ ;
+ 
+ SimpleInstructionList:
+ 	instructions+=SimpleInstruction (instructions+=SimpleInstruction)*
+ ;
+ 
+ SimpleInstruction:
+ 	SimpleOperation | ExpressionOperation
+ ;
+ 
+// ---------------------------------------------------------------------------------------------------------------------
+StatementList:
+	statements+=Statement ';' (statements+=Statement ';')*
+;
+
+Statement:
+	AssignStatement | SelectionStatement
+;
+
+AssignStatement:
+	variable=[Variable] ':=' expression=Expression
+;
+
+SelectionStatement:
+	IfStatement | CaseStatement
+;
+
+IfStatement:
+  'IF' ifExpression=Expression 'THEN' thenStatementList=StatementList
+  (elseIfs+=ElseIf)*
+  ('ELSE' elseStatementList=StatementList)?
+   'END_IF'
+;
+
+ElseIf:
+	'ELSIF' expression=Expression 'THEN' statementList=StatementList
+;
+
+CaseStatement:
+	     'CASE' expression=Expression 'OF'
+         (caseElements+=CaseElement)*
+         ('ELSE' elseStatementList=StatementList)?
+'END_CASE'
+;
+
+CaseElement:
+	caseList=CaseList ':' statementList=StatementList
+;
+
+CaseList:
+	elements+=CaseListElement (',' elements+=CaseListElement)*
+;
+
+CaseListElement:
+	subRange=SUB_RANGE | integer=SignedInteger | enumeratedValue=[EnumeratedValue]
+;
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+FunctionBlockDeclaration:
+	'FUNCTION_BLOCK' name=ID
+	(ioVarDeclarations+=FunctionBlockVarDeclarations)*
+	body=FunctionBlockBody
+	'END_FUNCTION_BLOCK'
+;
+
+FunctionBlockVarDeclarations:
+	IoVarDeclarations | OtherVarDeclarations
+;
+
+OtherVarDeclarations:
+	VarDeclarations
+;
+
+VarDeclarations:
+	'VAR' (constant?='CONSTANT')?
+	     initDecls+=VarInitDecl ';'
+         (initDecls+=VarInitDecl ';')*
+	'END_VAR'
+;
+
+FunctionBlockBody:
+	InstructionList | StatementList
+;
+
+
+/* Constants / Literals */
+// =====================================================================================================================
+
+Constant:
+	NumericLiteral | CharacterString | TimeLiteral | BitString | Boolean
+;
+
+NumericLiteral:
+	IntegerLiteral | RealLiteral
+;
+
+IntegerLiteral:
+	(type=IntegerType '#')? (value=IntegerValue)
+;
+
+RealLiteral:
+	(type=RealType '#')? (value=RealValue)
+;
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+IntegerValue:
+	SignedInteger | BinaryInteger | OctalInteger | HexInteger
+;
+
+SignedInteger hidden(): ('+' | '-')? Integer
+;
+
+BinaryInteger hidden(): BINT 
+;
+
+OctalInteger hidden(): OINT;
+
+HexInteger hidden(): HINT;
+
+RealValue hidden():  ('+' | '-')? FIXED_POINT (EXPONENT)?
+;
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+CharacterString:
+	value=SINGLE_BYTE_STRING | value=DOUBLE_BYTE_STRING
+;
+
+BitString :
+ ('BYTE#' | 'WORD#' | 'DWORD#' | 'LWORD#') value=BitStringValue
+;
+
+BitStringValue:
+	( INT | BinaryInteger | OctalInteger | HexInteger)
+;
+
+Boolean : {Boolean} 
+(('BOOL#' (boolInt=INT) ) | (true?='TRUE'|'FALSE'))
+;
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+TimeLiteral:
+	DurationLiteral | TimeOfDayLiteral | DateLiteral | DateAndTimeLiteral
+;
+
+DurationLiteral : 
+	('T#' | 't#' | 'TIME#') ('-')? ( duration=DAYS | duration=HOURS | duration=MINUTES | duration=SECONDS | duration=MILLISECONDS)	
+;
+
+TimeOfDayLiteral:
+	('TIME_OF_DAY#' | 'TOD#') hour=INT ':' minute=INT ':' second=INT
+;
+
+DateLiteral:
+	('DATE#' | 'D#') year=INT '-' month=INT '-' day=INT
+;
+
+DateAndTimeLiteral:
+	('DATE_AND_TIME#' | 'DT#') year=INT '-' month=INT '-' day=INT '-' hour=INT ':' minute=INT ':' second=INT
+;
+
+// ----------------------------------------
+
+//terminal DAYS returns ecore::EString:
+//	(INT ('.' INT)? 'd')  (('_')? HOURS)?
+//;
+//
+//terminal HOURS returns ecore::EString:
+//	(INT ('.' INT)? 'h')  (('_')? MINUTES)?
+//;
+//
+//terminal MINUTES returns ecore::EString:
+//	(INT ('.' INT)? 'm')  (('_')? SECONDS)?
+//;
+//
+//terminal SECONDS returns ecore::EString:
+//	(INT ('.' INT)? 's') (('_')? MILLISECONDS)?
+//;
+//
+//terminal MILLISECONDS returns ecore::EString:
+//	INT ('.' INT)? 'ms'
+//;
+
+ DAYS returns ecore::EString:
+	(INT ('.' INT)? 'd')  (('_')? HOURS)?
+;
+
+ HOURS returns ecore::EString:
+	(INT ('.' INT)? 'h')  (('_')? MINUTES)?
+;
+
+ MINUTES returns ecore::EString:
+	(INT ('.' INT)? 'm')  (('_')? SECONDS)?
+;
+
+ SECONDS returns ecore::EString:
+	(INT ('.' INT)? 's') (('_')? MILLISECONDS)?
+;
+
+ MILLISECONDS returns ecore::EString:
+	INT ('.' INT)? 'ms'
+;
+
+
+ Identifier  hidden()	: ( LETTER | ID);
+ Integer hidden() : (DIGIT|INT);
+ 
+ 
+
+
+/* Basic Terminals */
+// =====================================================================================================================
+
+/* letter and digits */
+// LETTER hidden(): 'a'|'z'|'A'|'Z';
+// DIGIT hidden(): '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
+// OCTAL_DIGIT hidden(): '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' ;
+// HEX_DIGIT hidden(): ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F');
+
+terminal LETTER:
+	('a'..'z'|'A'..'Z')
+;
+
+terminal DIGIT:
+	'0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+;
+
+
+//terminal ID  		: (('a'..'z'|'A'..'Z') | '_' ('a'..'z'|'A'..'Z'|'0'..'9')) (('_')? ('a'..'z'|'A'..'Z'|'0'..'9'))*;
+terminal ID  		: ( LETTER | '_' (LETTER|DIGIT)) (('_')? (LETTER|DIGIT))*;
+
+
+
+//terminal INT returns ecore::EInt: ('^' '#' '0'..'9')+;
+terminal BINT returns ecore::EInt: '2#' ('0' | '1') (('_')? ('0' | '1' ))*;
+terminal OINT returns ecore::EInt: '8#' ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7') (('_')? ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7'))*;
+terminal HINT returns ecore::EInt: '16#' ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F') (('_')? ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F'	))*;
+
+terminal INT returns ecore::EInt: ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9') (('_')? ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'))*;
+//terminal INTEGER : ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9') (('_')? ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'))*;
+
+terminal SUB_RANGE:
+	 INT '..' ('+' | '-')? INT
+;
+
+terminal FIXED_POINT:
+	INT '.' INT
+;
+
+
+terminal EXPONENT returns ecore::EString:
+     ('E' | 'e') ('+' | '-')? INT
+;
+
+terminal SINGLE_BYTE_STRING:			
+	"'" 
+	( '$' ('L'|'N'|'P'|'R'|'T'|'l'|'n'|'p'|'r'|'t'|"'"|'$'| ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F') ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F')) | 
+		!('$'|"'")
+	)* 
+	"'"
+;
+
+terminal DOUBLE_BYTE_STRING:
+	'"'
+	( '$' ('L'|'N'|'P'|'R'|'T'|'l'|'n'|'p'|'r'|'t'|'"'|'$'| ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F') ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F') ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F') ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F')) | 
+		!('$'|'"')
+	)*
+	'"' 
+;
+
+terminal DIRECT_VARIABLE_ID:
+	'%' ('I' | 'Q' | 'M') ('NIL' | 'X' | 'B' | 'W' | 'D' | 'L') INT ('.' INT)*
+;
+
+terminal ML_COMMENT	: '(*' -> '*)';
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+terminal FIELD_SELECTOR:
+	'.' ID
+;

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            category="Automation Studio"
+            file="toc.xml"
+            primary="true">
+      </toc>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="context.xml"
+            plugin="com.bichler.astudio.opcua.help">
+      </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="com.bichler.astudio.main.toolbar.help2">
+            <command
+                  commandId="com.bichler.astudio.opcserver.showhelp"
+                  icon="icons/help_32.png"
+                  label="%menu.showhelpopcua"
+                  style="toggle"
+                  tooltip="%menu.showhelpopcua">
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               id="com.bichler.astudio.help"
+               label="%menu.help">
+            <command
+                  commandId="com.bichler.astudio.opcserver.showhelp"
+                  icon="icons/help_16.png"
+                  label="%menu.showhelpopcua"
+                  style="toggle">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.bichler.astudio.opcserver.showhelp"
+            name="%menu.help">
+         <state
+               class="org.eclipse.ui.handlers.RegistryToggleState:true"
+               id="org.eclipse.ui.commands.toggleState">
+         </state>
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.astudio.opcua.help.ShowHelpHandler"
+            commandId="com.bichler.astudio.opcserver.showhelp">
+      </handler>
+   </extension>
+
+</plugin>

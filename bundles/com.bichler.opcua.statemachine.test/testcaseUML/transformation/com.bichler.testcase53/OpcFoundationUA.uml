@@ -1,0 +1,1302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_uKaWXyUN2n85b2jdyPNR1k" name="OpcFoundationUA">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_4wp8pyUN2n85b2jdyPNR1k">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_ZJOHkyUN2n85b2jdyPNR1k" name="opcfoundation.org/UA/_objecttypes" URI="http://opcfoundation.org/UA/">
+    <packagedElement xmi:type="uml:Class" xmi:id="_lo96ByUN2n85b2jdyPNR1k" name="PubSubDiagnosticsDataSetWriterType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_F4SjKyUN2n85b2jdyPNR1k" general="_A2tSlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_l81SEyUN2n85b2jdyPNR1k" name="ProgramStateMachineType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_XVepyyUN2n85b2jdyPNR1k" general="_VZFUIrXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JJmn4yUN2n85b2jdyPNR1k" name="PublishedDataSetType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_NoXVEyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wESvnyUN2n85b2jdyPNR1k" name="KeyCredentialConfigurationFolderType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_3RRK2yUN2n85b2jdyPNR1k" general="_dxDMeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zU4DMyUN2n85b2jdyPNR1k" name="StateType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_lVYi4yUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_xVrFZyUN2n85b2jdyPNR1k" name="SubscribedDataSetType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_jADSkyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_kRtAkyUN2n85b2jdyPNR1k" name="RoleType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_F4MplyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_DXDz9yUN2n85b2jdyPNR1k" name="ChoiceStateType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_m429NyUN2n85b2jdyPNR1k" general="_zU4DMyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rhLXtyUN2n85b2jdyPNR1k" name="InitialStateType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_bTVNHyUN2n85b2jdyPNR1k" general="_zU4DMyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GrTgtyUN2n85b2jdyPNR1k" name="TransitionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_1nQeYyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_DtNSYyUN2n85b2jdyPNR1k" name="SecurityGroupFolderType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_VsVZOyUN2n85b2jdyPNR1k" general="_dxDMeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eemTQyUN2n85b2jdyPNR1k" name="TargetVariablesType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Or46qyUN2n85b2jdyPNR1k" general="_xVrFZyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dhbgEyUN2n85b2jdyPNR1k" name="AggregateConfigurationType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_k29R1yUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_mHaIwyUN2n85b2jdyPNR1k" name="DictionaryEntryType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_hHOqZyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CQNUwyUN2n85b2jdyPNR1k" name="NamespaceMetadataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_aB8vWyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BKRdsyUN2n85b2jdyPNR1k" name="CertificateGroupType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_cYspzyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cyFpayUN2n85b2jdyPNR1k" name="CertificateType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_PKaKSyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_nALmtyUN2n85b2jdyPNR1k" name="DictionaryFolderType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_skDjSyUN2n85b2jdyPNR1k" general="_dxDMeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ysw3ayUN2n85b2jdyPNR1k" name="ReaderGroupTransportType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Vb9mzyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_amwyhyUN2n85b2jdyPNR1k" name="ApplicationCertificateType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_1oMZYyUN2n85b2jdyPNR1k" general="_cyFpayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BM9AJyUN2n85b2jdyPNR1k" name="ReaderGroupMessageType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7XB7syUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_93RSEyUN2n85b2jdyPNR1k" name="HttpsCertificateType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Rguj6yUN2n85b2jdyPNR1k" general="_cyFpayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_xEpOwyUN2n85b2jdyPNR1k" name="HistoricalDataConfigurationType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_uxtwWyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_qZW42yUN2n85b2jdyPNR1k" name="RsaMinApplicationCertificateType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_HYd3KyUN2n85b2jdyPNR1k" general="_amwyhyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pDJHfyUN2n85b2jdyPNR1k" name="RsaSha256ApplicationCertificateType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_VSmVWyUN2n85b2jdyPNR1k" general="_amwyhyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yRroeyUN2n85b2jdyPNR1k" name="FileTransferStateMachineType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZAnSDyUN2n85b2jdyPNR1k" general="_VZFUIrXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5b2sTyUN2n85b2jdyPNR1k" name="ExclusiveLimitStateMachineType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_PIR5xyUN2n85b2jdyPNR1k" general="_VZFUIrXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_o462DyUN2n85b2jdyPNR1k" name="AuthorizationServiceConfigurationType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_se34SyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QLZEKyUN2n85b2jdyPNR1k" name="DataSetWriterMessageType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_PL1nOyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_TrtszyUN2n85b2jdyPNR1k" name="IrdiDictionaryEntryType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_SYWSEyUN2n85b2jdyPNR1k" general="_mHaIwyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_VYwN2yUN2n85b2jdyPNR1k" name="PubSubDiagnosticsRootType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_vdQnXyUN2n85b2jdyPNR1k" general="_A2tSlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_TSLCEyUN2n85b2jdyPNR1k" name="PubSubDiagnosticsReaderGroupType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_kH6q5yUN2n85b2jdyPNR1k" general="_A2tSlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zK8kmyUN2n85b2jdyPNR1k" name="AlarmGroupType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_8jvtjyUN2n85b2jdyPNR1k" general="_dxDMeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FQyHlyUN2n85b2jdyPNR1k" name="UriDictionaryEntryType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_BxjiIyUN2n85b2jdyPNR1k" general="_mHaIwyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KSWT2yUN2n85b2jdyPNR1k" name="SubscribedDataSetMirrorType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_8fj9vyUN2n85b2jdyPNR1k" general="_xVrFZyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_kzyMNyUN2n85b2jdyPNR1k" name="BaseInterfaceType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qS5apyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8tzZyyUN2n85b2jdyPNR1k" name="DataSetWriterType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_9arwqyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_OftroyUN2n85b2jdyPNR1k" name="SecurityGroupType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_g8tk7yUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6gVKGyUN2n85b2jdyPNR1k" name="HistoryServerCapabilitiesType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_89YIUyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_tE6ncyUN2n85b2jdyPNR1k" name="DataSetReaderMessageType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_vMiCNyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bRdyTyUN2n85b2jdyPNR1k" name="PublishedDataItemsType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_yI2SxyUN2n85b2jdyPNR1k" general="_JJmn4yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Um48PyUN2n85b2jdyPNR1k" name="UadpWriterGroupMessageType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZJZ9LyUN2n85b2jdyPNR1k" general="_w8dVfyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CW7jdyUN2n85b2jdyPNR1k" name="ShelvedStateMachineType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_lfdy6yUN2n85b2jdyPNR1k" general="_VZFUIrXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_z9yWbyUN2n85b2jdyPNR1k" name="DataSetWriterTransportType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_evlO2yUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Vw9nPyUN2n85b2jdyPNR1k" name="DataSetReaderType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qbnnfyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_83opgyUN2n85b2jdyPNR1k" name="UadpDataSetWriterMessageType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_cX15CyUN2n85b2jdyPNR1k" general="_QLZEKyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ebuURyUN2n85b2jdyPNR1k" name="PubSubKeyServiceType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_tQy3hyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1HKhoyUN2n85b2jdyPNR1k" name="AggregateFunctionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_YkKbGyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_myhhayUN2n85b2jdyPNR1k" name="PubSubDiagnosticsWriterGroupType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Lvoa6yUN2n85b2jdyPNR1k" general="_A2tSlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_atAiOyUN2n85b2jdyPNR1k" name="ServerConfigurationType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_2KOC2yUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1r8f8yUN2n85b2jdyPNR1k" name="UadpDataSetReaderMessageType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_X3WlvyUN2n85b2jdyPNR1k" general="_tE6ncyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Vhe6IyUN2n85b2jdyPNR1k" name="NamespacesType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Ar8IAyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_VZFUIrXkEeq6aKVUZFYG3w" name="FiniteStateMachineType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_G6psSyUN2n85b2jdyPNR1k" general="_VZFUILXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_7IgkpyUN2n85b2jdyPNR1k" name="FileDirectoryType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6FuShyUN2n85b2jdyPNR1k" general="_dxDMeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cS6miyUN2n85b2jdyPNR1k" name="ServerType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Sn4yTyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cGpAqyUN2n85b2jdyPNR1k" name="AlarmMetricsType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_UzmeUyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_N55vxyUN2n85b2jdyPNR1k" name="TemporaryFileTransferType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_flFc5yUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wC2phyUN2n85b2jdyPNR1k" name="PubSubConnectionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GEeglyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_gceugyUN2n85b2jdyPNR1k" name="ExtensionFieldsType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_F3DOJyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_YlHcUyUN2n85b2jdyPNR1k" name="OperationLimitsType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_XCqLhyUN2n85b2jdyPNR1k" general="_dxDMeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zTVFfyUN2n85b2jdyPNR1k" name="DataSetReaderTransportType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_LaIHyyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_xTkZkyUN2n85b2jdyPNR1k" name="DatagramConnectionTransportType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7ETTcyUN2n85b2jdyPNR1k" general="_9pFimyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8dzGgyUN2n85b2jdyPNR1k" name="JsonWriterGroupMessageType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_HZ4GdyUN2n85b2jdyPNR1k" general="_w8dVfyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_A2tSlyUN2n85b2jdyPNR1k" name="PubSubDiagnosticsType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ScIBoyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_YFvqMyUN2n85b2jdyPNR1k" name="ServerCapabilitiesType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_EPkj3yUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_de4zYyUN2n85b2jdyPNR1k" name="JsonDataSetWriterMessageType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RRrCDyUN2n85b2jdyPNR1k" general="_QLZEKyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6NOc9yUN2n85b2jdyPNR1k" name="PubSubStatusType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ipsWCyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cvTFzyUN2n85b2jdyPNR1k" name="BrokerConnectionTransportType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_3pKxTyUN2n85b2jdyPNR1k" general="_9pFimyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RbjPmyUN2n85b2jdyPNR1k" name="JsonDataSetReaderMessageType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_skXLjyUN2n85b2jdyPNR1k" general="_tE6ncyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1bYhcyUN2n85b2jdyPNR1k" name="FileType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_UnKCqyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1vHabyUN2n85b2jdyPNR1k" name="DataSetFolderType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_sQ2IJyUN2n85b2jdyPNR1k" general="_dxDMeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_c4alRyUN2n85b2jdyPNR1k" name="DatagramWriterGroupTransportType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Z72ULyUN2n85b2jdyPNR1k" general="_vUUCFyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_9pFimyUN2n85b2jdyPNR1k" name="ConnectionTransportType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_yTBvoyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_fVr7PyUN2n85b2jdyPNR1k" name="ServerDiagnosticsType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_s6c5JyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_VZF7MLXkEeq6aKVUZFYG3w" name="BaseObjectType"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_tQ7rpyUN2n85b2jdyPNR1k" name="BrokerWriterGroupTransportType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_FfhhQyUN2n85b2jdyPNR1k" general="_vUUCFyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bWvRDyUN2n85b2jdyPNR1k" name="PubSubDiagnosticsDataSetReaderType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_zQfuByUN2n85b2jdyPNR1k" general="_A2tSlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ClrhfyUN2n85b2jdyPNR1k" name="BrokerDataSetWriterTransportType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_EwifZyUN2n85b2jdyPNR1k" general="_z9yWbyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dxDMeyUN2n85b2jdyPNR1k" name="FolderType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ajITyyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZxYi1yUN2n85b2jdyPNR1k" name="WriterGroupType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_t4doAyUN2n85b2jdyPNR1k" general="_A3sWGyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yfzosyUN2n85b2jdyPNR1k" name="StatisticalConditionClassType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_fCxyqyUN2n85b2jdyPNR1k" general="_FwsNayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EVotAyUN2n85b2jdyPNR1k" name="TrustListType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RVXZTyUN2n85b2jdyPNR1k" general="_1bYhcyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_C5Rq8yUN2n85b2jdyPNR1k" name="SessionsDiagnosticsSummaryType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Smzh1yUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rNWwjyUN2n85b2jdyPNR1k" name="BrokerDataSetReaderTransportType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_4AS3byUN2n85b2jdyPNR1k" general="_zTVFfyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_mVEDlyUN2n85b2jdyPNR1k" name="PublishedEventsType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_TKDNEyUN2n85b2jdyPNR1k" general="_JJmn4yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_9g9oByUN2n85b2jdyPNR1k" name="SafetyConditionClassType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_cYgcbyUN2n85b2jdyPNR1k" general="_FwsNayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oKUNTyUN2n85b2jdyPNR1k" name="SessionDiagnosticsObjectType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_9qnY9yUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_A3sWGyUN2n85b2jdyPNR1k" name="PubSubGroupType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_i2lqdyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6uFxwyUN2n85b2jdyPNR1k" name="HighlyManagedAlarmConditionClassType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_hlPskyUN2n85b2jdyPNR1k" general="_FwsNayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JNtwWyUN2n85b2jdyPNR1k" name="NetworkAddressType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_amegIyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4QmlQyUN2n85b2jdyPNR1k" name="TrainingConditionClassType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_9OqOnyUN2n85b2jdyPNR1k" general="_FwsNayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LDuwCyUN2n85b2jdyPNR1k" name="TestingConditionSubClassType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_2yBkUyUN2n85b2jdyPNR1k" general="_FwsNayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FwsNayUN2n85b2jdyPNR1k" name="BaseConditionClassType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RUNKZyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wnNsByUN2n85b2jdyPNR1k" name="NetworkAddressUrlType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_iDkFgyUN2n85b2jdyPNR1k" general="_JNtwWyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1o6NUyUN2n85b2jdyPNR1k" name="VendorServerInfoType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_BQLuLyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_tSWGgyUN2n85b2jdyPNR1k" name="ProcessConditionClassType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_VOYybyUN2n85b2jdyPNR1k" general="_FwsNayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1SlBWyUN2n85b2jdyPNR1k" name="ServerRedundancyType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_NoNQIyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_3LA9dyUN2n85b2jdyPNR1k" name="MaintenanceConditionClassType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_fitBLyUN2n85b2jdyPNR1k" general="_FwsNayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_L8FczyUN2n85b2jdyPNR1k" name="SystemConditionClassType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_PzRP7yUN2n85b2jdyPNR1k" general="_FwsNayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5aHkZyUN2n85b2jdyPNR1k" name="AliasNameType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_hQncWyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a81iayUN2n85b2jdyPNR1k" name="TransparentRedundancyType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qYHAcyUN2n85b2jdyPNR1k" general="_1SlBWyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ko1w8yUN2n85b2jdyPNR1k" name="PubSubDiagnosticsConnectionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GXe3iyUN2n85b2jdyPNR1k" general="_A2tSlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_OUAsByUN2n85b2jdyPNR1k" name="CertificateGroupFolderType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Ml3gEyUN2n85b2jdyPNR1k" general="_dxDMeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bIjwLyUN2n85b2jdyPNR1k" name="AliasNameCategoryType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_UMdMByUN2n85b2jdyPNR1k" general="_dxDMeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_qXywIyUN2n85b2jdyPNR1k" name="DataTypeSystemType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Urv87yUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_kKscgyUN2n85b2jdyPNR1k" name="AddressSpaceFileType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_OfdVAyUN2n85b2jdyPNR1k" general="_1bYhcyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ul5HCyUN2n85b2jdyPNR1k" name="DataTypeEncodingType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_abpMdyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ely7GyUN2n85b2jdyPNR1k" name="RoleSetType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_vf1hZyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QOn1eyUN2n85b2jdyPNR1k" name="NonTransparentRedundancyType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_FUgVjyUN2n85b2jdyPNR1k" general="_1SlBWyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_f5JB2yUN2n85b2jdyPNR1k" name="ModellingRuleType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_AC5fkyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vUUCFyUN2n85b2jdyPNR1k" name="WriterGroupTransportType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_gvijryUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_jfg8eyUN2n85b2jdyPNR1k" name="UserCredentialCertificateType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_FnQbmyUN2n85b2jdyPNR1k" general="_cyFpayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_w8dVfyUN2n85b2jdyPNR1k" name="WriterGroupMessageType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_NzkTWyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_u5zksyUN2n85b2jdyPNR1k" name="ReaderGroupType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_gkb9IyUN2n85b2jdyPNR1k" general="_A3sWGyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Cr1PcyUN2n85b2jdyPNR1k" name="PublishSubscribeType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_XNEWsyUN2n85b2jdyPNR1k" general="_ebuURyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_VZFUILXkEeq6aKVUZFYG3w" name="StateMachineType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_YYF8ayUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GmLk3yUN2n85b2jdyPNR1k" name="KeyCredentialConfigurationType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7FdOWyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_97u8OyUN2n85b2jdyPNR1k" name="NonTransparentNetworkRedundancyType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_dVTMZyUN2n85b2jdyPNR1k" general="_QOn1eyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_gSMIGyUN2n85b2jdyPNR1k" name="opcfoundation.org/UA/_eventtypes" URI="http://opcfoundation.org/UA/">
+    <packagedElement xmi:type="uml:Class" xmi:id="_8CmLyyUN2n85b2jdyPNR1k" name="NonExclusiveDeviationAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZGlFJyUN2n85b2jdyPNR1k" general="_6vKPuyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_asnSAyUN2n85b2jdyPNR1k" name="InstrumentDiagnosticAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_rA5PYyUN2n85b2jdyPNR1k" general="_g38nWyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_haImDyUN2n85b2jdyPNR1k" name="AuditAddNodesEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_uwch2yUN2n85b2jdyPNR1k" general="_Kv55AyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_jmAWryUN2n85b2jdyPNR1k" name="AuditConditionConfirmEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_oEHfxyUN2n85b2jdyPNR1k" general="_Slj87yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PQAlyyUN2n85b2jdyPNR1k" name="ProgressEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Zl4pyyUN2n85b2jdyPNR1k" general="__T8sILuNEeq9S-4yXgSHNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oXYfeyUN2n85b2jdyPNR1k" name="AuditDeleteNodesEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_NcBOJyUN2n85b2jdyPNR1k" general="_Kv55AyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eIc1vyUN2n85b2jdyPNR1k" name="AuditEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RXHAhyUN2n85b2jdyPNR1k" general="__T8sILuNEeq9S-4yXgSHNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_HGgmVyUN2n85b2jdyPNR1k" name="AuditAddReferencesEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_d5uxCyUN2n85b2jdyPNR1k" general="_Kv55AyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5JYsgyUN2n85b2jdyPNR1k" name="PubSubStatusEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_cSntbyUN2n85b2jdyPNR1k" general="_UHoFSyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JrP4wyUN2n85b2jdyPNR1k" name="AuditConditionSilenceEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_D2Pm5yUN2n85b2jdyPNR1k" general="_Slj87yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vn1qAyUN2n85b2jdyPNR1k" name="EventQueueOverflowEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_xIPqAyUN2n85b2jdyPNR1k" general="__T8sILuNEeq9S-4yXgSHNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZocIpyUN2n85b2jdyPNR1k" name="KeyCredentialAuditEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_kDWkdyUN2n85b2jdyPNR1k" general="_ASrsZyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UMPpnyUN2n85b2jdyPNR1k" name="AuditDeleteReferencesEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_iupHOyUN2n85b2jdyPNR1k" general="_Kv55AyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FEHT8LuOEeq9S-4yXgSHNA" name="TransitionEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_9hduQyUN2n85b2jdyPNR1k" general="__T8sILuNEeq9S-4yXgSHNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lwxoCyUN2n85b2jdyPNR1k" name="SemanticChangeEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_1ErDAyUN2n85b2jdyPNR1k" general="__T8sILuNEeq9S-4yXgSHNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vKPuyUN2n85b2jdyPNR1k" name="NonExclusiveLimitAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZRrWKyUN2n85b2jdyPNR1k" general="_RDuPuyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_j1DGFyUN2n85b2jdyPNR1k" name="AuditUpdateEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_231wvyUN2n85b2jdyPNR1k" general="_eIc1vyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_F3a7myUN2n85b2jdyPNR1k" name="ConditionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_OBeHDyUN2n85b2jdyPNR1k" general="__T8sILuNEeq9S-4yXgSHNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_erZ3dyUN2n85b2jdyPNR1k" name="ProgramTransitionAuditEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_stvGeyUN2n85b2jdyPNR1k" general="_eHlE3yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JmwZQyUN2n85b2jdyPNR1k" name="AuditWriteUpdateEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Oys88yUN2n85b2jdyPNR1k" general="_j1DGFyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_iW9KcyUN2n85b2jdyPNR1k" name="AuditConditionRespondEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_JQ53dyUN2n85b2jdyPNR1k" general="_Slj87yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ULClkyUN2n85b2jdyPNR1k" name="ExclusiveLevelAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_r9Ob7yUN2n85b2jdyPNR1k" general="_BsdkwyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_kfQL7yUN2n85b2jdyPNR1k" name="AuditSecurityEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_YXoNuyUN2n85b2jdyPNR1k" general="_eIc1vyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RDuPuyUN2n85b2jdyPNR1k" name="LimitAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RSxnzyUN2n85b2jdyPNR1k" general="_TMTLQyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ae6RhyUN2n85b2jdyPNR1k" name="AuditChannelEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_5stuByUN2n85b2jdyPNR1k" general="_kfQL7yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eHlE3yUN2n85b2jdyPNR1k" name="AuditUpdateStateEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_D5KCmyUN2n85b2jdyPNR1k" general="_ASrsZyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_mKA1RyUN2n85b2jdyPNR1k" name="SystemStatusChangeEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_82A3byUN2n85b2jdyPNR1k" general="_UHoFSyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dWAvVyUN2n85b2jdyPNR1k" name="TrustListOutOfDateAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_R3WU3yUN2n85b2jdyPNR1k" general="_TlaWRyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_sZjHlyUN2n85b2jdyPNR1k" name="AuditOpenSecureChannelEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_JqEbDyUN2n85b2jdyPNR1k" general="_ae6RhyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_W2WWlyUN2n85b2jdyPNR1k" name="AuditHistoryEventUpdateEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_JchORyUN2n85b2jdyPNR1k" general="_YF1GFyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_g38nWyUN2n85b2jdyPNR1k" name="OffNormalAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_rroNtyUN2n85b2jdyPNR1k" general="_gXw3DyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4FBKbyUN2n85b2jdyPNR1k" name="AuditConditionCommentEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_YTy9byUN2n85b2jdyPNR1k" general="_Slj87yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UpzNEyUN2n85b2jdyPNR1k" name="DiscrepancyAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_WTuczyUN2n85b2jdyPNR1k" general="_TMTLQyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_YF1GFyUN2n85b2jdyPNR1k" name="AuditHistoryUpdateEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZXjjoyUN2n85b2jdyPNR1k" general="_j1DGFyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_TMTLQyUN2n85b2jdyPNR1k" name="AlarmConditionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Uz84eyUN2n85b2jdyPNR1k" general="_yNO1gyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_qjFxVyUN2n85b2jdyPNR1k" name="RefreshStartEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_78VRqyUN2n85b2jdyPNR1k" general="_UHoFSyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uVWZKyUN2n85b2jdyPNR1k" name="DialogConditionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_5y6pByUN2n85b2jdyPNR1k" general="_F3a7myUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_HL2GJyUN2n85b2jdyPNR1k" name="RefreshEndEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_no29KyUN2n85b2jdyPNR1k" general="_UHoFSyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XpWzuyUN2n85b2jdyPNR1k" name="RefreshRequiredEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qYEwFyUN2n85b2jdyPNR1k" general="_UHoFSyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_2AdS4yUN2n85b2jdyPNR1k" name="NonExclusiveRateOfChangeAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RXOvcyUN2n85b2jdyPNR1k" general="_6vKPuyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Slj87yUN2n85b2jdyPNR1k" name="AuditConditionEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_uqwxTyUN2n85b2jdyPNR1k" general="_ASrsZyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lIJUPyUN2n85b2jdyPNR1k" name="TrustListUpdatedAuditEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qCZlXyUN2n85b2jdyPNR1k" general="_ASrsZyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eWKTNyUN2n85b2jdyPNR1k" name="AuditUrlMismatchEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_lhWyMyUN2n85b2jdyPNR1k" general="_scWH1yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oFV53yUN2n85b2jdyPNR1k" name="PubSubTransportLimitsExceedEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6heFlyUN2n85b2jdyPNR1k" general="_5JYsgyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uLmFgyUN2n85b2jdyPNR1k" name="AuditHistoryValueUpdateEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_YCh1AyUN2n85b2jdyPNR1k" general="_YF1GFyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_TlaWRyUN2n85b2jdyPNR1k" name="SystemOffNormalAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_t1GoPyUN2n85b2jdyPNR1k" general="_g38nWyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EflyyyUN2n85b2jdyPNR1k" name="RoleMappingRuleChangedAuditEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_DT6LsyUN2n85b2jdyPNR1k" general="_ASrsZyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UlLYayUN2n85b2jdyPNR1k" name="AuditSessionEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RXv6ByUN2n85b2jdyPNR1k" general="_kfQL7yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_T3P3qyUN2n85b2jdyPNR1k" name="SystemDiagnosticAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_vRcu4yUN2n85b2jdyPNR1k" general="_g38nWyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PDZqqyUN2n85b2jdyPNR1k" name="AuditConditionOutOfServiceEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_If43RyUN2n85b2jdyPNR1k" general="_Slj87yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yNO1gyUN2n85b2jdyPNR1k" name="AcknowledgeableConditionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_3edl4yUN2n85b2jdyPNR1k" general="_F3a7myUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_WfpRHyUN2n85b2jdyPNR1k" name="ExclusiveRateOfChangeAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_lgUt5yUN2n85b2jdyPNR1k" general="_BsdkwyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_scWH1yUN2n85b2jdyPNR1k" name="AuditCreateSessionEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_bL1eKyUN2n85b2jdyPNR1k" general="_UlLYayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_neQK1yUN2n85b2jdyPNR1k" name="AuditHistoryAnnotationUpdateEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_AEp8ayUN2n85b2jdyPNR1k" general="_YF1GFyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ymj7XyUN2n85b2jdyPNR1k" name="KeyCredentialUpdatedAuditEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ii1PiyUN2n85b2jdyPNR1k" general="_ZocIpyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_DYyEKyUN2n85b2jdyPNR1k" name="AuditHistoryDeleteEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_setlsyUN2n85b2jdyPNR1k" general="_YF1GFyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_2DM3vyUN2n85b2jdyPNR1k" name="AuditConditionAcknowledgeEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RNTWpyUN2n85b2jdyPNR1k" general="_Slj87yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_gXw3DyUN2n85b2jdyPNR1k" name="DiscreteAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_CFWujyUN2n85b2jdyPNR1k" general="_TMTLQyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_SC4zFyUN2n85b2jdyPNR1k" name="AuditActivateSessionEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_3Z5hByUN2n85b2jdyPNR1k" general="_UlLYayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_T6bxQyUN2n85b2jdyPNR1k" name="AuditHistoryRawModifyDeleteEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_VuRvoyUN2n85b2jdyPNR1k" general="_DYyEKyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wB4kDyUN2n85b2jdyPNR1k" name="AuditConditionEnableEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_i9BMZyUN2n85b2jdyPNR1k" general="_Slj87yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1tCaRyUN2n85b2jdyPNR1k" name="AuditCancelEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_g56JRyUN2n85b2jdyPNR1k" general="_UlLYayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BHGeNyUN2n85b2jdyPNR1k" name="AuditConditionSuppressionEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_eovrWyUN2n85b2jdyPNR1k" general="_Slj87yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EOC7fyUN2n85b2jdyPNR1k" name="ProgramTransitionEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_N4OqjyUN2n85b2jdyPNR1k" general="_FEHT8LuOEeq9S-4yXgSHNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_MohNXyUN2n85b2jdyPNR1k" name="AuditCertificateEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GMrP4yUN2n85b2jdyPNR1k" general="_kfQL7yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_aTkHByUN2n85b2jdyPNR1k" name="AuditHistoryAtTimeDeleteEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RZIddyUN2n85b2jdyPNR1k" general="_DYyEKyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_acjw9yUN2n85b2jdyPNR1k" name="PubSubCommunicationFailureEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ROZpPyUN2n85b2jdyPNR1k" general="_5JYsgyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_YSb7dyUN2n85b2jdyPNR1k" name="NonExclusiveLevelAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_c7PBOyUN2n85b2jdyPNR1k" general="_6vKPuyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JIpgcyUN2n85b2jdyPNR1k" name="CertificateUpdatedAuditEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_SNbGlyUN2n85b2jdyPNR1k" general="_ASrsZyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_M5a5WyUN2n85b2jdyPNR1k" name="AuditCertificateDataMismatchEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_pprrtyUN2n85b2jdyPNR1k" general="_MohNXyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4L2R9yUN2n85b2jdyPNR1k" name="AuditHistoryEventDeleteEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_s4CdkyUN2n85b2jdyPNR1k" general="_DYyEKyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="__T8sILuNEeq9S-4yXgSHNA" name="BaseEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qZejVyUN2n85b2jdyPNR1k" general="_VZF7MLXkEeq6aKVUZFYG3w"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_SGRiUO6JEeqYEuBrfc7OBg" name="notifyBE()"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Z7jYKyUN2n85b2jdyPNR1k" name="ExclusiveDeviationAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_QJX37yUN2n85b2jdyPNR1k" general="_BsdkwyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ASrsZyUN2n85b2jdyPNR1k" name="AuditUpdateMethodEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_HUGCXyUN2n85b2jdyPNR1k" general="_eIc1vyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_2anq7yUN2n85b2jdyPNR1k" name="AuditCertificateExpiredEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_chnsqyUN2n85b2jdyPNR1k" general="_MohNXyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cDi2TyUN2n85b2jdyPNR1k" name="AuditConditionResetEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZnvT3yUN2n85b2jdyPNR1k" general="_Slj87yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XlnAmyUN2n85b2jdyPNR1k" name="AuditProgramTransitionEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_WbwcAyUN2n85b2jdyPNR1k" general="_eHlE3yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lpf1HyUN2n85b2jdyPNR1k" name="AuditCertificateInvalidEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ADglJyUN2n85b2jdyPNR1k" general="_MohNXyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Qv5tIyUN2n85b2jdyPNR1k" name="AuditCertificateUntrustedEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_2fi1GyUN2n85b2jdyPNR1k" general="_MohNXyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UHoFSyUN2n85b2jdyPNR1k" name="SystemEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_XEItRyUN2n85b2jdyPNR1k" general="__T8sILuNEeq9S-4yXgSHNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BsdkwyUN2n85b2jdyPNR1k" name="ExclusiveLimitAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_R5heayUN2n85b2jdyPNR1k" general="_RDuPuyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_AVqYOyUN2n85b2jdyPNR1k" name="AuditCertificateRevokedEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZCtkPyUN2n85b2jdyPNR1k" general="_MohNXyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6kAU8yUN2n85b2jdyPNR1k" name="DeviceFailureEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_chcT1yUN2n85b2jdyPNR1k" general="_UHoFSyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_9vS7EyUN2n85b2jdyPNR1k" name="CertificateExpirationAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_f25ftyUN2n85b2jdyPNR1k" general="_TlaWRyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8g9E8yUN2n85b2jdyPNR1k" name="AuditCertificateMismatchEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_EYb53yUN2n85b2jdyPNR1k" general="_MohNXyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_YTiIQyUN2n85b2jdyPNR1k" name="BaseModelChangeEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_oTz8MyUN2n85b2jdyPNR1k" general="__T8sILuNEeq9S-4yXgSHNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_xSHQoyUN2n85b2jdyPNR1k" name="TripAlarmType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_XVOCyyUN2n85b2jdyPNR1k" general="_g38nWyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zHd6GyUN2n85b2jdyPNR1k" name="KeyCredentialDeletedAuditEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_UJtyLyUN2n85b2jdyPNR1k" general="_ZocIpyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Kv55AyUN2n85b2jdyPNR1k" name="AuditNodeManagementEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_lExCRyUN2n85b2jdyPNR1k" general="_eIc1vyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_X8WONyUN2n85b2jdyPNR1k" name="AuditConditionShelvingEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_NnUV2yUN2n85b2jdyPNR1k" general="_Slj87yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_mYZAyyUN2n85b2jdyPNR1k" name="GeneralModelChangeEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Y1e46yUN2n85b2jdyPNR1k" general="_YTiIQyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_9SdTVyUN2n85b2jdyPNR1k" name="opcfoundation.org/UA/_datatypes" URI="http://opcfoundation.org/UA/">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_NckI3yUN2n85b2jdyPNR1k" name="Boolean">
+      <generalization xmi:type="uml:Generalization" xmi:id="_iEwLvyUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ooMfFyUN2n85b2jdyPNR1k" name="DatagramWriterGroupTransportDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_b55X1yUN2n85b2jdyPNR1k" general="_GhNUzyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_jd9XpyUN2n85b2jdyPNR1k" name="SByte">
+      <generalization xmi:type="uml:Generalization" xmi:id="_CaWkuyUN2n85b2jdyPNR1k" general="_7WgvQyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ZYaoeyUN2n85b2jdyPNR1k" name="OverrideValueHandling">
+      <generalization xmi:type="uml:Generalization" xmi:id="_SYWLZyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_7HuSKyUN2n85b2jdyPNR1k" name="SignedSoftwareCertificate">
+      <generalization xmi:type="uml:Generalization" xmi:id="_vXVC3yUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_Evw95yUN2n85b2jdyPNR1k" name="SamplingIntervalDiagnosticsDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Wqw9eyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_zCpHtyUN2n85b2jdyPNR1k" name="Byte">
+      <generalization xmi:type="uml:Generalization" xmi:id="_82aUHyUN2n85b2jdyPNR1k" general="_CTlXnyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_qJ3nayUN2n85b2jdyPNR1k" name="DataTypeSchemaHeader">
+      <generalization xmi:type="uml:Generalization" xmi:id="_FkkNGyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_8dKloyUN2n85b2jdyPNR1k" name="Int16">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Y3lWwyUN2n85b2jdyPNR1k" general="_7WgvQyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_VXJvRyUN2n85b2jdyPNR1k" name="UInt16">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7qbkUyUN2n85b2jdyPNR1k" general="_CTlXnyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_JamZXyUN2n85b2jdyPNR1k" name="ServerDiagnosticsSummaryDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7OMESyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_coicNyUN2n85b2jdyPNR1k" name="AttributeWriteMask">
+      <generalization xmi:type="uml:Generalization" xmi:id="_owg1ryUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_L2rR8yUN2n85b2jdyPNR1k" name="Int32">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qRBr1yUN2n85b2jdyPNR1k" general="_7WgvQyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_5Hgb3yUN2n85b2jdyPNR1k" name="VersionTime">
+      <generalization xmi:type="uml:Generalization" xmi:id="_EDDIlyUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_FRdmWyUN2n85b2jdyPNR1k" name="NodeAttributesMask">
+      <generalization xmi:type="uml:Generalization" xmi:id="_u8vD2yUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_uwDYlyUN2n85b2jdyPNR1k" name="UInt32">
+      <generalization xmi:type="uml:Generalization" xmi:id="_LOvlmyUN2n85b2jdyPNR1k" general="_CTlXnyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_3DhwYyUN2n85b2jdyPNR1k" name="Int64">
+      <generalization xmi:type="uml:Generalization" xmi:id="_oUkbwyUN2n85b2jdyPNR1k" general="_7WgvQyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ZWf9zyUN2n85b2jdyPNR1k" name="ServerStatusDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Mypa5yUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_PnJhfyUN2n85b2jdyPNR1k" name="ContinuationPoint">
+      <generalization xmi:type="uml:Generalization" xmi:id="_DpWpuyUN2n85b2jdyPNR1k" general="_sKDvdyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_VNLg5yUN2n85b2jdyPNR1k" name="UInt64">
+      <generalization xmi:type="uml:Generalization" xmi:id="_FwH13yUN2n85b2jdyPNR1k" general="_CTlXnyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ZJh2gyUN2n85b2jdyPNR1k" name="Index">
+      <generalization xmi:type="uml:Generalization" xmi:id="_VZQaoyUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_YXWzTyUN2n85b2jdyPNR1k" name="Float">
+      <generalization xmi:type="uml:Generalization" xmi:id="_TR61WyUN2n85b2jdyPNR1k" general="_BOxmKyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_Y8OLeyUN2n85b2jdyPNR1k" name="Double">
+      <generalization xmi:type="uml:Generalization" xmi:id="_JjePqyUN2n85b2jdyPNR1k" general="_BOxmKyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_qpAuWyUN2n85b2jdyPNR1k" name="SessionDiagnosticsDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_3IDZsyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_b3xUMyUN2n85b2jdyPNR1k" name="String">
+      <generalization xmi:type="uml:Generalization" xmi:id="_tZ1XcyUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_Mh8iJyUN2n85b2jdyPNR1k" name="AccessLevelType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_2HnLwyUN2n85b2jdyPNR1k" general="_zCpHtyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_7oMOtyUN2n85b2jdyPNR1k" name="DateTime">
+      <generalization xmi:type="uml:Generalization" xmi:id="_HkcxyyUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_BkvKFyUN2n85b2jdyPNR1k" name="Guid">
+      <generalization xmi:type="uml:Generalization" xmi:id="_9SBQyyUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_dWusuyUN2n85b2jdyPNR1k" name="EventNotifierType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_St1MQyUN2n85b2jdyPNR1k" general="_zCpHtyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_gBL81yUN2n85b2jdyPNR1k" name="SessionSecurityDiagnosticsDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ygpXqyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_sKDvdyUN2n85b2jdyPNR1k" name="ByteString">
+      <generalization xmi:type="uml:Generalization" xmi:id="_4i9muyUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_OXFDGyUN2n85b2jdyPNR1k" name="XmlElement">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Nzs9ryUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_wfZBLyUN2n85b2jdyPNR1k" name="DataSetMetaDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_YMoWFyUN2n85b2jdyPNR1k" general="_qJ3nayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_EgMNCyUN2n85b2jdyPNR1k" name="NodeId">
+      <generalization xmi:type="uml:Generalization" xmi:id="_AUY7ByUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_P8WmOyUN2n85b2jdyPNR1k" name="FieldMetaData">
+      <generalization xmi:type="uml:Generalization" xmi:id="_abvvsyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_7fD3yyUN2n85b2jdyPNR1k" name="ServiceCounterDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6rionyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_icAPCyUN2n85b2jdyPNR1k" name="ExpandedNodeId">
+      <generalization xmi:type="uml:Generalization" xmi:id="_FvBr6yUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rraX7yUN2n85b2jdyPNR1k" name="DataTypeDescription">
+      <generalization xmi:type="uml:Generalization" xmi:id="_lOy8syUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_iFKLlyUN2n85b2jdyPNR1k" name="StatusCode">
+      <generalization xmi:type="uml:Generalization" xmi:id="_rrcqNyUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_mdDJtyUN2n85b2jdyPNR1k" name="QualifiedName">
+      <generalization xmi:type="uml:Generalization" xmi:id="_QZwZFyUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_9iVBCyUN2n85b2jdyPNR1k" name="SubscriptionDiagnosticsDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Kyl2xyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_boOUFyUN2n85b2jdyPNR1k" name="LocalizedText">
+      <generalization xmi:type="uml:Generalization" xmi:id="_CTPfDyUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_jR2mCyUN2n85b2jdyPNR1k" name="Structure">
+      <generalization xmi:type="uml:Generalization" xmi:id="_lFnKtyUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_9ZNisyUN2n85b2jdyPNR1k" name="DataValue">
+      <generalization xmi:type="uml:Generalization" xmi:id="_H9y5yyUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_iy1mByUN2n85b2jdyPNR1k" name="ModelChangeStructureDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_rEQPAyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_vf8wYyUN2n85b2jdyPNR1k" name="BaseDataType"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_OG3xoyUN2n85b2jdyPNR1k" name="RelativePathElement">
+      <generalization xmi:type="uml:Generalization" xmi:id="_dPIDXyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_iLVgIyUN2n85b2jdyPNR1k" name="DiagnosticInfo">
+      <generalization xmi:type="uml:Generalization" xmi:id="_q6jDkyUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_BOxmKyUN2n85b2jdyPNR1k" name="Number">
+      <generalization xmi:type="uml:Generalization" xmi:id="_OaVutyUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_4M68NyUN2n85b2jdyPNR1k" name="KeyValuePair">
+      <generalization xmi:type="uml:Generalization" xmi:id="_AqZX4yUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_7WgvQyUN2n85b2jdyPNR1k" name="Integer">
+      <generalization xmi:type="uml:Generalization" xmi:id="_9HNGbyUN2n85b2jdyPNR1k" general="_BOxmKyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_LrjcVyUN2n85b2jdyPNR1k" name="RelativePath">
+      <generalization xmi:type="uml:Generalization" xmi:id="_FzyHYyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_CTlXnyUN2n85b2jdyPNR1k" name="UInteger">
+      <generalization xmi:type="uml:Generalization" xmi:id="_TzqXYyUN2n85b2jdyPNR1k" general="_BOxmKyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ooKCByUN2n85b2jdyPNR1k" name="Enumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ol8A5yUN2n85b2jdyPNR1k" general="_vf8wYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_LJzxPyUN2n85b2jdyPNR1k" name="PerformUpdateType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GiUsiyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_vg1OeyUN2n85b2jdyPNR1k" name="Image">
+      <generalization xmi:type="uml:Generalization" xmi:id="_mfvBCyUN2n85b2jdyPNR1k" general="_sKDvdyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_DrNQHyUN2n85b2jdyPNR1k" name="Range">
+      <generalization xmi:type="uml:Generalization" xmi:id="_H5wzuyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_alUOLyUN2n85b2jdyPNR1k" name="DataSetFieldFlags">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7ZTxeyUN2n85b2jdyPNR1k" general="_VXJvRyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_2UIlKyUN2n85b2jdyPNR1k" name="RationalNumber">
+      <generalization xmi:type="uml:Generalization" xmi:id="_SUL8EyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ERs92yUN2n85b2jdyPNR1k" name="EUInformation">
+      <generalization xmi:type="uml:Generalization" xmi:id="_VONAryUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_2BlipyUN2n85b2jdyPNR1k" name="Vector">
+      <generalization xmi:type="uml:Generalization" xmi:id="_1c9IGyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_psKgZyUN2n85b2jdyPNR1k" name="AddNodesItem">
+      <generalization xmi:type="uml:Generalization" xmi:id="_UlcFkyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_pJxSYyUN2n85b2jdyPNR1k" name="3DVector">
+      <generalization xmi:type="uml:Generalization" xmi:id="_V6YSeyUN2n85b2jdyPNR1k" general="_2BlipyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_OqQNByUN2n85b2jdyPNR1k" name="CartesianCoordinates">
+      <generalization xmi:type="uml:Generalization" xmi:id="_AQSmSyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_kjUd2yUN2n85b2jdyPNR1k" name="ProgramDiagnostic2DataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_o9SmeyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_i6LzIyUN2n85b2jdyPNR1k" name="MonitoringFilter">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZCHGLyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_9SiiAyUN2n85b2jdyPNR1k" name="3DCartesianCoordinates">
+      <generalization xmi:type="uml:Generalization" xmi:id="_cYR1nyUN2n85b2jdyPNR1k" general="_OqQNByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_UsprXyUN2n85b2jdyPNR1k" name="ExceptionDeviationFormat">
+      <generalization xmi:type="uml:Generalization" xmi:id="_UkzMWyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_CbwJCyUN2n85b2jdyPNR1k" name="TimeZoneDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qOHVRyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_BFpxEyUN2n85b2jdyPNR1k" name="AddReferencesItem">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Qw8aHyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_Cq5JLyUN2n85b2jdyPNR1k" name="Annotation">
+      <generalization xmi:type="uml:Generalization" xmi:id="_MxFNkyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ZQzidyUN2n85b2jdyPNR1k" name="Orientation">
+      <generalization xmi:type="uml:Generalization" xmi:id="_c5pQtyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_7m1luyUN2n85b2jdyPNR1k" name="3DOrientation">
+      <generalization xmi:type="uml:Generalization" xmi:id="_NYM9MyUN2n85b2jdyPNR1k" general="_ZQzidyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_SC1UsyUN2n85b2jdyPNR1k" name="Frame">
+      <generalization xmi:type="uml:Generalization" xmi:id="_iDy5RyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_XxZJvyUN2n85b2jdyPNR1k" name="DeleteNodesItem">
+      <generalization xmi:type="uml:Generalization" xmi:id="_jRxtWyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_53CHtyUN2n85b2jdyPNR1k" name="ProgramDiagnosticDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_mIcURyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_FHLezyUN2n85b2jdyPNR1k" name="3DFrame">
+      <generalization xmi:type="uml:Generalization" xmi:id="_YsDI5yUN2n85b2jdyPNR1k" general="_SC1UsyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_QuwFhyUN2n85b2jdyPNR1k" name="EventFilter">
+      <generalization xmi:type="uml:Generalization" xmi:id="_QYQJryUN2n85b2jdyPNR1k" general="_i6LzIyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_vd42lyUN2n85b2jdyPNR1k" name="DeleteReferencesItem">
+      <generalization xmi:type="uml:Generalization" xmi:id="_wePsnyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_nOV8fyUN2n85b2jdyPNR1k" name="SemanticChangeStructureDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_dpB2ZyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_yquEIyUN2n85b2jdyPNR1k" name="AccessLevelExType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Cjl9ayUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_BUDbCyUN2n85b2jdyPNR1k" name="SessionAuthenticationToken">
+      <generalization xmi:type="uml:Generalization" xmi:id="_hLm94yUN2n85b2jdyPNR1k" general="_EgMNCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_DwBboyUN2n85b2jdyPNR1k" name="PublishedDataSetDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_VfBd2yUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_7KjQYyUN2n85b2jdyPNR1k" name="PublishedDataSetSourceDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_NTJ3ayUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_9EbgQyUN2n85b2jdyPNR1k" name="Decimal">
+      <generalization xmi:type="uml:Generalization" xmi:id="_aoYijyUN2n85b2jdyPNR1k" general="_BOxmKyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_u7ThayUN2n85b2jdyPNR1k" name="PublishedDataItemsDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_UylHIyUN2n85b2jdyPNR1k" general="_7KjQYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_EM3M3yUN2n85b2jdyPNR1k" name="PublishedEventsDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_drIGjyUN2n85b2jdyPNR1k" general="_7KjQYyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rwjMnyUN2n85b2jdyPNR1k" name="DataSetFieldContentMask">
+      <generalization xmi:type="uml:Generalization" xmi:id="_He8CxyUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ikPrKyUN2n85b2jdyPNR1k" name="ComplexNumberType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_J3HdIyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_POQMJyUN2n85b2jdyPNR1k" name="DoubleComplexNumberType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_42a7RyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_bWP3yyUN2n85b2jdyPNR1k" name="DatagramConnectionTransportDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_wsFL2yUN2n85b2jdyPNR1k" general="_FjHu8yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_QiqxayUN2n85b2jdyPNR1k" name="FilterOperator">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7X9VcyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_XFqssyUN2n85b2jdyPNR1k" name="DataSetWriterDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_iUiwEyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_JLdUwyUN2n85b2jdyPNR1k" name="HistoryEventFieldList">
+      <generalization xmi:type="uml:Generalization" xmi:id="_G21ufyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_HRQLEyUN2n85b2jdyPNR1k" name="FieldTargetDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_LZuonyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_owd8zyUN2n85b2jdyPNR1k" name="DataSetWriterTransportDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_IHJabyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_EihGMyUN2n85b2jdyPNR1k" name="ContentFilterElement">
+      <generalization xmi:type="uml:Generalization" xmi:id="_jQXoTyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_CzBKSyUN2n85b2jdyPNR1k" name="ServerOnNetwork">
+      <generalization xmi:type="uml:Generalization" xmi:id="_SGMx1yUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_8MQy8yUN2n85b2jdyPNR1k" name="ContentFilter">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7SRbwyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_adxa7yUN2n85b2jdyPNR1k" name="DataSetWriterMessageDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_jRKYlyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ZCMbKyUN2n85b2jdyPNR1k" name="NormalizedString">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Uv9tDyUN2n85b2jdyPNR1k" general="_b3xUMyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_DTMI3yUN2n85b2jdyPNR1k" name="FilterOperand">
+      <generalization xmi:type="uml:Generalization" xmi:id="_4RB4pyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_GdYffyUN2n85b2jdyPNR1k" name="DecimalString">
+      <generalization xmi:type="uml:Generalization" xmi:id="_OF5QyyUN2n85b2jdyPNR1k" general="_b3xUMyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_QwUMXyUN2n85b2jdyPNR1k" name="PubSubGroupDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_eNFePyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_lRIMGyUN2n85b2jdyPNR1k" name="DurationString">
+      <generalization xmi:type="uml:Generalization" xmi:id="_DPnUXyUN2n85b2jdyPNR1k" general="_b3xUMyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_K6H8TyUN2n85b2jdyPNR1k" name="TimeString">
+      <generalization xmi:type="uml:Generalization" xmi:id="_wCls3yUN2n85b2jdyPNR1k" general="_b3xUMyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_pTKfIyUN2n85b2jdyPNR1k" name="ElementOperand">
+      <generalization xmi:type="uml:Generalization" xmi:id="_EMH7NyUN2n85b2jdyPNR1k" general="_DTMI3yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_GhNUzyUN2n85b2jdyPNR1k" name="WriterGroupTransportDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6Sr1RyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_1ldJwyUN2n85b2jdyPNR1k" name="DateString">
+      <generalization xmi:type="uml:Generalization" xmi:id="_UlLlryUN2n85b2jdyPNR1k" general="_b3xUMyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_4QSQwyUN2n85b2jdyPNR1k" name="LiteralOperand">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6pUcuyUN2n85b2jdyPNR1k" general="_DTMI3yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_4rhj7yUN2n85b2jdyPNR1k" name="IssuedIdentityToken">
+      <generalization xmi:type="uml:Generalization" xmi:id="_9xv5jyUN2n85b2jdyPNR1k" general="_4YpdayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_TavUZyUN2n85b2jdyPNR1k" name="EnumValueType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_pvuMAyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_W7my8yUN2n85b2jdyPNR1k" name="WriterGroupMessageDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_lO6RUyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_TLtIyyUN2n85b2jdyPNR1k" name="IdType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_5eNNqyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_C8uajyUN2n85b2jdyPNR1k" name="AttributeOperand">
+      <generalization xmi:type="uml:Generalization" xmi:id="_U9wMSyUN2n85b2jdyPNR1k" general="_DTMI3yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_E1pr1yUN2n85b2jdyPNR1k" name="ConfigurationVersionDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_KHxKgyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_avFrmyUN2n85b2jdyPNR1k" name="PubSubConnectionDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_WoLTQyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_EwBM4yUN2n85b2jdyPNR1k" name="NodeClass">
+      <generalization xmi:type="uml:Generalization" xmi:id="_bTUBmyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_nv4tqyUN2n85b2jdyPNR1k" name="AliasNameDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GfsIOyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_FjHu8yUN2n85b2jdyPNR1k" name="ConnectionTransportDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_OsJOuyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_8BFCryUN2n85b2jdyPNR1k" name="SimpleAttributeOperand">
+      <generalization xmi:type="uml:Generalization" xmi:id="_vlGu7yUN2n85b2jdyPNR1k" general="_DTMI3yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_jqJRnyUN2n85b2jdyPNR1k" name="DiscoveryConfiguration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_76PnLyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_myoaGyUN2n85b2jdyPNR1k" name="ReaderGroupTransportDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_SmFmsyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_TUE8FyUN2n85b2jdyPNR1k" name="RegisteredServer">
+      <generalization xmi:type="uml:Generalization" xmi:id="_F227QyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_mkH7kyUN2n85b2jdyPNR1k" name="MdnsDiscoveryConfiguration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_kCnznyUN2n85b2jdyPNR1k" general="_jqJRnyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_sj2pWyUN2n85b2jdyPNR1k" name="ReaderGroupMessageDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_9b947yUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_r7GSEyUN2n85b2jdyPNR1k" name="DataSetReaderDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_VjuxByUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_wpOBsyUN2n85b2jdyPNR1k" name="TrustListMasks">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6c1GlyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_Q8jtqyUN2n85b2jdyPNR1k" name="AudioDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_4jsetyUN2n85b2jdyPNR1k" general="_sKDvdyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_3etO3yUN2n85b2jdyPNR1k" name="PermissionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GJRIuyUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_7RRFByUN2n85b2jdyPNR1k" name="AggregateConfiguration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_mZMXNyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_2vPmnyUN2n85b2jdyPNR1k" name="AccessRestrictionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_M5Oy4yUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_UUFStyUN2n85b2jdyPNR1k" name="TrustListDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_hxCToyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_WchPsyUN2n85b2jdyPNR1k" name="RolePermissionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_VqSPJyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_Jc5x1yUN2n85b2jdyPNR1k" name="DiagnosticsLevel">
+      <generalization xmi:type="uml:Generalization" xmi:id="_JIBlvyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_YQrxOyUN2n85b2jdyPNR1k" name="DataTypeDefinition">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qT9JxyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_2NcsGyUN2n85b2jdyPNR1k" name="DataSetReaderTransportDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_aSpAWyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_eh1rayUN2n85b2jdyPNR1k" name="StructureType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_KTAq1yUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_VSG9VyUN2n85b2jdyPNR1k" name="DataSetReaderMessageDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_P9PlRyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_hahQOyUN2n85b2jdyPNR1k" name="DataSetOrderingType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_MYE2myUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_qoObcyUN2n85b2jdyPNR1k" name="StructureDefinition">
+      <generalization xmi:type="uml:Generalization" xmi:id="_igjKMyUN2n85b2jdyPNR1k" general="_YQrxOyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_PjIwIyUN2n85b2jdyPNR1k" name="SubscribedDataSetDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_YxQmyyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_KNLUCyUN2n85b2jdyPNR1k" name="AdditionalParametersType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_aMMwfyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_7y47OyUN2n85b2jdyPNR1k" name="EnumDefinition">
+      <generalization xmi:type="uml:Generalization" xmi:id="_o2IZyyUN2n85b2jdyPNR1k" general="_YQrxOyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_XX8fKyUN2n85b2jdyPNR1k" name="TargetVariablesDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_dBiR1yUN2n85b2jdyPNR1k" general="_PjIwIyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_4HRR9yUN2n85b2jdyPNR1k" name="StructureField">
+      <generalization xmi:type="uml:Generalization" xmi:id="_c3gHOyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_k2MZ4yUN2n85b2jdyPNR1k" name="IdentityCriteriaType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_xSacMyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_RnM3OyUN2n85b2jdyPNR1k" name="EnumField">
+      <generalization xmi:type="uml:Generalization" xmi:id="_rgjL3yUN2n85b2jdyPNR1k" general="_TavUZyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_zzydwyUN2n85b2jdyPNR1k" name="IdentityMappingRuleType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_L7CioyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_obz92yUN2n85b2jdyPNR1k" name="PubSubDiagnosticsCounterClassification">
+      <generalization xmi:type="uml:Generalization" xmi:id="_a3A2byUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_i5tOUyUN2n85b2jdyPNR1k" name="SubscribedDataSetMirrorDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_1PYf4yUN2n85b2jdyPNR1k" general="_PjIwIyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_CGj2dyUN2n85b2jdyPNR1k" name="PublishedVariableDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_N8TsjyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ncenEyUN2n85b2jdyPNR1k" name="UadpNetworkMessageContentMask">
+      <generalization xmi:type="uml:Generalization" xmi:id="_LHBDByUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_2nP61yUN2n85b2jdyPNR1k" name="UadpWriterGroupMessageDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RQGTnyUN2n85b2jdyPNR1k" general="_W7my8yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_IBfuOyUN2n85b2jdyPNR1k" name="UadpDataSetMessageContentMask">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GQ1NKyUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_GvutyyUN2n85b2jdyPNR1k" name="IntegerId">
+      <generalization xmi:type="uml:Generalization" xmi:id="_L8IEpyUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_yXY3vyUN2n85b2jdyPNR1k" name="Counter">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qfbgayUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_lI6EuyUN2n85b2jdyPNR1k" name="Duration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_c6LHnyUN2n85b2jdyPNR1k" general="_Y8OLeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_9wQS2yUN2n85b2jdyPNR1k" name="WriterGroupDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_sF87vyUN2n85b2jdyPNR1k" general="_QwUMXyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_VM6qTyUN2n85b2jdyPNR1k" name="NamingRuleType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6kXRzyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_8zAhvyUN2n85b2jdyPNR1k" name="NumericRange">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RCW2fyUN2n85b2jdyPNR1k" general="_b3xUMyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_auKcLyUN2n85b2jdyPNR1k" name="Time">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7PZN8yUN2n85b2jdyPNR1k" general="_b3xUMyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_qywbLyUN2n85b2jdyPNR1k" name="UadpDataSetWriterMessageDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_PK94qyUN2n85b2jdyPNR1k" general="_adxa7yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_xF7WVyUN2n85b2jdyPNR1k" name="Date">
+      <generalization xmi:type="uml:Generalization" xmi:id="_wXt1nyUN2n85b2jdyPNR1k" general="_7oMOtyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_iiLbpyUN2n85b2jdyPNR1k" name="UadpDataSetReaderMessageDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_NiM1syUN2n85b2jdyPNR1k" general="_VSG9VyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_NdC9ByUN2n85b2jdyPNR1k" name="ImageBMP">
+      <generalization xmi:type="uml:Generalization" xmi:id="_T67OvyUN2n85b2jdyPNR1k" general="_vg1OeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_93dfZyUN2n85b2jdyPNR1k" name="UtcTime">
+      <generalization xmi:type="uml:Generalization" xmi:id="_fSed4yUN2n85b2jdyPNR1k" general="_7oMOtyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_frSpLyUN2n85b2jdyPNR1k" name="JsonNetworkMessageContentMask">
+      <generalization xmi:type="uml:Generalization" xmi:id="_1kLwGyUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_W54eoyUN2n85b2jdyPNR1k" name="ImageGIF">
+      <generalization xmi:type="uml:Generalization" xmi:id="_jd1INyUN2n85b2jdyPNR1k" general="_vg1OeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_WzSZ8yUN2n85b2jdyPNR1k" name="LocaleId">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Ct2nuyUN2n85b2jdyPNR1k" general="_b3xUMyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_iFvyuyUN2n85b2jdyPNR1k" name="ImageJPG">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Qcb9oyUN2n85b2jdyPNR1k" general="_vg1OeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_HFumNyUN2n85b2jdyPNR1k" name="Argument">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RzhyQyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_4XKOvyUN2n85b2jdyPNR1k" name="ImagePNG">
+      <generalization xmi:type="uml:Generalization" xmi:id="_2QENVyUN2n85b2jdyPNR1k" general="_vg1OeyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_4fH84yUN2n85b2jdyPNR1k" name="OptionSet">
+      <generalization xmi:type="uml:Generalization" xmi:id="_8Qql8yUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_RPdAbyUN2n85b2jdyPNR1k" name="JsonWriterGroupMessageDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_jgQgRyUN2n85b2jdyPNR1k" general="_W7my8yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_G5FQjyUN2n85b2jdyPNR1k" name="Union">
+      <generalization xmi:type="uml:Generalization" xmi:id="_F4wNEyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_Jo2U8yUN2n85b2jdyPNR1k" name="StructureDescription">
+      <generalization xmi:type="uml:Generalization" xmi:id="_n1wclyUN2n85b2jdyPNR1k" general="_rraX7yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_xZ1mbyUN2n85b2jdyPNR1k" name="JsonDataSetMessageContentMask">
+      <generalization xmi:type="uml:Generalization" xmi:id="_oJyiayUN2n85b2jdyPNR1k" general="_uwDYlyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_MUnGwyUN2n85b2jdyPNR1k" name="EnumDescription">
+      <generalization xmi:type="uml:Generalization" xmi:id="_O8YxFyUN2n85b2jdyPNR1k" general="_rraX7yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_PJGWPyUN2n85b2jdyPNR1k" name="StatusResult">
+      <generalization xmi:type="uml:Generalization" xmi:id="_wxQ2qyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_U7iMFyUN2n85b2jdyPNR1k" name="AxisScaleEnumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ktVl6yUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_J7ySCyUN2n85b2jdyPNR1k" name="MessageSecurityMode">
+      <generalization xmi:type="uml:Generalization" xmi:id="_QYEjAyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_lxBOgyUN2n85b2jdyPNR1k" name="BitFieldMaskDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_eXYH4yUN2n85b2jdyPNR1k" general="_VNLg5yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_QMhJCyUN2n85b2jdyPNR1k" name="AxisInformation">
+      <generalization xmi:type="uml:Generalization" xmi:id="_oqjGUyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_SpawVyUN2n85b2jdyPNR1k" name="UserTokenType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RTcYSyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_hfhBvyUN2n85b2jdyPNR1k" name="UserTokenPolicy">
+      <generalization xmi:type="uml:Generalization" xmi:id="_TQSH3yUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_vJptjyUN2n85b2jdyPNR1k" name="XVType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_L8L4zyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_55LOdyUN2n85b2jdyPNR1k" name="JsonDataSetWriterMessageDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_xuXUbyUN2n85b2jdyPNR1k" general="_adxa7yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_7MrDCyUN2n85b2jdyPNR1k" name="JsonDataSetReaderMessageDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_OxNhXyUN2n85b2jdyPNR1k" general="_VSG9VyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_9VcDdyUN2n85b2jdyPNR1k" name="BrokerWriterGroupTransportDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_uHSMkyUN2n85b2jdyPNR1k" general="_GhNUzyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_GSow1yUN2n85b2jdyPNR1k" name="ApplicationType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_XeeVayUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_FLj5dyUN2n85b2jdyPNR1k" name="ApplicationDescription">
+      <generalization xmi:type="uml:Generalization" xmi:id="_KyyW2yUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_6ZWStyUN2n85b2jdyPNR1k" name="BrokerDataSetWriterTransportDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_jllBJyUN2n85b2jdyPNR1k" general="_owd8zyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_7jYtLyUN2n85b2jdyPNR1k" name="BrokerDataSetReaderTransportDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ejDpsyUN2n85b2jdyPNR1k" general="_2NcsGyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_5s4InyUN2n85b2jdyPNR1k" name="EphemeralKeyType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Sho3pyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_x8JuCyUN2n85b2jdyPNR1k" name="ApplicationInstanceCertificate">
+      <generalization xmi:type="uml:Generalization" xmi:id="_yj2bgyUN2n85b2jdyPNR1k" general="_sKDvdyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_jnJhQyUN2n85b2jdyPNR1k" name="PubSubState">
+      <generalization xmi:type="uml:Generalization" xmi:id="_o9TDByUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_EiGJMyUN2n85b2jdyPNR1k" name="HistoryUpdateType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_8CVAIyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_JxUZiyUN2n85b2jdyPNR1k" name="EndpointDescription">
+      <generalization xmi:type="uml:Generalization" xmi:id="_SXxaSyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_RuCwryUN2n85b2jdyPNR1k" name="NetworkAddressDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GOCvpyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_TcJyQyUN2n85b2jdyPNR1k" name="SecurityTokenRequestType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_p5u3RyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_4YpdayUN2n85b2jdyPNR1k" name="UserIdentityToken">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qCRLGyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_DzXUWyUN2n85b2jdyPNR1k" name="HistoryEvent">
+      <generalization xmi:type="uml:Generalization" xmi:id="_WfZLuyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_7BIVAyUN2n85b2jdyPNR1k" name="AnonymousIdentityToken">
+      <generalization xmi:type="uml:Generalization" xmi:id="_FEul8yUN2n85b2jdyPNR1k" general="_4YpdayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_IfG27yUN2n85b2jdyPNR1k" name="NetworkAddressUrlDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_JiBpNyUN2n85b2jdyPNR1k" general="_RuCwryUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_5m5x1yUN2n85b2jdyPNR1k" name="UserNameIdentityToken">
+      <generalization xmi:type="uml:Generalization" xmi:id="_DFTYYyUN2n85b2jdyPNR1k" general="_4YpdayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_YQgnkyUN2n85b2jdyPNR1k" name="X509IdentityToken">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RSLgFyUN2n85b2jdyPNR1k" general="_4YpdayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_iD2s1yUN2n85b2jdyPNR1k" name="SimpleTypeDescription">
+      <generalization xmi:type="uml:Generalization" xmi:id="_vrSJ8yUN2n85b2jdyPNR1k" general="_rraX7yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_TdAofyUN2n85b2jdyPNR1k" name="UABinaryFileDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_BK6fRyUN2n85b2jdyPNR1k" general="_qJ3nayUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_XD2J8yUN2n85b2jdyPNR1k" name="BrokerConnectionTransportDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qrMrbyUN2n85b2jdyPNR1k" general="_FjHu8yUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_h6qoPyUN2n85b2jdyPNR1k" name="ReaderGroupDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_LRKkHyUN2n85b2jdyPNR1k" general="_QwUMXyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_kF174yUN2n85b2jdyPNR1k" name="BrokerTransportQualityOfService">
+      <generalization xmi:type="uml:Generalization" xmi:id="_su9sDyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_XtMa7yUN2n85b2jdyPNR1k" name="EndpointConfiguration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_sHFgUyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_KSIrRyUN2n85b2jdyPNR1k" name="OpenFileMode">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZInAcyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_arIQEyUN2n85b2jdyPNR1k" name="EndpointUrlListDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Du6eryUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_aMtUeyUN2n85b2jdyPNR1k" name="BuildInfo">
+      <generalization xmi:type="uml:Generalization" xmi:id="_dFArmyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_MpnPlyUN2n85b2jdyPNR1k" name="NetworkGroupDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_xHRClyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_VK9shyUN2n85b2jdyPNR1k" name="EndpointType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_TJV29yUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_IhMgDyUN2n85b2jdyPNR1k" name="RedundancySupport">
+      <generalization xmi:type="uml:Generalization" xmi:id="_bTMLZyUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_T7jeByUN2n85b2jdyPNR1k" name="ServerState">
+      <generalization xmi:type="uml:Generalization" xmi:id="_rcCH2yUN2n85b2jdyPNR1k" general="_ooKCByUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_BrPueyUN2n85b2jdyPNR1k" name="PubSubConfigurationDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_cOguqyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_GJKpzyUN2n85b2jdyPNR1k" name="RedundantServerDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_FHFDDyUN2n85b2jdyPNR1k" general="_jR2mCyUN2n85b2jdyPNR1k"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

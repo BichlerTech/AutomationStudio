@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.bichler.astudio.zebra.labelprint.printLabel"
+            name="Print dataHUB Label">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.astudio.zebra.handler.PrintLabelHandler"
+            commandId="com.bichler.astudio.zebra.labelprint.printLabel">
+      </handler>
+   </extension>
+
+</plugin>

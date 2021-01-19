@@ -1,0 +1,407 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 2.0cm 70.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=DE-AT>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b><span lang=EN-US>Datenbankanbindung Mysql</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:Consolas;
+color:black'>Im folgenden Sehen Sie eine Beispiel, wie sie eine Verbindung zu einer
+Mysql Dabenbank aufbauen,</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:Consolas;
+color:black'>eine Abfrage tätigen, die zurückgelieferte Datensätze durchlaufen.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:Consolas;
+color:black'>Anschließend wird die Datenbankverbindung wieder geschlossen.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:Consolas;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>load(</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#2A00FF'>&quot;nashorn:mozilla_compat.js&quot;</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>importPackage(java.lang);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>importPackage(java.sql);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:#7F0055'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:#7F0055'>function</span></b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:black'> testDB() {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>/**</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>loads</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>the</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>driver</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>class</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>into</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>runtime</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*/</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       Class.forName(</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#2A00FF'>&quot;com.mysql.jdbc.Driver&quot;</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>/**</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>connect</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>to</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>mysql</span></u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>database</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*/</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>var</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>
+connection = DriverManager.getConnection(</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>                    </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#2A00FF'>&quot;jdbc:mysql://localhost:3306/dataHUB&quot;</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>, </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#2A00FF'>&quot;dataHUB&quot;</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>, </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#2A00FF'>&quot;dataHUB&quot;</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>/**</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>read</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>values</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>from</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>database</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*/</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       stmt = connection.createStatement();</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       rs = stmt.executeQuery(</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#2A00FF'>&quot;SELECT
+* FROM vk5_spura_automatik&quot;</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><span style='font-size:10.0pt;
+font-family:Consolas;color:#3F7F5F'>// <u>Ergebnissätze</u> <u>durchfahren</u>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:Consolas;
+color:black'>       </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:Consolas;
+color:black'>       </span><b><span style='font-size:10.0pt;font-family:Consolas;
+color:#7F0055'>while</span></b><span style='font-size:10.0pt;font-family:Consolas;
+color:black'> (rs.next()) {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:Consolas;
+color:black'>             </span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>count = count + rs.getInt(</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#2A00FF'>&quot;plain_value&quot;</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       }</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       write();</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>/**</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>now</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>write</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>count</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>into</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>opc</span></u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>ua</span></u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>address</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>space</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*/</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F7F5F'>// release
+resources</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F7F5F'>// in reverse</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>if</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> (rs != </span><b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>null</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>) {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>             </span><b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>try</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>                    rs.close();</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>             } </span><b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>catch</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> (sqlEx) {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>             } </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F7F5F'>// ignore</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>             rs = </span><b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>null</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       }</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>if</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> (stmt != </span><b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>null</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>) {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>             </span><b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>try</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>                    stmt.close();</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>             } </span><b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>catch</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> (sqlEx) {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>             } </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F7F5F'>// ignore</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>             stmt = </span><b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>null</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       }</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>/**</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>close</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>the</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>database</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>connection</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span style='font-size:10.0pt;
+font-family:Consolas;color:#3F5FBF'>*/</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:Consolas;
+color:black'>       connection.close();</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;font-family:
+Consolas;color:black'>}</span></p>
+
+</div>
+
+</body>
+
+</html>

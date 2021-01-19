@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: HB-Logview
+Bundle-SymbolicName: com.bichler.astudio.log.view;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.log.view.Activator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.bichler.astudio.utils;bundle-version="1.0.0",
+ com.bichler.astudio.log.server
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bichler.astudio.log.view.preferences,
+ com.bichler.astudio.log.view.utils,
+ com.bichler.astudio.log.view.viewer
+Bundle-ClassPath: .
+Automatic-Module-Name: com.bichler.astudio.log.view

@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Automation Studio Labelprint
+Bundle-SymbolicName: com.bichler.astudio.zebra.labelprint;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Bichler Technologies GmbH
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: .,
+ lib/bcpkix-jdk15on-1.48.jar,
+ lib/bcprov-jdk15on-1.48.jar,
+ lib/commons-codec-1.8.jar,
+ lib/commons-io-2.2.jar,
+ lib/commons-lang3-3.4.jar,
+ lib/commons-net-3.1.jar,
+ lib/commons-validator-1.4.0.jar,
+ lib/httpcore-4.3.1.jar,
+ lib/httpmime-4.3.2.jar,
+ lib/jackson-annotations-2.2.3.jar,
+ lib/jackson-core-2.2.3.jar,
+ lib/jackson-databind-2.2.3.jar,
+ lib/log4j-1.2.17.jar,
+ lib/opencsv-2.2.jar,
+ lib/snmp6_1.jar,
+ lib/ZSDK_API.jar
+Import-Package: org.eclipse.ui.plugin,
+ org.osgi.framework
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.ui;bundle-version="3.109.0",
+ org.eclipse.core.runtime;bundle-version="3.13.0"
+Bundle-Activator: com.bichler.astudio.zebra.labelprint.ZebraActivator
+Export-Package: com.bichler.astudio.zebra.handler
+Automatic-Module-Name: com.bichler.astudio.zebra.labelprint

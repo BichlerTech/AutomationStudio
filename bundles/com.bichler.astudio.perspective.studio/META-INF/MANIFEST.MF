@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Automation Studio Perspective
+Bundle-SymbolicName: com.bichler.astudio.perspective.studio;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.perspective.studio.ASPerspectiveActivator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.expressions,
+ com.bichler.astudio.properties;bundle-version="1.0.0",
+ com.bichler.astudio.device.opcua;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bichler.astudio.perspective.studio
+Automatic-Module-Name: com.bichler.astudio.perspective.studio

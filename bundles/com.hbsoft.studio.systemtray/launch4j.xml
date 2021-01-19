@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\HBS\Programmierung\Java\release\visu\Automation Studio Service.jar</jar>
+  <outfile>C:\HBS\Programmierung\Java\release\visu\Automation Studio Service.exe</outfile>
+  <errTitle>Automation Studio Service</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\HBS\Programmierung\bu_128SSD\HB-Studio One\workspace_2017_10_03\com.hbsoft.studio.systemtray\icons\btech.ico</icon>
+  <singleInstance>
+    <mutexName>AutomationStudioService</mutexName>
+    <windowTitle>Automation Studio Service</windowTitle>
+  </singleInstance>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>1.8.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.1</fileVersion>
+    <txtFileVersion>1.0</txtFileVersion>
+    <fileDescription>Automation Studio Service Runtime</fileDescription>
+    <copyright>Copyright (C) 2017 Bichler Technologies GmbH</copyright>
+    <productVersion>2.0.0.0</productVersion>
+    <txtProductVersion>1.0</txtProductVersion>
+    <productName>Automation Studio Service</productName>
+    <companyName>Bichler Technologies GmbH</companyName>
+    <internalName>http://www.bichler.tech</internalName>
+    <originalFilename>Automation Studio Service.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>GERMAN</language>
+  </versionInfo>
+</launch4jConfig>

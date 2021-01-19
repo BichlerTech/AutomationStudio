@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.bichler.astudio.view.drivermodel.browser.DriverModelBrowserView"
+            icon="icons/drivers.png"
+            id="com.bichler.astudio.view.drivermodel.browser"
+            name="%view.driverbrowser"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.bichler.astudio.view.drivermodel.openDrivermodel"
+            name="Open driver model">
+      </command>
+      <command
+            id="com.bichler.astudio.view.drivermodel.openDriverstructure"
+            name="Open driver structure model">
+      </command>
+      <command
+            id="com.bichler.astudio.view.drivermodel.refreshmodel"
+            name="Refresh model">
+      </command>
+      <command
+            id="com.bichler.astudio.view.drivermodel.opcua.dispose"
+            name="Dispose OPCUA editor">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.astudio.view.drivermodel.handler.OpenDriverStructureHandler"
+            commandId="com.bichler.astudio.view.drivermodel.openDriverstructure">
+      </handler>
+      <handler
+            class="com.bichler.astudio.view.drivermodel.handler.OpenDriverModelHandler"
+            commandId="com.bichler.astudio.view.drivermodel.openDrivermodel">
+      </handler>
+      <handler
+            class="com.bichler.astudio.view.drivermodel.handler.RefreshDriverModelHandler"
+            commandId="com.bichler.astudio.view.drivermodel.refreshmodel">
+      </handler>
+      <handler
+            class="com.bichler.astudio.view.drivermodel.handler.DisposeOPCUAEditorHandler"
+            commandId="com.bichler.astudio.view.drivermodel.opcua.dispose">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:com.bichler.astudio.view.drivermodel.browser">
+         <command
+               commandId="com.bichler.astudio.view.drivermodel.openDrivermodel"
+               icon="icons/schreiben.png"
+               label="%menu.open.model"
+               style="push"
+               tooltip="%menu.open.model">
+         </command>
+         <command
+               commandId="com.bichler.astudio.view.drivermodel.openDriverstructure"
+               icon="icons/dp.png"
+               label="%menu.open.struct"
+               style="push"
+               tooltip="%menu.open.struct">
+         </command>
+         <command
+               commandId="com.bichler.astudio.view.drivermodel.refreshmodel"
+               icon="icons/refresh.png"
+               label="%menu.refresh"
+               style="push"
+               tooltip="%menu.refresh">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

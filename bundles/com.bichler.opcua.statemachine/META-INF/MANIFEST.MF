@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Statemachine
+Bundle-SymbolicName: com.bichler.opcua.statemachine;singleton:=true
+Bundle-Version: 1.0.2
+Bundle-Activator: com.bichler.opcua.statemachine.BaseStatemachineActivator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.uml2;bundle-version="5.5.0",
+ org.eclipse.uml2.uml;bundle-version="5.5.0",
+ com.bichler.opc.core;bundle-version="1.1.2",
+ org.apache.xerces;bundle-version="2.9.0",
+ org.eclipse.core.runtime;bundle-version="3.15.300",
+ com.bichler.astudio.opcua.datadictionary.base;bundle-version="1.0.0",
+ com.bichler.astudio.opcua.components;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: com.bichler.opcua.statemachine
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bichler.opcua.statemachine,
+ com.bichler.opcua.statemachine.addressspace.importer,
+ com.bichler.opcua.statemachine.exception,
+ com.bichler.opcua.statemachine.transform

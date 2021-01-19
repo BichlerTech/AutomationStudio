@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Getting Started" link_to="toc.xml#gettingstarted">
+	<topic label="Daten-Server Projekt"  href="html/gettingstarted/maintopic.html"> 
+		<topic label="Projekt erstellen" href="html/gettingstarted/subtopic.html" /> 
+	</topic>
+	<topic label="IEC 61131 Projekt">
+		<topic label="Projekt erstellen" href="html/gettingstarted/subtopic2.html" />
+	</topic>
+ <topic label="Visualisierungs Projekt">
+    <topic href="html/gettingstarted/subtopic2.html" label="Projekt erstellen">
+    </topic>
+ </topic>
+ <topic label="TSN Echtzeitprojekt">
+    <topic href="html/gettingstarted/newtsn.htm" label="Projekt erstellen">
+    </topic>
+ </topic> 
+</toc>

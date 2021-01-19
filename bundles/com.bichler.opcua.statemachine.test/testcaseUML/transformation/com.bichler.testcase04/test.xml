@@ -1,0 +1,20 @@
+<UANodeSet xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" LastModified="2020-09-10T00:00:00Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
+	<NamespaceUris>
+		<Uri>http://testcase.com/bichler/</Uri>
+	</NamespaceUris>
+	<Models>
+		<Model ModelUri="http://testcase.com/bichler/" PublicationDate="2020-09-10T00:00:00Z" Version="1.0.0">
+			<RequiredModel ModelUri="http://opcfoundation.org/UA/" Version="1.00" PublicationDate="2020-09-10T00:00:00Z" />
+		</Model>
+	</Models>
+	<Aliases>
+		<Alias Alias="HasSubtype">i=45</Alias>
+	</Aliases>
+	<UAObjectType NodeId="ns=1;s=StateMachine" BrowseName="StateMachine">
+		<DisplayName>StateMachine</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasSubtype" IsForward="false">i=2771</Reference>
+		</References>
+	</UAObjectType>
+</UANodeSet>

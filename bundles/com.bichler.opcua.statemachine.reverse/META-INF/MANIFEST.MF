@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Engineering
+Bundle-SymbolicName: com.bichler.opcua.statemachine.reverse
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.opcua.statemachine.reverse.ReverseEngineActivator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.core.runtime,
+ com.bichler.opcua.statemachine;bundle-version="1.0.2",
+ com.bichler.opc.core;bundle-version="1.1.2",
+ com.bichler.opc.server;bundle-version="1.1.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: com.bichler.opcua.statemachine.reverse.engineering
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bichler.opcua.statemachine.reverse.engineering

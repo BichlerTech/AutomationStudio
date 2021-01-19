@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_1hQMcVSXAGUmaLyGUwOnCM" name="testcase11">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_IoUqKVSXAGUmaLyGUwOnCM">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_vCyDzVSXAGUmaLyGUwOnCM" name="opcfoundation.org/UA/TMC/_objecttypes" URI="http://opcfoundation.org/UA/TMC/">
+    <packagedElement xmi:type="uml:Class" xmi:id="_nBZXGVSXAGUmaLyGUwOnCM" name="MachineModuleProductionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_A2w9sVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZF7MLXkEeq6aKVUZFYG3w"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_R6r84VSXAGUmaLyGUwOnCM" name="UIInformationType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_rz9E5VSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZF7MLXkEeq6aKVUZFYG3w"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lNqvuVSXAGUmaLyGUwOnCM" name="MachineModuleLiveStatusType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_B6g2dVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZF7MLXkEeq6aKVUZFYG3w"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4OGsrVSXAGUmaLyGUwOnCM" name="MachineModuleSetupType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_REOxVVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZF7MLXkEeq6aKVUZFYG3w"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6IomdVSXAGUmaLyGUwOnCM" name="UserInterfaceType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_uBpSRVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZF7MLXkEeq6aKVUZFYG3w"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_VAh2TVSXAGUmaLyGUwOnCM" name="MachineModuleHistoricalRecordType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_TwgSPVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZF7MLXkEeq6aKVUZFYG3w"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ML1EdVSXAGUmaLyGUwOnCM" name="MachineModuleSpecificationType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_N488xVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZF7MLXkEeq6aKVUZFYG3w"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UWJlaVSXAGUmaLyGUwOnCM" name="MachineModuleConfigurationType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_2I2KzVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZF7MLXkEeq6aKVUZFYG3w"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oRZ37VSXAGUmaLyGUwOnCM" name="TMCServerType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZBnWuVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZF7MLXkEeq6aKVUZFYG3w"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_SEQtVVSXAGUmaLyGUwOnCM" name="ProcessItemType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_veqLgVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZF7MLXkEeq6aKVUZFYG3w"/>
+     </generalization>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_NkWhPVSXAGUmaLyGUwOnCM" name="opcfoundation.org/UA/TMC/_eventtypes" URI="http://opcfoundation.org/UA/TMC/">
+    <packagedElement xmi:type="uml:Class" xmi:id="_G6itXVSXAGUmaLyGUwOnCM" name="POChangeLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_HYiyPVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_HdutjVSXAGUmaLyGUwOnCM" name="ControlModeChangeLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_PwYIFVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_E6HCbVSXAGUmaLyGUwOnCM" name="StateChangeLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GwETTVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8IgUvVSXAGUmaLyGUwOnCM" name="LoadingPointIsUnloadedLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6ukVKVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FkCy2VSXAGUmaLyGUwOnCM" name="ProductionLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Eax3KVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_54fMEVSXAGUmaLyGUwOnCM" name="MachineModuleSpecificationChangeLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_HEqHZVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_SwUALVSXAGUmaLyGUwOnCM" name="DatasetChangeLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_MOcGAVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_iTLPvVSXAGUmaLyGUwOnCM" name="MaterialIsConsumedLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GQvqGVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vSkHMVSXAGUmaLyGUwOnCM" name="MaterialUnloadingIsRequiredLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_3qWTKVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wy3yhVSXAGUmaLyGUwOnCM" name="DowntimeLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_lLWhVVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_OXjcKVSXAGUmaLyGUwOnCM" name="RootCauseListChangeLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_dz4J5VSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uYw9SVSXAGUmaLyGUwOnCM" name="RootCauseGroupListChangeLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZMTwQVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dvtcXVSXAGUmaLyGUwOnCM" name="StopReasonListChangeLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_swTPeVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_NkosKVSXAGUmaLyGUwOnCM" name="DefectDetectedLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_9xuwCVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_gRWrpVSXAGUmaLyGUwOnCM" name="MaterialRejectedLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_9cYg8VSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_adPjSVSXAGUmaLyGUwOnCM" name="LogbookEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_fHOJRVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#__T8sILuNEeq9S-4yXgSHNA"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_hQiPjVSXAGUmaLyGUwOnCM" name="NewPresentedMaterialLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_8DXo7VSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Xy3UJVSXAGUmaLyGUwOnCM" name="DataSetChangeLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_fULvBVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XHfuHVSXAGUmaLyGUwOnCM" name="DefectDetectionSensorDisabledLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZF1uYVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_DSJFxVSXAGUmaLyGUwOnCM" name="IntegrityRejectedMaterialLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_dflAaVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GkLLQVSXAGUmaLyGUwOnCM" name="NewSystemDumpIsGeneratedLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_k1Po3VSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Zdig3VSXAGUmaLyGUwOnCM" name="MaterialRejectionTrapDisabledLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_a3muCVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ylqeYVSXAGUmaLyGUwOnCM" name="GoodOutputProducedLogType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GxfCOVSXAGUmaLyGUwOnCM" general="_adPjSVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_hWNyCVSXAGUmaLyGUwOnCM" name="opcfoundation.org/UA/TMC/_datatypes" URI="http://opcfoundation.org/UA/TMC/">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_wQ8IiVSXAGUmaLyGUwOnCM" name="DataSetEntryType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_pN8RKVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_Zcz9zVSXAGUmaLyGUwOnCM" name="ParameterDependencyEnumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_B2nZeVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_ooKCByUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_dgOEHVSXAGUmaLyGUwOnCM" name="ControlsHWFeatureEnumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_bXn7zVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_ooKCByUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_4TmtKVSXAGUmaLyGUwOnCM" name="ControlsSWFeatureEnumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_4marrVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_ooKCByUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_daHghVSXAGUmaLyGUwOnCM" name="CommandEnumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_hbLGOVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_ooKCByUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_V4MVpVSXAGUmaLyGUwOnCM" name="RootCauseMessageType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Zu6wgVSXAGUmaLyGUwOnCM" general="_fsI6TVSXAGUmaLyGUwOnCM"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_fvJJ1VSXAGUmaLyGUwOnCM" name="StateEnumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_vxQLMVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_ooKCByUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_OQ5YaVSXAGUmaLyGUwOnCM" name="RootCauseGroupType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_OhrhmVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_1PfG3VSXAGUmaLyGUwOnCM" name="MethodExecutionFeedbackType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_DZYCYVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_owQayVSXAGUmaLyGUwOnCM" name="TMCImplementedLevelEnumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_zxnmNVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_ooKCByUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_87Es4VSXAGUmaLyGUwOnCM" name="MaterialType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_eOER9VSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_JUArZVSXAGUmaLyGUwOnCM" name="IOTypeEnumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6gywaVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_ooKCByUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_IWSgeVSXAGUmaLyGUwOnCM" name="IOValueType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_k8hWhVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_bsV9YVSXAGUmaLyGUwOnCM" name="IOPointType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_BONYfVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oXN21VSXAGUmaLyGUwOnCM" name="LoadUnloadPointType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_wi4dmVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_KewKlVSXAGUmaLyGUwOnCM" name="MaterialStorageBufferDataType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_4kpPUVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_938pKVSXAGUmaLyGUwOnCM" name="StorageLogicEnumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_M6GojVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_ooKCByUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ZxtkJVSXAGUmaLyGUwOnCM" name="POType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_8HwMrVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_WZFZXVSXAGUmaLyGUwOnCM" name="ProductionStatusEnumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_U74biVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_ooKCByUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_U1Z2WVSXAGUmaLyGUwOnCM" name="DataSetType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ohGVrVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_JorfZVSXAGUmaLyGUwOnCM" name="MaterialIntergrityAgentEnumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_psn1lVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_ooKCByUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_qSK5IVSXAGUmaLyGUwOnCM" name="DataSetListType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_xpRAsVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_sxgQSVSXAGUmaLyGUwOnCM" name="ControlModeEnumeration">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GNbsFVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_ooKCByUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_fsI6TVSXAGUmaLyGUwOnCM" name="MessageType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_5dVzpVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_qcNuTVSXAGUmaLyGUwOnCM" name="IOMetaType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_aFEx2VSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_CwcFaVSXAGUmaLyGUwOnCM" name="DataDescriptionType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_dmQ8kVSXAGUmaLyGUwOnCM">
+        <general xmi:type="uml:DataType" href="OpcFoundationUA.uml#_jR2mCyUN2n85b2jdyPNR1k"/>
+     </generalization>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Automation Studio Language
+Bundle-SymbolicName: com.bichler.astudio.language;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Bichler Technologies GmbH
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.ui.workbench,
+ org.eclipse.jface,
+ org.eclipse.ui.forms,
+ com.bichler.astudio.utils,
+ org.eclipse.core.runtime;bundle-version="3.13.0",
+ com.bichler.astudio.utils.ui
+Export-Package: com.bichler.astudio.language.handler
+Bundle-Activator: com.bichler.astudio.language.LanguageActivator
+Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: com.bichler.astudio.language

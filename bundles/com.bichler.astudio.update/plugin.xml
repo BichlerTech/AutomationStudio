@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.bichler.astudio.update.check"
+            name="Check for update">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.astudio.update.handler.CheckForUpdateHandler"
+            commandId="com.bichler.astudio.update.check">
+      </handler>
+   </extension>
+
+</plugin>

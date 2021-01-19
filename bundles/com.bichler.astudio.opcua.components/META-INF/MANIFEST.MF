@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Components
+Bundle-SymbolicName: com.bichler.astudio.opcua.components
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.opcua.components.OPCUAComponentsActivator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.core.runtime,
+ com.bichler.astudio.utils;bundle-version="1.0.0",
+ com.bichler.opc.core;bundle-version="1.1.2",
+ org.eclipse.ui.workbench;bundle-version="3.118.0"
+Automatic-Module-Name: com.bichler.astudio.opcua.components
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bichler.astudio.opcua.components.addressspace
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

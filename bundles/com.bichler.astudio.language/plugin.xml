@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.astudio.language.handler.ChangeLanguageHandler"
+            commandId="com.bichler.astudio.command.applicationlanguage">
+      </handler>
+   </extension>
+</plugin>

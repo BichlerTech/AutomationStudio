@@ -1,0 +1,515 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+h1
+	{mso-style-link:"Überschrift 1 Zchn";
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:24.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Sprechblasentext Zchn";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.berschrift1Zchn
+	{mso-style-name:"Überschrift 1 Zchn";
+	mso-style-link:"Überschrift 1";
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+span.SprechblasentextZchn
+	{mso-style-name:"Sprechblasentext Zchn";
+	mso-style-link:Sprechblasentext;
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 2.0cm 70.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<title>Methodenaufruf</title>
+</head>
+
+<body lang=DE-AT>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:16.0pt;
+font-family:"Times New Roman","serif"'>Methodenaufruf registrieren</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Um
+einen Aufruf einer Methodenimplementierung zu bekommen, ist es notwendig, </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>diese
+mit Hilfe des Browsnames am Benachrichtigungssystem zu registrieren.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:Consolas;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>load(</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#2A00FF'>&quot;nashorn:mozilla_compat.js&quot;</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>importPackage(org.opcfoundation.ua.builtintypes);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>importPackage(java.lang);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>importPackage(com.hbsoft.comdrv);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:#3F5FBF'>/**</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'> </span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>Write</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>listener</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>callback</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>object.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'> </span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>Here</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>we</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>implemented</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>listener</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>member</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>function.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'> </span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;color:#3F5FBF'>*/</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:#7F0055'>function</span></b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:black'> CallMethodListener()
+{</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>/**</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>Calls</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>the</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>required</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>method</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>and</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>returns</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>the</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>result</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#7F9FBF'>@param</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>(NodeId)</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>  </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>context</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>       </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>Operation</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>context</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>of</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>method</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>call.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;text-indent:-35.4pt;line-height:normal;
+text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+color:black'>        </span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:#3F5FBF'>*</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;color:black'> </span><b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#7F9FBF'>@param</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>(NodeId)</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>  </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>nodeId</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>NodeId</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>of</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>object</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>to</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>which</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>the</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>method</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>  </span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal;text-autospace:
+none'><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*     </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>                           </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>belongs</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>to.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#7F9FBF'>@param</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>(NodeId)</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>  </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>methodId</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>      </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>NodeId</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>of</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>the</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>method</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>to</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>call.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#7F9FBF'>@param</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>(Variant</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>[])</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>inputargs</span></u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>  </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>List</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>with</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>all</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>required</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>input</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>arguments.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#7F9FBF'>@return</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>(CallMethodResult)</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>     </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>The</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>result</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>of</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>the</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>execution</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>of</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>the</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>method.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>        </span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>*/</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       </span><b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>this</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>.callMethod
+= </span><b><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+color:#7F0055'>function</span></b><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>(context, parentId, methodId, inputargs) {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>             System.out.println(</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#2A00FF'>&quot;method
+called: &quot;</span><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+color:black'> + parentId + </span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:#2A00FF'>&quot; : &quot;</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:black'> + methodId);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>       }</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'>}</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:#3F5FBF'>/**</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'> </span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>create</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>javascript</span></u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>method</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>handler,</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'> </span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>which</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>function</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>will</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>be</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>called</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>from</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>comet</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>driver</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>manager.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'> </span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;color:#3F5FBF'>*/</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:#7F0055'>var</span></b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:black'> methoddrv = </span><b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>new</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>
+CallMethodListener();</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:#3F5FBF'>/**</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'> </span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>create</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>the</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>java</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>mapping</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>of</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>the</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>write</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>listener.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'> </span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;color:#3F5FBF'>*/</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:#7F0055'>var</span></b><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:black'> methodListener = </span><b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#7F0055'>new</span></b><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'>
+IMethodListener(methoddrv);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:#3F5FBF'>/**</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'> </span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;color:#3F5FBF'>*</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>Register</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>listener</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>to</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>driver</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>manager</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>for</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>a</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>defined</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>browsepath</span></u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>,</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>pointing</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>to</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>the</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>method</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:black'> </span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;color:#3F5FBF'>object</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;color:black'> </span><span style='font-size:10.0pt;
+font-family:Consolas;color:#3F5FBF'>*/</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;font-family:
+Consolas;color:black'>ComDRVManager.getDRVManager().addMethodListener(</span><span
+style='font-size:10.0pt;line-height:115%;font-family:Consolas;color:#2A00FF'>'0:caller'</span><span
+style='font-size:10.0pt;line-height:115%;font-family:Consolas;color:black'>,
+methodListener);</span></p>
+
+<p class=MsoNormal><span style='position:absolute;z-index:251658238;margin-left:
+1px;margin-top:7px;width:223px;height:197px'><img width=223 height=197
+src="Methodenaufruf-Dateien/image001.jpg"></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

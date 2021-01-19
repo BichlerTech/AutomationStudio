@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+<?language javascript?>
+
+<fx:root fx:id="topbox" type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml" prefHeight="35">
+	<Pane prefHeight="30.0" prefWidth="10.0" />
+	<Label fx:id="lbl_config" prefHeight="30.0" prefWidth="220.0"
+		text="Label">
+		<font>
+			<Font name="System Bold" size="22.0" />
+		</font>
+	</Label>
+	<TextField fx:id="content" editable="true" prefHeight="30.0" 
+		prefWidth="450.0" />
+</fx:root>

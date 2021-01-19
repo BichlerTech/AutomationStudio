@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: com.bichler.opc.client.test
+Bundle-Version: 1.0.0.1
+Bundle-Vendor: Bichler Technologies GmbH
+Fragment-Host: com.bichler.opc.client;bundle-version="1.0.0"
+Automatic-Module-Name: com.bichler.opc.client.test
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.junit;bundle-version="4.12.0",
+ com.bichler.opc.core

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_WUkYIM2iEeqIOOebPkUJpA" name="testcase20">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_WU-n0M2iEeqIOOebPkUJpA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_YhjNEM2iEeqIOOebPkUJpA" name="Statemachine" URI="http://testcase.com/bichler/">
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_x_r0UM2iEeqIOOebPkUJpA" name="StateMachine">
+      <generalization xmi:type="uml:Generalization" xmi:id="_JRcDkM2jEeqIOOebPkUJpA" general="_6yZAEM2iEeqIOOebPkUJpA"/>
+      <region xmi:type="uml:Region" xmi:id="_ybqlsM2iEeqIOOebPkUJpA" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_1cYksM2iEeqIOOebPkUJpA" source="_zhKOIM2iEeqIOOebPkUJpA" target="_z92xMM2iEeqIOOebPkUJpA"/>
+        <transition xmi:type="uml:Transition" xmi:id="_15NDkM2iEeqIOOebPkUJpA" source="_z92xMM2iEeqIOOebPkUJpA" target="_0osd8M2iEeqIOOebPkUJpA"/>
+        <transition xmi:type="uml:Transition" xmi:id="_2YUBcM2iEeqIOOebPkUJpA" source="_0osd8M2iEeqIOOebPkUJpA" target="_z92xMM2iEeqIOOebPkUJpA"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_zhKOIM2iEeqIOOebPkUJpA" name="Initial"/>
+        <subvertex xmi:type="uml:State" xmi:id="_z92xMM2iEeqIOOebPkUJpA" name="State1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_0osd8M2iEeqIOOebPkUJpA" name="State2"/>
+      </region>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6yZAEM2iEeqIOOebPkUJpA" name="MySubtype2">
+      <generalization xmi:type="uml:Generalization" xmi:id="_NiELEM_vEeqwLM2eDEdE8w" general="_LWWhcM_vEeqwLM2eDEdE8w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LWWhcM_vEeqwLM2eDEdE8w" name="MySubtype1">
+      <generalization xmi:type="uml:Generalization" xmi:id="_RVup8M_vEeqwLM2eDEdE8w">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZFUIrXkEeq6aKVUZFYG3w"/>
+      </generalization>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+<?language javascript?>
+
+<fx:root type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml">
+	<Pane prefHeight="96.0" prefWidth="10.0" />
+	<Label fx:id="lbl_project" prefHeight="96.0" prefWidth="200.0"
+		text="Label">
+		<font>
+			<Font name="System Bold" size="36.0" />
+		</font>
+	</Label>
+	<Button fx:id="btn_start" mnemonicParsing="false" onAction="#startServer"
+		prefHeight="96.0" prefWidth="96.0"
+		style="-fx-background-color:transparent; -fx-background-image: url('com/hbsoft/studio/systemtray/icons/start.png');" />
+	<Button fx:id="btn_stop" disable="true" mnemonicParsing="false"
+		onAction="#stopServer" prefHeight="96.0" prefWidth="96.0"
+		style="-fx-background-color:transparent; -fx-background-image: url('com/hbsoft/studio/systemtray/icons/stop.png');" />
+	<TextArea fx:id="message" editable="false" prefHeight="96.0"
+		prefWidth="400.0" />
+	<Button fx:id="btn_refresh" disable="true" mnemonicParsing="false" onAction="#reloadConfig"
+		prefHeight="96.0" prefWidth="96.0"
+		style="-fx-background-color:transparent; -fx-background-image: url('com/hbsoft/studio/systemtray/icons/refresh.png');" />
+	<fx:script>
+		var tooltipstart = new javafx.scene.control.Tooltip('HMI Server starten.');
+		javafx.scene.control.Tooltip.install(btn_start, tooltipstart);
+	</fx:script>
+	<fx:script>
+		var tooltipstop = new javafx.scene.control.Tooltip('HMI Server stoppen.');
+		javafx.scene.control.Tooltip.install(btn_stop, tooltipstop);
+	</fx:script>
+	<fx:script>
+		var tooltiprefresh = new javafx.scene.control.Tooltip('HMI Settings neu laden.');
+		javafx.scene.control.Tooltip.install(btn_refresh, tooltiprefresh);
+	</fx:script>
+</fx:root>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.bichler.astudio.properties.view.ASPropertyView"
+            icon="icons/properties_16.png"
+            id="com.bichler.astudio.properties.view"
+            name="%view.property"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <!-- <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="com.bichler.astudio.main.toolbar.views">
+            <command
+                  commandId="com.bichler.astudio.showproperties"
+                  icon="icons/properties_32.png"
+                  label="%menu.showproperties"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>-->
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               id="com.bichler.astudio.ansicht"
+               label="%menu.view">
+            <menu
+                  id="com.bichler.astudio.views"
+                  label="%menu.views">
+               <command
+                  commandId="com.bichler.astudio.showproperties"
+                  icon="icons/properties_16.png"
+                  label="%view.property"
+                  style="toggle">
+            </command>
+            </menu>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.astudio.properties.handler.ShowPropertiesViewHandler"
+            commandId="com.bichler.astudio.showproperties">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.bichler.astudio.showproperties"
+            name="%menu.showproperties">
+         <state
+               class="org.eclipse.ui.handlers.RegistryToggleState:true"
+               id="org.eclipse.ui.commands.toggleState">
+         </state>
+      </command>
+   </extension>
+
+</plugin>

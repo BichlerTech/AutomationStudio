@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.bichler.astudio.picandplace.editor.PickAndPlaceEditor"
+            default="false"
+            id="com.bichler.astudio.pickandplace.editor.PickAndPlaceEditor"
+            name="name">
+      </editor>
+   </extension>
+   <extension
+         point="com.bichler.astudio.extensionpoint.navigation">
+      <navigation_item
+            class="com.bichler.astudio.picandplace.nodes.PaPRootModelNode">
+      </navigation_item>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.bichler.astudio.pickandplace.openPaPEditor"
+            name="name">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.astudio.picandplace.handlers.OpenPaPHandler"
+            commandId="com.bichler.astudio.pickandplace.openPaPEditor">
+      </handler>
+   </extension>
+
+</plugin>

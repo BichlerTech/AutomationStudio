@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_px1CBCztNxMl9iuthsD4VZ" name="testcase12_result">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_YezuXCztNxMl9iuthsD4VZ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_abQCiCztNxMl9iuthsD4VZ" name="engelglobal.com/Types/_objecttypes" URI="http://engelglobal.com/Types/">
+    <packagedElement xmi:type="uml:Class" xmi:id="_HdgElCztNxMl9iuthsD4VZ" name="DemoStateMachineType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_lUJTxCztNxMl9iuthsD4VZ">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_VZFUIrXkEeq6aKVUZFYG3w"/>
+     </generalization>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

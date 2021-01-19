@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: License managemenet
+Bundle-SymbolicName: com.bichler.astudio.licensemanagement;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui;bundle-version="3.7.0",
+ org.eclipse.ui.forms;bundle-version="3.5.101",
+ com.bichler.astudio.components.ui,
+ com.bichler.astudio.navigation,
+ com.bichler.astudio.utils;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ libs/CodeMeter.jar
+Bundle-Activator: com.bichler.astudio.licensemanagement.LicManActivator
+Export-Package: com.bichler.astudio.licensemanagement,
+ com.bichler.astudio.licensemanagement.exception,
+ com.bichler.astudio.licensemanagement.manager,
+ com.bichler.astudio.licensemanagement.nodes,
+ com.bichler.astudio.licensemanagement.util
+Automatic-Module-Name: com.bichler.astudio.licensemanagement

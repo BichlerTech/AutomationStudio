@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OPC-UA AddressSpace Modelling
+Bundle-SymbolicName: com.bichler.astudio.opcua.addressspace.model;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.opcua.addressspace.model.Activator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jdt.core;bundle-version="3.7.3",
+ com.bichler.astudio.utils,
+ com.bichler.astudio.filesystem,
+ com.bichler.astudio.opcua.libs,
+ com.bichler.opc.core,
+ com.bichler.opc.server,
+ com.bichler.opc.comdrv,
+ org.eclipse.ui.workbench;bundle-version="3.118.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bichler.astudio.opcua.addressspace.model.binary,
+ com.bichler.astudio.opcua.addressspace.model.gen,
+ com.bichler.astudio.opcua.addressspace.model.nosql.userauthority,
+ com.bichler.astudio.opcua.addressspace.model.tool
+Bundle-ClassPath: libs/sqlite-jdbc-3.7.2.jar,
+ .
+Automatic-Module-Name: com.bichler.astudio.opcua.addressspace.model

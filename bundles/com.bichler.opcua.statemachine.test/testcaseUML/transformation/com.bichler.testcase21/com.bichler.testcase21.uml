@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_7ZiMgM_7EeqwLM2eDEdE8w" name="testcase21">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_7aywwM_7EeqwLM2eDEdE8w">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_N-ShIM_8EeqwLM2eDEdE8w" name="Statemachine" URI="http://testcase.com/bichler/">
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_Qc6fsM_8EeqwLM2eDEdE8w" name="StateMachine">
+      <region xmi:type="uml:Region" xmi:id="_QyNaQM_8EeqwLM2eDEdE8w" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_T5OOgM_8EeqwLM2eDEdE8w" source="_RvGgUM_8EeqwLM2eDEdE8w" target="_SVULwM_8EeqwLM2eDEdE8w"/>
+        <transition xmi:type="uml:Transition" xmi:id="_UgUDsM_8EeqwLM2eDEdE8w" source="_SVULwM_8EeqwLM2eDEdE8w" target="_S_M2QM_8EeqwLM2eDEdE8w"/>
+        <transition xmi:type="uml:Transition" xmi:id="_U-_jwM_8EeqwLM2eDEdE8w" source="_S_M2QM_8EeqwLM2eDEdE8w" target="_SVULwM_8EeqwLM2eDEdE8w">
+          <effect xmi:type="uml:FunctionBehavior" xmi:id="_yqEskM_8EeqwLM2eDEdE8w" specification="_yi_0MM_8EeqwLM2eDEdE8w"/>
+        </transition>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_RvGgUM_8EeqwLM2eDEdE8w" name="Initial"/>
+        <subvertex xmi:type="uml:State" xmi:id="_SVULwM_8EeqwLM2eDEdE8w" name="State1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_S_M2QM_8EeqwLM2eDEdE8w" name="State2"/>
+      </region>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_i0y18M_8EeqwLM2eDEdE8w" name="MySubType2">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ry5ZYM_8EeqwLM2eDEdE8w">
+        <general xmi:type="uml:Class" href="OpcFoundationUA.uml#_FEHT8LuOEeq9S-4yXgSHNA"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_krNlAM_8EeqwLM2eDEdE8w" name="MySubType1">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qsBQ4M_8EeqwLM2eDEdE8w" general="_i0y18M_8EeqwLM2eDEdE8w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_nYnmcM_8EeqwLM2eDEdE8w" name="TestcaseTransitionEventType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_pXV88M_8EeqwLM2eDEdE8w" general="_krNlAM_8EeqwLM2eDEdE8w"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_yi_0MM_8EeqwLM2eDEdE8w" method="_yqEskM_8EeqwLM2eDEdE8w"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

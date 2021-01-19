@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.bichler.module.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.bichler.module.Perspective"
+            name="Perspective"
+            id="com.bichler.module.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               closeable="false"
+               id="com.bichler.astudio.device.core.view.devices"
+               minimized="false"
+               relationship="left"
+               relative="org.eclipse.ui.editorss"
+               standalone="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="File">
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  label="Exit">
+            </command>
+         </menu>
+         <menu
+               label="Module">
+            <command
+                  commandId="com.bichler.module.install"
+                  label="Install"
+                  style="push">
+            </command>
+            <separator
+                  name="com.bichler.module.separator1"
+                  visible="true">
+            </separator>
+            <command
+                  commandId="com.bichler.module.importworkspacedevices"
+                  label="Import"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.bichler.module.install"
+            name="Install module">
+      </command>
+      <command
+            id="com.bichler.module.importworkspacedevices"
+            name="Import workspace devices">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.bichler.module.handler.InstallModuleToDeviceHandler"
+            commandId="com.bichler.module.install">
+      </handler>
+      <handler
+            class="com.bichler.module.handler.ImportWorkspaceDevicesHandler"
+            commandId="com.bichler.module.importworkspacedevices">
+      </handler>
+   </extension>
+   <extension
+         id="BTechModules"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.bichler.module.application"
+            name="BTecht Modules">
+         <property
+               name="appName"
+               value="BTecht Modules">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AS Log Server
+Bundle-SymbolicName: com.bichler.astudio.log.server
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.bichler.astudio.log.server,
+ com.bichler.astudio.log.server.core,
+ com.bichler.astudio.log.server.listener,
+ com.bichler.astudio.log.server.util
+Bundle-Vendor: Bichler Technologies GmbH
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: .,
+ libs/log4j-1.2.15.jar
+Automatic-Module-Name: com.bichler.astudio.log.server

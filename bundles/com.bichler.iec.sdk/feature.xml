@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.bichler.iec.sdk"
+      label="Iec 61131 SDK Feature"
+      version="1.0.0.qualifier"
+      provider-name="Bichler Technologies GmbH">
+
+   <plugin
+         id="com.bichler.iec"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.bichler.iec.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.bichler.iec.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

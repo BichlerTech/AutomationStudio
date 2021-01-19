@@ -1,0 +1,24 @@
+private static ReferenceNode[] referenceListToArray(List<ReferenceNode> refNodeList){
+		return refNodeList.toArray(new ReferenceNode[refNodeList.size()]);
+	}
+	
+	private static List<ReferenceNode> referenceArrayToList(ReferenceNode[] refNodeArray){
+		List<ReferenceNode> refNodeList = new ArrayList<ReferenceNode>();
+		for(ReferenceNode refNode : refNodeArray)
+			refNodeList.add(refNode);
+		return refNodeList;
+	}
+	
+		public static StatusCode createNewReferenceOnNode(Node sourceNode, Node targetNode,
+			ReferenceNode referenceNode) {
+		
+		List<ReferenceNode> sourceReferences = referenceArrayToList(sourceNode.getReferences());
+		List<ReferenceNode> targetReferences = referenceArrayToList(targetNode.getReferences());
+		
+		sourceReferences.add(referenceNode);
+		targetReferences.add(referenceNode)
+		
+		add to parent
+		return StatusCode.GOOD;
+	}
+	

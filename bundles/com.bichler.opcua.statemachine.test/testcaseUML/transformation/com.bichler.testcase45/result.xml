@@ -1,0 +1,151 @@
+<UANodeSet xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" LastModified="2020-09-10T00:00:00Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
+	<NamespaceUris>
+		<Uri>http://testcase.com/bichler/</Uri>
+	</NamespaceUris>
+	<Models>
+		<Model ModelUri="http://testcase.com/bichler/" PublicationDate="2020-09-10T00:00:00Z" Version="1.0.0">
+			<RequiredModel ModelUri="http://opcfoundation.org/UA/" Version="1.00" PublicationDate="2020-09-10T00:00:00Z" />
+		</Model>
+	</Models>
+	<Aliases>
+		<Alias Alias="UInt32">i=7</Alias>
+		<Alias Alias="HasModellingRule">i=37</Alias>
+		<Alias Alias="HasTypeDefinition">i=40</Alias>
+		<Alias Alias="HasSubtype">i=45</Alias>
+		<Alias Alias="HasProperty">i=46</Alias>
+		<Alias Alias="HasComponent">i=47</Alias>
+		<Alias Alias="FromState">i=51</Alias>
+		<Alias Alias="ToState">i=52</Alias>
+		<Alias Alias="HasCause">i=53</Alias>
+	</Aliases>
+	<UAObjectType NodeId="ns=1;s=StateMachine" BrowseName="StateMachine">
+		<DisplayName>StateMachine</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasSubtype" IsForward="false">i=2771</Reference>
+		</References>
+	</UAObjectType>
+	<UAObject NodeId="ns=1;s=StateMachine.State1" BrowseName="1:State1" ParentNodeId="ns=1;s=StateMachine">
+		<DisplayName>State1</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=StateMachine</Reference>
+			<Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+			<Reference ReferenceType="ToState" IsForward="false">ns=1;s=StateMachine.InitialToState1</Reference>
+			<Reference ReferenceType="FromState" IsForward="false">ns=1;s=StateMachine.State1ToState2</Reference>
+			<Reference ReferenceType="ToState" IsForward="false">ns=1;s=StateMachine.State2ToState1</Reference>
+		</References>
+	</UAObject>
+	<UAVariable NodeId="ns=1;s=StateMachine.State1.StateNumber" BrowseName="StateNumber" DataType="UInt32" ValueRank="0">
+		<DisplayName>StateNumber</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasProperty" IsForward="false">ns=1;s=StateMachine.State1</Reference>
+			<Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+			<Reference ReferenceType="HasModellingRule">i=78</Reference>
+		</References>
+	</UAVariable>
+	<UAObject NodeId="ns=1;s=StateMachine.State2" BrowseName="1:State2" ParentNodeId="ns=1;s=StateMachine">
+		<DisplayName>State2</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=StateMachine</Reference>
+			<Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+			<Reference ReferenceType="ToState" IsForward="false">ns=1;s=StateMachine.State1ToState2</Reference>
+			<Reference ReferenceType="FromState" IsForward="false">ns=1;s=StateMachine.State2ToState1</Reference>
+		</References>
+	</UAObject>
+	<UAVariable NodeId="ns=1;s=StateMachine.State2.StateNumber" BrowseName="StateNumber" DataType="UInt32" ValueRank="0">
+		<DisplayName>StateNumber</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasProperty" IsForward="false">ns=1;s=StateMachine.State2</Reference>
+			<Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+			<Reference ReferenceType="HasModellingRule">i=78</Reference>
+		</References>
+	</UAVariable>
+	<UAObject NodeId="ns=1;s=StateMachine.Initial" BrowseName="1:Initial" ParentNodeId="ns=1;s=StateMachine">
+		<DisplayName>Initial</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=StateMachine</Reference>
+			<Reference ReferenceType="HasTypeDefinition">i=2309</Reference>
+			<Reference ReferenceType="FromState" IsForward="false">ns=1;s=StateMachine.InitialToState1</Reference>
+		</References>
+	</UAObject>
+	<UAVariable NodeId="ns=1;s=StateMachine.Initial.StateNumber" BrowseName="StateNumber" DataType="UInt32" ValueRank="0">
+		<DisplayName>StateNumber</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasProperty" IsForward="false">ns=1;s=StateMachine.Initial</Reference>
+			<Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+			<Reference ReferenceType="HasModellingRule">i=78</Reference>
+		</References>
+	</UAVariable>
+	<UAObject NodeId="ns=1;s=StateMachine.State2ToState1" BrowseName="1:State2ToState1" ParentNodeId="ns=1;s=StateMachine">
+		<DisplayName>State2ToState1</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=StateMachine</Reference>
+			<Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+			<Reference ReferenceType="FromState">ns=1;s=StateMachine.State2</Reference>
+			<Reference ReferenceType="ToState">ns=1;s=StateMachine.State1</Reference>
+		</References>
+	</UAObject>
+	<UAVariable NodeId="ns=1;s=StateMachine.State2ToState1.TransitionNumber" BrowseName="TransitionNumber" DataType="UInt32" ValueRank="0">
+		<DisplayName>TransitionNumber</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasProperty" IsForward="false">ns=1;s=StateMachine.State2ToState1</Reference>
+			<Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+			<Reference ReferenceType="HasModellingRule">i=78</Reference>
+		</References>
+	</UAVariable>
+	<UAObject NodeId="ns=1;s=StateMachine.InitialToState1" BrowseName="1:InitialToState1" ParentNodeId="ns=1;s=StateMachine">
+		<DisplayName>InitialToState1</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=StateMachine</Reference>
+			<Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+			<Reference ReferenceType="FromState">ns=1;s=StateMachine.Initial</Reference>
+			<Reference ReferenceType="ToState">ns=1;s=StateMachine.State1</Reference>
+		</References>
+	</UAObject>
+	<UAVariable NodeId="ns=1;s=StateMachine.InitialToState1.TransitionNumber" BrowseName="TransitionNumber" DataType="UInt32" ValueRank="0">
+		<DisplayName>TransitionNumber</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasProperty" IsForward="false">ns=1;s=StateMachine.InitialToState1</Reference>
+			<Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+			<Reference ReferenceType="HasModellingRule">i=78</Reference>
+		</References>
+	</UAVariable>
+	<UAObject NodeId="ns=1;s=StateMachine.State1ToState2" BrowseName="1:State1ToState2" ParentNodeId="ns=1;s=StateMachine">
+		<DisplayName>State1ToState2</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=StateMachine</Reference>
+			<Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+			<Reference ReferenceType="FromState">ns=1;s=StateMachine.State1</Reference>
+			<Reference ReferenceType="ToState">ns=1;s=StateMachine.State2</Reference>
+			<Reference ReferenceType="HasCause">ns=1;s=StateMachine.TestCaseEvent</Reference>
+		</References>
+	</UAObject>
+	<UAVariable NodeId="ns=1;s=StateMachine.State1ToState2.TransitionNumber" BrowseName="TransitionNumber" DataType="UInt32" ValueRank="0">
+		<DisplayName>TransitionNumber</DisplayName>
+		<Description></Description>
+		<References>
+			<Reference ReferenceType="HasProperty" IsForward="false">ns=1;s=StateMachine.State1ToState2</Reference>
+			<Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+			<Reference ReferenceType="HasModellingRule">i=78</Reference>
+		</References>
+	</UAVariable>
+	<UAMethod NodeId="ns=1;s=StateMachine.TestCaseEvent" BrowseName="TestCaseEvent" ParentNodeId="ns=1;s=StateMachine">
+		<DisplayName>TestCaseEvent</DisplayName>
+		<Description>null</Description>
+		<References>
+			<Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=StateMachine</Reference>
+			<Reference ReferenceType="HasCause" IsForward="false">ns=1;s=StateMachine.State1ToState2</Reference>
+		</References>
+	</UAMethod>
+</UANodeSet>

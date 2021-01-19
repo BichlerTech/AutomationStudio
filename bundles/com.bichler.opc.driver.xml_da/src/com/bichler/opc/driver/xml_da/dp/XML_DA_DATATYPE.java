@@ -1,0 +1,6 @@
+package com.bichler.opc.driver.xml_da.dp;
+
+public enum XML_DA_DATATYPE {
+	ANY, BOOL, BYTE, SHORT, INT, DINT, LONG, DOUBLE, REAL, STRING, UNSIGNEDBYTE, UNSIGNEDSHORT, UNSIGNEDINT,
+	UNSIGNEDLONG;
+}

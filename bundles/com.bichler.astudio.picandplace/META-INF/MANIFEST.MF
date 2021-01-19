@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Pick and Place manitulation
+Bundle-SymbolicName: com.bichler.astudio.picandplace;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Bichler Technologies GmbH
+Automatic-Module-Name: com.bichler.astudio.picandplace
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.ui.workbench,
+ com.bichler.astudio.filesystem,
+ org.eclipse.jface,
+ org.eclipse.core.runtime;bundle-version="3.15.300",
+ org.eclipse.ui;bundle-version="3.113.0",
+ com.bichler.astudio.connections,
+ com.bichler.astudio.images,
+ com.bichler.astudio.utils,
+ com.bichler.astudio.navigation,
+ org.eclipse.draw2d
+Bundle-Activator: com.bichler.astudio.picandplace.PaPActivator

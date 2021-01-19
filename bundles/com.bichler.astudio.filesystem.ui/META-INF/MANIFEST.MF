@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ui
+Bundle-SymbolicName: com.bichler.astudio.filesystem.ui
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.filesystem.ui.FilesystemUIActivator
+Bundle-Vendor: BICHLER
+Require-Bundle: org.eclipse.core.runtime,
+ com.bichler.astudio.utils;bundle-version="1.0.0",
+ org.eclipse.ui,
+ com.bichler.astudio.filesystem;bundle-version="1.0.0"
+Automatic-Module-Name: com.bichler.astudio.filesystem.ui
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

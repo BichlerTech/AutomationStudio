@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OPC-UA Discovery
+Bundle-SymbolicName: com.bichler.astudio.opcua.dialog.discovery
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.opcua.dialog.discovery.DialogDiscoveryActivator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms;bundle-version="3.5.101",
+ com.bichler.astudio.utils,
+ com.bichler.astudio.opcua.libs,
+ com.bichler.astudio.images.common,
+ com.bichler.opc.client,
+ com.bichler.opc.core,
+ com.bichler.astudio.utils.ui;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bichler.astudio.opcua.dialog.discovery,
+ com.bichler.astudio.opcua.dialog.discovery.dialog
+Automatic-Module-Name: com.bichler.astudio.opcua.dialog.discovery

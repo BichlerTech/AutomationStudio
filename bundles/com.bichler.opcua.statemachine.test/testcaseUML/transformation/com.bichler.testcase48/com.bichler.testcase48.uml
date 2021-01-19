@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_7RmZEO22Eeq_tZKrJulJkg" name="testcase48">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_7XtoIO22Eeq_tZKrJulJkg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Mkwi8O23Eeq_tZKrJulJkg" name="Statemachine" URI="http://testcase.com/bichler/">
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_PRhEIO23Eeq_tZKrJulJkg" name="StateMachine">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_fL_JsO3sEeq_tZKrJulJkg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_fL_Jse3sEeq_tZKrJulJkg" name="In1">
+          <type xmi:type="uml:DataType" href="../com.bichler.testcase45/OpcFoundationUA.uml#_8dKloyUN2n85b2jdyPNR1k"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_fL_Jsu3sEeq_tZKrJulJkg" name="In2">
+          <type xmi:type="uml:DataType" href="../com.bichler.testcase45/OpcFoundationUA.uml#_L2rR8yUN2n85b2jdyPNR1k"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_fL_Js-3sEeq_tZKrJulJkg" name="Out1" direction="out">
+          <type xmi:type="uml:DataType" href="../com.bichler.testcase45/OpcFoundationUA.uml#_8dKloyUN2n85b2jdyPNR1k"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_fL_JtO3sEeq_tZKrJulJkg" name="Out2">
+          <type xmi:type="uml:DataType" href="../com.bichler.testcase45/OpcFoundationUA.uml#_L2rR8yUN2n85b2jdyPNR1k"/>
+        </ownedParameter>
+      </ownedOperation>
+      <region xmi:type="uml:Region" xmi:id="_P6vAQO23Eeq_tZKrJulJkg" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_U9a3AO23Eeq_tZKrJulJkg" source="_REJfYO23Eeq_tZKrJulJkg" target="_Rxj_AO23Eeq_tZKrJulJkg"/>
+        <transition xmi:type="uml:Transition" xmi:id="_X3D9oO23Eeq_tZKrJulJkg" source="_Rxj_AO23Eeq_tZKrJulJkg" target="_SmgqAO23Eeq_tZKrJulJkg">
+          <trigger xmi:type="uml:Trigger" xmi:id="_fngoEO3sEeq_tZKrJulJkg" event="_U3OVUO3sEeq_tZKrJulJkg"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_ZCvGkO23Eeq_tZKrJulJkg" source="_SmgqAO23Eeq_tZKrJulJkg" target="_Rxj_AO23Eeq_tZKrJulJkg"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_REJfYO23Eeq_tZKrJulJkg" name="Initial"/>
+        <subvertex xmi:type="uml:State" xmi:id="_Rxj_AO23Eeq_tZKrJulJkg" name="State1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_SmgqAO23Eeq_tZKrJulJkg" name="State2"/>
+      </region>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_U3OVUO3sEeq_tZKrJulJkg" name="TestcaseEvent" operation="_fL_JsO3sEeq_tZKrJulJkg"/>
+  </packagedElement>
+</uml:Model>

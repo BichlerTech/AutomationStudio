@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AS Properties
+Bundle-SymbolicName: com.bichler.astudio.properties;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.properties.Activator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.core.runtime,
+ com.bichler.astudio.utils;bundle-version="1.0.0",
+ org.eclipse.ui.views.properties.tabbed;bundle-version="3.8.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bichler.astudio.properties.view
+Automatic-Module-Name: com.bichler.astudio.properties

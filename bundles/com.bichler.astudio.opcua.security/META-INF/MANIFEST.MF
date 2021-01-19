@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OPC UA Security
+Bundle-SymbolicName: com.bichler.astudio.opcua.security
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.opcua.security.Activator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.bichler.astudio.utils,
+ com.bichler.astudio.opcua.libs,
+ com.bichler.opc.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bichler.astudio.opcua.security.wizard.util
+Automatic-Module-Name: com.bichler.astudio.opcua.security

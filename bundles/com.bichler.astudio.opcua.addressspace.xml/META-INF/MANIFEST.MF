@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Xml
+Bundle-SymbolicName: com.bichler.astudio.opcua.addressspace.xml
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bichler.astudio.opcua.addressspace.xml.XMLActivator
+Bundle-Vendor: Bichler Technologies GmbH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.bichler.astudio.utils;bundle-version="1.0.0",
+ com.bichler.astudio.filesystem;bundle-version="1.0.0",
+ com.bichler.astudio.opcua.libs;bundle-version="1.0.0",
+ com.bichler.opc.server,
+ com.bichler.opc.comdrv;bundle-version="1.0.0",
+ com.bichler.opc.driver.base;bundle-version="1.0.0",
+ com.bichler.opc.core;bundle-version="1.1.2",
+ com.bichler.astudio.opcua.datadictionary.base;bundle-version="1.0.0",
+ com.bichler.astudio.opcua.components;bundle-version="1.0.0",
+ com.bichler.astudio.opcua.components.ui;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: com.bichler.astudio.opcua.addressspace.xml
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bichler.astudio.opcua.addressspace.xml.exporter,
+ com.bichler.astudio.opcua.addressspace.xml.importer
+Bundle-ClassPath: .,
+ libs/jdom-2.0.6.jar

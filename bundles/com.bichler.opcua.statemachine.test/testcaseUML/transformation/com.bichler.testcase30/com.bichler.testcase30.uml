@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_1Vc6MNCrEeqdwsccM1H44g" name="testcase30">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_1f0-MNCrEeqdwsccM1H44g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_7lEeINCrEeqdwsccM1H44g" name="Statemachine" URI="http://testcase.com/bichler/">
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_Rw61QNCsEeqdwsccM1H44g" name="FirstStateMachine">
+      <region xmi:type="uml:Region" xmi:id="_SfOswNCsEeqdwsccM1H44g" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_jLDw4NCsEeqdwsccM1H44g" source="_g7HukNCsEeqdwsccM1H44g" target="_hiQAANCsEeqdwsccM1H44g"/>
+        <transition xmi:type="uml:Transition" xmi:id="_j37d8NCsEeqdwsccM1H44g" source="_hiQAANCsEeqdwsccM1H44g" target="_iN2hwNCsEeqdwsccM1H44g"/>
+        <transition xmi:type="uml:Transition" xmi:id="_ki5GgNCsEeqdwsccM1H44g" source="_iN2hwNCsEeqdwsccM1H44g" target="_hiQAANCsEeqdwsccM1H44g"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_g7HukNCsEeqdwsccM1H44g" name="Initial"/>
+        <subvertex xmi:type="uml:State" xmi:id="_hiQAANCsEeqdwsccM1H44g" name="State1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_iN2hwNCsEeqdwsccM1H44g" name="State2"/>
+      </region>
+    </packagedElement>
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_Wg3WMNCsEeqdwsccM1H44g" name="SecondStateMachine">
+      <region xmi:type="uml:Region" xmi:id="_XcVf8NCsEeqdwsccM1H44g" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_dP_goNCsEeqdwsccM1H44g" source="_ai8rkNCsEeqdwsccM1H44g" target="_b-mxQNCsEeqdwsccM1H44g"/>
+        <transition xmi:type="uml:Transition" xmi:id="_dv-oQNCsEeqdwsccM1H44g" source="_b-mxQNCsEeqdwsccM1H44g" target="_ai8rkNCsEeqdwsccM1H44g"/>
+        <transition xmi:type="uml:Transition" xmi:id="_fKSDENCsEeqdwsccM1H44g" source="_ZqO64NCsEeqdwsccM1H44g" target="_ai8rkNCsEeqdwsccM1H44g"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_ZqO64NCsEeqdwsccM1H44g" name="Initial"/>
+        <subvertex xmi:type="uml:State" xmi:id="_ai8rkNCsEeqdwsccM1H44g" name="State1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_b-mxQNCsEeqdwsccM1H44g" name="State2"/>
+      </region>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
