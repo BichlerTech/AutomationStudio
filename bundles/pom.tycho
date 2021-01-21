@@ -57,8 +57,8 @@ com.bichler.astudio.utils
 com.bichler.astudio.utils.ui
 com.bichler.astudio.view.drivermodel
 com.bichler.astudio.zebra.labelprint
-com.bichler.iec
-com.bichler.iec.ui
+## com.bichler.iec
+## com.bichler.iec.ui
 com.bichler.module
 com.bichler.opc.client
 com.bichler.opc.comdrv
