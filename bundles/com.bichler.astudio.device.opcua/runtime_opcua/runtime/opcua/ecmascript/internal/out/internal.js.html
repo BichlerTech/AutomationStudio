@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: internal.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: internal.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+load("nashorn:mozilla_compat.js");
+importPackage(org.opcfoundation.ua.builtintypes);
+importPackage(java.lang);
+importPackage(com.hbsoft.comdrv);
+importPackage(org.opcfoundation.ua.core);
+importPackage(java.util);
+importPackage(Packages.opc.sdk.core.types);
+importPackage(org.opcfoundation.ua.encoding);
+
+/**
+ * don't change that functions, these are part of the Automation Studio
+ */
+var driverIndex = -1;
+/**
+ * Appends one namespace uri to the servers namespace array.
+ *
+ * @author	Hannes Bichler
+ * @param 	(String)
+ *            	nsUri namespace uri which should be inserted.
+ * @return 	(java.lang.Integer) The index of that new namespace or -1 if an error
+ *         		occurs.
+ */
+function appendNS(nsUri) {
+	/** first we add namespaceuri */
+	// var response = ComDRVManager.getDRVManager().readValue(
+	// Identifiers.Server_NamespaceArray);
+	var response = ComDRVManager.getDRVManager().readFromDriver(
+			Identifiers.Server_NamespaceArray, Attributes.Value, null, null,
+			-1, 0.0, TimestampsToReturn.Both);
+
+	/* check the namespace object */
+	if (response == null) {
+		return -1;
+	}
+
+	/**
+	 * array with all already existing namespace uris
+	 */
+	var namespaces = response.getValue().getValue();
+
+	/**
+	 * create a new array where we insert all namespaces inclusive the new one.
+	 */
+	var StringArray = Java.type("java.lang.String[]");
+
+	var ns = new StringArray(namespaces.length + 1);
+
+	/**
+	 * fill the new namespace array with the existing values
+	 */
+	for (var i = 0; i &lt; namespaces.length; i++) {
+		ns[i] = namespaces[i];
+	}
+
+	/**
+	 * add the new namespace uri
+	 */
+	ns[ns.length - 1] = nsUri;
+
+	/**
+	 * create the new namespace index.
+	 */
+	var nsIndex = new java.lang.Integer(ns.length - 1);
+
+	/**
+	 * create a value to write back to opc ua address space.
+	 */
+	var variable = new Variant(ns);
+	var newNamespaces = new DataValue(variable);
+
+	/**
+	 * write the new array back to address space
+	 */
+	ComDRVManager.getDRVManager().writeFromDriver(
+			Identifiers.Server_NamespaceArray, Attributes.Value, null,
+			newNamespaces, 0);
+
+	driverIndex = nsIndex;
+
+	return nsIndex;
+}
+
+/**
+ * Creates a new Object as Folder and suspends it to the parent node.
+ * 
+ * @param (int)
+ *            parentNsIndex Namespace index of parent node.
+ * @param (String)
+ *            parentNodeid Nodeid of parent in form ("i=1" or "s=demo")
+ * @param (int)
+ *            newNsIndex Namespace index of requested new node.
+ * @param (String)
+ *            newNsIndex Nodeid of requested new node. e.g. "i=1" or "s=demo"
+ * @param (String)
+ *            browseName Name to browse this folder node. e.g.
+ *            "demo.myfolders.folderinterval"
+ * @param (String)
+ *            description Description of this folder.
+ * @param (String)
+ *            displayName Name which will be display in our Comet OPC UA
+ *            Browser.
+ * @param (byte)
+ *            eventNotifier Notifier type which should raise an event for the
+ *            folder.
+ * @param (int)
+ *            writeMask Mask to write from system to this node.
+ * @param (int)
+ *            userWriteMask Mask to write as a user connection to this node.
+ */
+function addFolderNode(parentNsIndex, parentNodeid, newNsIndex, newNodeId,
+		browseName, description, displayName, eventNotifier, writeMask,
+		userWriteMask) {
+
+	var AddNodesItemArray = Java.type("org.opcfoundation.ua.core.AddNodesItem[]");
+	var addNodesItems = new AddNodesItemArray(1);
+	/**
+	 * new nodes item to insert into address space
+	 */
+	var nodesitem = new AddNodesItem();
+	addNodesItems[0] = nodesitem;
+
+	/**
+	 * create parent and new requested NodeIds
+	 */
+	var parNodeId = NodeId.decode("ns=" + parentNsIndex + ";" + parentNodeid);
+	var reqNodeId = NodeId.decode("ns=" + newNsIndex + ";" + newNodeId);
+
+	/**
+	 * set the brownse name
+	 */
+	var qName = new QualifiedName(new java.lang.Integer(newNsIndex),
+			new java.lang.String(browseName));
+	nodesitem.setBrowseName(qName);
+
+	/**
+	 * class of folder is object
+	 */
+	nodesitem.setNodeClass(NodeClass.Object);
+	/**
+	 * set node ids
+	 */
+	nodesitem.setParentNodeId(new ExpandedNodeId(parNodeId));
+	nodesitem.setRequestedNewNodeId(new ExpandedNodeId(reqNodeId));
+
+	/**
+	 * set types for new node
+	 */
+	nodesitem.setTypeDefinition(new ExpandedNodeId(Identifiers.FolderType));
+	nodesitem.setReferenceTypeId(Identifiers.Organizes);
+
+	/**
+	 * set object attributes
+	 */
+	try {
+		var attributes = new ObjectAttributes();
+		attributes.setDescription(new LocalizedText(description, Locale
+				.getDefault()));
+		attributes.setDisplayName(new LocalizedText(displayName, Locale
+				.getDefault()));
+
+		// attributes.setEventNotifier(UnsignedByte.ZERO);
+		attributes.setEventNotifier(UnsignedByte.getFromBits(eventNotifier));
+
+		// attributes.setWriteMask(UnsignedInteger.ZERO);
+		attributes.setWriteMask(UnsignedInteger.getFromBits(writeMask));
+
+		// attributes.setUserWriteMask(UnsignedInteger.ZERO);
+		attributes.setUserWriteMask(UnsignedInteger.getFromBits(userWriteMask));
+
+		var attr = ExtensionObject.binaryEncode(attributes, EncoderContext
+				.getDefaultInstance());
+		nodesitem.setNodeAttributes(attr);
+
+		/**
+		 * now load the new node into the address space
+		 */
+		ComDRVManager.getDRVManager().getResourceManager()
+				.getDriverConnection().loadNodes(addNodesItems);
+
+	} catch (e) {
+		/**
+		 * print out exception
+		 */
+		System.out.println(e);
+	}
+}
+
+/**
+ * Creates a new Object as Folder and suspends it to the parent node.
+ * 
+ * @param (int)
+ *            parentNsIndex Namespace index of parent node.
+ * @param (String)
+ *            parentNodeid Nodeid of parent in form ("i=1" or "s=demo")
+ * @param (int)
+ *            newNsIndex Namespace index of requested new node.
+ * @param (String)
+ *            newNsIndex Nodeid of requested new node. e.g. "i=1" or "s=demo"
+ * @param (String)
+ *            browseName Name to browse this folder node. e.g.
+ *            "demo.myfolders.folderinterval"
+ * @param (String)
+ *            description Description of this folder.
+ * @param (String)
+ *            displayName Name which will be display in our Comet OPC UA
+ *            Browser.
+ * @param (byte)
+ *            eventNotifier Notifier type which should raise an event for the
+ *            folder.
+ * @param (int)
+ *            writeMask Mask to write from system to this node.
+ * @param (int)
+ *            userWriteMask Mask to write as a user connection to this node.
+ */
+function addVariableNode(parentNsIndex, parentNodeid, newNsIndex, newNodeId,
+		browseName, description, displayName, writeMask, userWriteMask,
+		accesslevel, arraydimension, datatypeNsIndex, datatypeNodeid,
+		historizing, minSampleInterval, useraccesslevel, value, valueRank) {
+
+	var AddNodesItemArray = Java.type("org.opcfoundation.ua.core.AddNodesItem[]");
+	var addNodesItems = new AddNodesItemArray(1);
+	/**
+	 * new nodes item to insert into address space
+	 */
+	var nodesitem = new AddNodesItem();
+	addNodesItems[0] = nodesitem;
+
+	/**
+	 * create parent and new requested NodeIds
+	 */
+	var parNodeId = NodeId.decode("ns=" + parentNsIndex + ";" + parentNodeid);
+	var reqNodeId = NodeId.decode("ns=" + newNsIndex + ";" + newNodeId);
+
+	/**
+	 * set the brownse name
+	 */
+	var qName = new QualifiedName(new java.lang.Integer(newNsIndex),
+			new java.lang.String(browseName));
+	nodesitem.setBrowseName(qName);
+
+	/**
+	 * class of folder is object
+	 */
+	nodesitem.setNodeClass(NodeClass.Variable);
+	/**
+	 * set node ids
+	 */
+	nodesitem.setParentNodeId(new ExpandedNodeId(parNodeId));
+	nodesitem.setRequestedNewNodeId(new ExpandedNodeId(reqNodeId));
+
+	/**
+	 * set types for new node
+	 */
+	nodesitem.setTypeDefinition(new ExpandedNodeId(
+			Identifiers.BaseDataVariableType));
+	nodesitem.setReferenceTypeId(Identifiers.Organizes);
+
+	/**
+	 * set variable attributes
+	 */
+	var datatypeNodeId = NodeId.decode("ns=" + datatypeNsIndex + ";"
+			+ datatypeNodeid);
+	try {
+		var attributes = new VariableAttributes();
+		attributes.setAccessLevel(AccessLevel.getMask(accesslevel));
+		attributes.setArrayDimensions(arraydimension);
+		attributes.setDataType(datatypeNodeId);
+		attributes.setDescription(new LocalizedText(description, Locale
+				.getDefault()));
+		attributes.setDisplayName(new LocalizedText(displayName, Locale
+				.getDefault()));
+		attributes.setHistorizing(historizing);
+		attributes.setMinimumSamplingInterval(minSampleInterval);
+		attributes.setUserAccessLevel(AccessLevel.getMask(useraccesslevel));
+		attributes.setUserWriteMask(UnsignedInteger.getFromBits(userWriteMask));
+		attributes.setValue(new Variant(value));
+		attributes.setValueRank(valueRank);
+		attributes.setWriteMask(UnsignedInteger.getFromBits(writeMask));
+
+		var attr = ExtensionObject.binaryEncode(attributes, EncoderContext
+				.getDefaultInstance());
+		nodesitem.setNodeAttributes(attr);
+
+		/**
+		 * now load the new node into the address space
+		 */
+		ComDRVManager.getDRVManager().getResourceManager()
+				.getDriverConnection().loadNodes(addNodesItems);
+
+	} catch (e) {
+		/**
+		 * print out exception
+		 */
+		System.out.println(e);
+	}
+}
+
+function addReference(parentNsIndex, parentNodeid, newNsIndex, newNodeId,
+		referenceTypeId) {
+		
+
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addFolderNode">addFolderNode</a></li><li><a href="global.html#addVariableNode">addVariableNode</a></li><li><a href="global.html#appendNS">appendNS</a></li><li><a href="global.html#driverIndex">driverIndex</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Jun 29 2018 22:17:34 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

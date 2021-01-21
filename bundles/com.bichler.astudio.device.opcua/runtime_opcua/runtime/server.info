@@ -1,0 +1,18 @@
+## Server Beschreibung, 
+#srvdescription
+Comet OPC UA Server with dynamic address space.
+
+## webseite mit zusaetzlichen infos ueber den treiber, kann auch eine komplette Treiberkonfiguration und online Hilfe sein.
+#srvweb
+http://www.hb-softsolution.com/comet/server/opc_ua_v_1_0_0_1/rev2
+
+## version des installierten Servers
+#srvversion
+v.1.0.0.1
+
+## Erstellungsdatum im Format yyyy-MM-dd 
+#srvbuilddate
+2015-02-10 11:59:59
+
+#srvrevision
+0.0.0.2

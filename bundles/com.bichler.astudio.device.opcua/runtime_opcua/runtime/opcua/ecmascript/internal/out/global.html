@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Global</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="driverIndex"><span class="type-signature"></span>driverIndex<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    don't change that functions, these are part of the Automation Studio
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="internal.js.html">internal.js</a>, <a href="internal.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="addFolderNode"><span class="type-signature"></span>addFolderNode<span class="signature">((int), (String), (int), (String), (String), (String), (String), (byte), (int), (int))</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Creates a new Object as Folder and suspends it to the parent node.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>(int)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">parentNsIndex Namespace index of parent node.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(String)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">parentNodeid Nodeid of parent in form ("i=1" or "s=demo")</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(int)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">newNsIndex Namespace index of requested new node.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(String)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">newNsIndex Nodeid of requested new node. e.g. "i=1" or "s=demo"</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(String)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">browseName Name to browse this folder node. e.g.           "demo.myfolders.folderinterval"</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(String)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">description Description of this folder.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(String)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">displayName Name which will be display in our Comet OPC UA           Browser.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(byte)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">eventNotifier Notifier type which should raise an event for the           folder.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(int)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">writeMask Mask to write from system to this node.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(int)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">userWriteMask Mask to write as a user connection to this node.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="internal.js.html">internal.js</a>, <a href="internal.js.html#line111">line 111</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="addVariableNode"><span class="type-signature"></span>addVariableNode<span class="signature">((int), (String), (int), (String), (String), (String), (String), (byte), (int), (int))</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Creates a new Object as Folder and suspends it to the parent node.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>(int)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">parentNsIndex Namespace index of parent node.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(String)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">parentNodeid Nodeid of parent in form ("i=1" or "s=demo")</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(int)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">newNsIndex Namespace index of requested new node.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(String)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">newNsIndex Nodeid of requested new node. e.g. "i=1" or "s=demo"</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(String)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">browseName Name to browse this folder node. e.g.           "demo.myfolders.folderinterval"</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(String)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">description Description of this folder.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(String)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">displayName Name which will be display in our Comet OPC UA           Browser.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(byte)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">eventNotifier Notifier type which should raise an event for the           folder.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(int)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">writeMask Mask to write from system to this node.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>(int)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">userWriteMask Mask to write as a user connection to this node.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="internal.js.html">internal.js</a>, <a href="internal.js.html#line216">line 216</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="appendNS"><span class="type-signature"></span>appendNS<span class="signature">((String))</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Appends one namespace uri to the servers namespace array.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>(String)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">nsUri namespace uri which should be inserted.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hannes Bichler</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="internal.js.html">internal.js</a>, <a href="internal.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    (java.lang.Integer) The index of that new namespace or -1 if an error        		occurs.
+</div>
+
+
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addFolderNode">addFolderNode</a></li><li><a href="global.html#addVariableNode">addVariableNode</a></li><li><a href="global.html#appendNS">appendNS</a></li><li><a href="global.html#driverIndex">driverIndex</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Jun 29 2018 22:17:34 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

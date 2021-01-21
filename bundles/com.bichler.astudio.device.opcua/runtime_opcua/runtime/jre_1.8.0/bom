@@ -1,0 +1,307 @@
+#Fri Nov 27 15:54:53 CET 2020
+#Please DO NOT Modify this file
+#This jre was built using the following options
+ejdk-home = C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..
+dest = C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre
+target = linux_armv6_vfp_hflt
+profile = jre
+debug = false
+vm = all
+keep-debug-info = false
+no-compression = false
+dry-run = false
+verbose = false
+extension = []
+# Some other info
+command = jrecreate --dest C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre 
+#List of files copied from ejdk to this directory
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\bin\java
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\bin\java
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\bin\jjs
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\bin\jjs
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\bin\keytool
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\bin\keytool
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\bin\orbd
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\bin\orbd
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\bin\pack200
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\bin\pack200
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\bin\policytool
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\bin\policytool
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\bin\rmid
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\bin\rmid
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\bin\rmiregistry
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\bin\rmiregistry
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\bin\servertool
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\bin\servertool
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\bin\tnameserv
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\bin\tnameserv
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\bin\unpack200
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\bin\unpack200
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\COPYRIGHT
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\COPYRIGHT
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\client\libjsig.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\client\libjsig.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\client\libjvm.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\client\libjvm.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\client\Xusage.txt
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\client\Xusage.txt
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\jli\libjli.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\jli\libjli.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\jvm.cfg
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\jvm.cfg
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libawt.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libawt.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libawt_headless.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libawt_headless.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libawt_xawt.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libawt_xawt.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libbci.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libbci.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libdcpr.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libdcpr.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libdt_socket.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libdt_socket.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libfontmanager.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libfontmanager.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libhprof.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libhprof.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libinstrument.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libinstrument.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libj2gss.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libj2gss.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libj2pcsc.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libj2pcsc.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libj2pkcs11.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libj2pkcs11.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libjaas_unix.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libjaas_unix.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libjava.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libjava.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libjava_crw_demo.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libjava_crw_demo.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libjawt.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libjawt.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libjdwp.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libjdwp.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libjpeg.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libjpeg.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libjsdt.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libjsdt.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libjsig.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libjsig.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libjsound.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libjsound.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libjsoundalsa.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libjsoundalsa.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\liblcms.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\liblcms.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libmanagement.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libmanagement.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libmlib_image.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libmlib_image.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libnet.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libnet.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libnio.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libnio.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libnpt.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libnpt.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libsctp.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libsctp.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libsplashscreen.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libsplashscreen.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libsunec.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libsunec.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libt2k.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libt2k.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libunpack.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libunpack.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libverify.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libverify.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\libzip.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\libzip.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\minimal\libjsig.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\minimal\libjsig.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\minimal\libjvm.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\minimal\libjvm.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\minimal\Xusage.txt
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\minimal\Xusage.txt
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\server\libjsig.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\server\libjsig.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\server\libjvm.so
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\server\libjvm.so
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\arm\server\Xusage.txt
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\arm\server\Xusage.txt
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\calendars.properties
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\calendars.properties
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\charsets.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\charsets.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\classlist
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\classlist
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\cmm\CIEXYZ.pf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\cmm\CIEXYZ.pf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\cmm\GRAY.pf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\cmm\GRAY.pf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\cmm\LINEAR_RGB.pf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\cmm\LINEAR_RGB.pf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\cmm\PYCC.pf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\cmm\PYCC.pf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\cmm\sRGB.pf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\cmm\sRGB.pf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\content-types.properties
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\content-types.properties
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\currency.data
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\currency.data
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\ext\cldrdata.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\ext\cldrdata.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\ext\dnsns.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\ext\dnsns.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\ext\jaccess.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\ext\jaccess.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\ext\localedata.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\ext\localedata.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\ext\meta-index
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\ext\meta-index
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\ext\nashorn.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\ext\nashorn.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\ext\sunec.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\ext\sunec.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\ext\sunjce_provider.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\ext\sunjce_provider.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\ext\sunpkcs11.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\ext\sunpkcs11.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\ext\zipfs.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\ext\zipfs.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\flavormap.properties
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\flavormap.properties
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fontconfig.bfc
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fontconfig.bfc
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fontconfig.properties.src
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fontconfig.properties.src
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fontconfig.RedHat.5.bfc
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fontconfig.RedHat.5.bfc
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fontconfig.RedHat.5.properties.src
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fontconfig.RedHat.5.properties.src
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fontconfig.RedHat.6.bfc
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fontconfig.RedHat.6.bfc
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fontconfig.RedHat.6.properties.src
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fontconfig.RedHat.6.properties.src
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fontconfig.SuSE.10.bfc
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fontconfig.SuSE.10.bfc
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fontconfig.SuSE.10.properties.src
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fontconfig.SuSE.10.properties.src
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fontconfig.SuSE.11.bfc
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fontconfig.SuSE.11.bfc
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fontconfig.SuSE.11.properties.src
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fontconfig.SuSE.11.properties.src
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fontconfig.Turbo.bfc
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fontconfig.Turbo.bfc
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fontconfig.Turbo.properties.src
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fontconfig.Turbo.properties.src
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fonts\fonts.dir
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fonts\fonts.dir
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fonts\LucidaBrightDemiBold.ttf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fonts\LucidaBrightDemiBold.ttf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fonts\LucidaBrightDemiItalic.ttf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fonts\LucidaBrightDemiItalic.ttf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fonts\LucidaBrightItalic.ttf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fonts\LucidaBrightItalic.ttf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fonts\LucidaBrightRegular.ttf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fonts\LucidaBrightRegular.ttf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fonts\LucidaSansDemiBold.ttf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fonts\LucidaSansDemiBold.ttf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fonts\LucidaSansRegular.ttf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fonts\LucidaSansRegular.ttf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fonts\LucidaTypewriterBold.ttf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fonts\LucidaTypewriterBold.ttf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\fonts\LucidaTypewriterRegular.ttf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\fonts\LucidaTypewriterRegular.ttf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\hijrah-config-umalqura.properties
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\hijrah-config-umalqura.properties
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\images\cursors\cursors.properties
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\images\cursors\cursors.properties
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\images\cursors\invalid32x32.gif
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\images\cursors\invalid32x32.gif
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\images\cursors\motif_CopyDrop32x32.gif
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\images\cursors\motif_CopyDrop32x32.gif
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\images\cursors\motif_CopyNoDrop32x32.gif
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\images\cursors\motif_CopyNoDrop32x32.gif
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\images\cursors\motif_LinkDrop32x32.gif
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\images\cursors\motif_LinkDrop32x32.gif
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\images\cursors\motif_LinkNoDrop32x32.gif
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\images\cursors\motif_LinkNoDrop32x32.gif
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\images\cursors\motif_MoveDrop32x32.gif
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\images\cursors\motif_MoveDrop32x32.gif
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\images\cursors\motif_MoveNoDrop32x32.gif
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\images\cursors\motif_MoveNoDrop32x32.gif
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\jce.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\jce.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\jexec
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\jexec
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\jsse.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\jsse.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\jvm.hprof.txt
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\jvm.hprof.txt
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\logging.properties
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\logging.properties
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\management\jmxremote.access
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\management\jmxremote.access
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\management\jmxremote.password.template
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\management\jmxremote.password.template
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\management\management.properties
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\management\management.properties
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\management\snmp.acl.template
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\management\snmp.acl.template
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\management-agent.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\management-agent.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\meta-index
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\meta-index
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\net.properties
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\net.properties
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\oblique-fonts\fonts.dir
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\oblique-fonts\fonts.dir
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\oblique-fonts\LucidaSansDemiOblique.ttf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\oblique-fonts\LucidaSansDemiOblique.ttf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\oblique-fonts\LucidaSansOblique.ttf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\oblique-fonts\LucidaSansOblique.ttf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\oblique-fonts\LucidaTypewriterBoldOblique.ttf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\oblique-fonts\LucidaTypewriterBoldOblique.ttf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\oblique-fonts\LucidaTypewriterOblique.ttf
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\oblique-fonts\LucidaTypewriterOblique.ttf
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\psfont.properties.ja
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\psfont.properties.ja
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\psfontj2d.properties
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\psfontj2d.properties
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\resources.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\resources.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\rt.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\rt.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\security\blacklist
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\security\blacklist
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\security\blacklisted.certs
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\security\blacklisted.certs
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\security\cacerts
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\security\cacerts
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\security\java.policy
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\security\java.policy
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\security\java.security
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\security\java.security
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\security\policy\limited\local_policy.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\security\policy\limited\local_policy.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\security\policy\limited\US_export_policy.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\security\policy\limited\US_export_policy.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\security\policy\unlimited\local_policy.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\security\policy\unlimited\local_policy.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\security\policy\unlimited\US_export_policy.jar
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\security\policy\unlimited\US_export_policy.jar
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\security\trusted.libraries
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\security\trusted.libraries
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\sound.properties
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\sound.properties
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\lib\tzdb.dat
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\lib\tzdb.dat
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\README
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\README
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\release
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\release
+C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\bin\..\linux_armv6_vfp_hflt\jre\THIRDPARTYLICENSEREADME.txt
+        => C:\Users\hbich\Downloads\ejdk-8u211-linux-armv6-vfp-hflt.tar\ejdk-8u211-fcs-b12-linux-armv6-vfp-hflt-01_apr_2019\ejdk1.8.0_211\jre\THIRDPARTYLICENSEREADME.txt
