@@ -21,5 +21,7 @@ jobs:
       with:
         java-version: 1.14
     - name: Build with Maven
-    #  run: mvn clean install
-      run: mvn -B package --file pom.xml
+      # -- creates eclipse rcp product 
+      run: mvn clean install
+      # -- creates jar files from the projects
+      # run: mvn -B package --file pom.xml
