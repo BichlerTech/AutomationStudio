@@ -216,7 +216,7 @@
          </property>
          <property
                name="aboutImage"
-               value="platform:/plugin/com.bichler.automationstudio.product/icons/welcome_finish.png">
+               value="/com.bichler.automationstudio.product/icons/welcome_finish.png">
          </property>
          <property
                name="startupForegroundColor"
