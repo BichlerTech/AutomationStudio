@@ -4,7 +4,7 @@
 <product name="AutomationStudio" uid="com.bichler.astudio.product.feature" id="com.bichler.astudio.product" application="com.bichler.astudio.application" version="2.0.5.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="/com.bichler.astudio/icons/welcome_finish.png"/>
+      <image path="/com.bichler.automationstudio.product/icons/welcome_finish.png"/>
       <text>
          Automation Studio v2.0.1_00520200908
 
@@ -32,13 +32,13 @@ For further information visit http://www.bichler.tech
    <windowImages i16="icons/splash_16x16.png" i32="icons/splash_32x32.png" i48="icons/splash_48x48.png" i64="icons/splash_64x64.png" i128="icons/splash_128x128.png" i256="icons/splash_256x256.png"/>
 
    <splash
-      location="com.bichler.astudio"
+      location="com.bichler.automationstudio.product"
       startupProgressRect="5,275,445,20"
       startupMessageRect="7,252,445,20"
       startupForegroundColor="FFFFFF" />
    <launcher name="AutomationStudio">
       <win useIco="true">
-         <ico path="/com.bichler.astudio/icons/splash.ico"/>
+         <ico path="/com.bichler.automationstudio.product/splash.ico"/>
          <bmp
             winSmallHigh="icons/splash_16x16.bmp"
             winSmallLow="icons/splash_16x16_8.bmp"

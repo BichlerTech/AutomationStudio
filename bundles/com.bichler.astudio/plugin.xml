@@ -200,44 +200,4 @@
          </toolbar>
          </menuContribution>
    </extension>
-   <extension
-         id="product"
-         point="org.eclipse.core.runtime.products">
-      <product
-            application="com.bichler.astudio.application"
-            name="AutomationStudio">
-         <property
-               name="windowImages"
-               value="icons/splash_16x16.png,icons/splash_32x32.png,icons/splash_48x48.png,icons/splash_64x64.png,icons/splash_128x128.png,icons/splash_256x256.png">
-         </property>
-         <property
-               name="aboutText"
-               value="Automation Studio v2.0.1_00520200908&#x0A;&#x0A;(c) Copyright Bichler Technologies GmbH 2018. All rights reserved.&#x0A;For further information visit http://www.bichler.tech">
-         </property>
-         <property
-               name="aboutImage"
-               value="icons/welcome_finish.png">
-         </property>
-         <property
-               name="startupForegroundColor"
-               value="FFFFFF">
-         </property>
-         <property
-               name="startupProgressRect"
-               value="5,275,445,20">
-         </property>
-         <property
-               name="startupMessageRect"
-               value="7,252,445,20">
-         </property>
-         <property
-               name="appName"
-               value="AutomationStudio">
-         </property>
-         <property
-               name="preferenceCustomization"
-               value="plugin_customization.ini">
-         </property>
-      </product>
-   </extension>
 </plugin>
