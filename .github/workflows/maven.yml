@@ -25,9 +25,11 @@ jobs:
       # -- creates eclipse rcp product 
       # mvn clean install
       # -- creates jar files from the projects
-      
+      # mvn -B package --file pom.xml
       run: |
-        mvn -B package --file pom.xml
+        ls
+        mvn clean install
+        ls
         mkdir staging && cp target/*.jar staging 
       
     - name: Step 3 - Set up Cache for Maven
