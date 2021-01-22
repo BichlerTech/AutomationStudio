@@ -32,7 +32,7 @@ For further information visit http://www.bichler.tech
    <windowImages i16="icons/splash_16x16.png" i32="icons/splash_32x32.png" i48="icons/splash_48x48.png" i64="icons/splash_64x64.png" i128="icons/splash_128x128.png" i256="icons/splash_256x256.png"/>
 
    <splash
-      location="com.bichler.automationstudio.product"
+      location="com.bichler.astudio"
       startupProgressRect="5,275,445,20"
       startupMessageRect="7,252,445,20"
       startupForegroundColor="FFFFFF" />
