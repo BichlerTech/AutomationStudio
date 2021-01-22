@@ -32,10 +32,13 @@ jobs:
       # mvn -B package --file pom.xml
       run: |
         mvn clean install
-        mkdir staging && cp target/*.jar staging 
+      # mkdir staging && cp target/*.jar staging 
     
     - name: LS2
       run: ls /home/runner/work/BichlerTechStudio/BichlerTechStudio/releng/com.bichler.automationstudio.product/target
+    
+    - name: LS3
+      run: ls ./target
     
     - name: Step 3 - Set up Cache for Maven
       uses: actions/cache@v2
