@@ -16,10 +16,7 @@ jobs:
 
     steps:
     - name: Step 0.5 - Install NSIS
-      run: |
-        sudo bash -c 'echo "deb http://ftp.debian.org/debian unstable main contrib non-free" >> /etc/apt/sources.list.d/unstable.list'
-        sudo apt-get -y update
-        sudo apt-get -y install -t unstable nsis
+      run: sudo apt update && sudo apt install -y nsis nsis-pluginapi
     - name: Print NSIS version
       run: makensis -VERSION
     - name: Print NSIS compile flags
