@@ -19,10 +19,9 @@ jobs:
       run: sudo apt update && sudo apt install -y nsis nsis-pluginapi
     - name: Print NSIS version
       run: makensis -VERSION
-      # - name: Create NSIS Installer
-      # uses: actions/makensis-action@v2
-      # with:
-      #  additional-plugin-paths: ${{ github.workspace }}/NSIS_Plugins/Plugins
+    - name: Create NSIS Installer
+      run: |
+        makensis install.nsi
       
     - uses: actions/checkout@v2
     - name: Step 1 - Set up JDK 1.14
