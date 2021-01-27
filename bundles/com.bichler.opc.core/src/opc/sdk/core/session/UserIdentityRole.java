@@ -18,6 +18,7 @@ import org.opcfoundation.ua.core.SignatureData;
 import org.opcfoundation.ua.core.StatusCodes;
 import org.opcfoundation.ua.core.UserIdentityToken;
 import org.opcfoundation.ua.core.UserNameIdentityToken;
+import org.opcfoundation.ua.core.UserTokenPolicy;
 import org.opcfoundation.ua.core.UserTokenType;
 import org.opcfoundation.ua.core.X509IdentityToken;
 import org.opcfoundation.ua.transport.security.Cert;
@@ -264,8 +265,9 @@ public class UserIdentityRole implements UserIdentity {
 		}
 		/** Certificate */
 		else if (UserTokenType.Certificate.equals(this.tokenType)) {
-			this.token = EndpointUtil.createX509IdentityToken(endpoint, tmpServerNonce,
-					this.x509TokenCert.getCertificate(), this.x509TokenCert.getPrivateKey().getPrivateKey(),
+			Cert serverCert = new Cert(endpoint.getServerCertificate().getValue());
+			this.token = createX509IdentityToken(endpoint, tmpServerNonce,
+					serverCert, this.x509TokenCert.getCertificate(), this.x509TokenCert.getPrivateKey().getPrivateKey(),
 					userTokenSignature);
 		}
 		/** IssuedToken Type */
@@ -275,6 +277,65 @@ public class UserIdentityRole implements UserIdentity {
 		}
 	}
 
+	/**
+	 * <p>createX509IdentityToken.</p>
+	 *
+	 * @param ep a {@link org.opcfoundation.ua.core.EndpointDescription} object.
+	 * @param serverNonce an array of byte.
+	 * @param certificate a {@link org.opcfoundation.ua.transport.security.Cert} object.
+	 * @param key a {@link java.security.PrivateKey} object.
+	 * @param signatureData a {@link org.opcfoundation.ua.core.SignatureData} object.
+	 * @return a {@link org.opcfoundation.ua.core.X509IdentityToken} object.
+	 * @throws org.opcfoundation.ua.common.ServiceResultException if any.
+	 */
+	private static X509IdentityToken createX509IdentityToken(
+			EndpointDescription ep, byte[] serverNonce, Cert serverCertificate, Cert certificate, PrivateKey key, SignatureData signatureData) throws ServiceResultException{
+		if (signatureData == null)
+			throw new NullPointerException("signatureData must be defined (will be filled in)");
+		UserTokenPolicy policy = ep.findUserTokenPolicy(UserTokenType.Certificate);
+		if (policy==null) throw new ServiceResultException(StatusCodes.Bad_IdentityTokenRejected,
+				"Certificate UserTokenType is not supported");
+
+		X509IdentityToken token = new X509IdentityToken( policy.getPolicyId(), ByteString.valueOf(certificate.getEncoded()) );		
+		
+		String securityPolicyUri = policy.getSecurityPolicyUri();
+		securityPolicyUri = "http://opcfoundation.org/UA/SecurityPolicy#Basic256Sha256";
+		if (securityPolicyUri==null) securityPolicyUri = ep.getSecurityPolicyUri();
+		SecurityPolicy securityPolicy = SecurityPolicy.getSecurityPolicy( securityPolicyUri );
+		Cert serverCert = new Cert(ByteString.asByteArray(ep.getServerCertificate()));
+		if ((securityPolicy!=null) && (serverCert != null))
+			try {
+				// Create a Signature object and initialize it with the private
+				// key
+				Signature signature = Signature.getInstance(securityPolicy
+						.getAsymmetricSignatureAlgorithm().getTransformation());
+				signature.initSign(key);
+
+				signature.update(serverCertificate.getEncoded());
+				signature.update(serverNonce);
+
+				signatureData.setSignature(ByteString.valueOf(signature.sign()));
+				signatureData.setAlgorithm(securityPolicy
+						.getAsymmetricSignatureAlgorithm().getUri());
+
+			} catch (NoSuchAlgorithmException e) {
+				throw new ServiceResultException(
+						StatusCodes.Bad_SecurityChecksFailed,
+						"Signature generation failed: " + e.getMessage());
+			} catch (InvalidKeyException e) {
+				// Server certificate does not have encrypt usage
+				throw new ServiceResultException(
+						StatusCodes.Bad_CertificateInvalid,
+						"Server certificate in endpoint is invalid: "
+								+ e.getMessage());
+			} catch (SignatureException e) {
+				throw new ServiceResultException(
+						StatusCodes.Bad_SecurityChecksFailed,
+						"Signature generation failed: " + e.getMessage());
+			}
+		return token;
+	}
+	
 	@Override
 	public void setPolicyId(String policyId) {
 		this.policyId = policyId;
