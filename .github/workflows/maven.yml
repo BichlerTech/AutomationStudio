@@ -20,7 +20,7 @@ jobs:
     - name: Print NSIS version
       run: makensis -VERSION
     - name: Create NSIS Installer
-      uses: tzoechbauer/makensis-action@v3.3
+      uses: actions/makensis-action@v3.3
       with:
         additional-plugin-paths: ${{ github.workspace }}/NSIS_Plugins/Plugins
       
