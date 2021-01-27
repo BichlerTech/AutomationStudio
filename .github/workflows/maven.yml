@@ -21,7 +21,7 @@ jobs:
       run: makensis -VERSION
     - name: Create NSIS Installer
       run: |
-        ls /home/runner/work/BichlerTechStudio
+        ls /home/runner/work/BichlerTechStudio/BichlerTechStudio
         makensis setup.nsi
       
     - uses: actions/checkout@v2
