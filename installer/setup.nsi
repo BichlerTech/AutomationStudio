@@ -115,7 +115,7 @@ FunctionEnd
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-	File /r "/home/runner/work/BichlerTechStudio/BichlerTechStudio/releng/com.bichler.automationstudio.product/target/products/com.bichler.astudio.product.feature/win32/win32/x86_64"
+	File /r "/home/runner/work/BichlerTechStudio/BichlerTechStudio/releng/com.bichler.automationstudio.product/target/products/com.bichler.astudio.product.feature/win32/win32/x86_64/*"
    # File /r "C:\Users\Thomas\Documents\java\product\AutomationStudio\*"
    # File C:\AutomationStudio\AutomationStudio.exe
     WriteRegStr HKLM "${REGKEY}\Components" Main 1
