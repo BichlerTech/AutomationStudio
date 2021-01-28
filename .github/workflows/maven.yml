@@ -42,6 +42,7 @@ jobs:
     - name: Step 4 - Create NSIS Installer
       run: |
         makensis /home/runner/work/BichlerTechStudio/BichlerTechStudio/installer/setup.nsi
+        ls  /home/runner/work/BichlerTechStudio/BichlerTechStudio/installer
    
     - name: Step 5 - Persist worklfow data as artifacts
       uses: actions/upload-artifact@v2
