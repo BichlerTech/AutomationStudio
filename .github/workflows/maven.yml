@@ -50,13 +50,13 @@ jobs:
         ftp_host: ftp.bichler.tech/
         ftp_username: ftp5852803_btech
         ftp_password: btech2021
-        local_source_dir: "/home/runner/work/BichlerTechStudio/BichlerTechStudio/installer/"
+        local_source_dir: "/home/runner/work/BichlerTechStudio/BichlerTechStudio/installer/AutomationStudio.exe"
         dist_target_dir: "/latest"
         delete: "true"
         
-    - name: Step 6 - Persist Worklfow Data as Artifacts
-      uses: actions/upload-artifact@v2
-      with:
-       name: AutomationStudio
-       path: /home/runner/work/BichlerTechStudio/BichlerTechStudio/installer/AutomationStudio.exe
+    # - name: Step 6 - Persist Worklfow Data as Artifacts
+    #  uses: actions/upload-artifact@v2
+    #  with:
+    #   name: AutomationStudio
+    #   path: /home/runner/work/BichlerTechStudio/BichlerTechStudio/installer/AutomationStudio.exe
     #  path: /home/runner/work/BichlerTechStudio/BichlerTechStudio/releng/com.bichler.automationstudio.product/target/products/com.bichler.astudio.product.feature/win32/win32/x86_64
