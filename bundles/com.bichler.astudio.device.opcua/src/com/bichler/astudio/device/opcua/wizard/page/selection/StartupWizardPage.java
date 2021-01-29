@@ -34,6 +34,7 @@ import com.bichler.astudio.device.opcua.options.SendOptions;
 import com.bichler.astudio.filesystem.IFileSystem;
 import com.bichler.astudio.images.StudioImageActivator;
 import com.bichler.astudio.images.StudioImages;
+import com.bichler.astudio.log.ASLogActivator;
 import com.bichler.astudio.opcua.OPCUAActivator;
 import com.bichler.astudio.opcua.constants.OPCUAConstants;
 import com.bichler.astudio.utils.internationalization.CustomString;
@@ -71,7 +72,14 @@ public class StartupWizardPage extends WizardPage {
 		IPreferenceStore store = OPCUAActivator.getDefault().getPreferenceStore();
 		boolean doCompileJar = store.getBoolean(OPCUAConstants.OPCUADoCompileJar);
 		boolean doCompileAnsiC = store.getBoolean(OPCUAConstants.OPCUADoCompileAnsiC);
-		if (doCompileAnsiC) {
+		boolean isToolchain = DeviceActivator.getDefault().isToolchainInstalled();
+		if(!isToolchain) {
+			ASLogActivator.getDefault().getLogger().log(Level.INFO, "Toolchain not found!"
+//					CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
+//							"com.bichler.astudio.device.opcua.handler.abstractcompile.log.error.upload")
+			);
+		}
+		else if (doCompileAnsiC) {
 			Label lblAnsiCTarget = new Label(container, SWT.NONE);
 			lblAnsiCTarget.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 			lblAnsiCTarget.setText(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
@@ -112,6 +120,7 @@ public class StartupWizardPage extends WizardPage {
 		}
 		File compilerFile = new File(compiler2.getFile());
 		File[] files = compilerFile.listFiles();
+		
 		for (File f : files) {
 			this.cmb_toolChain.add(f.getName());
 		}
