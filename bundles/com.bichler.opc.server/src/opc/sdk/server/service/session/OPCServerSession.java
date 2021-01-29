@@ -814,9 +814,11 @@ public class OPCServerSession implements IOPCSession, IOPCServerSession {
 			boolean verified = false;
 			try {
 				Signature signature = Signature.getInstance(algorithm.getTransformation());
+			
 				signature.initVerify(cert.getCertificate());
 				signature.update(ByteString.asByteArray(this.endpointDescription.getServerCertificate()));
 				signature.update(this.serverNonce.getValue());
+				
 				verified = signature.verify(userTokenSignature.getSignature().getValue());
 			} catch (NoSuchAlgorithmException e) {
 				e.printStackTrace();

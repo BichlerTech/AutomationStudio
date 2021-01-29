@@ -284,6 +284,13 @@ public class Subscription {
 	}
 
 	/**
+	 * clears all monitoreditems from outside
+	 */
+	public void clearMonitoredItems() {
+		this.monitoredItems.clear();
+	}
+
+	/**
 	 * Return all monitored items.
 	 *
 	 * @return MonitoredItems

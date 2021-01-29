@@ -90,7 +90,7 @@ public class UAClient implements AbstractApplication {
 	/** default sdk name */
 	public static final String OPC_CLIENT_SDK_NAME = "OPCUA BTech Client SDK";
 	/** current sdk version */
-	public static final String OPC_CLIENT_SDK_VERSION = "1.0.5";
+	public static final String OPC_CLIENT_SDK_VERSION = "1.0.3";
 	/** client configuration */
 	private ApplicationConfiguration clientApplicationConfiguration = null;
 	/** OPC UA profile manager */

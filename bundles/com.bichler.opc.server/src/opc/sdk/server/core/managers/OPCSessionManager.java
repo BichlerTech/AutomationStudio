@@ -60,6 +60,21 @@ public class OPCSessionManager implements IOPCManager {
 	private Map<NodeId, OPCServerSession> sessions = null;
 	private WatchSessionsTask task = null;
 
+	// is activated as default, not all trusted certificate support client app URI
+	private boolean validateClientAppUri = true;
+
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean isValidateClientAppUri() {
+		return validateClientAppUri;
+	}
+
+	public void setValidateClientAppUri(boolean validateClientAppUri) {
+		this.validateClientAppUri = validateClientAppUri;
+	}
+
 	/**
 	 * Handler to manage user login (Anonymous-, Username/Password-, Issuer-,
 	 * X509Certificate- Token
@@ -194,9 +209,15 @@ public class OPCSessionManager implements IOPCManager {
 					if (certAppUri.contains("@")) {
 						certAppUri = certAppUri.substring(certAppUri.indexOf("@") + 1);
 					}
-					boolean contains = clientAppUri.contains(certAppUri);
-					if (!contains) {
-						throw new ServiceResultException(StatusCodes.Bad_CertificateUriInvalid);
+					if (validateClientAppUri) {
+						if (clientAppUri != null) {
+							boolean contains = clientAppUri.contains(certAppUri);
+							if (!contains) {
+								throw new ServiceResultException(StatusCodes.Bad_CertificateUriInvalid);
+							}
+						} else {
+							throw new ServiceResultException(StatusCodes.Bad_CertificateUriInvalid);
+						}
 					}
 				}
 			}

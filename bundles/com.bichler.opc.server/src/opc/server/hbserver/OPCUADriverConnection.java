@@ -68,6 +68,26 @@ public class OPCUADriverConnection implements IComDriverConnection {
 	}
 
 	/**
+	 * Adds a node to the server's addressspace
+	 * 
+	 * @param Node Information for the new node to create.
+	 * 
+	 */
+	public AddNodesResult[] addNodeswithResult(AddNodesItem[] nodes) {
+		AddNodesResult[] result = null;
+		try {
+			Map<ExpandedNodeId, AddNodesItem> mappedNodes = new HashMap<ExpandedNodeId, AddNodesItem>();
+			for (AddNodesItem item : nodes) {
+				mappedNodes.put(item.getRequestedNewNodeId(), item);
+			}
+			result = this.server.getMaster().addNodes(nodes, mappedNodes, false, null, false);
+		} catch (ServiceResultException e) {
+			logger.severe("Could not create all nodes to address space!");
+		}
+		return result;
+	}
+
+	/**
 	 * Adds a reference to the server's addressspace (allows to connect underlying
 	 * system models to the server).
 	 * 

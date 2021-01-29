@@ -529,6 +529,8 @@ public class SubscriptionManager {
 			 */
 			// use handler from the template subscription
 			MonitoredItem[] items = subscription.getMonitoredItems();
+			// here we should delete monitored items from subscription
+			subscription.clearMonitoredItems();
 			if (items.length > 0) {
 				CreateMonitoredItemsResponse response;
 				List<MonitoredItem> tmpItems = new ArrayList<>();
@@ -558,9 +560,9 @@ public class SubscriptionManager {
 					// monitoring mode
 					itemToCreate.setMonitoringMode(item.getMonitoringMode());
 					count++;
+					tmpItems.add(item);
 					// if we reached the max count
 					if (count % session.getMaxMonitoredItemsPerCreate() == 0 || count == items.length) {
-						tmpItems.add(item);
 						monitoredItemRequest.setItemsToCreate(
 								itemsToCreate.toArray(new MonitoredItemCreateRequest[itemsToCreate.size()]));
 						monitoredItemRequest.setSubscriptionId(subscription.getSubscriptionId());

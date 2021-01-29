@@ -6,5 +6,6 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/com.bichler.opc.core"/>
 	<classpathentry exported="true" kind="lib" path="libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/OPCUA_ServerRuntime/lib/opc-ua-stack-1.4.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
