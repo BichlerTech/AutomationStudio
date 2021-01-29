@@ -44,6 +44,16 @@ jobs:
         makensis /home/runner/work/BichlerTechStudio/BichlerTechStudio/installer/setup.nsi
     #    ls  /home/runner/work/BichlerTechStudio/BichlerTechStudio/installer
    
+    - name: Step 6.0 - Upload Installer to FTP
+      uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+      with:
+        ftp_host: ftp.bichler.tech/
+        ftp_username: ftp5852803_btech
+        ftp_password: btech2021
+        local_source_dir: "/home/runner/work/BichlerTechStudio/BichlerTechStudio/installer/"
+        dist_target_dir: "/latest"
+        delete: "true"
+        
     - name: Step 6 - Persist Worklfow Data as Artifacts
       uses: actions/upload-artifact@v2
       with:
