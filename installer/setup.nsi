@@ -90,7 +90,7 @@ Var StartMenuGroup
 
 
 # Installer attributes
-OutFile AutomationStudio.exe
+OutFile "setup\AutomationStudio.exe"
 InstallDir AutomationStudio
 CRCCheck on
 XPStyle off
