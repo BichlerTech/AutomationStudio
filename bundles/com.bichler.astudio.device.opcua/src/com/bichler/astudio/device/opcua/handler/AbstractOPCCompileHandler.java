@@ -90,7 +90,7 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 	protected static final String SERVERNAME_HBSOFT = "HBSServer";
 	protected static final String SERVERNAME_BTECH = "BTECH-Server";
 	protected boolean finished = true;
-	
+
 	public static final String PARAMETER_MODULE_NODE = "compilemodule";
 
 	protected abstract void copy(IProgressMonitor monitor, IFileSystem localfileSystem, String localPath,
@@ -257,7 +257,7 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 				}
 			}
 		}
-		
+
 		IPreferenceStore store = OPCUAActivator.getDefault().getPreferenceStore();
 		boolean doCompileJar = store.getBoolean(OPCUAConstants.OPCUADoCompileJar);
 		if (doCompileJar) {
@@ -267,7 +267,13 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 		}
 
 		boolean doCompileAnsiC = store.getBoolean(OPCUAConstants.OPCUADoCompileAnsiC);
-		if (doCompileAnsiC) {
+		boolean isToolchain = DeviceActivator.getDefault().isToolchainInstalled();
+		if (!isToolchain) {
+			ASLogActivator.getDefault().getLogger().log(Level.INFO, "Cannot compile C-files, Toolchain not found!"
+//					CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
+//							"com.bichler.astudio.device.opcua.handler.abstractcompile.log.error.upload")
+			);
+		} else if (doCompileAnsiC) {
 			// compiles c information model
 			compileInformationModelC(monitor, imFolder, namespaces2export, serverNS, mfc, localfileSystem);
 		}
@@ -375,7 +381,8 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 								}
 								writeDatapointList(window, filesystem, targetFilesystem, devicePath.toOSString(),
 										"datapoints_" + fileIndex + ".com", type, result, nodes, version);
-								NamespaceTable exportTable = AbstractOPCCompileHandlerUtil.createNamespaceTableToExport(namespaceTable, dList);
+								NamespaceTable exportTable = AbstractOPCCompileHandlerUtil
+										.createNamespaceTableToExport(namespaceTable, dList);
 								// generate device jar
 								generateJar(monitor, deviceFolder.toOSString(), devicePath.toOSString(),
 										"device_" + fileIndex, mf, namespaceTable, exportTable, fullNsTable2export,
@@ -414,12 +421,14 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 						}
 					}
 				}
-				List<Integer> iList = AbstractOPCCompileHandlerUtil.getIndexFromNamespaceToExport(namespaceTable, namespaces2export);
+				List<Integer> iList = AbstractOPCCompileHandlerUtil.getIndexFromNamespaceToExport(namespaceTable,
+						namespaces2export);
 				if (monitor.isCanceled()) {
 					monitor.done();
 					return;
 				}
-				Map<Integer, List<Node>> list = AbstractOPCCompileHandlerUtil.getNodesForNamespacetableToExport(namespaceTable, iList);
+				Map<Integer, List<Node>> list = AbstractOPCCompileHandlerUtil
+						.getNodesForNamespacetableToExport(namespaceTable, iList);
 				// write datapoints end
 				writeDatapointList(window, filesystem, targetFilesystem, driverPath.toOSString(),
 						"datapointsDevices.com", type, result, list/* .values().toArray(new Node[0]) */, version);
@@ -444,17 +453,15 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 			ICommandService commandService = window.getService(ICommandService.class);
 			Command command = commandService
 					.getCommand("com.bichler.astudio.editor." + type + "." + version + ".compile");
-			
 
 			if (command != null && command.isDefined()) {
 				// call internal module compiler if exists
 				IHandlerService handlerService = window.getService(IHandlerService.class);
 				ExecutionEvent evt = handlerService.createExecutionEvent(command, null);
-				
-				
+
 				IEvaluationContext evalCtx = (IEvaluationContext) evt.getApplicationContext();
 				evalCtx.getParent().addVariable(PARAMETER_MODULE_NODE, module);
-				
+
 				try {
 					command.executeWithChecks(evt);
 				} catch (ExecutionException | NotDefinedException | NotEnabledException | NotHandledException e) {
@@ -659,7 +666,8 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 			monitor.done();
 			return;
 		}
-		CompileFactory.compile(new OPCProgressMonitor(monitor), destFolder, jarPath, jarName, AddressSpaceNodeModelFactory.PACKAGENAME);
+		CompileFactory.compile(new OPCProgressMonitor(monitor), destFolder, jarPath, jarName,
+				AddressSpaceNodeModelFactory.PACKAGENAME);
 		if (monitor.isCanceled()) {
 			monitor.done();
 			return;
@@ -669,8 +677,9 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 	private void generateExecute(IProgressMonitor monitor, String destFolder, String jarPath, String jarName,
 			AddressSpaceNodeModelFactoryC modelFactory, NamespaceTable serverTable, NamespaceTable nsTable,
 			Map<Integer, List<Node>> nodes, List<Integer> rList, IFileSystem filesystem) throws IOException {
-		
-		File[] files = modelFactory.create(new OPCProgressMonitor(monitor), destFolder, nsTable, serverTable, nodes, rList, filesystem);
+
+		File[] files = modelFactory.create(new OPCProgressMonitor(monitor), destFolder, nsTable, serverTable, nodes,
+				rList, filesystem);
 
 		String[] filesToDel = copyCFiles(filesystem);
 		//
@@ -868,7 +877,8 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 	 * TODO Auto-generated catch block e1.printStackTrace(); } }
 	 */
 
-	private void writeMakefile(String folder, IFileSystem filesystem, File[] files, String toolChain, String[] extCFiles) {
+	private void writeMakefile(String folder, IFileSystem filesystem, File[] files, String toolChain,
+			String[] extCFiles) {
 		// reate compiled folder
 		File compiled = new File(folder + "\\compiled");
 		try {
@@ -920,9 +930,8 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 				fw.write("all: btech_opcua_server.elf\n");
 				fw.write("\n");
 				fw.write("btech_opcua_server.elf: $(OBJS)\n\t");
-				URL linker = FileLocator.find(DeviceActivator.getDefault().getBundle(),
-						Path.ROOT.append("toolchain").append("compiler").append(toolChain)
-								.append("bin").append("arm-linux-gnueabihf-gcc.exe"),
+				URL linker = FileLocator.find(DeviceActivator.getDefault().getBundle(), Path.ROOT.append("toolchain")
+						.append("compiler").append(toolChain).append("bin").append("arm-linux-gnueabihf-gcc.exe"),
 						null);
 				URL open62541File = FileLocator.find(DeviceActivator.getDefault().getBundle(), Path.ROOT
 						.append("toolchain").append("btech_lib").append("open62541").append("build-arm").append("bin"),

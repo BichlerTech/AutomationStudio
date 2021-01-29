@@ -3,6 +3,7 @@ package com.bichler.astudio.device.opcua;
 import java.io.File;
 import java.io.PrintStream;
 
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
@@ -22,7 +23,7 @@ public class DeviceActivator extends InternationalActivator {
 	public static final String BUNDLE_NAME = "com.bichler.astudio.device.opcua.resource.custom"; //$NON-NLS-1$
 	// The shared instance
 	private static DeviceActivator plugin;
-	
+
 	private static final String RUNTIME = "runtime";
 	private static final String OPCUA = RUNTIME + "_opcua";
 	private static final String DRIVERS = "drivers";
@@ -30,6 +31,7 @@ public class DeviceActivator extends InternationalActivator {
 	private static final String WEBSITE = "website";
 	private static final String FIRMWARE = "firmware";
 	private static final String NODEJSVISUALIZATION = "dataHUB-Xi";
+	private static final String TOOLCHAIN = "toolchain";
 	private static final String WAKEONLAN = "wakeonlan";
 	private static final String DOKU = "docu.pdf";
 
@@ -125,6 +127,20 @@ public class DeviceActivator extends InternationalActivator {
 
 	public File getDriverFile() {
 		return getFile(getDefault().getBundle(), Path.ROOT.append(OPCUA).append(RUNTIME).append(DRIVERS));
+	}
+
+	public File getToolchain() {
+		return getFile(getDefault().getBundle(), Path.ROOT.append(TOOLCHAIN));
+	}
+
+	public boolean isToolchainInstalled() {
+		boolean exist = false;
+
+		File file = getFile(getDefault().getBundle(), Path.ROOT.append(TOOLCHAIN).append("btech_src"));
+		if (file != null) {
+			exist = file.exists();
+		}
+		return exist;
 	}
 
 	@Override
