@@ -52,7 +52,7 @@ jobs:
         ftp_password: btech2021
         local_source_dir: "/home/runner/work/BichlerTechStudio/BichlerTechStudio/installer/setup"
         dist_target_dir: "/latest"
-        delete: "true"
+        delete: "false"
         
     # - name: Step 6 - Persist Worklfow Data as Artifacts
     #  uses: actions/upload-artifact@v2
