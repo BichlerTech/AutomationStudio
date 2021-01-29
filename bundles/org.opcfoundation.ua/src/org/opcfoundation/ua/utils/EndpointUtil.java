@@ -348,9 +348,9 @@ public class EndpointUtil {
 	 *                                                            stack doesn't
 	 *                                                            support UserName
 	 *                                                            token policy
-	 * @param senderNonce an array of byte.
+	 * @param byteString an array of byte.
 	 */
-	public static UserIdentityToken createUserNameIdentityToken(EndpointDescription ep, ByteString senderNonce,
+	public static UserIdentityToken createUserNameIdentityToken(EndpointDescription ep, ByteString byteString,
 			String username, String password) throws ServiceResultException {
 		UserTokenPolicy policy = ep.findUserTokenPolicy(UserTokenType.UserName);
 		if (policy == null)
@@ -376,9 +376,9 @@ public class EndpointUtil {
 			try {
 				byte[] c = ByteString.asByteArray(ep.getServerCertificate());
 				Cert serverCert = (c == null || c.length == 0) ? null : new Cert(c);
-				if (senderNonce != null)
-					pw = ByteBufferUtils.concatenate(toArray(pw.length + senderNonce.getLength()), pw,
-							senderNonce.getValue());
+				if (byteString != null)
+					pw = ByteBufferUtils.concatenate(toArray(pw.length + byteString.getLength()), pw,
+							byteString.getValue());
 				else
 					pw = ByteBufferUtils.concatenate(toArray(pw.length), pw);
 				pw = CryptoUtil.encryptAsymm(pw, serverCert.getCertificate().getPublicKey(), algorithm);
@@ -410,7 +410,7 @@ public class EndpointUtil {
 	 * @param ep                  a
 	 *                            {@link org.opcfoundation.ua.core.EndpointDescription}
 	 *                            object.
-	 * @param senderNonce         an array of byte.
+	 * @param byteString          an array of byte.
 	 * @param issuedIdentityToken an array of byte.
 	 * @return user identity token
 	 * @throws org.opcfoundation.ua.common.ServiceResultException if endpoint or the
@@ -418,7 +418,7 @@ public class EndpointUtil {
 	 *                                                            support UserName
 	 *                                                            token policy
 	 */
-	public static UserIdentityToken createIssuedIdentityToken(EndpointDescription ep, ByteString senderNonce,
+	public static UserIdentityToken createIssuedIdentityToken(EndpointDescription ep, ByteString byteString,
 			byte[] issuedIdentityToken) throws ServiceResultException {
 		UserTokenPolicy policy = ep.findUserTokenPolicy(UserTokenType.IssuedToken);
 		if (policy == null)
@@ -441,9 +441,9 @@ public class EndpointUtil {
 			Cert serverCert = new Cert(ByteString.asByteArray(ep.getServerCertificate()));
 			cipher.init(Cipher.ENCRYPT_MODE, serverCert.getCertificate());
 			byte[] tokenData = issuedIdentityToken;
-			if (senderNonce != null)
-				tokenData = ByteBufferUtils.concatenate(toArray(issuedIdentityToken.length + senderNonce.getLength()),
-						issuedIdentityToken, senderNonce.getValue());
+			if (byteString != null)
+				tokenData = ByteBufferUtils.concatenate(toArray(issuedIdentityToken.length + byteString.getLength()),
+						issuedIdentityToken, byteString.getValue());
 			token.setTokenData(ByteString.valueOf(cipher.doFinal(tokenData)));
 			token.setEncryptionAlgorithm(algorithmUri.getUri());
 
@@ -712,7 +712,6 @@ public class EndpointUtil {
 				ByteString.valueOf(certificate.getEncoded()));
 
 		String securityPolicyUri = policy.getSecurityPolicyUri();
-		securityPolicyUri = "http://opcfoundation.org/UA/SecurityPolicy#Basic256Sha256";
 		if (securityPolicyUri == null)
 			securityPolicyUri = ep.getSecurityPolicyUri();
 		SecurityPolicy securityPolicy = SecurityPolicy.getSecurityPolicy(securityPolicyUri);
@@ -725,7 +724,7 @@ public class EndpointUtil {
 						.getInstance(securityPolicy.getAsymmetricSignatureAlgorithm().getTransformation());
 				signature.initSign(key);
 
-				signature.update(certificate.getEncoded());
+				signature.update(serverCert.getEncoded());
 				signature.update(serverNonce);
 
 				signatureData.setSignature(ByteString.valueOf(signature.sign()));
