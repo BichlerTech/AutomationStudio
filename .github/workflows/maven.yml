@@ -50,7 +50,7 @@ jobs:
         ftp_host: ftp.bichler.tech/
         ftp_username: ftp5852803_btech
         ftp_password: btech2021
-        local_source_dir: "/home/runner/work/BichlerTechStudio/BichlerTechStudio/installer/AutomationStudio.exe"
+        local_source_dir: "/home/runner/work/BichlerTechStudio/BichlerTechStudio/installer/setup"
         dist_target_dir: "/latest"
         delete: "true"
         
