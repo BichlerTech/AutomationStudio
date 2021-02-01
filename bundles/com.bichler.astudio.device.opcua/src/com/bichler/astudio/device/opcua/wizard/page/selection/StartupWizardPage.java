@@ -48,12 +48,11 @@ public class StartupWizardPage extends WizardPage {
 
 	public StartupWizardPage(IFileSystem filesystem) {
 		super("platform");
-		
-		setTitle(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
-				"wizard.startup.page.title"));
+
+		setTitle(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE, "wizard.startup.page.title"));
 		setDescription(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
 				"wizard.startup.page.description"));
-		
+
 		this.options = new DefaultSendOptions();
 	}
 
@@ -73,13 +72,12 @@ public class StartupWizardPage extends WizardPage {
 		boolean doCompileJar = store.getBoolean(OPCUAConstants.OPCUADoCompileJar);
 		boolean doCompileAnsiC = store.getBoolean(OPCUAConstants.OPCUADoCompileAnsiC);
 		boolean isToolchain = DeviceActivator.getDefault().isToolchainInstalled();
-		if(!isToolchain) {
+		if (!isToolchain) {
 			ASLogActivator.getDefault().getLogger().log(Level.INFO, "Toolchain not found!"
 //					CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
 //							"com.bichler.astudio.device.opcua.handler.abstractcompile.log.error.upload")
 			);
-		}
-		else if (doCompileAnsiC) {
+		} else if (doCompileAnsiC) {
 			Label lblAnsiCTarget = new Label(container, SWT.NONE);
 			lblAnsiCTarget.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 			lblAnsiCTarget.setText(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
@@ -120,7 +118,7 @@ public class StartupWizardPage extends WizardPage {
 		}
 		File compilerFile = new File(compiler2.getFile());
 		File[] files = compilerFile.listFiles();
-		
+
 		for (File f : files) {
 			this.cmb_toolChain.add(f.getName());
 		}
@@ -172,7 +170,7 @@ public class StartupWizardPage extends WizardPage {
 			}
 		});
 	}
-	
+
 	private void setHandler() {
 		this.cmb_os.addSelectionListener(new SelectionAdapter() {
 			@Override

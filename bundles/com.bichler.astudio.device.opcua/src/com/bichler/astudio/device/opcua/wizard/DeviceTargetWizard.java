@@ -1,9 +1,14 @@
 package com.bichler.astudio.device.opcua.wizard;
 
+import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 
 import com.bichler.astudio.core.user.util.UserUtils;
+import com.bichler.astudio.device.opcua.DeviceActivator;
 import com.bichler.astudio.device.opcua.options.EthernetUploadOption;
 import com.bichler.astudio.device.opcua.options.SendOptions;
 import com.bichler.astudio.device.opcua.wizard.page.connection.DeviceEthernetWizardPage;
@@ -56,6 +61,12 @@ public class DeviceTargetWizard extends Wizard {
 		setWindowTitle(title);
 		this.serverFileSystem = serverFileSystem;
 		this.serverNode = serverNode;
+		
+		File toolchain = DeviceActivator.getDefault().getToolchain();
+
+		for (String name : toolchain.list()) {
+			Logger.getLogger(getClass().getName()).log(Level.INFO, name);
+		}
 	}
 
 	@Override
@@ -162,7 +173,7 @@ public class DeviceTargetWizard extends Wizard {
 		}
 		this.uploadOptions = this.wizardPageStartup.getSendOptions();
 		this.ethernetOptions = this.wizardPageEthernet.getEthernetOptions();
-		
+
 		return true;
 	}
 

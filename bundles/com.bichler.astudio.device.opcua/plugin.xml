@@ -62,6 +62,10 @@
                id="org.eclipse.ui.commands.toggleState">
          </state>
       </command>
+      <command
+            id="com.bichler.astudio.device.opcua.install.toolchain"
+            name="Install Toolchain">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -134,6 +138,10 @@
                   definitionId="IsDevSelected">
             </reference>
          </enabledWhen>
+      </handler>
+      <handler
+            class="com.bichler.astudio.device.opcua.handler.InstallToolchainHandler"
+            commandId="com.bichler.astudio.device.opcua.install.toolchain">
       </handler>
    </extension>
    <extension
@@ -259,5 +267,21 @@
             id="com.bichler.astudio.device.opcua.editor.simulation.ClientTestEditorPart"
             name="%com.bichler.astudio.device.opcua.editor.clienttest.title">
       </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               id="com.bichler.astudio.help"
+               label="%menu.help">
+            <command
+                  commandId="com.bichler.astudio.device.opcua.install.toolchain"
+                  label="Install Toolchain"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
    </extension>
 </plugin>
