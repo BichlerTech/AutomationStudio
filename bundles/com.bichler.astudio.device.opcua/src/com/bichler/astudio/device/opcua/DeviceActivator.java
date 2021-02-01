@@ -134,13 +134,18 @@ public class DeviceActivator extends InternationalActivator {
 	}
 
 	public boolean isToolchainInstalled() {
-		boolean exist = false;
-
-		File file = getFile(getDefault().getBundle(), Path.ROOT.append(TOOLCHAIN).append("btech_src"));
-		if (file != null) {
-			exist = file.exists();
+//		boolean exist = false;
+		for(String file : getToolchain().list()){
+			if("btech_src".equals(file)) {
+				return true;
+			}
 		}
-		return exist;
+		
+//		File file = getFile(getDefault().getBundle(), Path.ROOT.append(TOOLCHAIN).append("btech_src"));
+//		if (file != null) {
+//			exist = file.exists();
+//		}
+		return false;
 	}
 
 	@Override
