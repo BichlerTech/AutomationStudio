@@ -107,15 +107,19 @@ public class StartupWizardPage extends WizardPage {
 
 	private void fillCToolchain() {
 		// if ansi c is selected, allow toolchain selection
-		URL compiler = FileLocator.find(DeviceActivator.getDefault().getBundle(),
-				Path.ROOT.append("toolchain").append("compiler"), null);
-		URL compiler2 = null;
-		try {
-			compiler2 = FileLocator.toFileURL(compiler);
-		} catch (IOException e) {
-			Logger.getLogger(getClass().getName()).log(Level.SEVERE, e.getMessage(), e);
-		}
-		File compilerFile = new File(compiler2.getFile());
+//		URL compiler = FileLocator.find(DeviceActivator.getDefault().getBundle(),
+//				Path.ROOT.append("toolchain").append("compiler"), null);
+//		
+//		URL compiler2 = null;
+//		try {
+//			compiler2 = FileLocator.toFileURL(compiler);
+//		} catch (IOException e) {
+//			Logger.getLogger(getClass().getName()).log(Level.SEVERE, e.getMessage(), e);
+//		}
+		// File compilerFile = new File(compiler2.getFile());
+		File compilerFile = DeviceActivator.getDefault().getToolchainFile(DeviceActivator.getDefault().getToolchain(),
+				"compiler");
+
 		File[] files = compilerFile.listFiles();
 
 		for (File f : files) {

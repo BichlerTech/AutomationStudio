@@ -3,7 +3,6 @@ package com.bichler.astudio.device.opcua.wizard.page;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.zip.ZipEntry;
@@ -16,16 +15,13 @@ import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.FileDialog;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-
-import com.bichler.astudio.device.opcua.DeviceActivator;
-
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.widgets.Button;
 
 public class InstallToolchainWizardPage extends WizardPage {
 	private Text txtPath;

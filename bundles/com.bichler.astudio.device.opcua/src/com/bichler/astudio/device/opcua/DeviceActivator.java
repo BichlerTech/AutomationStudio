@@ -132,6 +132,16 @@ public class DeviceActivator extends InternationalActivator {
 	public File getToolchain() {
 		return getFile(getDefault().getBundle(), Path.ROOT.append(TOOLCHAIN));
 	}
+	
+	public File getToolchainFile(File file, String child) {
+		for(File f : file.listFiles()){
+			String filename = f.getName();
+			if(filename.equals(child)){
+				return f;
+			}
+		}
+		return null;
+	}
 
 	public boolean isToolchainInstalled() {
 //		boolean exist = false;
@@ -169,5 +179,4 @@ public class DeviceActivator extends InternationalActivator {
 		registry.put(DeviceSharedImages.ICON_SERVER_START, getImageDescriptor(DeviceSharedImages.ICON_SERVER_START));
 		registry.put(DeviceSharedImages.ICON_SERVER_STOP, getImageDescriptor(DeviceSharedImages.ICON_SERVER_STOP));
 	}
-
 }
