@@ -44,6 +44,10 @@
                   label="%menu.showhelpopcua"
                   style="toggle">
             </command>
+            <separator
+                  name="com.bichler.astudio.opcua.help.separator.help"
+                  visible="true">
+            </separator>
          </menu>
       </menuContribution>
    </extension>

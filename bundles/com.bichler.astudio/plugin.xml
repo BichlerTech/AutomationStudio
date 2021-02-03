@@ -164,13 +164,17 @@
                   label="%menu.about"
                   style="push">
             </command>
-            <command
+            <separator
+                  name="com.bichler.astudio.separator.help"
+                  visible="true">
+            </separator>
+            <!-- <command
                   commandId="org.eclipse.epp.mpc.ui.command.showMarketplaceWizard"
                   icon="icons/marketplace16.png"
                   label="%command.open.marketplace"
                   style="push"
                   tooltip="%command.open.marketplace.tooltip">
-            </command>
+            </command> -->
          </menu>
       </menuContribution>
          <menuContribution

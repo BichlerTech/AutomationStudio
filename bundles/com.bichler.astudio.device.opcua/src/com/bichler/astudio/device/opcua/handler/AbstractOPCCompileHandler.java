@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -780,8 +781,21 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 		try {
 			URL folder1 = FileLocator.find(DeviceActivator.getDefault().getBundle(),
 					Path.ROOT.append("toolchain").append("btech_src"), null);
+			
+			try {
+				Logger.getLogger(getClass().getName()).log(Level.INFO, "BTECH_SRC path: "+folder1.toURI().toString());
+			} catch (URISyntaxException e1) {
+				e1.printStackTrace();
+			}
+			
 			URL folder2 = FileLocator.toFileURL(folder1);
 
+			try {
+				Logger.getLogger(getClass().getName()).log(Level.INFO, "FileURL BTECH_SRC path: "+folder2.toURI().toString());
+			} catch (URISyntaxException e1) {
+				e1.printStackTrace();
+			}
+			
 			File folder3 = new File(folder2.getFile());
 			String folder = folder3.getAbsolutePath();
 			try {
@@ -796,8 +810,15 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 			for (String file : cfiles) {
 				try {
 					URL src = FileLocator.find(DeviceActivator.getDefault().getBundle(),
-							Path.ROOT.append("toolchain").append("btech_src").append(file), null);
+							Path.ROOT.append("toolchain").append("btech_src").append(file), null);					
 					URL src2 = FileLocator.toFileURL(src);
+					
+					try {
+						Logger.getLogger(getClass().getName()).log(Level.INFO, "FileURL BTECH_SRC path: "+src2.toURI().toString());
+					} catch (URISyntaxException e1) {
+						e1.printStackTrace();
+					}
+					
 					File srcFile = new File(src2.getFile());
 					if (!filesystem.isFile(srcFile.getAbsolutePath())) {
 						filesystem.addFile(srcFile.getAbsolutePath());

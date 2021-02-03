@@ -88,7 +88,6 @@ public class StartupWizardPage extends WizardPage {
 			fillCToolchain();
 		}
 		if (doCompileJar) {
-
 			Label lblJavaTarget = new Label(container, SWT.NONE);
 			lblJavaTarget.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 			lblJavaTarget.setText(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,

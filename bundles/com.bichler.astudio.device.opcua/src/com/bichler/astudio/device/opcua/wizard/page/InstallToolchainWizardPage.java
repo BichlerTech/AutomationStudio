@@ -85,7 +85,7 @@ public class InstallToolchainWizardPage extends WizardPage {
 	private void setIsToolchainZip() {
 		ProgressMonitorDialog progressDialog = new ProgressMonitorDialog(getShell());
 		try {
-			progressDialog.run(false, false, new IRunnableWithProgress() {
+			progressDialog.run(true, false, new IRunnableWithProgress() {
 
 				@Override
 				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {

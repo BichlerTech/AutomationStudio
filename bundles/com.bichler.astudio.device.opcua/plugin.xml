@@ -278,9 +278,13 @@
                label="%menu.help">
             <command
                   commandId="com.bichler.astudio.device.opcua.install.toolchain"
-                  label="Install Toolchain"
+                  label="%menu.help.installtoolchain"
                   style="push">
             </command>
+            <separator
+                  name="com.bichler.astudio.device.opcua.separator.help"
+                  visible="true">
+            </separator>
          </menu>
       </menuContribution>
    </extension>
