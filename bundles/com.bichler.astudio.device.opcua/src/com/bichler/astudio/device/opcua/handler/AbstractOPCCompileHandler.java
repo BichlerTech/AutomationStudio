@@ -714,7 +714,7 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 
 			String makePath = fBtechMakeExe.getPath();
 
-			Process pr = rt.exec("cmd /C " + makePath, null, new File(folder + "\\compiled"));
+			Process pr = rt.exec("cmd /C \"" + makePath+"\"", null, new File(folder + "\\compiled"));
 			BufferedReader input = new BufferedReader(new InputStreamReader(pr.getInputStream()));
 			String line = null;
 			while ((line = input.readLine()) != null) {
