@@ -734,7 +734,7 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 			boolean doDeleteSources = store.getBoolean(OPCUAConstants.OPCUADoDeleteSources);
 			if (doDeleteSources) {
 				// now clean sources
-				pr = rt.exec("cmd /C " + makePath + " cleanSources", null, new File(folder + "\\compiled"));
+				pr = rt.exec("cmd /C \"" + makePath + "\" cleanSources", null, new File(folder + "\\compiled"));
 				input = new BufferedReader(new InputStreamReader(pr.getInputStream()));
 				line = null;
 				while ((line = input.readLine()) != null) {
@@ -756,7 +756,7 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 			}
 			// now clean binaries
 			if (doDeleteSources) {
-				pr = rt.exec("cmd /C " + makePath + " cleanBinary", null, new File(folder + "\\compiled"));
+				pr = rt.exec("cmd /C \"" + makePath + "\" cleanBinary", null, new File(folder + "\\compiled"));
 				input = new BufferedReader(new InputStreamReader(pr.getInputStream()));
 				line = null;
 				while ((line = input.readLine()) != null) {
