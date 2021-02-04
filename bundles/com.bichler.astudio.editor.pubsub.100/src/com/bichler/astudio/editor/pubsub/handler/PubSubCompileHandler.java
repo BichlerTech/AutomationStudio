@@ -419,7 +419,7 @@ public class PubSubCompileHandler extends AbstractOPCOpenDriverModelHandler {
 				fw.write(
 						" -O3 -Wall -c -fmessage-length=0  -fPIC -MMD -MP -MF\"$(@:%.o=%.d)\" -MT\"$(@)\" -o \"$@\" \"$<\"\n");
 				fw.write("\n");
-				// }
+				// 
 				fw.write("cleanSources:\n");
 				fw.write("\t-$(RM) $(C_SRCS)\n\n");// btech_opcua_server.elf ");
 				fw.write("cleanBinary:\n");

@@ -37,9 +37,9 @@ public class CompileFactory {
 	}
 
 	public static boolean compile(ICancleOperation monitor, String destFolder, String jarPath, String jarName, /*
-																										 * String
-																										 * workspace,
-																										 */
+																												 * String
+																												 * workspace,
+																												 */
 			String packageName/* , boolean compile */) throws IOException {
 		CompilationProgress progress = new InformationModelCompilationProgress(monitor); // instantiate
 		boolean isCompiled = batchCompile(progress, destFolder/* , compile */);
@@ -118,7 +118,7 @@ public class CompileFactory {
 				if (index >= 0) {
 					extension = name.substring(index + 1);
 				}
-				
+
 				JarEntry jarAdd = null;
 				if (EXTENSION_VALUE.equalsIgnoreCase(extension)) {
 					jarAdd = new JarEntry(name);
@@ -130,7 +130,7 @@ public class CompileFactory {
 																														// create
 																														// class
 																														// jar
-																													// entry
+																														// entry
 					jarAdd = new JarEntry(pPath + name);
 					jarAdd.setTime(files[i].lastModified());
 					out.putNextEntry(jarAdd);
@@ -186,6 +186,10 @@ public class CompileFactory {
 		String jBaseDriver = OPCLibsActivator.getLibraryPath(OPCLibsActivator.JAR_DRVBASE);
 		// if (doCompile) {
 		if (isOSWindows()) {
+			Logger.getLogger("CompileFactory_batchcompile").log(Level.INFO,
+					"-source 1.7 -target 1.7 " + "-classpath rt.jar;\"" + jStack + "\";\"" + jCore + "\";\"" + jServer
+							+ "\";\"" + jComDRV + "\";\"" + jBaseDriver + "\" \"" + destFolder + "\"");
+
 			// compile with windows, because of whitespaces in a path
 			isCompiled = BatchCompiler.compile(
 					"-source 1.7 -target 1.7 " + "-classpath rt.jar;\"" + jStack + "\";\"" + jCore + "\";\"" + jServer

@@ -683,6 +683,7 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 				rList, filesystem);
 
 		String[] filesToDel = copyCFiles(filesystem);
+		Logger.getLogger(getClass().getName()).log(Level.INFO, "before compile C");
 		//
 //		writeSourcesFile(destFolder, filesystem);
 //		writeObjectsFile(destFolder, filesystem);
