@@ -702,11 +702,17 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 			Runtime rt = Runtime.getRuntime();
 
 			// final Map<String, String> env = new HashMap<String, String>(System.getenv());
-			URL makeFile = FileLocator.find(DeviceActivator.getDefault().getBundle(),
-					Path.ROOT.append("toolchain").append("btech_make").append("bin").append("make.exe"), null);
-			URL fileMakeFile = FileLocator.toFileURL(makeFile);
-			File includesFolder = new File(fileMakeFile.getFile());
-			String makePath = includesFolder.getPath();
+//			URL makeFile = FileLocator.find(DeviceActivator.getDefault().getBundle(),
+//					Path.ROOT.append("toolchain").append("btech_make").append("bin").append("make.exe"), null);
+//			URL fileMakeFile = FileLocator.toFileURL(makeFile);
+//			File includesFolder = new File(fileMakeFile.getFile());
+
+			File fBtechMake = DeviceActivator.getDefault().getToolchainFile(DeviceActivator.getDefault().getToolchain(),
+					"btech_make");
+			File fBtechMakeBin = DeviceActivator.getDefault().getToolchainFile(fBtechMake, "bin");
+			File fBtechMakeExe = DeviceActivator.getDefault().getToolchainFile(fBtechMakeBin, "make.exe");
+
+			String makePath = fBtechMakeExe.getPath();
 			Process pr = rt.exec("cmd /C " + makePath, null, new File(folder + "\\compiled"));
 			BufferedReader input = new BufferedReader(new InputStreamReader(pr.getInputStream()));
 			String line = null;
@@ -951,21 +957,23 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 				fw.write("all: btech_opcua_server.elf\n");
 				fw.write("\n");
 				fw.write("btech_opcua_server.elf: $(OBJS)\n\t");
-				
-				File fCompiler = DeviceActivator.getDefault().getToolchainFile(DeviceActivator.getDefault().getToolchain(), "compiler");
-				File fToolchain =DeviceActivator.getDefault().getToolchainFile(fCompiler, toolChain);
-				File fBin =DeviceActivator.getDefault().getToolchainFile(fToolchain, "bin");
-				File linkerFile =DeviceActivator.getDefault().getToolchainFile(fBin, "arm-linux-gnueabihf-gcc.exe");
-				
+
+				File fCompiler = DeviceActivator.getDefault()
+						.getToolchainFile(DeviceActivator.getDefault().getToolchain(), "compiler");
+				File fToolchain = DeviceActivator.getDefault().getToolchainFile(fCompiler, toolChain);
+				File fBin = DeviceActivator.getDefault().getToolchainFile(fToolchain, "bin");
+				File linkerFile = DeviceActivator.getDefault().getToolchainFile(fBin, "arm-linux-gnueabihf-gcc.exe");
+
 //				URL linker = FileLocator.find(DeviceActivator.getDefault().getBundle(), Path.ROOT.append("toolchain")
 //						.append("compiler").append(toolChain).append("bin").append("arm-linux-gnueabihf-gcc.exe"),
 //						null);
-				
-				File fBtechLib = DeviceActivator.getDefault().getToolchainFile(DeviceActivator.getDefault().getToolchain(), "btech_lib");
-				File fOpen62541 =DeviceActivator.getDefault().getToolchainFile(fBtechLib, "open62541");
-				File fBuildArm =DeviceActivator.getDefault().getToolchainFile(fOpen62541, "build-arm");
-				File open62541F =DeviceActivator.getDefault().getToolchainFile(fBuildArm, "bin");
-				
+
+				File fBtechLib = DeviceActivator.getDefault()
+						.getToolchainFile(DeviceActivator.getDefault().getToolchain(), "btech_lib");
+				File fOpen62541 = DeviceActivator.getDefault().getToolchainFile(fBtechLib, "open62541");
+				File fBuildArm = DeviceActivator.getDefault().getToolchainFile(fOpen62541, "build-arm");
+				File open62541F = DeviceActivator.getDefault().getToolchainFile(fBuildArm, "bin");
+
 //				URL open62541File = FileLocator.find(DeviceActivator.getDefault().getBundle(), Path.ROOT
 //						.append("toolchain").append("btech_lib").append("open62541").append("build-arm").append("bin"),
 //						null);
@@ -983,12 +991,14 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 				fw.write("\n");
 				// for (File file : files) {
 				fw.write("%.o : %.c\n");
-				
+
 //				File fBtechLib = DeviceActivator.getDefault().getToolchainFile(DeviceActivator.getDefault().getToolchain(), "c");
-				File fGccArm =DeviceActivator.getDefault().getToolchainFile(fCompiler, "gcc-linaro-arm-linux-gnueabihf-4.9.3");
-				File fGCCArmBin =DeviceActivator.getDefault().getToolchainFile(fGccArm, "bin");
-				File compilerFile =DeviceActivator.getDefault().getToolchainFile(fGCCArmBin, "arm-linux-gnueabihf-gcc.exe");
-				
+				File fGccArm = DeviceActivator.getDefault().getToolchainFile(fCompiler,
+						"gcc-linaro-arm-linux-gnueabihf-4.9.3");
+				File fGCCArmBin = DeviceActivator.getDefault().getToolchainFile(fGccArm, "bin");
+				File compilerFile = DeviceActivator.getDefault().getToolchainFile(fGCCArmBin,
+						"arm-linux-gnueabihf-gcc.exe");
+
 //				URL compiler = FileLocator.find(DeviceActivator.getDefault().getBundle(),
 //						Path.ROOT.append("toolchain").append("compiler").append("gcc-linaro-arm-linux-gnueabihf-4.9.3")
 //								.append("bin").append("arm-linux-gnueabihf-gcc.exe"),
@@ -1004,43 +1014,44 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 				// open62541/plugins/include
 				// open62541/deps/ua-nodeset/AnsiC
 				// open62541/arch
-				
-				File includesFolder =DeviceActivator.getDefault().getToolchainFile(fOpen62541, "include");
-				
+
+				File includesFolder = DeviceActivator.getDefault().getToolchainFile(fOpen62541, "include");
+
 //				URL includes = FileLocator.find(DeviceActivator.getDefault().getBundle(),
 //						Path.ROOT.append("toolchain").append("btech_lib").append("open62541").append("include"), null);
 //				URL includes2 = FileLocator.toFileURL(includes);
 //				File includesFolder = new File(includes2.getFile());
-			
+
 				fw.write(" -I\"" + includesFolder.getAbsolutePath() + "\"");
 
-				File fOpen62541Deps = includesFolder = DeviceActivator.getDefault().getToolchainFile(fOpen62541, "deps");
+				File fOpen62541Deps = includesFolder = DeviceActivator.getDefault().getToolchainFile(fOpen62541,
+						"deps");
 //				includes = FileLocator.find(DeviceActivator.getDefault().getBundle(),
 //						Path.ROOT.append("toolchain").append("btech_lib").append("open62541").append("deps"), null);
 //				includes2 = FileLocator.toFileURL(includes);
 //				includesFolder = new File(includes2.getFile());
 				fw.write(" -I\"" + includesFolder.getAbsolutePath() + "\"");
 
-				includesFolder =DeviceActivator.getDefault().getToolchainFile(fBuildArm, "src_generated");
-				
+				includesFolder = DeviceActivator.getDefault().getToolchainFile(fBuildArm, "src_generated");
+
 //				includes = FileLocator.find(DeviceActivator.getDefault().getBundle(), Path.ROOT.append("toolchain")
 //						.append("btech_lib").append("open62541").append("build-arm").append("src_generated"), null);
 //				includes2 = FileLocator.toFileURL(includes);
 //				includesFolder = new File(includes2.getFile());
 				fw.write(" -I\"" + includesFolder.getAbsolutePath() + "\"");
 
-				File fOpen62541Plugins =DeviceActivator.getDefault().getToolchainFile(fOpen62541, "plugins");
-				includesFolder =DeviceActivator.getDefault().getToolchainFile(fOpen62541Plugins, "include");
-				
+				File fOpen62541Plugins = DeviceActivator.getDefault().getToolchainFile(fOpen62541, "plugins");
+				includesFolder = DeviceActivator.getDefault().getToolchainFile(fOpen62541Plugins, "include");
+
 //				includes = FileLocator.find(DeviceActivator.getDefault().getBundle(), Path.ROOT.append("toolchain")
 //						.append("btech_lib").append("open62541").append("plugins").append("include"), null);
 //				includes2 = FileLocator.toFileURL(includes);
 //				includesFolder = new File(includes2.getFile());
 				fw.write(" -I\"" + includesFolder.getAbsolutePath() + "\"");
 
-				File fOpen62541UANodeset =DeviceActivator.getDefault().getToolchainFile(fOpen62541Deps, "ua-nodeset");
-				includesFolder =DeviceActivator.getDefault().getToolchainFile(fOpen62541UANodeset, "AnsiC");
-				
+				File fOpen62541UANodeset = DeviceActivator.getDefault().getToolchainFile(fOpen62541Deps, "ua-nodeset");
+				includesFolder = DeviceActivator.getDefault().getToolchainFile(fOpen62541UANodeset, "AnsiC");
+
 //				includes = FileLocator.find(DeviceActivator.getDefault().getBundle(), Path.ROOT.append("toolchain")
 //						.append("btech_lib").append("open62541").append("deps").append("ua-nodeset").append("AnsiC"),
 //						null);
@@ -1049,15 +1060,16 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 				fw.write(" -I\"" + includesFolder.getAbsolutePath() + "\"");
 
 				includesFolder = DeviceActivator.getDefault().getToolchainFile(fOpen62541, "arch");
-				
+
 //				includes = FileLocator.find(DeviceActivator.getDefault().getBundle(),
 //						Path.ROOT.append("toolchain").append("btech_lib").append("open62541").append("arch"), null);
 //				includes2 = FileLocator.toFileURL(includes);
 //				includesFolder = new File(includes2.getFile());
 				fw.write(" -I\"" + includesFolder.getAbsolutePath() + "\"");
 
-				includesFolder = DeviceActivator.getDefault().getToolchainFile(DeviceActivator.getDefault().getToolchain(), "btech_include");
-				
+				includesFolder = DeviceActivator.getDefault()
+						.getToolchainFile(DeviceActivator.getDefault().getToolchain(), "btech_include");
+
 //				includes = FileLocator.find(DeviceActivator.getDefault().getBundle(),
 //						Path.ROOT.append("toolchain").append("btech_include"), null);
 //				includes2 = FileLocator.toFileURL(includes);
