@@ -683,7 +683,6 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 				rList, filesystem);
 
 		String[] filesToDel = copyCFiles(filesystem);
-		Logger.getLogger(getClass().getName()).log(Level.INFO, "before compile C");
 		//
 //		writeSourcesFile(destFolder, filesystem);
 //		writeObjectsFile(destFolder, filesystem);
@@ -714,6 +713,7 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 			File fBtechMakeExe = DeviceActivator.getDefault().getToolchainFile(fBtechMakeBin, "make.exe");
 
 			String makePath = fBtechMakeExe.getPath();
+
 			Process pr = rt.exec("cmd /C " + makePath, null, new File(folder + "\\compiled"));
 			BufferedReader input = new BufferedReader(new InputStreamReader(pr.getInputStream()));
 			String line = null;

@@ -62,11 +62,11 @@ public class DeviceTargetWizard extends Wizard {
 		this.serverFileSystem = serverFileSystem;
 		this.serverNode = serverNode;
 		
-		File toolchain = DeviceActivator.getDefault().getToolchain();
-
-		for (String name : toolchain.list()) {
-			Logger.getLogger(getClass().getName()).log(Level.INFO, name);
-		}
+//		File toolchain = DeviceActivator.getDefault().getToolchain();
+//
+//		for (String name : toolchain.list()) {
+//			Logger.getLogger(getClass().getName()).log(Level.INFO, name);
+//		}
 	}
 
 	@Override

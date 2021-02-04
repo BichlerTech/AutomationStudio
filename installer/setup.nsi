@@ -20,7 +20,7 @@ Name "AutomationStudio"
 !define MULTIUSER_INSTALLMODE_DEFAULT_REGISTRY_KEY "${REGKEY}"
 !define MULTIUSER_INSTALLMODE_DEFAULT_REGISTRY_VALUENAME MultiUserInstallMode
 !define MULTIUSER_INSTALLMODE_COMMANDLINE
-!define MULTIUSER_INSTALLMODE_INSTDIR "BTech\Automation Studio"
+!define MULTIUSER_INSTALLMODE_INSTDIR "BTech\AutomationStudio"
 !define MULTIUSER_INSTALLMODE_INSTDIR_REGISTRY_KEY "${REGKEY}"
 !define MULTIUSER_INSTALLMODE_INSTDIR_REGISTRY_VALUE "Path"
 
@@ -96,7 +96,7 @@ CRCCheck on
 XPStyle off
 ShowInstDetails show
 VIProductVersion 2.0.0.0
-VIAddVersionKey ProductName "Automation Studio"
+VIAddVersionKey ProductName "AutomationStudio"
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"

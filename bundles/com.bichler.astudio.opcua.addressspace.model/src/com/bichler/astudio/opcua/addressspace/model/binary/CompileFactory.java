@@ -186,10 +186,6 @@ public class CompileFactory {
 		String jBaseDriver = OPCLibsActivator.getLibraryPath(OPCLibsActivator.JAR_DRVBASE);
 		// if (doCompile) {
 		if (isOSWindows()) {
-			Logger.getLogger("CompileFactory_batchcompile").log(Level.INFO,
-					"-source 1.7 -target 1.7 " + "-classpath rt.jar;\"" + jStack + "\";\"" + jCore + "\";\"" + jServer
-							+ "\";\"" + jComDRV + "\";\"" + jBaseDriver + "\" \"" + destFolder + "\"");
-
 			// compile with windows, because of whitespaces in a path
 			isCompiled = BatchCompiler.compile(
 					"-source 1.7 -target 1.7 " + "-classpath rt.jar;\"" + jStack + "\";\"" + jCore + "\";\"" + jServer
