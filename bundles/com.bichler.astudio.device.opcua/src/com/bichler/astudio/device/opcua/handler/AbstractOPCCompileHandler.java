@@ -983,8 +983,8 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 
 //				URL linker2 = FileLocator.toFileURL(linker);
 //				File linkerFile = new File(linker2.getFile());
-				fw.write(" " + linkerFile.getAbsolutePath());
-				fw.write(" -L" + open62541F.getAbsolutePath());
+				fw.write(" \"" + linkerFile.getAbsolutePath()+"\"");
+				fw.write(" -L\"" + open62541F.getAbsolutePath()+"\"");
 				fw.write(
 						" -mcpu=cortex-a7 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -Xlinker --gc-sections -o \"btech_opcua_server.elf\" $(OBJS) $(LIBS)");
 
@@ -1006,7 +1006,7 @@ public abstract class AbstractOPCCompileHandler extends AbstractUploadHandler {
 //						null);
 //				URL compiler2 = FileLocator.toFileURL(compiler);
 //				File compilerFile = new File(compiler2.getFile());
-				fw.write("\t" + compilerFile.getAbsolutePath());
+				fw.write("\t\"" + compilerFile.getAbsolutePath()+"\"");
 
 				// include files
 				// open62541/include

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="AutomationStudio" uid="com.bichler.astudio.product.feature" id="com.bichler.astudio.product" application="com.bichler.astudio.application" version="2.0.5.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="AutomationStudio" uid="com.bichler.astudio.product.feature" id="com.bichler.astudio.product" application="com.bichler.astudio.application" version="3.0.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/com.bichler.automationstudio.product/icons/welcome_finish.png"/>
       <text>
-         Automation Studio v2.0.1_00520200908
+         Automation Studio v3.0.0
 
 (c) Copyright Bichler Technologies GmbH 2018. All rights reserved.
 For further information visit http://www.bichler.tech

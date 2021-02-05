@@ -57,6 +57,7 @@
             pattern="org.eclipse.ui.views/org.eclipse.ui.views.Bookmarks">
       </activityPatternBinding>
    </extension>
+   <!--
    <extension
          id="AS"
          point="org.eclipse.core.runtime.products">
@@ -105,6 +106,7 @@
          </property>
       </product>
    </extension>
+   -->
    <extension
          point="org.eclipse.ui.intro">
       <intro
@@ -114,7 +116,7 @@
       </intro>
       <introProductBinding
             introId="com.bichler.astudio.intro"
-            productId="com.bichler.astudio.AS">
+            productId="com.bichler.astudio.product">
       </introProductBinding>
    </extension>
    <extension
@@ -216,7 +218,7 @@
          </property>
          <property
                name="aboutText"
-               value="Automation Studio v2.0.1_00520200908&#x0A;&#x0A;(c) Copyright Bichler Technologies GmbH 2018. All rights reserved.&#x0A;For further information visit http://www.bichler.tech">
+               value="Automation Studio v3.0.0&#x0A;&#x0A;(c) Copyright Bichler Technologies GmbH 2018. All rights reserved.&#x0A;For further information visit http://www.bichler.tech">
          </property>
          <property
                name="aboutImage"
@@ -237,6 +239,14 @@
          <property
                name="appName"
                value="AutomationStudio">
+         </property>
+         <property
+               name="introTitle"
+               value="Automation Studio Startseite">
+         </property>
+         <property
+               name="introBrandingImage"
+               value="icons/header.png">
          </property>
          <property
                name="preferenceCustomization"
