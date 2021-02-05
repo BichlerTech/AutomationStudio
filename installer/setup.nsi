@@ -229,7 +229,7 @@ SectionEnd
 
 # Installer functions
 Function .onInit
-	ReadRegStr $0 HKCU "Software\Software\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" "UninstallString"
+	ReadRegStr $0 HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" "UninstallString"
 	${If} $0 != ""
 	${AndIf} ${Cmd} `MessageBox MB_YESNO|MB_ICONQUESTION "Uninstall previous version?" /SD IDYES IDYES`
 		!insertmacro UninstallExisting $0 $0
