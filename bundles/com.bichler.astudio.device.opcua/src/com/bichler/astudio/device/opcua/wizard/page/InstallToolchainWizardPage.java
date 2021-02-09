@@ -24,6 +24,9 @@ import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
+import com.bichler.astudio.device.opcua.DeviceActivator;
+import com.bichler.astudio.utils.internationalization.CustomString;
+
 public class InstallToolchainWizardPage extends WizardPage {
 	private Text txtPath;
 	private Button btnPath;
@@ -34,8 +37,10 @@ public class InstallToolchainWizardPage extends WizardPage {
 
 	public InstallToolchainWizardPage() {
 		super("installtoolchainWizardPage");
-		setTitle("Install toolchain");
-		setDescription("Select toolchain file");
+		setTitle(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
+				"wizard.installtoolchain.page.toolchain.title"));
+		setDescription(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
+				"wizard.installtoolchain.page.toolchain.description"));
 	}
 
 	@Override
@@ -47,7 +52,8 @@ public class InstallToolchainWizardPage extends WizardPage {
 
 		Label lblPath = new Label(container, SWT.NONE);
 		lblPath.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-		lblPath.setText("Path");
+		lblPath.setText(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
+				"wizard.installtoolchain.page.toolchain.path"));
 
 		txtPath = new Text(container, SWT.BORDER);
 		txtPath.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
@@ -61,12 +67,13 @@ public class InstallToolchainWizardPage extends WizardPage {
 	@Override
 	public boolean isPageComplete() {
 		if (this.path == null) {
-			setErrorMessage("Select a toolchain.zip file!");
+			setErrorMessage(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
+					"wizard.installtoolchain.page.toolchain.error.select"));
 			return false;
 		}
 
 		if (!this.flagToolchainZip) {
-			setErrorMessage("Selected toolchain.zip is corrupt!");
+			setErrorMessage(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE, "wizard.installtoolchain.page.toolchain.error.corrupt"));
 			return false;
 		}
 
@@ -86,16 +93,16 @@ public class InstallToolchainWizardPage extends WizardPage {
 
 				@Override
 				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
-					monitor.setTaskName("Check toolchain file"+"...");
-					
+					monitor.setTaskName(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE, "wizard.installtoolchain.page.toolchain.monitor.checktoolchain") + "...");
+
 					File zipFile = new File(getPath());
 					ZipInputStream zis = null;
 					ZipFile zf = null;
 					try {
 						zf = new ZipFile(zipFile);
 						int size = zf.size();
-						monitor.beginTask("Checking"+"...", size);
-						
+						monitor.beginTask(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE, "wizard.installtoolchain.page.toolchain.monitor.check") + "...", size);
+
 						zis = new ZipInputStream(new FileInputStream(zipFile));
 						ZipEntry zipEntry = zis.getNextEntry();
 						while (zipEntry != null) {
@@ -121,7 +128,7 @@ public class InstallToolchainWizardPage extends WizardPage {
 								e.printStackTrace();
 							}
 						}
-						if(zf != null) {
+						if (zf != null) {
 							try {
 								zf.close();
 							} catch (IOException e) {

@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
@@ -17,13 +19,15 @@ import org.eclipse.jface.wizard.Wizard;
 
 import com.bichler.astudio.device.opcua.DeviceActivator;
 import com.bichler.astudio.device.opcua.wizard.page.InstallToolchainWizardPage;
+import com.bichler.astudio.utils.internationalization.CustomString;
 
 public class InstallToolchainWizard extends Wizard {
 
 	private InstallToolchainWizardPage pageOne;
 
 	public InstallToolchainWizard() {
-		setWindowTitle("Install C-Toolchain");
+		setWindowTitle(
+				CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE, "wizard.installtoolchain.title"));
 		setNeedsProgressMonitor(true);
 	}
 
@@ -40,7 +44,7 @@ public class InstallToolchainWizard extends Wizard {
 		// install zip
 		try {
 			getContainer().run(true, false, new IRunnableWithProgress() {
-				
+
 				@Override
 				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
 					File zipFile = new File(path);
@@ -48,15 +52,15 @@ public class InstallToolchainWizard extends Wizard {
 					try {
 						zf = new ZipFile(zipFile);
 						int size = zf.size();
-	
-						monitor.beginTask("Copy files"+"...", size);
+						monitor.beginTask(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
+								"wizard.installtoolchain.copyfiles") + "...", size);
 						copyToolchainFile(monitor, path);
 					} catch (ZipException e) {
 						e.printStackTrace();
 					} catch (IOException e) {
 						e.printStackTrace();
-					}finally {
-						if(zf != null) {
+					} finally {
+						if (zf != null) {
 							try {
 								zf.close();
 							} catch (IOException e) {
@@ -72,11 +76,10 @@ public class InstallToolchainWizard extends Wizard {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
+
 		return true;
 	}
 
-	
 	private void copyToolchainFile(IProgressMonitor monitor, String zipPath) {
 		File destToolchain = DeviceActivator.getDefault().getToolchain();
 
@@ -92,9 +95,9 @@ public class InstallToolchainWizard extends Wizard {
 				zipEntry = zis.getNextEntry();
 			}
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			Logger.getLogger(getClass().getName()).log(Level.SEVERE, e.getMessage());
 		} catch (IOException e) {
-			e.printStackTrace();
+			Logger.getLogger(getClass().getName()).log(Level.SEVERE, e.getMessage());
 		} finally {
 			if (zis != null) {
 				try {
@@ -105,17 +108,20 @@ public class InstallToolchainWizard extends Wizard {
 			}
 		}
 	}
-	
+
 	private static void copyZip(File newFile, ZipInputStream zis, ZipEntry zipEntry) throws IOException {
 		if (zipEntry.isDirectory()) {
 			if (!newFile.isDirectory() && !newFile.mkdirs()) {
-				throw new IOException("Failed to create directory " + newFile);
+
+				throw new IOException(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
+						"wizard.installtoolchain.error.makedirectory") + " " + newFile);
 			}
 		} else {
 			// fix for Windows-created archives
 			File parent = newFile.getParentFile();
 			if (!parent.isDirectory() && !parent.mkdirs()) {
-				throw new IOException("Failed to create directory " + parent);
+				throw new IOException(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
+						"wizard.installtoolchain.error.makedirectory") + " " + parent);
 			}
 
 			// write file content
@@ -136,7 +142,8 @@ public class InstallToolchainWizard extends Wizard {
 		String destFilePath = destFile.getCanonicalPath();
 
 		if (!destFilePath.startsWith(destDirPath + File.separator)) {
-			throw new IOException("Entry is outside of the target dir: " + zipEntry.getName());
+			throw new IOException(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
+					"wizard.installtoolchain.error.outsidedirectory") + ": " + zipEntry.getName());
 		}
 
 		return destFile;

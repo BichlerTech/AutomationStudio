@@ -3,9 +3,11 @@ package com.bichler.astudio.device.opcua.wizard;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 
+import com.bichler.astudio.device.opcua.DeviceActivator;
 import com.bichler.astudio.device.opcua.wizard.page.selection.DeviceInstallationPage;
 import com.bichler.astudio.device.opcua.wizard.page.selection.DriverInstallationWizardPage;
 import com.bichler.astudio.device.opcua.wizard.page.selection.RuntimeInstallationWizardPage;
+import com.bichler.astudio.utils.internationalization.CustomString;
 
 public class DeviceInstallWizard extends Wizard
 {
@@ -28,7 +30,8 @@ public class DeviceInstallWizard extends Wizard
 
   public DeviceInstallWizard()
   {
-    setWindowTitle("Installation");
+    setWindowTitle(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE,
+	        "com.bichler.astudio.device.opcua.wizard.title"));
   }
 
   @Override

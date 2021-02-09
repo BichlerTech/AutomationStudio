@@ -1,6 +1,6 @@
 # Automation Studio
 
-## Requirements
+## Requirements (Eclipse for sources)
 ```
 - Eclipse 2019-06 (https://www.eclipse.org/downloads/packages/release/2019-06/r)
   or
@@ -45,10 +45,28 @@ Equinox Target Components
 Install Eclipse Lucene package
 ```
 
-## Run in Eclipse
+### Run in Eclipse
 
-In project com.bichler.astudio -> AS-Feature.product -> Launch an Eclipse application
+In project com.bichler.automationstudio.product -> AS-Feature.product -> Launch an Eclipse application
 
-# Install C-Compile Toolchain
 
-## Download toolchain.zip
+## Install AutomationStudio (Windows *.exe)
+
+### Download AutomationStudio
+
+Download latest version of AutomationStudio from https://www.bichler.tech/ and follow installer instructions
+
+
+## Install C-Compile Toolchain
+
+### Download toolchain.zip
+
+Download toolchain.zip file from https://www.bichler.tech/
+
+### Install toolchain in AutomationStudio
+
+#### Start AutomationStudio
+
+Menu -> Help -> Install toolchain
+
+Select path of the toolchain.zip file
