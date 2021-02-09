@@ -5,9 +5,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -41,7 +41,7 @@ jobs:
     
     - name: Step 5 - Create Installer for AutomationStudio
       run: |
-        makensis /home/runner/work/BichlerTechStudio/BichlerTechStudio/installer/setup.nsi
+        makensis /home/runner/work/AutomationStudio/AutomationStudio/installer/setup.nsi
     #    ls  /home/runner/work/BichlerTechStudio/BichlerTechStudio/installer
    
     - name: Step 6.0 - Upload Installer to FTP
@@ -50,7 +50,7 @@ jobs:
         ftp_host: ftp.bichler.tech/
         ftp_username: ftp5852803_btech
         ftp_password: btech2021
-        local_source_dir: "/home/runner/work/BichlerTechStudio/BichlerTechStudio/installer/setup"
+        local_source_dir: "/home/runner/work/AutomationStudio/AutomationStudio/installer/setup"
         dist_target_dir: "/latest"
         delete: "false"
         
