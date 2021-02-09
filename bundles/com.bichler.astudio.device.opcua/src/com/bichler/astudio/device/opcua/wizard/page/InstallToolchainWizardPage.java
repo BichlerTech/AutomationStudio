@@ -86,7 +86,11 @@ public class InstallToolchainWizardPage extends WizardPage {
 		return this.path;
 	}
 
-	private void setIsToolchainZip() {
+	private void setIsToolchainZip(final String path) {
+		if(path == null) {
+			return ;
+		}		
+		
 		ProgressMonitorDialog progressDialog = new ProgressMonitorDialog(getShell());
 		try {
 			progressDialog.run(true, false, new IRunnableWithProgress() {
@@ -95,7 +99,7 @@ public class InstallToolchainWizardPage extends WizardPage {
 				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
 					monitor.setTaskName(CustomString.getString(DeviceActivator.getDefault().RESOURCE_BUNDLE, "wizard.installtoolchain.page.toolchain.monitor.checktoolchain") + "...");
 
-					File zipFile = new File(getPath());
+					File zipFile = new File(path);
 					ZipInputStream zis = null;
 					ZipFile zf = null;
 					try {
@@ -158,7 +162,7 @@ public class InstallToolchainWizardPage extends WizardPage {
 					txtPath.setText(path);
 					setPath(path);
 				}
-				setIsToolchainZip();
+				setIsToolchainZip(path);
 
 				boolean isComplete = isPageComplete();
 				setPageComplete(isComplete);
