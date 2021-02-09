@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -89,7 +90,12 @@ public class InstallToolchainWizardPage extends WizardPage {
 					
 					File zipFile = new File(getPath());
 					ZipInputStream zis = null;
+					ZipFile zf = null;
 					try {
+						zf = new ZipFile(zipFile);
+						int size = zf.size();
+						monitor.beginTask("Checking"+"...", size);
+						
 						zis = new ZipInputStream(new FileInputStream(zipFile));
 						ZipEntry zipEntry = zis.getNextEntry();
 						while (zipEntry != null) {
@@ -101,8 +107,8 @@ public class InstallToolchainWizardPage extends WizardPage {
 							}
 							flagToolchainZip = false;
 							zipEntry = zis.getNextEntry();
+							monitor.worked(1);
 						}
-
 					} catch (FileNotFoundException e) {
 						e.printStackTrace();
 					} catch (IOException e) {
@@ -115,9 +121,15 @@ public class InstallToolchainWizardPage extends WizardPage {
 								e.printStackTrace();
 							}
 						}
+						if(zf != null) {
+							try {
+								zf.close();
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
 					}
-					
-					progressDialog.close();
+					monitor.done();
 				}
 			});
 		} catch (InvocationTargetException e1) {
@@ -125,7 +137,6 @@ public class InstallToolchainWizardPage extends WizardPage {
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
 		}
-//		progressDialog.open();
 	}
 
 	private void setHandler() {

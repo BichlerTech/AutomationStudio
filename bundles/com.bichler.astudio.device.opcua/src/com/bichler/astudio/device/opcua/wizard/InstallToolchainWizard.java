@@ -7,6 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.zip.ZipEntry;
+import java.util.zip.ZipException;
+import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -33,15 +35,36 @@ public class InstallToolchainWizard extends Wizard {
 
 	@Override
 	public boolean performFinish() {
-		String path = this.pageOne.getPath();
+		final String path = this.pageOne.getPath();
 
 		// install zip
 		try {
-			getContainer().run(false, false, new IRunnableWithProgress() {
+			getContainer().run(true, false, new IRunnableWithProgress() {
 				
 				@Override
 				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
-					copyToolchainFile(path);
+					File zipFile = new File(path);
+					ZipFile zf = null;
+					try {
+						zf = new ZipFile(zipFile);
+						int size = zf.size();
+	
+						monitor.beginTask("Copy files"+"...", size);
+						copyToolchainFile(monitor, path);
+					} catch (ZipException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}finally {
+						if(zf != null) {
+							try {
+								zf.close();
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+					}
+					monitor.done();
 				}
 			});
 		} catch (InvocationTargetException e) {
@@ -54,7 +77,7 @@ public class InstallToolchainWizard extends Wizard {
 	}
 
 	
-	private void copyToolchainFile(String zipPath) {
+	private void copyToolchainFile(IProgressMonitor monitor, String zipPath) {
 		File destToolchain = DeviceActivator.getDefault().getToolchain();
 
 		File zipFile = new File(zipPath);
@@ -63,6 +86,7 @@ public class InstallToolchainWizard extends Wizard {
 			zis = new ZipInputStream(new FileInputStream(zipFile));
 			ZipEntry zipEntry = zis.getNextEntry();
 			while (zipEntry != null) {
+				monitor.worked(1);
 				File newFile = newFile(destToolchain, zipEntry);
 				copyZip(newFile, zis, zipEntry);
 				zipEntry = zis.getNextEntry();
