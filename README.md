@@ -45,6 +45,8 @@ Equinox Target Components
 Install Eclipse Lucene package
 ```
 
-# Run
+## Run in Eclipse
 
 In project com.bichler.astudio -> AS-Feature.product -> Launch an Eclipse application
+
+# Install C-Compile Toolchain
