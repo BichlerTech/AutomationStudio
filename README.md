@@ -50,3 +50,5 @@ Install Eclipse Lucene package
 In project com.bichler.astudio -> AS-Feature.product -> Launch an Eclipse application
 
 # Install C-Compile Toolchain
+
+## Download toolchain.zip
