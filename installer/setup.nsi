@@ -229,15 +229,15 @@ SectionEnd
 
 # Installer functions
 Function .onInit
-	ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" "UninstallString"
-	${If} $0 != ""
-	${AndIf} ${Cmd} `MessageBox MB_YESNO|MB_ICONQUESTION "Uninstall previous version?" /SD IDYES IDYES`
-		!insertmacro UninstallExisting $0 $0
-		${If} $0 <> 0
-			MessageBox MB_YESNO|MB_ICONSTOP "Failed to uninstall, continue anyway?" /SD IDYES IDYES +2
-				Abort
-		${EndIf}
-	${EndIf}
+	; ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" "UninstallString"
+	; ${If} $0 != ""
+	; ${AndIf} ${Cmd} `MessageBox MB_YESNO|MB_ICONQUESTION "Uninstall previous version?" /SD IDYES IDYES`
+	;	!insertmacro UninstallExisting $0 $0
+	;	${If} $0 <> 0
+	;		MessageBox MB_YESNO|MB_ICONSTOP "Failed to uninstall, continue anyway?" /SD IDYES IDYES +2
+	;			Abort
+	;	${EndIf}
+	; ${EndIf}
     InitPluginsDir
     !insertmacro MUI_LANGDLL_DISPLAY
     !insertmacro MULTIUSER_INIT

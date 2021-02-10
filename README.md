@@ -40,6 +40,21 @@ work with: http://download.eclipse.org/eclipse/updates/4.4
 Equinox Target Components
 - Equinox Target Components
 ```
+
+### Import Eclipse projects
+
+Eclipse projects are structured inside
+```
+- bundles
+-- AutomationStudio plugin projects
+- features
+-- com.bichler.astudio.feature (Eclipse feature definition)
+- releng
+-- com.bichler.astudio.target(Eclipse target definition)
+-- com.bichler.automationstudio.product (Eclipse product definition)
+```
+Import all projects available in those folders
+
 ### Eclipse on Linux
 ```
 Install Eclipse Lucene package
