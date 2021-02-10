@@ -206,14 +206,14 @@ public class WebsiteInstallationWizardPage extends WizardPage {
 		this.filesystem = filesystem;
 	}
 
-	private void fill() {
-		if (filesystem instanceof SimpleFileSystem) {
-			this.cmbWebsiteVersion.select(0);
-		} else {
-			this.cmbWebsiteVersion.select(1);
-		}
-
-	}
+//	private void fill() {
+//		if (filesystem instanceof SimpleFileSystem) {
+//			this.cmbWebsiteVersion.select(0);
+//		} else {
+//			this.cmbWebsiteVersion.select(1);
+//		}
+//
+//	}
 
 	/*
 	private void setValue() {
