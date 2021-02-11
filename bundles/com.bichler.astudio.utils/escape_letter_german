@@ -1,0 +1,25 @@
+Deutsche Umlaute
+------------------------------------------------------------------------------------
+Set language file in plugin package *.resource 
+
+Right click -> Properties -> Resource -> Text file encoding
+
+to UTF-8 and type in language file umlaut (ä ö ü ß)
+
+Change back the Text file encoding to ISO-8859-1
+
+------------------------------------------------------------------------------------
+
+https://www.utf8-zeichentabelle.de/unicode-utf8-table.pl?names=-&unicodeinhtml=hex
+
+Escaping starts with \u
+-------------------------
+Ã - 00C4 - Ä
+Ã - 00D6 - Ö
+Ã - 00DC - Ü
+
+Ã¤ - 00E4 - ä
+Ã¶ - 00F6 - ö
+Ã¼ - 00FC - ü
+
+ÃƒÂŸ - 00DF - ß
