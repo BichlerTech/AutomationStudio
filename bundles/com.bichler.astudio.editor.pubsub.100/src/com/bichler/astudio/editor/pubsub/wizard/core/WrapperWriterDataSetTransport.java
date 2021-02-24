@@ -76,4 +76,14 @@ public class WrapperWriterDataSetTransport implements IWrapper {
 		clone.MetaDataUpdateTime = this.MetaDataUpdateTime;
 		return clone;
 	}
+
+	@Override
+	public void reset() {
+		this.QueueName = null;
+		this.ResourceUri = null;
+		this.AuthenticationProfileUri = null;
+		this.RequestedDeliveryGuarantee = null;
+		this.MetaDataQueueName = null;
+		this.MetaDataUpdateTime = null;
+	}
 }

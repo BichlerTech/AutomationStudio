@@ -1,5 +1,6 @@
 package com.bichler.astudio.editor.pubsub.wizard.page;
 
+import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -13,30 +14,39 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.opcfoundation.ua.builtintypes.DataValue;
 
+import com.bichler.astudio.editor.pubsub.dialog.ValueSourceDialog;
 import com.bichler.astudio.editor.pubsub.nodes.DataSetVariable;
 import com.bichler.astudio.editor.pubsub.wizard.PubSubDataSetFieldWizard;
 import com.bichler.astudio.editor.pubsub.wizard.core.WrapperConfigurationVersion;
 import com.bichler.astudio.editor.pubsub.wizard.core.WrapperPublishedVariableParameter;
+import com.bichler.astudio.editor.pubsub.wizard.core.WrapperStaticValue;
 
-public class DetailDataSetPage extends AbstractDetailWizardPage {
+public class DetailDataSetVariablePage extends AbstractDetailWizardPage {
 
-	private Text txt_staticValueSource;
+//	private Text txt_staticValueSource;
 	private Text txt_version;
 	private Text txt_fieldnameAlias;
 	private Text txt_publishParameters;
-	private Button btn_checkStaticValueSource;
+	private Text txt_valueSource;
+	
+//	private Button btn_checkStaticValueSource;
 	private Button btn_checkPromotedField;
 
 	private Button btn_version;
 	private Button btn_publishParameters;
-	private Button btn_staticValueSource;
-
+//	private Button btn_staticValueSource;
+	private Button btn_valueSource;
+	
+	private ValueSourceDialog staticValueDialog = null;
+	
 	private DataSetVariable model = null;
+	
 
-	public DetailDataSetPage() {
+	public DetailDataSetVariablePage() {
 		super("datasetvariablepage");
 		setTitle("DataSet variable");
 		setDescription("Properties of a DataSet variable");
+		this.staticValueDialog = new ValueSourceDialog(getShell());
 	}
 
 	@Override
@@ -87,28 +97,40 @@ public class DetailDataSetPage extends AbstractDetailWizardPage {
 		this.btn_publishParameters = new Button(container, SWT.NONE);
 		btn_publishParameters.setText("  ");
 
-		Label lblStaticValueSource = new Label(container, SWT.NONE);
-		lblStaticValueSource.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-		lblStaticValueSource.setText("Static value source enabled:");
+//		Label lblStaticValueSource = new Label(container, SWT.NONE);
+//		lblStaticValueSource.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+//		lblStaticValueSource.setText("Static value source enabled:");
+//
+//		btn_checkStaticValueSource = new Button(container, SWT.CHECK);
+//		btn_checkStaticValueSource.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+//		new Label(container, SWT.NONE);
+//
+//		Label lblSourceValue = new Label(container, SWT.NONE);
+//		lblSourceValue.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+//		lblSourceValue.setText("Static value source:");
+//
+//		txt_staticValueSource = new Text(container, SWT.BORDER);
+//		txt_staticValueSource.setEnabled(false);
+//		txt_staticValueSource.setEditable(false);
+//		txt_staticValueSource.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+//
+//		this.btn_staticValueSource = new Button(container, SWT.NONE);
+//		btn_staticValueSource.setText("  ");
 
-		btn_checkStaticValueSource = new Button(container, SWT.CHECK);
-		btn_checkStaticValueSource.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-		new Label(container, SWT.NONE);
+		Label lblValueSource = new Label(container, SWT.NONE);
+		lblValueSource.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+		lblValueSource.setText("Value source:");
+	
+		txt_valueSource = new Text(container, SWT.BORDER);
+		txt_valueSource.setEnabled(false);
+		txt_valueSource.setEditable(false);
+		txt_valueSource.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 
-		Label lblSourceValue = new Label(container, SWT.NONE);
-		lblSourceValue.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-		lblSourceValue.setText("Static value source:");
-
-		txt_staticValueSource = new Text(container, SWT.BORDER);
-		txt_staticValueSource.setEnabled(false);
-		txt_staticValueSource.setEditable(false);
-		txt_staticValueSource.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-
-		this.btn_staticValueSource = new Button(container, SWT.NONE);
-		btn_staticValueSource.setText("  ");
-
+		this.btn_valueSource = new Button(container, SWT.NONE);
+		btn_valueSource.setText("  ");
+		
 		createApply(container);
-
+			
 		setHandler();
 	}
 
@@ -167,6 +189,18 @@ public class DetailDataSetPage extends AbstractDetailWizardPage {
 
 		});
 		
+		this.btn_valueSource.addSelectionListener(new SelectionAdapter() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int open = staticValueDialog.open();
+				if(open == Dialog.OK) {
+					WrapperStaticValue value = staticValueDialog.getStaticValue();
+					model.setStaticValue(value);
+				}
+			}
+		});
+		
 		btn_apply.addSelectionListener(new SelectionAdapter() {
 
 			@Override
@@ -177,8 +211,7 @@ public class DetailDataSetPage extends AbstractDetailWizardPage {
 				model.setFieldNameAlias(getFieldNameAlias());
 				model.setPromotedField(getPromotedField());
 				model.setPublishParameters(getPublishParameters());
-				model.setStaticValueSource(getStaticValueSource());
-				model.setStaticValueSourceEnabled(getStaticValueSourceEnabled());
+				model.setStaticValue(getStaticValue());
 			}
 
 		});
@@ -187,16 +220,16 @@ public class DetailDataSetPage extends AbstractDetailWizardPage {
 	private void setDefaultValues() {
 		DataSetVariable datasetVariable = getWizard().getElement().getField();
 
-		if (datasetVariable != null) {
+		if (datasetVariable != null) {			
 			if (datasetVariable.getFieldNameAlias() != null) {
 				this.txt_fieldnameAlias.setText(datasetVariable.getFieldNameAlias());
 			}
 			if (datasetVariable.getPromotedField() != null) {
 				this.btn_checkPromotedField.setSelection(datasetVariable.getPromotedField());
 			}
-			if (datasetVariable.getStaticValueSourceEnabled() != null) {
-				this.btn_checkStaticValueSource.setSelection(datasetVariable.getStaticValueSourceEnabled());
-			}
+			
+			this.staticValueDialog.setStaticValue(datasetVariable.getStaticValue());
+			
 			this.model = datasetVariable.clone();
 		}
 	}
@@ -217,12 +250,8 @@ public class DetailDataSetPage extends AbstractDetailWizardPage {
 		return getWizard().pageFour.getPublishedVariableDataType();
 	}
 
-	private DataValue getStaticValueSource() {
-		return null;
-	}
-
-	private Boolean getStaticValueSourceEnabled() {
-		return btn_checkStaticValueSource.getSelection();
+	private WrapperStaticValue getStaticValue() {
+		return this.staticValueDialog.getStaticValue();
 	}
 	
 }

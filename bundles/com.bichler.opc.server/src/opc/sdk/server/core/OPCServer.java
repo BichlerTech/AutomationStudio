@@ -12,8 +12,10 @@ import java.net.URISyntaxException;
 import java.net.UnknownHostException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Locale;
@@ -25,11 +27,13 @@ import java.util.logging.Logger;
 
 import org.opcfoundation.ua.application.Application;
 import org.opcfoundation.ua.application.Server;
+import org.opcfoundation.ua.builtintypes.DateTime;
 import org.opcfoundation.ua.builtintypes.LocalizedText;
 import org.opcfoundation.ua.common.NamespaceTable;
 import org.opcfoundation.ua.common.ServiceResultException;
 import org.opcfoundation.ua.core.ApplicationDescription;
 import org.opcfoundation.ua.core.ServerState;
+import org.opcfoundation.ua.core.StatusCodes;
 import org.opcfoundation.ua.core.UserTokenPolicy;
 import org.opcfoundation.ua.core.UserTokenType;
 import org.opcfoundation.ua.transport.Endpoint;
@@ -104,6 +108,164 @@ public abstract class OPCServer extends Server {
 		this.serverUris = new StringTable();
 		// typetable of opc ua informationmodel
 		this.typeTable = new TypeTable(this.namespaceUris);
+	}
+
+	public KeyPair createServerCertificate(String certificateStorePath, boolean useHostName, String commonName,
+			String organisation, String... defaultIP) throws IOException {
+		File certFile = null;
+		File privFile = null;
+		String configPath = this.securityManager.getCertStorePath();
+		if (configPath.endsWith("certs/")) {
+			// skip
+		} else if (configPath.endsWith("certs")) {
+			configPath += "/";
+		} else if (!configPath.endsWith("certs/")) {
+			configPath += "certs/";
+		}
+		String pathCert = "", pathKey = "";
+		if (certificateStorePath == null) {
+			Files.createDirectories(
+					Paths.get(certificateStorePath + "/" + configPath + CertificatePath.publiccert.getPath()));
+			Files.createDirectories(
+					Paths.get(certificateStorePath + "/" + configPath + CertificatePath.privatekey.getPath()));
+			pathCert = configPath + CertificatePath.publiccert.getPath() + this.securityManager.getCertName()
+					+ "_cert.crt";
+			pathKey = configPath + CertificatePath.privatekey.getPath() + this.securityManager.getCertName()
+					+ "_key.pfx";
+			certFile = new File(pathCert);
+			privFile = new File(pathKey);
+		} else {
+			Files.createDirectories(
+					Paths.get(certificateStorePath + "/" + configPath + CertificatePath.publiccert.getPath()));
+			Files.createDirectories(
+					Paths.get(certificateStorePath + "/" + configPath + CertificatePath.privatekey.getPath()));
+			pathCert = certificateStorePath + "/" + configPath + CertificatePath.publiccert.getPath() + "/"
+					+ this.securityManager.getCertName() + "_cert.crt";
+			pathKey = certificateStorePath + "/" + configPath + CertificatePath.privatekey.getPath() + "/"
+					+ this.securityManager.getCertName() + "_key.pfx";
+			certFile = new File(pathCert);
+			privFile = new File(pathKey);
+		}
+		if (!certFile.exists()) {
+			try {
+				certFile.createNewFile();
+			} catch (IOException e) {
+				certFile = certFile.getAbsoluteFile();
+				try {
+					certFile.createNewFile();
+				} catch (IOException e1) {
+					logger.log(Level.SEVERE, e.getMessage(), e);
+				}
+			}
+		}
+		if (!privFile.exists()) {
+			try {
+				privFile.createNewFile();
+			} catch (IOException e) {
+				privFile = privFile.getAbsoluteFile();
+				try {
+					privFile.createNewFile();
+				} catch (IOException e1) {
+					logger.log(Level.SEVERE, e.getMessage(), e1);
+				}
+			}
+		}
+		KeyPair result = null;
+
+		try {
+			String hostname[] = new String[1];
+			if (defaultIP != null && defaultIP.length > 0)
+				hostname = defaultIP;
+			if (useHostName)
+				hostname[0] = InetAddress.getLocalHost().getHostName();
+			result = CertificateUtils.createApplicationInstanceCertificate(commonName, organisation,
+					getApplication().getApplicationUri(), this.sessionConfigurator.getCertificateValidity(), hostname);
+			result.save(certFile, privFile);
+		} catch (Exception e) {
+			logger.log(Level.SEVERE, e.getMessage(), e);
+			String hostname = null;
+			try {
+				hostname = execReadToString("hostname");
+				result = CertificateUtils.createApplicationInstanceCertificate(commonName, organisation,
+						getApplication().getApplicationUri(), this.sessionConfigurator.getCertificateValidity(),
+						hostname);
+				result.save(certFile, privFile);
+			} catch (Exception e2) {
+				logger.log(Level.SEVERE, e2.getMessage(), e2);
+			}
+		}
+
+		return result;
+	}
+
+	public KeyPair loadServerCertificate(String certificateStorePath) throws ServiceResultException {
+		File certFile = null;
+		File privFile = null;
+		String configPath = this.securityManager.getCertStorePath();
+		if (configPath.endsWith("certs/")) {
+			// skip
+		} else if (configPath.endsWith("certs")) {
+			configPath += "/";
+		} else if (!configPath.endsWith("certs/")) {
+			configPath += "certs/";
+		}
+		String pathCert = "", pathKey = "";
+		if (certificateStorePath == null) {
+			pathCert = configPath + CertificatePath.publiccert.getPath() + this.securityManager.getCertName()
+					+ "_cert.crt";
+			pathKey = configPath + CertificatePath.privatekey.getPath() + this.securityManager.getCertName()
+					+ "_key.pfx";
+			certFile = new File(pathCert);
+			privFile = new File(pathKey);
+		} else {
+			pathCert = certificateStorePath + "/" + configPath + CertificatePath.publiccert.getPath() + "/"
+					+ this.securityManager.getCertName() + "_cert.crt";
+			pathKey = certificateStorePath + "/" + configPath + CertificatePath.privatekey.getPath() + "/"
+					+ this.securityManager.getCertName() + "_key.pfx";
+			certFile = new File(pathCert);
+			privFile = new File(pathKey);
+		}
+
+		KeyPair result = null;
+		try {
+			// Load certificate from file
+			Cert cert = Cert.load(certFile);
+			// This may be used to load private key from keystore.
+			PrivKey privKey = PrivKey.load(privFile);
+			result = new KeyPair(cert, privKey);
+			SecurityCertificateAdministration securityCertAdmin = new SecurityCertificateAdministration(cert, privKey);
+			this.sessionConfigurator.setSecurityCertificate(securityCertAdmin);
+			this.sessionConfigurator.initWatchCertificate(getApplication(), pathCert, pathKey);
+			this.application.addApplicationInstanceCertificate(result);
+		} catch (Exception e1) {
+			logger.log(Level.SEVERE, e1.getMessage(), e1);
+			throw new ServiceResultException(StatusCodes.Bad_UnexpectedError);
+		}
+
+		return result;
+	}
+
+	public boolean removeServerCertificate(KeyPair certificate) {
+
+		this.sessionConfigurator.setSecurityCertificate(null);
+		this.application.removeApplicationInstanceCertificate(certificate);
+
+		return true;
+	}
+
+	public KeyPair renewServerCertificate(KeyPair oldCert, String commonName, String organisation, String hostname)
+			throws IllegalStateException, IOException, GeneralSecurityException {
+
+		KeyPair newKeyPair = CertificateUtils.renewApplicationInstanceCertificate(commonName, organisation,
+				getApplication().getApplicationUri(), getSessionConfigurator().getCertificateValidity(), oldCert,
+				hostname);
+
+		return newKeyPair;
+	}
+
+	public Date validToServerCertificate() {
+		Date date = this.sessionConfigurator.getSecurityCert().getCert().getCertificate().getNotAfter();
+		return date;
 	}
 
 	/**

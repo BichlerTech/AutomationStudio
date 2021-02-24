@@ -85,4 +85,14 @@ public class WrapperWriterGroupTransport implements IWrapper {
 		return obj;
 	}
 
+	@Override
+	public void reset() {
+		this.AuthenticationProfileUri = null;
+		this.QueueName = null;
+		this.RequestedDeliveryGuarantee = null;
+		this.ResourceUri = null;
+		this.MessageRepeatCount = null;
+		this.MessageRepeatDelay = null;
+	}
+
 }

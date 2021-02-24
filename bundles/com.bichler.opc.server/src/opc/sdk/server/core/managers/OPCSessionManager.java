@@ -312,6 +312,10 @@ public class OPCSessionManager implements IOPCManager {
 		if (sessionName == null || sessionName.isEmpty()) {
 			sessionName = "Session " + newAuthentificationToken;
 		}
+		if (this.configuration.getSecurityCert() == null) {
+			throw new ServiceResultException(StatusCodes.Bad_CertificateUseNotAllowed);
+		}
+
 		try {
 			URI uri = new URI(endpointUrl);
 			Cert serverCert = CertificateFactory.create(

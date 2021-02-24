@@ -84,6 +84,7 @@ public class WrapperPublishedVariable implements IWrapper {
 		MetaDataProperties = metaDataProperties;
 	}
 
+	@Override
 	public WrapperPublishedVariable clone() {
 		WrapperPublishedVariable obj = new WrapperPublishedVariable();
 		obj.AttributeId = this.AttributeId;
@@ -96,5 +97,16 @@ public class WrapperPublishedVariable implements IWrapper {
 		obj.SubstituteValue = this.SubstituteValue;
 		
 		return obj;
+	}
+	@Override
+	public void reset() {
+		this.AttributeId = null;
+		this.DeadbandType = null;
+		this.DeadbandValue = null;
+		this.IndexRange = null;
+		this.MetaDataProperties = null;
+		this.PublishedVariable = null;
+		this.SamplingIntervalHint = null;
+		this.SubstituteValue = null;
 	}
 }

@@ -88,6 +88,17 @@ public class WrapperWriterGroupMessage implements IWrapper {
 		
 		return obj;
 	}
+
+	@Override
+	public void reset() {
+		this.type = null;
+		this.GroupVersion = null;
+		this.DataSetOrdering = null;
+		this.NetworkMessageContentMask = null;
+		this.SamplingOffset = null;
+		this.PublishingOffset = null;
+		this.JsonNetworkMessageContentMask = null;
+	}
 	
 	
 }

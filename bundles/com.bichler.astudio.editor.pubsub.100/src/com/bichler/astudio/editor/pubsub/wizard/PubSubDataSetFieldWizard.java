@@ -2,7 +2,7 @@ package com.bichler.astudio.editor.pubsub.wizard;
 
 import com.bichler.astudio.editor.pubsub.nodes.PubSubDataSetField;
 import com.bichler.astudio.editor.pubsub.wizard.page.DetailDataSetFieldVersionPage;
-import com.bichler.astudio.editor.pubsub.wizard.page.DetailDataSetPage;
+import com.bichler.astudio.editor.pubsub.wizard.page.DetailDataSetVariablePage;
 import com.bichler.astudio.editor.pubsub.wizard.page.DetailPublishParameterPage;
 import com.bichler.astudio.editor.pubsub.wizard.page.DetailVersionPage;
 import com.bichler.astudio.editor.pubsub.wizard.page.PubSubDataSetFieldPage;
@@ -10,7 +10,7 @@ import com.bichler.astudio.editor.pubsub.wizard.page.PubSubDataSetFieldPage;
 public class PubSubDataSetFieldWizard extends AbstractPubSubWizard {
 
 	private PubSubDataSetFieldPage pageOne;
-	public DetailDataSetPage pageTwo;
+	public DetailDataSetVariablePage pageTwo;
 	public DetailVersionPage pageThree;
 	public DetailPublishParameterPage pageFour;
 
@@ -24,7 +24,7 @@ public class PubSubDataSetFieldWizard extends AbstractPubSubWizard {
 		this.pageOne = new PubSubDataSetFieldPage();
 		addPage(this.pageOne);
 
-		this.pageTwo = new DetailDataSetPage();
+		this.pageTwo = new DetailDataSetVariablePage();
 		addPage(this.pageTwo);
 
 		this.pageThree = new DetailDataSetFieldVersionPage();

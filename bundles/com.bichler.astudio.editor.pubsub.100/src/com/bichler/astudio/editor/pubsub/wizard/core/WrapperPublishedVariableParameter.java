@@ -5,20 +5,20 @@ import org.opcfoundation.ua.builtintypes.QualifiedName;
 import org.opcfoundation.ua.builtintypes.UnsignedInteger;
 import org.opcfoundation.ua.builtintypes.Variant;
 
-public class WrapperPublishedVariableParameter implements IWrapper{
+public class WrapperPublishedVariableParameter implements IWrapper {
 
-    protected NodeId PublishedVariable;
-    protected UnsignedInteger AttributeId;
-    protected Double SamplingIntervalHint;
-    protected UnsignedInteger DeadbandType;
-    protected Double DeadbandValue;
-    protected String IndexRange;
-    protected Variant SubstituteValue;
-    protected QualifiedName[] MetaDataProperties;
-    
-    public WrapperPublishedVariableParameter() {
-    	
-    }
+	protected NodeId PublishedVariable;
+	protected UnsignedInteger AttributeId;
+	protected Double SamplingIntervalHint;
+	protected UnsignedInteger DeadbandType;
+	protected Double DeadbandValue;
+	protected String IndexRange;
+	protected Variant SubstituteValue;
+	protected QualifiedName[] MetaDataProperties;
+
+	public WrapperPublishedVariableParameter() {
+
+	}
 
 	public NodeId getPublishedVariable() {
 		return PublishedVariable;
@@ -83,17 +83,39 @@ public class WrapperPublishedVariableParameter implements IWrapper{
 	public void setMetaDataProperties(QualifiedName[] metaDataProperties) {
 		MetaDataProperties = metaDataProperties;
 	}
-    
-    public WrapperPublishedVariableParameter clone() {
-    	WrapperPublishedVariableParameter obj = new WrapperPublishedVariableParameter();
-    	obj.AttributeId = new UnsignedInteger(getAttributeId());
-    	obj.DeadbandType = new UnsignedInteger(getDeadbandType());
-    	obj.DeadbandValue = getDeadbandValue();
-    	obj.IndexRange = getIndexRange();
-    	obj.MetaDataProperties = getMetaDataProperties();
-    	obj.PublishedVariable = getPublishedVariable();
-    	obj.SamplingIntervalHint = getSamplingIntervalHint();
-    	obj.SubstituteValue = getSubstituteValue();
-    	return obj;
-    }
+
+	@Override
+	public WrapperPublishedVariableParameter clone() {
+		WrapperPublishedVariableParameter obj = new WrapperPublishedVariableParameter();
+		if (getAttributeId() != null) {
+			obj.AttributeId = new UnsignedInteger(getAttributeId());
+		} else {
+			obj.AttributeId = null;
+		}
+		if(getDeadbandType() != null) {
+			obj.DeadbandType = new UnsignedInteger(getDeadbandType());
+		} else {
+			obj.DeadbandType = null;
+		}
+		
+		obj.DeadbandValue = getDeadbandValue();
+		obj.IndexRange = getIndexRange();
+		obj.MetaDataProperties = getMetaDataProperties();
+		obj.PublishedVariable = getPublishedVariable();
+		obj.SamplingIntervalHint = getSamplingIntervalHint();
+		obj.SubstituteValue = getSubstituteValue();
+		return obj;
+	}
+
+	@Override
+	public void reset() {
+		this.AttributeId = null;
+		this.DeadbandType = null;
+		this.DeadbandValue = null;
+		this.IndexRange = null;
+		this.MetaDataProperties = null;
+		this.PublishedVariable = null;
+		this.SamplingIntervalHint = null;
+		this.SubstituteValue = null;
+	}
 }

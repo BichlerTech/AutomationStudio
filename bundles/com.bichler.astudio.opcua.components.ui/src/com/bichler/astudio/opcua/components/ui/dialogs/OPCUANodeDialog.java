@@ -2,6 +2,8 @@ package com.bichler.astudio.opcua.components.ui.dialogs;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.HashSet;
+import java.util.Set;
 
 import opc.sdk.server.core.OPCInternalServer;
 
@@ -13,8 +15,9 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.graphics.Point;import org.eclipse.swt.internal.ole.win32.IDataObject;
 import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
@@ -25,6 +28,7 @@ import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.opcfoundation.ua.builtintypes.NodeId;
 import org.opcfoundation.ua.core.Identifiers;
+import org.opcfoundation.ua.core.NodeClass;
 
 import com.bichler.astudio.opcua.components.ui.BrowsePathElement;
 import com.bichler.astudio.opcua.components.ui.dialogs.providers.OPCUABrowseContentProvider;
@@ -38,20 +42,15 @@ public class OPCUANodeDialog extends Dialog {
 	private TreeViewer tableViewer_1;
 
 	private OPCInternalServer internalServer;
+	private String formTitle = "";
 	private NodeId selectedNodeId = null;
 	private String displayName = "";
 	private Deque<BrowsePathElement> browsePath = new ArrayDeque<BrowsePathElement>();
 
-	private NodeId startId = Identifiers.ObjectsFolder;
-
-	public OPCInternalServer getInternalServer() {
-		return internalServer;
-	}
-
-	public void setInternalServer(OPCInternalServer internalServer) {
-		this.internalServer = internalServer;
-	}
-
+	private NodeId startId = Identifiers.ObjectsFolder;	
+	
+	private Set<NodeClass> nodeClassFilter = new HashSet<>();
+	
 	/**
 	 * Create the dialog.
 	 * 
@@ -61,8 +60,6 @@ public class OPCUANodeDialog extends Dialog {
 		super(parentShell);
 		setShellStyle(SWT.CLOSE | SWT.RESIZE);
 	}
-
-	private String formTitle = "";
 
 	/**
 	 * Create contents of the dialog.
@@ -132,7 +129,28 @@ public class OPCUANodeDialog extends Dialog {
 	}
 
 	protected void selectionChange(OPCTreeViewerItem item) {
-
+		Button btnOK = getButton(IDialogConstants.OK_ID);
+		if(btnOK == null) {
+			return ;
+		}
+		
+		if(item == null) {
+			btnOK.setEnabled(false);
+			return ;
+		}
+		
+		if(this.nodeClassFilter.isEmpty()) {
+			btnOK.setEnabled(true);
+			return ;
+		}
+		
+		NodeClass selectedNodeClass = item.getNodeClass();		
+		if(this.nodeClassFilter.contains(selectedNodeClass)) {
+			btnOK.setEnabled(true);
+		}
+		else {
+			btnOK.setEnabled(false);
+		}
 	}
 
 	private void fillTree() {
@@ -209,6 +227,14 @@ public class OPCUANodeDialog extends Dialog {
 	public String getFormTitle() {
 		return formTitle;
 	}
+	
+	public OPCInternalServer getInternalServer() {
+		return internalServer;
+	}
+
+	public void setInternalServer(OPCInternalServer internalServer) {
+		this.internalServer = internalServer;
+	}
 
 	public void setFormTitle(String formTitle) {
 		this.formTitle = formTitle;
@@ -218,11 +244,35 @@ public class OPCUANodeDialog extends Dialog {
 		this.startId = startId;
 	}
 
+	public void setNodeClassFilter(NodeClass...nodeClasses) {
+		if(nodeClasses == null) {
+			this.nodeClassFilter = new HashSet<>();
+			return;
+		}
+		
+		for(NodeClass nodeClass : nodeClasses) {
+			this.nodeClassFilter.add(nodeClass);
+		}
+	}
+	
 	protected TreeViewer getTreeViewer() {
 		return this.tableViewer_1;
 	}
 
 	protected Composite getFormBody() {
 		return this.dialogForm.getBody();
+	}
+	
+	public static String toBrowsePath(Deque<BrowsePathElement> browsePathElements) {
+		 String browsepath = "";
+         for (BrowsePathElement element : browsePathElements)
+         {
+           if (element.getId().equals(Identifiers.ObjectsFolder))
+           {
+             continue;
+           }
+           browsepath += "//" + element.getBrowsename().getName();
+         }
+         return browsepath;
 	}
 }

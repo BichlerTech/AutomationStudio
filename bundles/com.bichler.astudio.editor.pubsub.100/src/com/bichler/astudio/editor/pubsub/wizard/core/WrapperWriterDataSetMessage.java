@@ -75,6 +75,7 @@ public class WrapperWriterDataSetMessage implements IWrapper {
 		JsonDataSetMessageContentMask = jsonDataSetMessageContentMask;
 	}
 
+	@Override
 	public WrapperWriterDataSetMessage clone() {
 		WrapperWriterDataSetMessage obj = new WrapperWriterDataSetMessage();
 		obj.type = this.type;
@@ -85,6 +86,17 @@ public class WrapperWriterDataSetMessage implements IWrapper {
 		obj.NetworkMessageContentMask = this.NetworkMessageContentMask;
 		obj.JsonDataSetMessageContentMask = this.JsonDataSetMessageContentMask;
 		return obj;
+	}
+
+	@Override
+	public void reset() {
+		this.type = null;
+		this.ConfiguredSize = null;
+		this.DataSetMessageContentMask = null;
+		this.DataSetOffset = null;
+		this.NetworkMessageNumber = null;
+		this.NetworkMessageContentMask = null;
+		this.JsonDataSetMessageContentMask = null;
 	}
 
 }

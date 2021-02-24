@@ -4,8 +4,8 @@ import org.opcfoundation.ua.builtintypes.UnsignedInteger;
 
 public class WrapperConfigurationVersion implements IWrapper {
 
-	protected UnsignedInteger MajorVersion;
-	protected UnsignedInteger MinorVersion;
+	protected UnsignedInteger MajorVersion = null;
+	protected UnsignedInteger MinorVersion = null;
 
 	public WrapperConfigurationVersion() {
 
@@ -18,8 +18,6 @@ public class WrapperConfigurationVersion implements IWrapper {
 	public UnsignedInteger getMinorVersion() {
 		return MinorVersion;
 	}
-	
-	
 
 	public void setMajorVersion(UnsignedInteger majorVersion) {
 		MajorVersion = majorVersion;
@@ -31,9 +29,23 @@ public class WrapperConfigurationVersion implements IWrapper {
 
 	public WrapperConfigurationVersion clone() {
 		WrapperConfigurationVersion obj = new WrapperConfigurationVersion();
-		obj.MajorVersion = new UnsignedInteger(MajorVersion);
-		obj.MinorVersion = new UnsignedInteger(MinorVersion);
+		if (MajorVersion != null) {
+			obj.MajorVersion = new UnsignedInteger(MajorVersion);
+		} else {
+			obj.MajorVersion = null;
+		}
+		if (MinorVersion != null) {
+			obj.MinorVersion = new UnsignedInteger(MinorVersion);
+		} else {
+			obj.MinorVersion = null;
+		}
 
 		return obj;
+	}
+
+	@Override
+	public void reset() {
+		MajorVersion = null;
+		MinorVersion = null;
 	}
 }

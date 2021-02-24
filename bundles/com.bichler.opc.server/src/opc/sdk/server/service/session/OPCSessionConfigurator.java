@@ -222,4 +222,5 @@ public class OPCSessionConfigurator {
 	public void startWatchCertificate(ScheduledExecutorService threadPool) {
 		threadPool.scheduleAtFixedRate(this.runnable, 0, 60000, TimeUnit.MILLISECONDS);
 	}
+
 }

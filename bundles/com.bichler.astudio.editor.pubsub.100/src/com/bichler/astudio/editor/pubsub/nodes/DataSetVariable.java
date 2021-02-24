@@ -6,6 +6,7 @@ import org.opcfoundation.ua.core.PublishedVariableDataType;
 
 import com.bichler.astudio.editor.pubsub.wizard.core.WrapperConfigurationVersion;
 import com.bichler.astudio.editor.pubsub.wizard.core.WrapperPublishedVariableParameter;
+import com.bichler.astudio.editor.pubsub.wizard.core.WrapperStaticValue;
 
 public class DataSetVariable implements Cloneable {
 
@@ -13,12 +14,12 @@ public class DataSetVariable implements Cloneable {
 	private String fieldNameAlias;
 	private Boolean promotedField;
 	private WrapperPublishedVariableParameter publishParameters;
-	
+	private WrapperStaticValue staticValue;
 	//private PublishedVariableDataType publishParameters;
 	
 	/* non std. field */
-	private Boolean staticValueSourceEnabled;
-	private DataValue staticValueSource;
+//	private Boolean staticValueSourceEnabled;
+//	private DataValue staticValueSource;
 
 	public void setFieldNameAlias(String value) {
 		this.fieldNameAlias = value;
@@ -39,9 +40,9 @@ public class DataSetVariable implements Cloneable {
 		if (this.publishParameters != null) {
 			clone.publishParameters = this.publishParameters.clone();
 		}
-		clone.staticValueSourceEnabled = this.staticValueSourceEnabled;
-		if (this.staticValueSource != null) {
-			clone.staticValueSource = (DataValue) this.staticValueSource.clone();
+		clone.staticValue = this.staticValue;
+		if (this.staticValue != null) {
+			clone.staticValue = this.staticValue.clone();
 		}
 		return clone;
 	}
@@ -73,19 +74,11 @@ public class DataSetVariable implements Cloneable {
 			return false;
 		}
 
-		if (this.staticValueSourceEnabled == null) {
-			if (other.staticValueSourceEnabled != null) {
+		if(this.staticValue == null) {
+			if(other.staticValue != null) {
 				return false;
 			}
-		} else if (!this.staticValueSourceEnabled.equals(other.staticValueSourceEnabled)) {
-			return false;
-		}
-
-		if (this.staticValueSource == null) {
-			if (other.staticValueSource != null) {
-				return false;
-			}
-		} else if (!this.staticValueSource.equals(other.staticValueSource)) {
+		} else if(!this.staticValue .equals(other.staticValue)) {
 			return false;
 		}
 
@@ -116,19 +109,11 @@ public class DataSetVariable implements Cloneable {
 		this.publishParameters = publishParameters;
 	}
 
-	public Boolean getStaticValueSourceEnabled() {
-		return staticValueSourceEnabled;
+	public WrapperStaticValue getStaticValue() {
+		return this.staticValue;
 	}
-
-	public void setStaticValueSourceEnabled(Boolean staticValueSourceEnabled) {
-		this.staticValueSourceEnabled = staticValueSourceEnabled;
-	}
-
-	public DataValue getStaticValueSource() {
-		return staticValueSource;
-	}
-
-	public void setStaticValueSource(DataValue staticValueSource) {
-		this.staticValueSource = staticValueSource;
+	
+	public void setStaticValue(WrapperStaticValue staticValue) {
+		this.staticValue = staticValue;
 	}
 }

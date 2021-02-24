@@ -5,10 +5,8 @@ import org.opcfoundation.ua.builtintypes.ExtensionObject;
 public class WrapperConnectionTransportSetting implements IWrapper{
 
 	private TransportSettingType type = null;
-	
 	private String ResourceUri = null;
 	private String AuthenticationProfileUri = null;
-	
 	private ExtensionObject DiscoveryAddress = null;
 	
 	public WrapperConnectionTransportSetting() {
@@ -57,6 +55,14 @@ public class WrapperConnectionTransportSetting implements IWrapper{
 		clone.DiscoveryAddress = this.DiscoveryAddress;
 		
 		return clone;
+	}
+
+	@Override
+	public void reset() {
+		this.type = null;
+		this.ResourceUri = null;
+		this.AuthenticationProfileUri = null;
+		this.DiscoveryAddress = null;
 	}
 	
 	

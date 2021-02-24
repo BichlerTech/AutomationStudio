@@ -29,6 +29,12 @@ public class WrapperConnectionAddress implements IWrapper{
 		clone.url = this.url;
 		return clone;
 	}
+
+	@Override
+	public void reset() {
+		this.networkInterface = null;
+		this.url = null;
+	}
 	
 	
 }

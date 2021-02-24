@@ -206,7 +206,7 @@ public class DetailConnectionTransportSettingsPage extends AbstractDetailWizardP
 		}
 	}
 
-	public ExtensionObject getDiscoveryAddress() {
+	private ExtensionObject getDiscoveryAddress() {
 		return new ExtensionObject(ExpandedNodeId.NULL);
 	}
 }

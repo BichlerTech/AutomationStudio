@@ -92,6 +92,7 @@ import com.bichler.astudio.editor.pubsub.wizard.core.WrapperFieldMetaData;
 import com.bichler.astudio.editor.pubsub.wizard.core.WrapperKeyValuePair;
 import com.bichler.astudio.editor.pubsub.wizard.core.WrapperPublishedVariable;
 import com.bichler.astudio.editor.pubsub.wizard.core.WrapperPublishedVariableParameter;
+import com.bichler.astudio.editor.pubsub.wizard.core.WrapperStaticValue;
 import com.bichler.astudio.editor.pubsub.wizard.core.WrapperWriterDataSetMessage;
 import com.bichler.astudio.editor.pubsub.wizard.core.WrapperWriterDataSetTransport;
 import com.bichler.astudio.editor.pubsub.wizard.core.WrapperWriterGroupMessage;
@@ -1383,6 +1384,7 @@ public class PubSubCompileHandler extends AbstractOPCOpenDriverModelHandler {
 		ConfigurationVersionDataType cv = null;
 		String falias = null;
 		Boolean promField = null;
+		Boolean statIN = null;
 		Boolean statVSEnabled = null;
 		DataValue statVS = null;
 		PublishedVariableDataType pvdt = null;
@@ -1390,8 +1392,11 @@ public class PubSubCompileHandler extends AbstractOPCOpenDriverModelHandler {
 			cv = helpConfigurationVersion(variable.getConfigurationVersion());
 			falias = variable.getFieldNameAlias();
 			promField = variable.getPromotedField();
-			statVSEnabled = variable.getStaticValueSourceEnabled();
-			statVS = variable.getStaticValueSource();
+			WrapperStaticValue staticVariable = variable.getStaticValue();
+			
+			statVSEnabled = staticVariable.isFieldSourceEnabled();
+			statIN = staticVariable.isInformationModelNode();
+			statVS = staticVariable.getStaticValueSource();
 			pvdt = helpPublishParameters(variable.getPublishParameters());
 		}
 		out.write("{" + linefeed);

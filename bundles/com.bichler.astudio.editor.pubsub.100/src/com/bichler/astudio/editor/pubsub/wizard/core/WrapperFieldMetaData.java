@@ -107,6 +107,7 @@ public class WrapperFieldMetaData implements IWrapper {
 		Properties = properties;
 	}
 
+	@Override
 	public WrapperFieldMetaData clone() {
 		WrapperFieldMetaData obj = new WrapperFieldMetaData();
 		obj.ArrayDimensions = this.ArrayDimensions;
@@ -121,5 +122,20 @@ public class WrapperFieldMetaData implements IWrapper {
 		obj.ValueRank = this.ValueRank;
 
 		return obj;
+	}
+
+
+	@Override
+	public void reset() {
+		this.ArrayDimensions = null;
+		this.BuiltInType = null;
+		this.DataSetFieldId = null;
+		this.DataType = null;
+		this.Description = null;
+		this.FieldFlags = null;
+		this.MaxStringLength = null;
+		this.Name = null;
+		this.Properties = null;
+		this.ValueRank = null;
 	}
 }

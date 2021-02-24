@@ -158,4 +158,13 @@ public class WrapperDataSetMetaData implements IWrapper {
 			this.Fields[index] = model;
 		}
 	}
+
+	@Override
+	public void reset() {
+		this.Name = null;
+		this.Description = null;
+		this.ConfigurationVersion = null;
+		this.Fields = null;
+		this.DataSetClassId = null;
+	}
 }
