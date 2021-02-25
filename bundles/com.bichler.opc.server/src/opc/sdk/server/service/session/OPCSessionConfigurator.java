@@ -2,6 +2,7 @@ package opc.sdk.server.service.session;
 
 import java.io.File;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -220,7 +221,7 @@ public class OPCSessionConfigurator {
 	 * @param threadPool
 	 */
 	public void startWatchCertificate(ScheduledExecutorService threadPool) {
-		threadPool.scheduleAtFixedRate(this.runnable, 0, 60000, TimeUnit.MILLISECONDS);
+		ScheduledFuture<?> future = threadPool.scheduleAtFixedRate(this.runnable, 0, 60000, TimeUnit.MILLISECONDS);
 	}
 
 }

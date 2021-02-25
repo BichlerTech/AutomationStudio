@@ -198,6 +198,31 @@ public abstract class OPCServer extends Server {
 		return result;
 	}
 
+	public void initWatchCertificate(String certificateStorePath) {
+		String configPath = this.securityManager.getCertStorePath();
+		if (configPath.endsWith("certs/")) {
+			// skip
+		} else if (configPath.endsWith("certs")) {
+			configPath += "/";
+		} else if (!configPath.endsWith("certs/")) {
+			configPath += "certs/";
+		}
+		
+		String pathCert = "", pathKey = "";
+		if (certificateStorePath == null) {
+			pathCert = configPath + CertificatePath.publiccert.getPath() + this.securityManager.getCertName()
+					+ "_cert.crt";
+			pathKey = configPath + CertificatePath.privatekey.getPath() + this.securityManager.getCertName()
+					+ "_key.pfx";
+		} else {
+			pathCert = certificateStorePath + "/" + configPath + CertificatePath.publiccert.getPath() + "/"
+					+ this.securityManager.getCertName() + "_cert.crt";
+			pathKey = certificateStorePath + "/" + configPath + CertificatePath.privatekey.getPath() + "/"
+					+ this.securityManager.getCertName() + "_key.pfx";
+		}
+		this.sessionConfigurator.initWatchCertificate(getApplication(), pathCert, pathKey);
+	}
+	
 	public KeyPair loadServerCertificate(String certificateStorePath) throws ServiceResultException {
 		File certFile = null;
 		File privFile = null;
@@ -235,7 +260,6 @@ public abstract class OPCServer extends Server {
 			result = new KeyPair(cert, privKey);
 			SecurityCertificateAdministration securityCertAdmin = new SecurityCertificateAdministration(cert, privKey);
 			this.sessionConfigurator.setSecurityCertificate(securityCertAdmin);
-			this.sessionConfigurator.initWatchCertificate(getApplication(), pathCert, pathKey);
 			this.application.addApplicationInstanceCertificate(result);
 		} catch (Exception e1) {
 			logger.log(Level.SEVERE, e1.getMessage(), e1);
