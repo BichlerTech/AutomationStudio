@@ -270,20 +270,56 @@ public abstract class OPCServer extends Server {
 	}
 
 	public boolean removeServerCertificate(KeyPair certificate) {
-
 		this.sessionConfigurator.setSecurityCertificate(null);
 		this.application.removeApplicationInstanceCertificate(certificate);
 
 		return true;
 	}
 
-	public KeyPair renewServerCertificate(KeyPair oldCert, String commonName, String organisation, String hostname)
+	public KeyPair renewServerCertificate(String certificateStorePath, KeyPair oldCert, String commonName, String organisation, String hostname)
 			throws IllegalStateException, IOException, GeneralSecurityException {
 
+		File certFile = null;
+		File privFile = null;
+		String configPath = this.securityManager.getCertStorePath();
+		if (configPath.endsWith("certs/")) {
+			// skip
+		} else if (configPath.endsWith("certs")) {
+			configPath += "/";
+		} else if (!configPath.endsWith("certs/")) {
+			configPath += "certs/";
+		}
+		String pathCert = "", pathKey = "";
+		if (certificateStorePath == null) {
+			Files.createDirectories(
+					Paths.get(certificateStorePath + "/" + configPath + CertificatePath.publiccert.getPath()));
+			Files.createDirectories(
+					Paths.get(certificateStorePath + "/" + configPath + CertificatePath.privatekey.getPath()));
+			pathCert = configPath + CertificatePath.publiccert.getPath() + this.securityManager.getCertName()
+					+ "_cert.crt";
+			pathKey = configPath + CertificatePath.privatekey.getPath() + this.securityManager.getCertName()
+					+ "_key.pfx";
+			certFile = new File(pathCert);
+			privFile = new File(pathKey);
+		} else {
+			Files.createDirectories(
+					Paths.get(certificateStorePath + "/" + configPath + CertificatePath.publiccert.getPath()));
+			Files.createDirectories(
+					Paths.get(certificateStorePath + "/" + configPath + CertificatePath.privatekey.getPath()));
+			pathCert = certificateStorePath + "/" + configPath + CertificatePath.publiccert.getPath() + "/"
+					+ this.securityManager.getCertName() + "_cert.crt";
+			pathKey = certificateStorePath + "/" + configPath + CertificatePath.privatekey.getPath() + "/"
+					+ this.securityManager.getCertName() + "_key.pfx";
+			certFile = new File(pathCert);
+			privFile = new File(pathKey);
+		}
+		
 		KeyPair newKeyPair = CertificateUtils.renewApplicationInstanceCertificate(commonName, organisation,
 				getApplication().getApplicationUri(), getSessionConfigurator().getCertificateValidity(), oldCert,
 				hostname);
-
+		
+		newKeyPair.save(certFile, privFile);
+		
 		return newKeyPair;
 	}
 

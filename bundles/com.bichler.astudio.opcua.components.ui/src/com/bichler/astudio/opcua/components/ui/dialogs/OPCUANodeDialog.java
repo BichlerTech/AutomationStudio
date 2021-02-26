@@ -5,17 +5,14 @@ import java.util.Deque;
 import java.util.HashSet;
 import java.util.Set;
 
-import opc.sdk.server.core.OPCInternalServer;
-
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Point;import org.eclipse.swt.internal.ole.win32.IDataObject;
+import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -34,6 +31,8 @@ import com.bichler.astudio.opcua.components.ui.BrowsePathElement;
 import com.bichler.astudio.opcua.components.ui.dialogs.providers.OPCUABrowseContentProvider;
 import com.bichler.astudio.opcua.components.ui.dialogs.providers.OPCUABrowserLabelProvider;
 import com.bichler.astudio.opcua.components.ui.dialogs.providers.OPCUABrowserProvider;
+
+import opc.sdk.server.core.OPCInternalServer;
 
 public class OPCUANodeDialog extends Dialog {
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
@@ -79,7 +78,7 @@ public class OPCUANodeDialog extends Dialog {
 		dialogForm.getBody().setLayout(new FillLayout(SWT.HORIZONTAL));
 
 		tableViewer_1 = new TreeViewer(dialogForm.getBody(), SWT.BORDER | SWT.FULL_SELECTION);
-		tableViewer_1.setSorter(new ViewerSorter());
+//		tableViewer_1.setSorter(new ViewerSorter());
 		Tree table_1 = tableViewer_1.getTree();
 		formToolkit.paintBordersFor(table_1);
 
