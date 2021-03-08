@@ -11,6 +11,6 @@
 	<classpathentry exported="true" kind="lib" path="libs/core-1.58.0.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/bcpkix-jdk15on-1.58.0.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/commons-logging-1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/OPCUA_ServerRuntime/lib/opc-ua-stack-1.4.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/opc-ua-stack-1.4.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
