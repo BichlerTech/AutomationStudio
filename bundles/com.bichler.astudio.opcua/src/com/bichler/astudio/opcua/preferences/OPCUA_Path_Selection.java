@@ -50,10 +50,12 @@ public class OPCUA_Path_Selection extends PreferencePage implements IWorkbenchPr
 	private Label lblDoCompileJar;
 	private Label lblDoCompileAnisC;
 	private Label lblDoDeleteSources;
+	private Label lblDoSymbolicNIDs;
 	private Button btn_onlyDataHUB;
 	private Button btn_doCompileJar;
 	private Button btn_doCompileAnsiC;
 	private Button btn_DoDeleteSources;
+	private Button btn_DoSymbolicNIDs;
 	private Label lblOpcUaModules;
 	private Label lblOpcUaModules_1;
 
@@ -163,6 +165,12 @@ public class OPCUA_Path_Selection extends PreferencePage implements IWorkbenchPr
 		lblDoDeleteSources.setText("generierte Sourcedateien löschen");
 		lblDoDeleteSources.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		btn_DoDeleteSources = new Button(container, SWT.CHECK);
+		
+		new Label(container, SWT.NONE);
+		lblDoSymbolicNIDs = new Label(container, SWT.NONE);
+		lblDoSymbolicNIDs.setText("Symbolische NodeIds bei Statemachines");
+		lblDoSymbolicNIDs.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+		btn_DoSymbolicNIDs = new Button(container, SWT.CHECK);
 
 		// btn_onlyDataHUB.setText("Only dataHUB upload");
 		new Label(container, SWT.NONE);
@@ -231,6 +239,8 @@ public class OPCUA_Path_Selection extends PreferencePage implements IWorkbenchPr
 		this.btn_doCompileAnsiC.setSelection(doCompileAnsiC);
 		boolean doDelSources = store.getBoolean(OPCUAConstants.OPCUADoDeleteSources);
 		this.btn_DoDeleteSources.setSelection(doDelSources);
+		boolean doSymbolicNIDs = store.getBoolean(OPCUAConstants.OPCUADoSymbolicNIDs);
+		this.btn_DoSymbolicNIDs.setSelection(doSymbolicNIDs);
 	}
 
 	@Override
@@ -249,6 +259,7 @@ public class OPCUA_Path_Selection extends PreferencePage implements IWorkbenchPr
 		store.setValue(OPCUAConstants.OPCUADoCompileJar, this.btn_doCompileJar.getSelection());
 		store.setValue(OPCUAConstants.OPCUADoCompileAnsiC, this.btn_doCompileAnsiC.getSelection());
 		store.setValue(OPCUAConstants.OPCUADoDeleteSources, this.btn_DoDeleteSources.getSelection());
+		store.setValue(OPCUAConstants.OPCUADoSymbolicNIDs, this.btn_DoSymbolicNIDs.getSelection());
 	}
 
 	@Override

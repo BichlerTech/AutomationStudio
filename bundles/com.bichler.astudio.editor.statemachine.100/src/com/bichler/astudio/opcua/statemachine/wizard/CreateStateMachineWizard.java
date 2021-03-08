@@ -2,9 +2,12 @@ package com.bichler.astudio.opcua.statemachine.wizard;
 
 import java.io.File;
 
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 
+import com.bichler.astudio.opcua.OPCUAActivator;
+import com.bichler.astudio.opcua.constants.OPCUAConstants;
 import com.bichler.astudio.opcua.statemachine.StatemachinePreferenceConstants;
 import com.bichler.opcua.statemachine.exception.StatemachineException;
 import com.bichler.opcua.statemachine.transform.AbstractStateMachineToOpcTransformer;
@@ -34,7 +37,9 @@ public class CreateStateMachineWizard extends Wizard {
 		try {
 			File resourceFile = new File(statemachineUMLModel);
 			File output = new File(targetPath);
-			AbstractStateMachineToOpcTransformer transformer = new PluginStateMachineToOpcTransformer(true);
+			IPreferenceStore store = OPCUAActivator.getDefault().getPreferenceStore();
+			boolean doSymbolicNIDs = store.getBoolean(OPCUAConstants.OPCUADoSymbolicNIDs);
+			AbstractStateMachineToOpcTransformer transformer = new PluginStateMachineToOpcTransformer(doSymbolicNIDs);
 			transformer.transform(resourceFile, output);
 			// store path to store
 			StatemachinePreferenceConstants.addValueToStore(

@@ -27,4 +27,6 @@ public class OPCUAConstants {
 	public static final String OPCUADoCompileAnsiC = "OPCUADoCompileAnsiC";
 
 	public static final String OPCUADoDeleteSources = "OPCUADoDeleteSources";
+	
+	public static final String OPCUADoSymbolicNIDs = "OPCUADoSymbolicNodeIDs";
 }
