@@ -36,7 +36,7 @@ Name "AutomationStudio"
 !define MUI_FINISHPAGE_RUN "$INSTDIR\AutomationStudio.exe"
 !define MUI_FINISHPAGE_SHOWREADME ""
 !define MUI_FINISHPAGE_SHOWREADME_NOTCHECKED
-!define MUI_FINISHPAGE_SHOWREADME_TEXT "Verknüpfung am Desktop erstellen"
+!define MUI_FINISHPAGE_SHOWREADME_TEXT "Verknuepfung am Desktop erstellen"
 !define MUI_FINISHPAGE_SHOWREADME_FUNCTION finishpageaction
 !define MUI_UNICON ".\icons\splash.ico"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
