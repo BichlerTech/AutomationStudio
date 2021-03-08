@@ -69,7 +69,7 @@ In project com.bichler.automationstudio.product -> AS-Feature.product -> Launch 
 
 ### Download AutomationStudio
 
-Download latest version of AutomationStudio from https://www.bichler.tech/ and follow installer instructions
+Download latest version of AutomationStudio from https://www.bichler.tech/download/as/latest/ and follow installer instructions
 
 
 ## Install C-Compile Toolchain
