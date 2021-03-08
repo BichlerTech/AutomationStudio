@@ -75,7 +75,7 @@ Var StartMenuGroup
 
 ; Installer pages
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE license.txt
+#!insertmacro MUI_PAGE_LICENSE license.txt
 !insertmacro MULTIUSER_PAGE_INSTALLMODE
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_STARTMENU Application $StartMenuGroup
