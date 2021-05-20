@@ -1595,8 +1595,7 @@ public class CreateFactory {
 					NodeId pasteId = ServerInstance.getInstance().getServerInstance().getAddressSpaceManager()
 							.getNodeFactory()
 							.getNextNodeId(key.getNamespaceIndex(), key.getValue(), key.getIdType(), ccNodeId);
-					ExpandedNodeId newExpId = new ExpandedNodeId(pasteId),
-							pasteId.getValue(), nsTable);
+					ExpandedNodeId newExpId = new ExpandedNodeId(pasteId);
 					// ExpandedNodeId newExpId =
 					// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 					// .toExpandedNodeId(pasteId);
