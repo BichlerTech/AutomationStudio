@@ -208,7 +208,7 @@ public class PasteHandler extends AbstractHandler {
 						MessageDialog.openError(HandlerUtil.getActiveShell(event),
 								CustomString.getString(Activator.getDefault().RESOURCE_BUNDLE, "window.error"),
 								CustomString.getString(Activator.getDefault().RESOURCE_BUNDLE,
-										"ópc.error.copypaste.remove"));
+										"ï¿½pc.error.copypaste.remove"));
 					} finally {
 						monitor.done();
 					}
@@ -284,8 +284,7 @@ public class PasteHandler extends AbstractHandler {
 						targetClass = serverNode.getNodeClass();
 					}
 					item.setTargetNodeClass(targetClass);
-					item.setTargetNodeId(new ExpandedNodeId(nsTable.getUri(pasteTarget.getNamespaceIndex()),
-							pasteTarget.getValue(), nsTable));
+					item.setTargetNodeId(new ExpandedNodeId(pasteTarget, nsTable));
 					// item.setTargetNodeId(nsTable.toExpandedNodeId(pasteTarget));
 				} else {
 					NodeId refTypeId = item.getReferenceTypeId();
@@ -363,7 +362,7 @@ public class PasteHandler extends AbstractHandler {
 		NamespaceTable table = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 		String nsUri = table.getUri(newId.getNamespaceIndex());
 
-		ExpandedNodeId expNewId = new ExpandedNodeId(nsUri, newId.getValue(), table);
+		ExpandedNodeId expNewId = new ExpandedNodeId(newId, table);
 
 		ExpandedNodeId expParentId = new ExpandedNodeId(UnsignedInteger.ZERO, parentId);
 	}
@@ -419,8 +418,7 @@ public class PasteHandler extends AbstractHandler {
 			ExpandedNodeId expNewId = new ExpandedNodeId(nsTable.getUri(newId.getNamespaceIndex()), newId.getValue(),
 					nsTable);
 			// ExpandedNodeId expNewId = nsTable.toExpandedNodeId(newId);
-			ExpandedNodeId expParentId = new ExpandedNodeId(nsTable.getUri(parentId.getNamespaceIndex()),
-					parentId.getValue(), nsTable);
+			ExpandedNodeId expParentId = new ExpandedNodeId(parentId, nsTable);
 			// ExpandedNodeId expParentId = nsTable.toExpandedNodeId(parentId);
 			/***************************/
 			/** fetched node to copy */
@@ -455,9 +453,8 @@ public class PasteHandler extends AbstractHandler {
 				boolean isTypeDefinition = tree.isTypeOf(refNode.getReferenceTypeId(), Identifiers.HasTypeDefinition);
 				if (isHierachical && isInverse && referenceId == null) {
 					// es gibt keinen orignalen parent
-					// <- als parent einfügen
-					ExpandedNodeId expPID = new ExpandedNodeId(nsTable.getUri(parentId.getNamespaceIndex()),
-							parentId.getValue(), nsTable);
+					// <- als parent einfï¿½gen
+					ExpandedNodeId expPID = new ExpandedNodeId(parentId, nsTable);
 					// ExpandedNodeId expPID = nsTable.toExpandedNodeId(parentId);
 					AddNodesItem originParent = pasteMapping.get(expPID);
 					if (originParent == null) {
@@ -525,8 +522,7 @@ public class PasteHandler extends AbstractHandler {
 			}
 			// find mapping of origin node
 			else {
-				ExpandedNodeId expTypeId = new ExpandedNodeId(nsTable.getUri(node2copy.getNodeId().getNamespaceIndex()),
-						node2copy.getNodeId().getValue(), nsTable);
+				ExpandedNodeId expTypeId = new ExpandedNodeId(node2copy.getNodeId(), nsTable);
 				// ExpandedNodeId expTypeId =
 				// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 				// .toExpandedNodeId(node2copy.getNodeId());
