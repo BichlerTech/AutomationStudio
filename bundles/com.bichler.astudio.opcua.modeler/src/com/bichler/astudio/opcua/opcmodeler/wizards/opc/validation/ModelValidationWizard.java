@@ -99,13 +99,12 @@ public class ModelValidationWizard extends Wizard {
 						ExtensionObject.binaryEncode(nodeAttributes, EncoderContext.getDefaultInstance()));
 				item.setNodeClass(model.getNodeClass());
 				item.setParentNodeId(
-						new ExpandedNodeId(nsTable.getUri(id.getNamespaceIndex()), id.getValue(), nsTable));
+						new ExpandedNodeId(id));
 				// item.setParentNodeId(ServerInstance.getInstance()
 				// .getServerInstance().getNamespaceUris()
 				// .toExpandedNodeId(model.getParent().getNodeId()));
 				item.setReferenceTypeId(result[0].getReferenceTypeId());
-				item.setRequestedNewNodeId(new ExpandedNodeId(nsTable.getUri(newNodeId.getNamespaceIndex()),
-						newNodeId.getValue(), nsTable));
+				item.setRequestedNewNodeId(new ExpandedNodeId(newNodeId));
 				// item.setRequestedNewNodeId(ServerInstance.getInstance()
 				// .getServerInstance().getNamespaceUris()
 				// .toExpandedNodeId(newNodeId));
@@ -193,8 +192,7 @@ public class ModelValidationWizard extends Wizard {
 		NamespaceTable nsTable = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 		ValidationModel model = (ValidationModel) selection.getFirstElement();
 		ModelTypDef selectedRootDef = new ModelTypDef();
-		selectedRootDef.nodeId = new ExpandedNodeId(nsTable.getUri(model.getNodeId().getNamespaceIndex()),
-				model.getNodeId().getValue(), nsTable);
+		selectedRootDef.nodeId = new ExpandedNodeId(model.getNodeId());
 		// selectedRootDef.nodeId = ServerInstance.getInstance()
 		// .getServerInstance().getNamespaceUris()
 		// .toExpandedNodeId(model.getNodeId());

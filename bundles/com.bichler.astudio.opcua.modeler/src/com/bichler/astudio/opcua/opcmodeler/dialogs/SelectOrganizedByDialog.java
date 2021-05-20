@@ -124,7 +124,7 @@ public class SelectOrganizedByDialog extends StatusDialog {
 			this.referenceNodeToUpdate.setReferenceTypeId(node.getNodeId());
 			this.referenceNodeToUpdate.setIsInverse(true);
 			this.referenceNodeToUpdate
-					.setTargetId(new ExpandedNodeId(nsTable.getUri(id.getNamespaceIndex()), id.getValue(), nsTable));
+					.setTargetId(new ExpandedNodeId(id));
 			// this.referenceNodeToUpdate.setTargetId(
 			// NamespaceTable.getDefaultInstance().toExpandedNodeId(this.nodeToUpdate.getNodeId()));
 			super.okPressed();

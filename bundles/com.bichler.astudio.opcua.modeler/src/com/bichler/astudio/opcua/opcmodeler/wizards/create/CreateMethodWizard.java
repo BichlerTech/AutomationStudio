@@ -122,8 +122,7 @@ public class CreateMethodWizard extends AbstractCreateWizard {
 			ReferenceNode ref = new ReferenceNode();
 			ref.setIsInverse(false);
 			ref.setReferenceTypeId(Identifiers.HasProperty);
-			ref.setTargetId(new ExpandedNodeId(nsTable.getUri(node.getNodeId().getNamespaceIndex()),
-					node.getNodeId().getValue(), nsTable));
+			ref.setTargetId(new ExpandedNodeId(node.getNodeId()));
 			additionalReferences.add(ref);
 		}
 		if (outputArgs.length > 0) {
@@ -132,8 +131,7 @@ public class CreateMethodWizard extends AbstractCreateWizard {
 			ReferenceNode ref = new ReferenceNode();
 			ref.setIsInverse(false);
 			ref.setReferenceTypeId(Identifiers.HasProperty);
-			ref.setTargetId(new ExpandedNodeId(nsTable.getUri(node.getNodeId().getNamespaceIndex()),
-					node.getNodeId().getValue(), nsTable));
+			ref.setTargetId(new ExpandedNodeId(node.getNodeId()));
 			additionalReferences.add(ref);
 		}
 	}

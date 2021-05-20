@@ -23,8 +23,7 @@ public class ReferenceUtil {
 		NamespaceTable nsTable = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 		Node root = ServerInstance.getNode(rootId);
 		ReferenceModel model, dummy = null;
-		model = new ReferenceModel(new ExpandedNodeId(nsTable.getUri(root.getNodeId().getNamespaceIndex()),
-				root.getNodeId().getValue(), nsTable), root.getDisplayName(), root.getNodeClass());
+		model = new ReferenceModel(new ExpandedNodeId(root.getNodeId()), root.getDisplayName(), root.getNodeClass());
 		// model = new ReferenceModel(nsTable.toExpandedNodeId(root.getNodeId()),
 		// root.getDisplayName(), root.getNodeClass());
 		List<ExpandedNodeId> preventStackOverflow = new ArrayList<>();

@@ -1438,7 +1438,7 @@ public class CreateFactory {
 		// ExpandedNodeId newNodeId =
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 		// .toExpandedNodeId(nodeId);
-		ExpandedNodeId variableType = new ExpandedNodeId(info);
+		ExpandedNodeId variableType = new ExpandedNodeId(info.getType());
 		// ExpandedNodeId variableType =
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 		// .toExpandedNodeId(info.getType());

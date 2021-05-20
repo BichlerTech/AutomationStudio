@@ -65,8 +65,7 @@ public class ValidateModelHandler extends AbstractHandler {
 		NodeId selectedId = selection.getNode().getNodeId();
 		boolean isUnderTypeModel = isSelectedNodeInTypeTree(selection);
 		ModelTypDef selectedDef = new ModelTypDef();
-		selectedDef.nodeId = new ExpandedNodeId(nsTable.getUri(selectedId.getNamespaceIndex()), selectedId.getValue(),
-				nsTable);
+		selectedDef.nodeId = new ExpandedNodeId(selectedId);
 		// selectedDef.nodeId =
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 		// .toExpandedNodeId(selectedId);
@@ -186,13 +185,11 @@ public class ValidateModelHandler extends AbstractHandler {
 									ExtensionObject.binaryEncode(nodeAttributes, EncoderContext.getDefaultInstance()));
 							item.setNodeClass(model.getNodeClass());
 
-							item.setParentNodeId(new ExpandedNodeId(nsTable.getUri(parentId.getNamespaceIndex()),
-									parentId.getValue(), nsTable));
+							item.setParentNodeId(new ExpandedNodeId(parentId);
 							// item.setParentNodeId(ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 							// .toExpandedNodeId(model.getParent().getNodeId()));
 							item.setReferenceTypeId(result[0].getReferenceTypeId());
-							item.setRequestedNewNodeId(new ExpandedNodeId(nsTable.getUri(newNodeId.getNamespaceIndex()),
-									newNodeId.getValue(), nsTable));
+							item.setRequestedNewNodeId(new ExpandedNodeId(newNodeId);
 							// item.setRequestedNewNodeId(ServerInstance.getInstance().getServerInstance()
 							// .getNamespaceUris().toExpandedNodeId(newNodeId));
 							if (result2.length > 0) {
@@ -234,8 +231,7 @@ public class ValidateModelHandler extends AbstractHandler {
 	private void fillSelectionParentTree(BrowserModelNode node, List<ExpandedNodeId> ids) {
 		NamespaceTable nsTable = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 		NodeId nodeId = node.getNode().getNodeId();
-		ExpandedNodeId expNodeId = new ExpandedNodeId(nsTable.getUri(nodeId.getNamespaceIndex()), nodeId.getValue(),
-				nsTable);
+		ExpandedNodeId expNodeId = new ExpandedNodeId(nodeId);
 		// ExpandedNodeId expNodeId =
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 		// .toExpandedNodeId(nodeId);

@@ -438,8 +438,7 @@ public class AddReferenceDialog extends Dialog {
 		NodeClass targetNodeClass = null;
 		if (this.targetIdResult != null) {
 			NodeId id = ((Node) this.targetIdResult).getNodeId();
-			ExpandedNodeId targetId = new ExpandedNodeId(nsTable.getUri(id.getNamespaceIndex()), id.getValue(),
-					nsTable);
+			ExpandedNodeId targetId = new ExpandedNodeId(id);
 			// ExpandedNodeId targetId =
 			// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 			// .toExpandedNodeId(((Node) this.targetIdResult).getNodeId());

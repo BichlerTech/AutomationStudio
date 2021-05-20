@@ -1348,8 +1348,7 @@ public class DesignerFormToolkit {
 					// remove this node from modelling rule node
 					Node n = ServerInstance.getNode(ref.getTargetId());
 					removeReference(n, Identifiers.HasModellingRule,
-							new ExpandedNodeId(nsTable.getUri(node.getNodeId().getNamespaceIndex()),
-									node.getNodeId().getValue(), nsTable));
+							new ExpandedNodeId(node.getNodeId()));
 				} else {
 					refs.add(ref);
 				}
@@ -1376,7 +1375,7 @@ public class DesignerFormToolkit {
 			// } else {
 			// if
 			foundRef = new ReferenceNode(Identifiers.HasModellingRule, false,
-					new ExpandedNodeId(nsTable.getUri(ruleId.getNamespaceIndex()), ruleId.getValue(), nsTable));
+					new ExpandedNodeId(ruleId));
 			refs.add(foundRef);
 			// now add reference to modelling rule node
 			// }
@@ -2605,8 +2604,7 @@ public class DesignerFormToolkit {
 			} else if (valueRank == ValueRanks.OneDimension) {
 				val = new ExtensionObject[1];
 				((ExtensionObject[]) val)[0] = new ExtensionObject(
-						new ExpandedNodeId(nsTable.getUri(Identifiers.Structure.getNamespaceIndex()),
-								Identifiers.Structure.getValue(), nsTable));
+						new ExpandedNodeId(Identifiers.Structure));
 			} else if (valueRank == ValueRanks.Scalar) {
 				val = new ExtensionObject(ExpandedNodeId.NULL);
 			}

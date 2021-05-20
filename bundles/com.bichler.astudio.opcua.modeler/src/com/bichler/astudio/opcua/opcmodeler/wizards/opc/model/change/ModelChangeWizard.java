@@ -95,8 +95,7 @@ public class ModelChangeWizard extends Wizard {
 								continue;
 							}
 							NodeId typeDefId = typeDef.typeId;
-							ExpandedNodeId expTdId = new ExpandedNodeId(nsTable.getUri(typeDefId.getNamespaceIndex()),
-									typeDefId.getValue(), nsTable);
+							ExpandedNodeId expTdId = new ExpandedNodeId(typeDefId);
 							// ExpandedNodeId expTdId =
 							// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 							// .toExpandedNodeId(typeDefId);
@@ -109,8 +108,7 @@ public class ModelChangeWizard extends Wizard {
 							List<ExpandedNodeId> nodeIdsToMap = new ArrayList<>();
 							for (AddNodesResult item : results) {
 								nodeIdsToMap.add(
-										new ExpandedNodeId(nsTable.getUri(item.getAddedNodeId().getNamespaceIndex()),
-												item.getAddedNodeId().getValue(), nsTable));
+										new ExpandedNodeId(item.getAddedNodeId()));
 								// nodeIdsToMap.add(ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 								// .toExpandedNodeId(item.getAddedNodeId()));
 							}

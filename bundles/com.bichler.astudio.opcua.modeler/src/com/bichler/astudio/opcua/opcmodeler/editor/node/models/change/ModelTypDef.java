@@ -49,12 +49,11 @@ public class ModelTypDef {
 
 		ModelTreeDef def = new ModelTreeDef();
 		def.setNodeId(
-				new ExpandedNodeId(nsTable.getUri(this.typeId.getNamespaceIndex()), this.typeId.getValue(), nsTable));
+				new ExpandedNodeId(this.typeId));
 		// def.setNodeId(nsTable.toExpandedNodeId(this.typeId));
 		List<ExpandedNodeId> already = new ArrayList<>();
 		buildChangedAttributeModel(nsTable, def,
-				new ExpandedNodeId(nsTable.getUri(Identifiers.RootFolder.getNamespaceIndex()),
-						Identifiers.RootFolder.getValue(), nsTable),
+				new ExpandedNodeId(Identifiers.RootFolder),
 				already);
 		// buildChangedAttributeModel(nsTable, def,
 		// nsTable.toExpandedNodeId(Identifiers.RootFolder), already);
@@ -107,13 +106,12 @@ public class ModelTypDef {
 		NamespaceTable nsTable = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 		ModelTreeDef def = new ModelTreeDef();
 		def.setNodeId(
-				new ExpandedNodeId(nsTable.getUri(this.typeId.getNamespaceIndex()), this.typeId.getValue(), nsTable));
+				new ExpandedNodeId(this.typeId));
 		// def.setNodeId(nsTable.toExpandedNodeId(this.typeId));
 		def.setNodeClass(this.typeClass);
 		def.setUpdate(result);
 		buildChangedModel(nsTable, def, this.typeId,
-				new ExpandedNodeId(nsTable.getUri(result.getNodeId().getNamespaceIndex()),
-						result.getNodeId().getValue(), nsTable),
+				new ExpandedNodeId(result.getNodeId()),
 				result);
 		// buildChangedModel(nsTable, def, this.typeId,
 		// nsTable.toExpandedNodeId(result.getNodeId()), result);
@@ -181,7 +179,7 @@ public class ModelTypDef {
 		NamespaceTable nsTable = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 		ModelTreeDef def = new ModelTreeDef();
 		def.setNodeId(
-				new ExpandedNodeId(nsTable.getUri(this.typeId.getNamespaceIndex()), this.typeId.getValue(), nsTable));
+				new ExpandedNodeId(this.typeId));
 		// def.setNodeId(nsTable.toExpandedNodeId(this.typeId));
 		def.setNodeClass(this.typeClass);
 		// node is the type
@@ -288,7 +286,7 @@ public class ModelTypDef {
 		NamespaceTable nsTable = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 		ModelTreeDef def = new ModelTreeDef();
 		def.setNodeId(
-				new ExpandedNodeId(nsTable.getUri(this.typeId.getNamespaceIndex()), this.typeId.getValue(), nsTable));
+				new ExpandedNodeId(this.typeId));
 		// def.setNodeId(nsTable.toExpandedNodeId(this.typeId));
 		buildType(nsTable, def);
 		this.typeTree = def;

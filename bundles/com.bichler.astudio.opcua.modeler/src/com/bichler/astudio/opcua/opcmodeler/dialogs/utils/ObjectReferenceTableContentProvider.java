@@ -45,7 +45,7 @@ public class ObjectReferenceTableContentProvider implements IStructuredContentPr
 			// the inputed element is an type
 			NodeId nodeId = ((Node) inputElement).getNodeId();
 			if (ref == null) {
-				ref = new ExpandedNodeId(nsTable.getUri(nodeId.getNamespaceIndex()), nodeId.getValue(), nsTable);
+				ref = new ExpandedNodeId(nodeId);
 				// ref = ServerInstance.getInstance().getServerInstance()
 				// .getNamespaceUris()
 				// .toExpandedNodeId(((Node) inputElement).getNodeId());
@@ -55,8 +55,7 @@ public class ObjectReferenceTableContentProvider implements IStructuredContentPr
 			} catch (ServiceResultException e) {
 				e.printStackTrace();
 			}
-			ExpandedNodeId expNodeId = new ExpandedNodeId(nsTable.getUri(nodeId.getNamespaceIndex()), nodeId.getValue(),
-					nsTable);
+			ExpandedNodeId expNodeId = new ExpandedNodeId(nodeId);
 			// ExpandedNodeId nodeId = ServerInstance.getInstance()
 			// .getServerInstance().getNamespaceUris()
 			// .toExpandedNodeId(((Node) inputElement).getNodeId());

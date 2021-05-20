@@ -450,8 +450,7 @@ public class NodeEditorVariableContentProvider extends NodeEditorVariableTypeCon
 		ReferenceNode[] nodes = varNode.getReferences();
 		for (ReferenceNode n : nodes) {
 			if (Identifiers.HasTypeDefinition.equals(n.getReferenceTypeId())) {
-				n.setTargetId(new ExpandedNodeId(nsTable.getUri(this.variableType.getNodeId().getNamespaceIndex()),
-						this.variableType.getNodeId().getValue(), nsTable));
+				n.setTargetId(new ExpandedNodeId(this.variableType.getNodeId()));
 				// int i = 0;
 			}
 		}

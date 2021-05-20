@@ -198,14 +198,11 @@ public class ValidationModelPage extends WizardPage {
 					objModel = redrawMissingValidationNode(objModel, typeModel);
 				}
 				NamespaceTable nsTable = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
-				objModel.setMappingId(new ExpandedNodeId(nsTable.getUri(typeModel.getNodeId().getNamespaceIndex()),
-						typeModel.getNodeId().getValue(), nsTable));
+				objModel.setMappingId(new ExpandedNodeId(typeModel.getNodeId()));
 				// objModel.setMappingId(nsTable.toExpandedNodeId(typeModel.getNodeId()));
 				getMVWizard().getRuntimeMapping()
-						.put(new ExpandedNodeId(nsTable.getUri(objModel.getNodeId().getNamespaceIndex()),
-								objModel.getNodeId().getValue(), nsTable),
-								new ExpandedNodeId(nsTable.getUri(typeModel.getNodeId().getNamespaceIndex()),
-										typeModel.getNodeId().getValue(), nsTable));
+						.put(new ExpandedNodeId(objModel.getNodeId()),
+								new ExpandedNodeId(typeModel.getNodeId()));
 				// getMVWizard().getRuntimeMapping().put(nsTable.toExpandedNodeId(objModel.getNodeId()),
 				// nsTable.toExpandedNodeId(typeModel.getNodeId()));
 				tvObjectModel.update(objModel, null);
@@ -437,8 +434,7 @@ public class ValidationModelPage extends WizardPage {
 				List<NodeId> remainingTypes = new ArrayList<>();
 				for (ValidationModel child : typeChildren) {
 					ExpandedNodeId expChildId = new ExpandedNodeId(
-							nsTable.getUri(child.getNodeId().getNamespaceIndex()), child.getNodeId().getValue(),
-							nsTable);
+							child.getNodeId());
 					// ExpandedNodeId expChildId =
 					// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 					// .toExpandedNodeId(child.getNodeId());

@@ -127,8 +127,8 @@ public class ServerModelTypeMapper {
 						NodeId sId = NodeIdUtil.createNodeId(sourceIndex, decodedSource.getValue());
 						NodeId tId = NodeIdUtil.createNodeId(targetIndex, decodedTarget.getValue());
 						typeMapping.put(
-								new ExpandedNodeId(nsTable.getUri(sId.getNamespaceIndex()), sId.getValue(), nsTable),
-								new ExpandedNodeId(nsTable.getUri(tId.getNamespaceIndex()), tId.getValue(), nsTable));
+								new ExpandedNodeId(sId),
+								new ExpandedNodeId(tId));
 					} catch (IndexOutOfBoundsException e1) {
 						// skip model entry because do not exist
 						Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, e1);

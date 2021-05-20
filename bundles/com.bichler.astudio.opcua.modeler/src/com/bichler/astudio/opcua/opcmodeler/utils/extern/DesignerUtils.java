@@ -415,7 +415,7 @@ public class DesignerUtils {
 		for (DeleteNodesItem remove : removedNodes) {
 			String nsUri = nsTable.getUri(remove.getNodeId().getNamespaceIndex());
 			// ExpandedNodeId expNewId =
-			nodes2remove.add(new ExpandedNodeId(nsUri, remove.getNodeId().getValue(), nsTable));
+			nodes2remove.add(new ExpandedNodeId(remove.getNodeId()));
 			// nodes2remove.add(nsTable.toExpandedNodeId(remove.getNodeId()));
 		}
 		// typemodel has changed
@@ -446,13 +446,11 @@ public class DesignerUtils {
 			NamespaceTable nsTable = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 			List<ExpandedNodeId> nodes2remove = new ArrayList<>();
 			for (DeleteNodesItem remove : nodesToDelete) {
-				nodes2remove.add(new ExpandedNodeId(nsTable.getUri(remove.getNodeId().getNamespaceIndex()),
-						remove.getNodeId().getValue(), nsTable));
+				nodes2remove.add(new ExpandedNodeId(remove.getNodeId()));
 				// nodes2remove.add(nsTable.toExpandedNodeId(remove.getNodeId()));
 			}
 			for (DeleteNodesItem remove : removedNodes.values()) {
-				nodes2remove.add(new ExpandedNodeId(nsTable.getUri(remove.getNodeId().getNamespaceIndex()),
-						remove.getNodeId().getValue(), nsTable));
+				nodes2remove.add(new ExpandedNodeId(remove.getNodeId()));
 				// nodes2remove.add(nsTable.toExpandedNodeId(remove.getNodeId()));
 			}
 			// typemodel has changed
@@ -670,7 +668,7 @@ public class DesignerUtils {
 		// there is a tree
 		List<ExpandedNodeId> typeList = new ArrayList<>();
 		typeList.add(
-				new ExpandedNodeId(nsTable.getUri(ptd.typeId.getNamespaceIndex()), ptd.typeId.getValue(), nsTable));
+				new ExpandedNodeId(ptd.typeId));
 		// typeList.add(nsTable.toExpandedNodeId(ptd.typeId));
 		rekTyp(typeList, typeTree);
 		List<ExpandedNodeId> preventStackOverflow = new ArrayList<>();
@@ -680,8 +678,7 @@ public class DesignerUtils {
 			 * find all effected types under objects folder
 			 */
 			doInputMCC(nsTable, effected,
-					new ExpandedNodeId(nsTable.getUri(Identifiers.ObjectsFolder.getNamespaceIndex()),
-							Identifiers.ObjectsFolder.getValue(), nsTable),
+					new ExpandedNodeId(Identifiers.ObjectsFolder),
 					NodeClass.getMask(NodeClass.Object, NodeClass.Variable, NodeClass.Method), typeList,
 					preventStackOverflow, true);
 			// doInputMCC(nsTable, effected,
@@ -694,8 +691,7 @@ public class DesignerUtils {
 			// object types folder
 			case ObjectType:
 				doInputMCC(nsTable, effected,
-						new ExpandedNodeId(nsTable.getUri(Identifiers.ObjectTypesFolder.getNamespaceIndex()),
-								Identifiers.ObjectTypesFolder.getValue(), nsTable),
+						new ExpandedNodeId(Identifiers.ObjectTypesFolder),
 						NodeClass.getMask(NodeClass.Object, NodeClass.Variable, NodeClass.Method, NodeClass.ObjectType),
 						typeList, preventStackOverflow, false);
 				// doInputMCC(nsTable, effected,
@@ -707,8 +703,7 @@ public class DesignerUtils {
 			// variable types folder AND object types folder
 			case VariableType:
 				doInputMCC(nsTable, effected,
-						new ExpandedNodeId(nsTable.getUri(Identifiers.ObjectTypesFolder.getNamespaceIndex()),
-								Identifiers.ObjectTypesFolder.getValue(), nsTable),
+						new ExpandedNodeId(Identifiers.ObjectTypesFolder),
 						NodeClass.getMask(NodeClass.Object, NodeClass.Variable, NodeClass.Method, NodeClass.ObjectType),
 						typeList, preventStackOverflow, false);
 				// doInputMCC(nsTable, effected,
@@ -717,8 +712,7 @@ public class DesignerUtils {
 				// NodeClass.Method, NodeClass.ObjectType),
 				// typeList, preventStackOverflow, false);
 				doInputMCC(nsTable, effected,
-						new ExpandedNodeId(nsTable.getUri(Identifiers.VariableTypesFolder.getNamespaceIndex()),
-								Identifiers.VariableTypesFolder.getValue(), nsTable),
+						new ExpandedNodeId(Identifiers.VariableTypesFolder),
 						NodeClass.getMask(NodeClass.Variable, NodeClass.VariableType), typeList, preventStackOverflow,
 						false);
 				// doInputMCC(nsTable, effected,
@@ -730,8 +724,7 @@ public class DesignerUtils {
 			// reftypefolder
 			case ReferenceType:
 				doInputMCC(nsTable, effected,
-						new ExpandedNodeId(nsTable.getUri(Identifiers.ReferenceTypesFolder.getNamespaceIndex()),
-								Identifiers.ReferenceTypesFolder.getValue(), nsTable),
+						new ExpandedNodeId(Identifiers.ReferenceTypesFolder),
 						NodeClass.getMask(NodeClass.ReferenceType, NodeClass.Variable), typeList, preventStackOverflow,
 						false);
 				// doInputMCC(nsTable, effected,
@@ -743,8 +736,7 @@ public class DesignerUtils {
 			// datatype folder
 			case DataType:
 				doInputMCC(nsTable, effected,
-						new ExpandedNodeId(nsTable.getUri(Identifiers.DataTypesFolder.getNamespaceIndex()),
-								Identifiers.DataTypesFolder.getValue(), nsTable),
+						new ExpandedNodeId(Identifiers.DataTypesFolder),
 						NodeClass.getMask(NodeClass.DataType, NodeClass.Variable), typeList, preventStackOverflow,
 						false);
 				// doInputMCC(nsTable, effected,
@@ -766,7 +758,7 @@ public class DesignerUtils {
 		// there is a tree
 		List<ExpandedNodeId> typeList = new ArrayList<>();
 		typeList.add(
-				new ExpandedNodeId(nsTable.getUri(ptd.typeId.getNamespaceIndex()), ptd.typeId.getValue(), nsTable));
+				new ExpandedNodeId(ptd.typeId));
 		// typeList.add(nsTable.toExpandedNodeId(ptd.typeId));
 		rekTyp(typeList, typeTree);
 		List<ExpandedNodeId> preventLoop = new ArrayList<>();
@@ -776,8 +768,7 @@ public class DesignerUtils {
 			 * find all effected types under objects folder
 			 */
 			doInputMCR(nsTable, effected,
-					new ExpandedNodeId(nsTable.getUri(Identifiers.ObjectsFolder.getNamespaceIndex()),
-							Identifiers.ObjectsFolder.getValue(), nsTable),
+					new ExpandedNodeId(Identifiers.ObjectsFolder),
 					NodeClass.getMask(NodeClass.ALL), typeList, preventLoop, true);
 			// doInputMCR(nsTable, effected,
 			// nsTable.toExpandedNodeId(Identifiers.ObjectsFolder),
@@ -786,8 +777,7 @@ public class DesignerUtils {
 			// object types folder
 			case ObjectType:
 				doInputMCR(nsTable, effected,
-						new ExpandedNodeId(nsTable.getUri(Identifiers.ObjectTypesFolder.getNamespaceIndex()),
-								Identifiers.ObjectTypesFolder.getValue(), nsTable),
+						new ExpandedNodeId(Identifiers.ObjectTypesFolder),
 						NodeClass.getMask(NodeClass.ALL), typeList, preventLoop, true);
 				// doInputMCR(nsTable, effected,
 				// nsTable.toExpandedNodeId(Identifiers.ObjectTypesFolder),
@@ -796,15 +786,13 @@ public class DesignerUtils {
 			// variable types folder AND object types folder
 			case VariableType:
 				doInputMCR(nsTable, effected,
-						new ExpandedNodeId(nsTable.getUri(Identifiers.ObjectTypesFolder.getNamespaceIndex()),
-								Identifiers.ObjectTypesFolder.getValue(), nsTable),
+						new ExpandedNodeId(Identifiers.ObjectTypesFolder),
 						NodeClass.getMask(NodeClass.ALL), typeList, preventLoop, true);
 				// doInputMCR(nsTable, effected,
 				// nsTable.toExpandedNodeId(Identifiers.ObjectTypesFolder),
 				// NodeClass.getMask(NodeClass.ALL), typeList, preventLoop, true);
 				doInputMCR(nsTable, effected,
-						new ExpandedNodeId(nsTable.getUri(Identifiers.VariableTypesFolder.getNamespaceIndex()),
-								Identifiers.VariableTypesFolder.getValue(), nsTable),
+						new ExpandedNodeId(Identifiers.VariableTypesFolder),
 						NodeClass.getMask(NodeClass.ALL), typeList, preventLoop, true);
 				// doInputMCR(nsTable, effected,
 				// nsTable.toExpandedNodeId(Identifiers.VariableTypesFolder),
@@ -813,8 +801,7 @@ public class DesignerUtils {
 			// reftypefolder
 			case ReferenceType:
 				doInputMCR(nsTable, effected,
-						new ExpandedNodeId(nsTable.getUri(Identifiers.ReferenceTypesFolder.getNamespaceIndex()),
-								Identifiers.ReferenceTypesFolder.getValue(), nsTable),
+						new ExpandedNodeId(Identifiers.ReferenceTypesFolder),
 						NodeClass.getMask(NodeClass.ALL), typeList, preventLoop, true);
 				// doInputMCR(nsTable, effected,
 				// nsTable.toExpandedNodeId(Identifiers.ReferenceTypesFolder),
@@ -823,8 +810,7 @@ public class DesignerUtils {
 			// datatype folder
 			case DataType:
 				doInputMCR(nsTable, effected,
-						new ExpandedNodeId(nsTable.getUri(Identifiers.DataTypesFolder.getNamespaceIndex()),
-								Identifiers.DataTypesFolder.getValue(), nsTable),
+						new ExpandedNodeId(Identifiers.DataTypesFolder),
 						NodeClass.getMask(NodeClass.ALL), typeList, preventLoop, true);
 				// doInputMCR(nsTable, effected,
 				// nsTable.toExpandedNodeId(Identifiers.DataTypesFolder),
@@ -1056,7 +1042,7 @@ public class DesignerUtils {
 	private static void startRefresh(NamespaceTable nsTable, ModelBrowserView part, BrowserModelNode node,
 			Collection<ExpandedNodeId> array) {
 		NodeId nodeId = node.getNode().getNodeId();
-		ExpandedNodeId id = new ExpandedNodeId(nsTable.getUri(nodeId.getNamespaceIndex()), nodeId.getValue(), nsTable);
+		ExpandedNodeId id = new ExpandedNodeId(nodeId);
 		// ExpandedNodeId id = nsTable.toExpandedNodeId(nodeId);
 		if (array.contains(id)) {
 			part.refresh(node);

@@ -31,7 +31,7 @@ public class ValidationModel {
 		this.name = name;
 		NamespaceTable nsTable = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 		this.mappingId = ServerInstance.getTypeModel().getTypeIdFromObject(
-				new ExpandedNodeId(nsTable.getUri(nodeId.getNamespaceIndex()), nodeId.getValue(), nsTable));
+				new ExpandedNodeId(nodeId));
 		// this.mappingId = ServerInstance.getTypeModel().getTypeIdFromObject(
 		// ServerInstance.getInstance().getServerInstance()
 		// .getNamespaceUris().toExpandedNodeId(nodeId));
@@ -143,14 +143,12 @@ public class ValidationModel {
 		NamespaceTable nsTable = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 		// add as new node
 		wizard.getNodesToAdd().add(objModelParent);
-		ExpandedNodeId mapping = new ExpandedNodeId(nsTable.getUri(getNodeId().getNamespaceIndex()),
-				getNodeId().getValue(), nsTable);
+		ExpandedNodeId mapping = new ExpandedNodeId(getNodeId());
 		// ExpandedNodeId mapping = ServerInstance.getInstance()
 		// .getServerInstance().getNamespaceUris()
 		// .toExpandedNodeId(getNodeId());
 		wizard.getRuntimeMapping()
-				.put(new ExpandedNodeId(nsTable.getUri(objModelParent.getNodeId().getNamespaceIndex()),
-						objModelParent.getNodeId().getValue(), nsTable), mapping);
+				.put(new ExpandedNodeId(objModelParent.getNodeId()), mapping);
 		// wizard.getRuntimeMapping().put(
 		// ServerInstance.getInstance().getServerInstance()
 		// .getNamespaceUris()
