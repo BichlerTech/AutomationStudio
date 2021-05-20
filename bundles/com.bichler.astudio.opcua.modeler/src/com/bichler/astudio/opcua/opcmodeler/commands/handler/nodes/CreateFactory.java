@@ -124,7 +124,7 @@ public class CreateFactory {
 			}
 			for (NodeId node : mapping) {
 				ServerInstance.getTypeModel().removeModelMapping(
-						new ExpandedNodeId(nsTable.getUri(node.getNamespaceIndex()), node.getValue(), nsTable));
+						new ExpandedNodeId(node));
 				// ServerInstance.getTypeModel().removeModelMapping(nsTable.toExpandedNodeId(node));
 			}
 		}
@@ -209,8 +209,7 @@ public class CreateFactory {
 		nodesToAdd.setNodeClass(info.getNodeClass());
 		nodesToAdd.setParentNodeId(parentNodeId);
 		nodesToAdd.setReferenceTypeId(referenceTypeId);
-		nodesToAdd.setRequestedNewNodeId(new ExpandedNodeId(nsTable.getUri(info.getNodeId().getNamespaceIndex()),
-				info.getNodeId().getValue(), nsTable));
+		nodesToAdd.setRequestedNewNodeId(new ExpandedNodeId(info.getNodeId()));
 		// nodesToAdd.setRequestedNewNodeId(
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris().toExpandedNodeId(info.getNodeId()));
 		nodesToAdd.setTypeDefinition(null);
@@ -241,21 +240,17 @@ public class CreateFactory {
 				e.printStackTrace();
 			}
 			additional2add.setNodeClass(key.getNodeClass());
-			additional2add.setParentNodeId(new ExpandedNodeId(nsTable.getUri(info.getNodeId().getNamespaceIndex()),
-					info.getNodeId().getValue(), nsTable));
+			additional2add.setParentNodeId(new ExpandedNodeId(info.getNodeId()));
 
 			additional2add.setReferenceTypeId(Identifiers.HasProperty);
-			additional2add.setRequestedNewNodeId(new ExpandedNodeId(nsTable.getUri(key.getNodeId().getNamespaceIndex()),
-					key.getNodeId().getValue(), nsTable));
+			additional2add.setRequestedNewNodeId(new ExpandedNodeId(key.getNodeId()));
 
 			additional2add
-					.setTypeDefinition(new ExpandedNodeId(nsTable.getUri(Identifiers.PropertyType.getNamespaceIndex()),
-							Identifiers.PropertyType.getValue(), nsTable));
+					.setTypeDefinition(new ExpandedNodeId(Identifiers.PropertyType));
 
 			nodes2add.add(additional2add);
 			additionalReferences.add(new AddReferencesItem(key.getNodeId(), Identifiers.HasModellingRule, true, null,
-					new ExpandedNodeId(nsTable.getUri(Identifiers.ModellingRule_Mandatory.getNamespaceIndex()),
-							Identifiers.ModellingRule_Mandatory.getValue(), nsTable),
+					new ExpandedNodeId(Identifiers.ModellingRule_Mandatory),
 					NodeClass.Object));
 
 			// TODO:
@@ -752,8 +747,7 @@ public class CreateFactory {
 		nodesToAdd.setNodeClass(info.getNodeClass());
 		nodesToAdd.setParentNodeId(parentNodeId);
 		nodesToAdd.setReferenceTypeId(referenceTypeId);
-		nodesToAdd.setRequestedNewNodeId(new ExpandedNodeId(nsTable.getUri(info.getNodeId().getNamespaceIndex()),
-				info.getNodeId().getValue(), nsTable));
+		nodesToAdd.setRequestedNewNodeId(new ExpandedNodeId(info.getNodeId()));
 		// nodesToAdd.setRequestedNewNodeId(
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris().toExpandedNodeId(info.getNodeId()));
 		nodesToAdd.setTypeDefinition(null);
@@ -785,8 +779,7 @@ public class CreateFactory {
 		nodesToAdd.setNodeClass(info.getNodeClass());
 		nodesToAdd.setParentNodeId(parentNodeId);
 		nodesToAdd.setReferenceTypeId(referenceTypeId);
-		nodesToAdd.setRequestedNewNodeId(new ExpandedNodeId(nsTable.getUri(info.getNodeId().getNamespaceIndex()),
-				info.getNodeId().getValue(), nsTable));
+		nodesToAdd.setRequestedNewNodeId(new ExpandedNodeId(info.getNodeId()));
 		// nodesToAdd.setRequestedNewNodeId(
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris().toExpandedNodeId(info.getNodeId()));
 		nodesToAdd.setTypeDefinition(null);
@@ -927,8 +920,7 @@ public class CreateFactory {
 		NamespaceTable nsTable = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 
 		AddNodesItem nodeToAdd = new AddNodesItem();
-		ExpandedNodeId expNodeId = new ExpandedNodeId(nsTable.getUri(nodeId.getNamespaceIndex()), nodeId.getValue(),
-				nsTable);
+		ExpandedNodeId expNodeId = new ExpandedNodeId(nodeId);
 		// ExpandedNodeId expNodeId =
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 		// .toExpandedNodeId(nodeId);
@@ -1004,7 +996,7 @@ public class CreateFactory {
 			modelingRule.setSourceNodeId(NodeIdUtil.createNodeId(newNodeId.getNamespaceIndex(), newNodeId.getValue()));
 			modelingRule.setTargetNodeClass(NodeClass.Object);
 			modelingRule.setTargetNodeId(
-					new ExpandedNodeId(nsTable.getUri(ruleId.getNamespaceIndex()), ruleId.getValue(), nsTable));
+					new ExpandedNodeId(ruleId));
 			referencesToAdd.add(modelingRule);
 		}
 		if (info.hasRuleItself()) {
@@ -1098,8 +1090,7 @@ public class CreateFactory {
 							.getNodeFactory()
 							.getNextNodeId(key.getNamespaceIndex(), key.getValue(), key.getIdType(), ccNodeId);
 
-					ExpandedNodeId newExpId = new ExpandedNodeId(nsTable.getUri(pasteId.getNamespaceIndex()),
-							pasteId.getValue(), nsTable);
+					ExpandedNodeId newExpId = new ExpandedNodeId(pasteId);
 					// ExpandedNodeId newExpId =
 					// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 					// .toExpandedNodeId(pasteId);
@@ -1128,8 +1119,7 @@ public class CreateFactory {
 						newReference.setReferenceTypeId(entry.getReferenceTypeId());
 						newReference.setTargetNodeClass(entry.getTargetNodeClass());
 						NodeId sr = entry.getSourceNodeId();
-						ExpandedNodeId expSr = new ExpandedNodeId(nsTable.getUri(sr.getNamespaceIndex()), sr.getValue(),
-								nsTable);
+						ExpandedNodeId expSr = new ExpandedNodeId(sr);
 						// ExpandedNodeId expSr = nsTable.toExpandedNodeId(sr);
 						ExpandedNodeId srExpId = pasteIdMapping.get(expSr);
 						newReference.setSourceNodeId(nsTable.toNodeId(srExpId));
@@ -1160,7 +1150,7 @@ public class CreateFactory {
 
 		NamespaceTable table = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 		String nsUri = table.getUri(nodeId.getNamespaceIndex());
-		ExpandedNodeId expNodeId = new ExpandedNodeId(nsUri, nodeId.getValue(), table);
+		ExpandedNodeId expNodeId = new ExpandedNodeId(nodeId);
 		// ExpandedNodeId expNodeId =
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 		// .toExpandedNodeId(nodeId);
@@ -1186,8 +1176,7 @@ public class CreateFactory {
 					.getNextNodeId(nextId2use.getNamespaceIndex(), nextId2use.getValue(), nextId2use.getIdType(),
 							ccNodeId);
 		}
-		ExpandedNodeId newNodeId = new ExpandedNodeId(table.getUri(nodeId.getNamespaceIndex()), nodeId.getValue(),
-				table);
+		ExpandedNodeId newNodeId = new ExpandedNodeId(nodeId);
 		// ExpandedNodeId newNodeId =
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 		// .toExpandedNodeId(nodeId);
@@ -1197,8 +1186,7 @@ public class CreateFactory {
 			newNodeType = ExpandedNodeId.NULL;
 			break;
 		default:
-			newNodeType = new ExpandedNodeId(table.getUri(info.getType().getNamespaceIndex()),
-					info.getType().getValue(), table);
+			newNodeType = new ExpandedNodeId(info.getType());
 			// newNodeType =
 			// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 			// .toExpandedNodeId(info.getType());
@@ -1242,7 +1230,7 @@ public class CreateFactory {
 			modelingRule.setSourceNodeId(NodeIdUtil.createNodeId(newNodeId.getNamespaceIndex(), newNodeId.getValue()));
 			modelingRule.setTargetNodeClass(NodeClass.Object);
 			modelingRule.setTargetNodeId(
-					new ExpandedNodeId(table.getUri(ruleId.getNamespaceIndex()), ruleId.getValue(), table));
+					new ExpandedNodeId(ruleId));
 			referencesToAdd.add(modelingRule);
 		}
 		if (info.hasRuleItself()) {
@@ -1359,8 +1347,7 @@ public class CreateFactory {
 							.getNodeFactory()
 							.getNextNodeId(key.getNamespaceIndex(), key.getValue(), key.getIdType(), ccNodeId);
 
-					ExpandedNodeId newExpId = new ExpandedNodeId(table.getUri(pasteId.getNamespaceIndex()),
-							pasteId.getValue(), table);
+					ExpandedNodeId newExpId = new ExpandedNodeId(pasteId);
 					// ExpandedNodeId newExpId =
 					// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 					// .toExpandedNodeId(pasteId);
@@ -1389,8 +1376,7 @@ public class CreateFactory {
 						newReference.setReferenceTypeId(entry.getReferenceTypeId());
 						newReference.setTargetNodeClass(entry.getTargetNodeClass());
 						NodeId sr = entry.getSourceNodeId();
-						ExpandedNodeId expSr = new ExpandedNodeId(table.getUri(sr.getNamespaceIndex()), sr.getValue(),
-								table);
+						ExpandedNodeId expSr = new ExpandedNodeId(sr);
 						// ExpandedNodeId expSr = nsTable.toExpandedNodeId(sr);
 						ExpandedNodeId srExpId = pasteIdMapping.get(expSr);
 						newReference.setSourceNodeId(table.toNodeId(srExpId));
@@ -1421,8 +1407,7 @@ public class CreateFactory {
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 		}
-		ExpandedNodeId expNodeId = new ExpandedNodeId(nsTable.getUri(nodeId.getNamespaceIndex()), nodeId.getValue(),
-				nsTable);
+		ExpandedNodeId expNodeId = new ExpandedNodeId(nodeId);
 		// ExpandedNodeId expNodeId =
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 		// .toExpandedNodeId(nodeId);
@@ -1449,13 +1434,11 @@ public class CreateFactory {
 					.getNextNodeId(nextId2use.getNamespaceIndex(), nextId2use.getValue(), nextId2use.getIdType(),
 							ccNodeId);
 		}
-		ExpandedNodeId newNodeId = new ExpandedNodeId(nsTable.getUri(nodeId.getNamespaceIndex()), nodeId.getValue(),
-				nsTable);
+		ExpandedNodeId newNodeId = new ExpandedNodeId(nodeId);
 		// ExpandedNodeId newNodeId =
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 		// .toExpandedNodeId(nodeId);
-		ExpandedNodeId variableType = new ExpandedNodeId(nsTable.getUri(info.getType().getNamespaceIndex()),
-				info.getType().getValue(), nsTable);
+		ExpandedNodeId variableType = new ExpandedNodeId(info);
 		// ExpandedNodeId variableType =
 		// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 		// .toExpandedNodeId(info.getType());
@@ -1498,7 +1481,7 @@ public class CreateFactory {
 			modelingRule.setSourceNodeId(NodeIdUtil.createNodeId(newNodeId.getNamespaceIndex(), newNodeId.getValue()));
 			modelingRule.setTargetNodeClass(NodeClass.Object);
 			modelingRule.setTargetNodeId(
-					new ExpandedNodeId(nsTable.getUri(ruleId.getNamespaceIndex()), ruleId.getValue(), nsTable));
+					new ExpandedNodeId(ruleId));
 			referencesToAdd.add(modelingRule);
 		}
 		if (info.hasRuleItself()) {
@@ -1612,7 +1595,7 @@ public class CreateFactory {
 					NodeId pasteId = ServerInstance.getInstance().getServerInstance().getAddressSpaceManager()
 							.getNodeFactory()
 							.getNextNodeId(key.getNamespaceIndex(), key.getValue(), key.getIdType(), ccNodeId);
-					ExpandedNodeId newExpId = new ExpandedNodeId(nsTable.getUri(pasteId.getNamespaceIndex()),
+					ExpandedNodeId newExpId = new ExpandedNodeId(pasteId),
 							pasteId.getValue(), nsTable);
 					// ExpandedNodeId newExpId =
 					// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
@@ -1642,8 +1625,7 @@ public class CreateFactory {
 						newReference.setReferenceTypeId(entry.getReferenceTypeId());
 						newReference.setTargetNodeClass(entry.getTargetNodeClass());
 						NodeId sr = entry.getSourceNodeId();
-						ExpandedNodeId expSr = new ExpandedNodeId(nsTable.getUri(sr.getNamespaceIndex()), sr.getValue(),
-								nsTable);
+						ExpandedNodeId expSr = new ExpandedNodeId(sr);
 						// ExpandedNodeId expSr = nsTable.toExpandedNodeId(sr);
 						ExpandedNodeId srExpId = pasteIdMapping.get(expSr);
 						newReference.setSourceNodeId(nsTable.toNodeId(srExpId));
@@ -1672,8 +1654,7 @@ public class CreateFactory {
 			NodeId id = ServerInstance.getInstance().getServerInstance().getAddressSpaceManager().getNodeFactory()
 					.getNextNodeId(targetNodeId.getNamespaceIndex(), targetNodeId.getValue(), targetNodeId.getIdType(),
 							ccNodeId);
-			ExpandedNodeId newNodeId = new ExpandedNodeId(nsTable.getUri(id.getNamespaceIndex()), id.getValue(),
-					nsTable);
+			ExpandedNodeId newNodeId = new ExpandedNodeId(id);
 //      referencesToAdd.get(index).setTargetNodeId(newNodeId);
 //      index++;
 			// ExpandedNodeId newNodeId =
@@ -1695,8 +1676,7 @@ public class CreateFactory {
 			// if (exists) {
 			// objectReferencesToAdd(refDescription, referencesToAdd,
 			// newNodeId);
-			ExpandedNodeId typeDef = new ExpandedNodeId(nsTable.getUri(Identifiers.PropertyType.getNamespaceIndex()),
-					Identifiers.PropertyType.getValue(), nsTable);
+			ExpandedNodeId typeDef = new ExpandedNodeId(Identifiers.PropertyType);
 			// ExpandedNodeId typeDef =
 			// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 			// .toExpandedNodeId(Identifiers.PropertyType);
@@ -1726,7 +1706,7 @@ public class CreateFactory {
 			modelingRule.setSourceNodeId(NodeIdUtil.createNodeId(newNodeId.getNamespaceIndex(), newNodeId.getValue()));
 			modelingRule.setTargetNodeClass(NodeClass.Object);
 			modelingRule.setTargetNodeId(
-					new ExpandedNodeId(nsTable.getUri(ruleId.getNamespaceIndex()), ruleId.getValue(), nsTable));
+					new ExpandedNodeId(ruleId));
 			referencesToAdd.add(modelingRule);
 		}
 	}
@@ -1799,8 +1779,7 @@ public class CreateFactory {
 						.getNextNodeId(targetNodeId.getNamespaceIndex(), targetNodeId.getValue(),
 								targetNodeId.getIdType(), ccNodeId);
 
-				ExpandedNodeId newNodeId = new ExpandedNodeId(nsTable.getUri(id.getNamespaceIndex()), id.getValue(),
-						nsTable);
+				ExpandedNodeId newNodeId = new ExpandedNodeId(id);
 				// ExpandedNodeId newNodeId =
 				// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 				// .toExpandedNodeId(id);
@@ -1952,8 +1931,7 @@ public class CreateFactory {
 					id = ServerInstance.getInstance().getServerInstance().getAddressSpaceManager().getNodeFactory()
 							.getNextNodeId(targetNodeId.getNamespaceIndex(), targetNodeId.getValue(), null, ccNodeId);
 				}
-				ExpandedNodeId newNodeId = new ExpandedNodeId(nsTable.getUri(id.getNamespaceIndex()), id.getValue(),
-						nsTable);
+				ExpandedNodeId newNodeId = new ExpandedNodeId(id);
 				boolean exists = existsVariableIdInNodeList(result.getAdditionalCreateNodes(),
 						refDescription.getNodeId());
 				// modelrule is good

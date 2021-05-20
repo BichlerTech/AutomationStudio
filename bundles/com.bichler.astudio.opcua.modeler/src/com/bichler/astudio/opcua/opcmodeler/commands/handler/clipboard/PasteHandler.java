@@ -284,7 +284,7 @@ public class PasteHandler extends AbstractHandler {
 						targetClass = serverNode.getNodeClass();
 					}
 					item.setTargetNodeClass(targetClass);
-					item.setTargetNodeId(new ExpandedNodeId(pasteTarget, nsTable));
+					item.setTargetNodeId(new ExpandedNodeId(pasteTarget));
 					// item.setTargetNodeId(nsTable.toExpandedNodeId(pasteTarget));
 				} else {
 					NodeId refTypeId = item.getReferenceTypeId();
@@ -362,7 +362,7 @@ public class PasteHandler extends AbstractHandler {
 		NamespaceTable table = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
 		String nsUri = table.getUri(newId.getNamespaceIndex());
 
-		ExpandedNodeId expNewId = new ExpandedNodeId(newId, table);
+		ExpandedNodeId expNewId = new ExpandedNodeId(newId);
 
 		ExpandedNodeId expParentId = new ExpandedNodeId(UnsignedInteger.ZERO, parentId);
 	}
@@ -415,10 +415,9 @@ public class PasteHandler extends AbstractHandler {
 			 * Wrapp nodeids
 			 */
 			NamespaceTable nsTable = ServerInstance.getInstance().getServerInstance().getNamespaceUris();
-			ExpandedNodeId expNewId = new ExpandedNodeId(nsTable.getUri(newId.getNamespaceIndex()), newId.getValue(),
-					nsTable);
+			ExpandedNodeId expNewId = new ExpandedNodeId(newId);
 			// ExpandedNodeId expNewId = nsTable.toExpandedNodeId(newId);
-			ExpandedNodeId expParentId = new ExpandedNodeId(parentId, nsTable);
+			ExpandedNodeId expParentId = new ExpandedNodeId(parentId);
 			// ExpandedNodeId expParentId = nsTable.toExpandedNodeId(parentId);
 			/***************************/
 			/** fetched node to copy */
@@ -454,7 +453,7 @@ public class PasteHandler extends AbstractHandler {
 				if (isHierachical && isInverse && referenceId == null) {
 					// es gibt keinen orignalen parent
 					// <- als parent einf�gen
-					ExpandedNodeId expPID = new ExpandedNodeId(parentId, nsTable);
+					ExpandedNodeId expPID = new ExpandedNodeId(parentId);
 					// ExpandedNodeId expPID = nsTable.toExpandedNodeId(parentId);
 					AddNodesItem originParent = pasteMapping.get(expPID);
 					if (originParent == null) {
@@ -522,7 +521,7 @@ public class PasteHandler extends AbstractHandler {
 			}
 			// find mapping of origin node
 			else {
-				ExpandedNodeId expTypeId = new ExpandedNodeId(node2copy.getNodeId(), nsTable);
+				ExpandedNodeId expTypeId = new ExpandedNodeId(node2copy.getNodeId());
 				// ExpandedNodeId expTypeId =
 				// ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 				// .toExpandedNodeId(node2copy.getNodeId());

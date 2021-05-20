@@ -189,14 +189,12 @@ public class EditMethodArgumentsHandler extends AbstractHandler {
 
 			try {
 				AddNodesItem item = new AddNodesItem(
-						new ExpandedNodeId(nsTable.getUri(node.getNode().getNodeId().getNamespaceIndex()),
-								node.getNode().getNodeId().getValue(), nsTable),
+						new ExpandedNodeId(node.getNode().getNodeId()),
 						Identifiers.HasProperty,
-						new ExpandedNodeId(nsTable.getUri(argsNID.getNamespaceIndex()), argsNID.getValue(), nsTable),
+						new ExpandedNodeId(argsNID),
 						new QualifiedName(path), NodeClass.Variable,
 						ExtensionObject.binaryEncode(va, EncoderContext.getDefaultInstance()),
-						new ExpandedNodeId(nsTable.getUri(Identifiers.PropertyType.getNamespaceIndex()),
-								Identifiers.PropertyType.getValue(), nsTable));
+						new ExpandedNodeId(Identifiers.PropertyType));
 
 				ServerInstance.addNode(new AddNodesItem[] { item }, false);
 				
