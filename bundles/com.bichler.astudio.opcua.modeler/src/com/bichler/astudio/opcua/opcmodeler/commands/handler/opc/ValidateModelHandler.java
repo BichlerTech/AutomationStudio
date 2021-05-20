@@ -185,11 +185,11 @@ public class ValidateModelHandler extends AbstractHandler {
 									ExtensionObject.binaryEncode(nodeAttributes, EncoderContext.getDefaultInstance()));
 							item.setNodeClass(model.getNodeClass());
 
-							item.setParentNodeId(new ExpandedNodeId(parentId);
+							item.setParentNodeId(new ExpandedNodeId(parentId));
 							// item.setParentNodeId(ServerInstance.getInstance().getServerInstance().getNamespaceUris()
 							// .toExpandedNodeId(model.getParent().getNodeId()));
 							item.setReferenceTypeId(result[0].getReferenceTypeId());
-							item.setRequestedNewNodeId(new ExpandedNodeId(newNodeId);
+							item.setRequestedNewNodeId(new ExpandedNodeId(newNodeId));
 							// item.setRequestedNewNodeId(ServerInstance.getInstance().getServerInstance()
 							// .getNamespaceUris().toExpandedNodeId(newNodeId));
 							if (result2.length > 0) {
