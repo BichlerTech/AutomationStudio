@@ -1,8 +1,0 @@
-Generated OPC UA statemachine type (OpModeStateMachineType) nodeset
-
--Subtype: FiniteStateMachineType
-+-StateType
-+-TransitionType
-
--References
-+- HasModellingRule
