@@ -649,7 +649,7 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 		out.newLine();
 		for (String nsUri : nsUris) {
 			int index = nsTable2use.getIndex(nsUri);
-			out.write("nsTable.add(" + index + ", \"" + nsUri + "\");");
+			out.write("nsTable.add(" + index + ", \"" + nsUri + "\".replace(\"hostname\", InetAddress.getLocalHost().getHostName()));");
 			out.newLine();
 		}
 		out.newLine();
