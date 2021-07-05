@@ -241,7 +241,7 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 				// init method header size
 				if (!hasMethodStarted) {
 					classByteCount += 127;
-					String declaration = "server.importModel(nsTable, " + VARIABLE_LIST_NODES2ADD
+					String declaration = "}catch(UnknownHostException ex){\nLogger.getLogger(getClass().getName()).log(Level.SEVERE,ex.getMessage());}\nserver.importModel(nsTable, " + VARIABLE_LIST_NODES2ADD
 							+ ".toArray(new Node[0]));\n}\n";
 					classByteCount += declaration.getBytes().length;
 				}
@@ -655,7 +655,7 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 			out.newLine();
 		}
 		out.newLine();
-		out.write("} catch(UnknownHostException ex) {Logger.getLogger(getClass().getName()).log(Level.SEVERE, ex.getMessage();}");
+		out.write("} catch(UnknownHostException ex) {Logger.getLogger(getClass().getName()).log(Level.SEVERE, ex.getMessage());}");
 		out.newLine();
 	}
 
