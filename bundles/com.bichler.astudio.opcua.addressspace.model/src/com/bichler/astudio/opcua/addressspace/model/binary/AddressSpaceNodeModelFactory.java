@@ -913,6 +913,8 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 	void writePackageSection(BufferedWriter out) throws IOException {
 		out.write("package " + PACKAGENAME + ";");
 		out.newLine();
+		out.write("import java.net.InetAddress;");
+		out.newLine();
 		out.write("import java.util.List;");
 		out.newLine();
 		out.write("import java.io.InputStream;");
@@ -1255,7 +1257,7 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 			if (nIdValue instanceof String) {
 				nIdValue = "\"" + nIdValue + "\"";
 			}
-			String help = "new ExpandedNodeId(new UnsignedInteger(" + nodeId.getServerIndex() + "),\"" + uri + "\","
+			String help = "new ExpandedNodeId(new UnsignedInteger(" + nodeId.getServerIndex() + "),\"" + uri + "\".replace(\"hostname\", InetAddress.getLocalHost().getHostName()),"
 					+ nIdValue + ", nsTable)";
 			return help;
 		} catch (ServiceResultException e) {
