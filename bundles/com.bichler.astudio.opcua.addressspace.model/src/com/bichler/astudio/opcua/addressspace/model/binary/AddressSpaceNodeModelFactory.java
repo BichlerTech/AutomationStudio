@@ -684,7 +684,7 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 		int byteCount = 0;
 		String declaration = "private void add" + count
 				+ "(NamespaceTable nsTable, UAServerApplicationInstance server, List<DataValue> values, List<ReferenceNode> references2add){\n";
-		declaration += "String hostName = "";\n";
+		declaration += "String hostName = \"\";\n";
 		declaration += "try {hostName = InetAddress.getLocalHost().getHostName();} \n";
 		declaration += "catch(UnknownHostException ex){\nLogger.getLogger(getClass().getName()).log(Level.SEVERE,ex.getMessage());}\n";
 		out.write(declaration);
