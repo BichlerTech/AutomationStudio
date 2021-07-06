@@ -1262,7 +1262,7 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 			if (nIdValue instanceof String) {
 				nIdValue = "\"" + nIdValue + "\"";
 			}
-			String help = "new ExpandedNodeId(new UnsignedInteger(" + nodeId.getServerIndex() + "),\"" + uri + "\".replace(\"hostname\", InetAddress.getLocalHost().getHostName()),"
+			String help = "new ExpandedNodeId(new UnsignedInteger(" + nodeId.getServerIndex() + "),\"" + uri + "\".replace(\"hostname\", hostName),"
 					+ nIdValue + ", nsTable)";
 			return help;
 		} catch (ServiceResultException e) {
