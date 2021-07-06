@@ -647,15 +647,11 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 		String[] nsUris = nsTable2use.toArray();
 		out.write("NamespaceTable nsTable = new NamespaceTable();");
 		out.newLine();
-		out.write("try {");
-		out.newLine();
 		for (String nsUri : nsUris) {
 			int index = nsTable2use.getIndex(nsUri);
-			out.write("nsTable.add(" + index + ", \"" + nsUri + "\".replace(\"hostname\", InetAddress.getLocalHost().getHostName()));");
+			out.write("nsTable.add(" + index + ", \"" + nsUri + "\".replace(\"hostname\", hostName));");
 			out.newLine();
 		}
-		out.newLine();
-		out.write("} catch(UnknownHostException ex) {Logger.getLogger(getClass().getName()).log(Level.SEVERE, ex.getMessage());}");
 		out.newLine();
 	}
 
@@ -919,6 +915,8 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 		out.write("package " + PACKAGENAME + ";");
 		out.newLine();
 		out.write("import java.net.InetAddress;");
+		out.newLine();
+		out.write("import java.util.logging.Logger;");
 		out.newLine();
 		out.write("import java.util.List;");
 		out.newLine();
