@@ -655,7 +655,7 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 		out.newLine();
 		for (String nsUri : nsUris) {
 			int index = nsTable2use.getIndex(nsUri);
-			out.write("nsTable.add(" + index + ", \"" + nsUri + "\".replace(\"<hostname>\", hostName));");
+			out.write("nsTable.add(" + index + ", \"" + nsUri + "\".replace(\"hostname\", hostName));");
 			out.newLine();
 		}
 		out.newLine();
@@ -1270,7 +1270,7 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 			if (nIdValue instanceof String) {
 				nIdValue = "\"" + nIdValue + "\"";
 			}
-			String help = "new ExpandedNodeId(new UnsignedInteger(" + nodeId.getServerIndex() + "),\"" + uri + "\".replace(\"<hostname>\", hostName),"
+			String help = "new ExpandedNodeId(new UnsignedInteger(" + nodeId.getServerIndex() + "),\"" + uri + "\".replace(\"hostname\", hostName),"
 					+ nIdValue + ", nsTable)";
 			return help;
 		} catch (ServiceResultException e) {
