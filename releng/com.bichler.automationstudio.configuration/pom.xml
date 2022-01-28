@@ -6,7 +6,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <properties>
-        <tycho.version>2.3.0</tycho.version>
+        <tycho.version>${tycho.version}</tycho.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Skip the deployment here, submodules can override this property -->
         <!--maven.deploy.skip>true</maven.deploy.skip-->
@@ -36,17 +36,26 @@
 		</pluginRepository>
   </pluginRepositories>-->
     <build>
+    	<pluginManagement>
+      		<plugins>
+        		<plugin>
+          			<groupId>org.eclipse.tycho</groupId>
+          			<artifactId>tycho-p2-director-plugin</artifactId>
+          			<version>2.5.0</version>
+        		</plugin>
+      		</plugins>
+      	</pluginManagement>
         <plugins>
             <!--Enable the replacement of the SNAPSHOT version based on the last commit-->
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
                 <artifactId>tycho-packaging-plugin</artifactId>
-                <version>2.3.0</version>
+                <version>${tycho.version}</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.eclipse.tycho.extras</groupId>
                         <artifactId>tycho-buildtimestamp-jgit</artifactId>
-                        <version>2.3.0</version>
+                        <version>${tycho.version}</version>
                     </dependency>
                 </dependencies>
                 <configuration>
@@ -69,13 +78,13 @@
                 <plugin>
                     <groupId>org.eclipse.tycho</groupId>
                     <artifactId>tycho-maven-plugin</artifactId>
-                    <version>2.3.0</version>
+                    <version>${tycho.version}</version>
                     <extensions>true</extensions>
                 </plugin>
                 <plugin>
                     <groupId>org.eclipse.tycho</groupId>
                     <artifactId>target-platform-configuration</artifactId>
-                    <version>2.3.0</version>
+                    <version>${tycho.version}</version>
                     <configuration><!--
 					 <dependency-resolution>
 						<extraRequirements>
@@ -116,7 +125,7 @@
                 <!--plugin>
                 <groupId>org.eclipse.tycho.extras</groupId>
                 <artifactId>tycho-source-feature-plugin</artifactId>
-                <version>2.3.0</version>
+                <version>${tycho.version}</version>
                 <executions>
                     <execution>
                         <id>source-feature</id>
@@ -130,7 +139,7 @@
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
                 <artifactId>tycho-source-plugin</artifactId>
-                <version>2.3.0</version>
+                <version>${tycho.version}</version>
                 <executions>
                     <execution>
                         <id>plugin-source</id>
