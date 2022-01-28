@@ -1,7 +1,0 @@
-source.. = src/
-output.. = bin/
-bin.includes = META-INF/,\
-               .,\
-               libs/,\
-               libs/slf4j-simple-1.7.7.jar
-               

@@ -1,8 +1,0 @@
-package com.bichler.opc.comdrv;
-
-import opc.sdk.ua.IOPCSession;
-
-public interface IOPCServerSession extends IOPCSession
-{
-  String getSessionname();
-}

@@ -321,11 +321,7 @@ public class NodesetImporter {
 			try {
 				attributesVar.setDataType((NodeId) Identifiers.class.getDeclaredField(dataType).get(null));
 			} catch (NoSuchFieldException nsfe) {
-<<<<<<< HEAD
 				// UADataTypes, falls DataType standardm��ig nicht vorhanden ist, pr�fen
-=======
-				// UADataTypes, falls DataType standardmäßig nicht vorhanden ist, prüfen
->>>>>>> 895f544a9595e6f7ac85742d15e36811a774868e
 				// ob in eigener Liste ein Eintrag vorhanden ist und ggf neue NodeId erzeugen,
 				// andernfalls Fehler/Abbruch
 				NodeId nid = getSpezificDataType(dataType);
@@ -551,11 +547,7 @@ public class NodesetImporter {
 			try {
 				attributes.setDataType((NodeId) Identifiers.class.getDeclaredField(dataType).get(null));
 			} catch (NoSuchFieldException nsfe) {
-<<<<<<< HEAD
 				// UADataTypes, falls DataType standardm��ig nicht vorhanden ist, pr�fen
-=======
-				// UADataTypes, falls DataType standardmäßig nicht vorhanden ist, prüfen
->>>>>>> 895f544a9595e6f7ac85742d15e36811a774868e
 				// ob in eigener Liste ein Eintrag vorhanden ist und ggf neue NodeId erzeugen,
 				// andernfalls Fehler/Abbruch
 				NodeId nid = getSpezificDataType(dataType);
@@ -888,11 +880,7 @@ public class NodesetImporter {
 				for (Element ref : references) {
 					/*
 					 * if (ref.getAttributeValue(IS_FORWARD) != null &&
-<<<<<<< HEAD
 					 * !Boolean.valueOf(ref.getAttributeValue(IS_FORWARD))) { // ==>use entry f�r
-=======
-					 * !Boolean.valueOf(ref.getAttributeValue(IS_FORWARD))) { // ==>use entry für
->>>>>>> 895f544a9595e6f7ac85742d15e36811a774868e
 					 * reference type String referenceTyp = ref.getAttributeValue(REFERENCE_TYPE);
 					 * // HAS_COMPONENT, HAS_ORDERED_COMPONENT,... try {
 					 * bean.setReferenceType((NodeId)
@@ -900,11 +888,7 @@ public class NodesetImporter {
 					 * node from refrerence
 					 * bean.setParentNodeId(createNodeIdByXmlValue(ref.getValue())); } catch
 					 * (NoSuchFieldException nsfe) { // UAReferences, falls ReferenceType
-<<<<<<< HEAD
 					 * standardm��ig nicht vorhanden ist, pr�fen // ob in eigener Liste ein Eintrag
-=======
-					 * standardmäßig nicht vorhanden ist, prüfen // ob in eigener Liste ein Eintrag
->>>>>>> 895f544a9595e6f7ac85742d15e36811a774868e
 					 * vorhanden ist und ggf neue NodeId erzeugen, // andernfalls Fehler/Abbruch if
 					 * (containsSpezificReferenceType(referenceTyp)) {
 					 * bean.setReferenceType(NodeId.parseNodeId(referenceTyp)); // use parent node
@@ -939,11 +923,7 @@ public class NodesetImporter {
 								// use parent node from refrerence
 								bean.setParentNodeId(createNodeIdByXmlValue(ref.getValue()));
 							} catch (NoSuchFieldException nsfe) {
-<<<<<<< HEAD
 								// UAReferences, falls ReferenceType standardm��ig nicht vorhanden ist, pr�fen
-=======
-								// UAReferences, falls ReferenceType standardmäßig nicht vorhanden ist, prüfen
->>>>>>> 895f544a9595e6f7ac85742d15e36811a774868e
 								// ob in eigener Liste ein Eintrag vorhanden ist und ggf neue NodeId erzeugen,
 								// andernfalls Fehler/Abbruch
 								if (containsSpezificReferenceType(referenceTyp)) {
@@ -973,11 +953,7 @@ public class NodesetImporter {
 					case HAS_COMPONENT:
 						if (ref.getAttributeValue(IS_FORWARD) != null
 								&& !Boolean.valueOf(ref.getAttributeValue(IS_FORWARD))) {
-<<<<<<< HEAD
 							// ==>use entry f�r reference type
-=======
-							// ==>use entry für reference type
->>>>>>> 895f544a9595e6f7ac85742d15e36811a774868e
 							String referenceTyp = ref.getAttributeValue(REFERENCE_TYPE);
 							// HAS_COMPONENT, HAS_ORDERED_COMPONENT,...
 							try {
@@ -986,11 +962,7 @@ public class NodesetImporter {
 								// use parent node from refrerence
 								bean.setParentNodeId(createNodeIdByXmlValue(ref.getValue()));
 							} catch (NoSuchFieldException nsfe) {
-<<<<<<< HEAD
 								// UAReferences, falls ReferenceType standardm��ig nicht vorhanden ist, pr�fen
-=======
-								// UAReferences, falls ReferenceType standardmäßig nicht vorhanden ist, prüfen
->>>>>>> 895f544a9595e6f7ac85742d15e36811a774868e
 								// ob in eigener Liste ein Eintrag vorhanden ist und ggf neue NodeId erzeugen,
 								// andernfalls Fehler/Abbruch
 								if (containsSpezificReferenceType(referenceTyp)) {

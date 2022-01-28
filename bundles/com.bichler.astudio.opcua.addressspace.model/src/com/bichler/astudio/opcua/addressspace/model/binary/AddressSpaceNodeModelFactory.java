@@ -241,7 +241,7 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 				// init method header size
 				if (!hasMethodStarted) {
 					classByteCount += 127;
-					String declaration = "}catch(UnknownHostException ex){\nLogger.getLogger(getClass().getName()).log(Level.SEVERE,ex.getMessage());}\nserver.importModel(nsTable, " + VARIABLE_LIST_NODES2ADD
+					String declaration = "server.importModel(nsTable, " + VARIABLE_LIST_NODES2ADD
 							+ ".toArray(new Node[0]));\n}\n";
 					classByteCount += declaration.getBytes().length;
 				}
@@ -647,15 +647,9 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 		String[] nsUris = nsTable2use.toArray();
 		out.write("NamespaceTable nsTable = new NamespaceTable();");
 		out.newLine();
-		out.write("String hostName = \"\";\n");
-		out.write("try{\n hostName = InetAddress.getLocalHost().getHostName();");
-		out.write("}\n");
-		out.write("catch(UnknownHostException ex){");
-		out.write("Logger.getLogger(getClass().getName()).log(Level.SEVERE,ex.getMessage());}");
-		out.newLine();
 		for (String nsUri : nsUris) {
 			int index = nsTable2use.getIndex(nsUri);
-			out.write("nsTable.add(" + index + ", \"" + nsUri + "\".replace(\"hostname\", hostName));");
+			out.write("nsTable.add(" + index + ", \"" + nsUri + "\");");
 			out.newLine();
 		}
 		out.newLine();
@@ -686,10 +680,9 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 		int byteCount = 0;
 		String declaration = "private void add" + count
 				+ "(NamespaceTable nsTable, UAServerApplicationInstance server, List<DataValue> values, List<ReferenceNode> references2add){\n";
-		declaration += "String hostName = \"\";\n";
-		declaration += "try {hostName = InetAddress.getLocalHost().getHostName();} \n";
-		declaration += "catch(UnknownHostException ex){\nLogger.getLogger(getClass().getName()).log(Level.SEVERE,ex.getMessage());}\n";
-		out.write(declaration);
+		out.write("private void add" + count
+				+ "(NamespaceTable nsTable, UAServerApplicationInstance server, List<DataValue> values,  List<ReferenceNode> references2add){");
+		out.newLine();
 		byteCount += declaration.getBytes().length;
 		declaration = "List<Node> " + VARIABLE_LIST_NODES2ADD + " = new ArrayList<>();\n";
 		out.write("List<Node> " + VARIABLE_LIST_NODES2ADD + " = new ArrayList<>();");
@@ -919,14 +912,6 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 
 	void writePackageSection(BufferedWriter out) throws IOException {
 		out.write("package " + PACKAGENAME + ";");
-		out.newLine();
-		out.write("import java.net.InetAddress;");
-		out.newLine();
-		out.write("import java.util.logging.Level;");
-		out.newLine();
-		out.write("import java.util.logging.Logger;");
-		out.newLine();
-		out.write("import java.net.UnknownHostException;");
 		out.newLine();
 		out.write("import java.util.List;");
 		out.newLine();
@@ -1270,7 +1255,7 @@ public class AddressSpaceNodeModelFactory {// extends AbstractCompileFactory {
 			if (nIdValue instanceof String) {
 				nIdValue = "\"" + nIdValue + "\"";
 			}
-			String help = "new ExpandedNodeId(new UnsignedInteger(" + nodeId.getServerIndex() + "),\"" + uri + "\".replace(\"hostname\", hostName),"
+			String help = "new ExpandedNodeId(new UnsignedInteger(" + nodeId.getServerIndex() + "),\"" + uri + "\","
 					+ nIdValue + ", nsTable)";
 			return help;
 		} catch (ServiceResultException e) {

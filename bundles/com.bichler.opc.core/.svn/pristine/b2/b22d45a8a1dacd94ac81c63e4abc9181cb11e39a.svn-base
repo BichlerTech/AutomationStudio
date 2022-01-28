@@ -1,7 +1,0 @@
-source.. = src/
-output.. = bin/
-bin.includes = META-INF/,\
-               .,\
-               libs/
-bin.excludes = libs/opc-ua-stack-1.4.1.2_src.jar
-             

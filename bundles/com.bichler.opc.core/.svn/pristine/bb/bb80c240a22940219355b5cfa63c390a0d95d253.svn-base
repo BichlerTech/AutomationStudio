@@ -1,7 +1,0 @@
-source.. = src/
-output.. = bin/
-bin.includes = META-INF/,\
-               .,\
-               libs/,\
-               libs/slf4j-nop-1.7.28.jar
-             
