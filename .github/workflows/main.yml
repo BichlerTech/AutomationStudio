@@ -29,7 +29,7 @@ jobs:
     #  run: ls  
     - name: Step 3 - Build AutomationStudio
       run: |
-        mvn clean install
+        mvn clean install -e -X
     # - name: LS2
     #  run: ls /home/runner/work/BichlerTechStudio/BichlerTechStudio/releng/com.bichler.automationstudio.product/target
     - name: Step 4 - Set up Cache for Artifact
