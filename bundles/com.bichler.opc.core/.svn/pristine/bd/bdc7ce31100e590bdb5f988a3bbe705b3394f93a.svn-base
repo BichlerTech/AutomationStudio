@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="libs/slf4j-nop-1.7.28.jar"/>
+	<classpathentry kind="lib" path="libs/slf4j-api-1.7.28.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/opc-ua-stack-1.4.1.1.jar" sourcepath="libs/opc-ua-stack-1.4.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/JDom.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry exported="true" kind="lib" path="libs/bcpkix-jdk15on-164.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/bcprov-jdk15on-164.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/httpcore-nio-4.4.12.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/core-1.58.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/bcpkix-jdk15on-1.58.0.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OPC UA client bundle
+Bundle-SymbolicName: com.bichler.opc.client
+Bundle-Version: 1.2.1.qualifier
+Bundle-Vendor: Bichler Technologies
+Automatic-Module-Name: com.bichler.opc.client
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ClassPath: .
+Export-Package: opc.client.application,
+ opc.client.application.core,
+ opc.client.application.core.dataaccess,
+ opc.client.application.core.method,
+ opc.client.application.listener,
+ opc.client.application.runtime.model,
+ opc.client.application.runtime.model.node,
+ opc.client.application.runtime.model.profile,
+ opc.client.application.runtime.model.service,
+ opc.client.service,
+ opc.client.service.node,
+ opc.client.util
+Require-Bundle: com.bichler.opc.core;bundle-version="1.0.0"

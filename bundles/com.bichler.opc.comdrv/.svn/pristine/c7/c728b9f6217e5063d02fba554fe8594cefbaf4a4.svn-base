@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OPC UA main communcation driver
+Bundle-SymbolicName: com.bichler.opc.comdrv
+Bundle-Version: 1.2.8.qualifier
+Bundle-Vendor: Bichler Technologies
+Automatic-Module-Name: com.bichler.opc.comdrv
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ClassPath: .
+Require-Bundle: com.bichler.opc.core;bundle-version="1.0.0",
+ com.bichler.opc.client;bundle-version="1.0.0"
+Export-Package: com.bichler.opc.comdrv,
+ com.bichler.opc.comdrv.importer,
+ com.bichler.opc.comdrv.utils

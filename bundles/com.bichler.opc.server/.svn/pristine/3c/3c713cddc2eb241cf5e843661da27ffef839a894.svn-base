@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OPC UA server bundle
+Bundle-SymbolicName: com.bichler.opc.server
+Bundle-Version: 1.1.12.qualifier
+Bundle-Vendor: Bichler Technologies GmbH
+Automatic-Module-Name: com.bichler.opc.server
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ClassPath: .,
+ libs/scriptmanager.jar,
+ libs/httpclient-4.5.6.jar
+Export-Package: com.bichler.scriptmanager,
+ opc.sdk.server,
+ opc.sdk.server.core,
+ opc.sdk.server.core.config,
+ opc.sdk.server.core.diagnostics,
+ opc.sdk.server.core.managers,
+ opc.sdk.server.core.user,
+ opc.sdk.server.language,
+ opc.sdk.server.security,
+ opc.sdk.server.service.addressspace,
+ opc.sdk.server.service.filter,
+ opc.sdk.server.service.history,
+ opc.sdk.server.service.history.impl,
+ opc.sdk.server.service.node,
+ opc.sdk.server.service.opc.browse,
+ opc.sdk.server.service.profile,
+ opc.sdk.server.service.session,
+ opc.sdk.server.service.subscribe,
+ opc.sdk.server.service.util,
+ opc.server.hbserver
+Require-Bundle: com.bichler.opc.core;bundle-version="1.0.0",
+ com.bichler.opc.comdrv;bundle-version="1.0.0",
+ com.bichler.opc.driver.base;bundle-version="1.0.0"

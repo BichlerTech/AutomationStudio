@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OPC UA server driver base bundle
+Bundle-SymbolicName: com.bichler.opc.driver.base
+Bundle-Version: 1.2.1.qualifier
+Bundle-Vendor: Bichler Technologies
+Automatic-Module-Name: com.bichler.opc.driver.base
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ClassPath: .
+Require-Bundle: com.bichler.opc.core;bundle-version="1.0.0",
+ com.bichler.opc.comdrv;bundle-version="1.0.0"
+Export-Package: com.bichler.opc.driver.base,
+ com.bichler.opc.driver.base.context,
+ com.bichler.opc.driver.base.handler
