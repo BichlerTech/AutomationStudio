@@ -11,7 +11,7 @@ allenbradley
 
 # here we define the version of the configured driver
 driverversion
-1.0.0
+1.0.1
 
 # namespace name for that driver
 drvns
@@ -38,7 +38,7 @@ redundancy no
 #true;1000
 
 deviceaddress
-localhost;102
+localhost;44818
 
 #reconnecttimeout
 #1000

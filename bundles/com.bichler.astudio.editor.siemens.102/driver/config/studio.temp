@@ -11,7 +11,7 @@ siemens
 
 # here we define the version of the configured driver
 driverversion
-1.0.1
+1.0.2
 
 # namespace name for that driver
 drvns
