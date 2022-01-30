@@ -16,7 +16,7 @@ import com.bichler.astudio.utils.activator.InternationalActivator;
 public class AllenBradleyActivator extends InternationalActivator
 {
   // The plug-in ID
-  private static final String PLUGIN_ID = "com.bichler.astudio.editor.allenbradley.1.0.0"; //$NON-NLS-1$
+  private static final String PLUGIN_ID = "com.bichler.astudio.editor.allenbradley.1.0.1"; //$NON-NLS-1$
   public static final String BUNDLE_NAME = "com.bichler.astudio.editor.allenbradley.resource.custom"; //$NON-NLS-1$
   // The shared instance
   private static AllenBradleyActivator plugin;

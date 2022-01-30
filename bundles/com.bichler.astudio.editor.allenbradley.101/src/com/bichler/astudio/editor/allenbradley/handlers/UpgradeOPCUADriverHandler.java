@@ -40,7 +40,7 @@ public class UpgradeOPCUADriverHandler extends CreateOPCUADriverHandler
           {
             buf.add(line + "\n");
             reader.readLine();
-            line = "1.0.0";
+            line = "1.0.1";
             versFound = true;
           }
           buf.add(line + "\n");
@@ -52,7 +52,7 @@ public class UpgradeOPCUADriverHandler extends CreateOPCUADriverHandler
           if(index >= 0)
           {
             buf.add(index + 3, "driverversion\n");
-            buf.add(index + 4, "1.0.0\n\n");
+            buf.add(index + 4, "1.0.1\n\n");
           }
 //          for (int i = 0 ; i < buf.size(); )
 //          {

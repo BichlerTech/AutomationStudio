@@ -25,7 +25,7 @@ import com.bichler.astudio.opcua.widget.NodeToTrigger;
 
 public class OPCUAAllenBradleyValidationHandler extends AbstractOPCUAValidationHandler
 {
-  public static final String ID = "com.bichler.astudio.editor.allenbradley.1.0.0.validate";
+  public static final String ID = "com.bichler.astudio.editor.allenbradley.1.0.1.validate";
   // private static final Logger logger = Logger
   // .getLogger(OPCUAallenbradleyValidationHandler.class);
   private List<NodeToTrigger> triggernodes = new ArrayList<NodeToTrigger>();

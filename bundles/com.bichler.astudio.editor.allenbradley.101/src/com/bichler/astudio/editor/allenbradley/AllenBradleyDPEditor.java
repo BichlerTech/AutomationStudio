@@ -103,7 +103,7 @@ import opc.sdk.core.node.Node;
 import opc.sdk.server.core.UAServerApplicationInstance;
 
 public class AllenBradleyDPEditor extends AbstractOPCTriggerNodeEditPart {
-	public static final String ID = "com.bichler.astudio.editor.allenbradley.AllenBradleyDPEditor"; //$NON-NLS-1$
+	public static final String ID = "com.bichler.astudio.editor.allenbradley.101.AllenBradleyDPEditor"; //$NON-NLS-1$
 	private static Map<String, Integer> dataTypeSizes = new HashMap<>();
 	private UAServerApplicationInstance opcServer = null;
 	private TableViewer tableViewer;
@@ -848,7 +848,7 @@ public class AllenBradleyDPEditor extends AbstractOPCTriggerNodeEditPart {
 	        else
 	        {
 	          MessageDialog.openWarning(tableViewer.getControl().getShell(), "Siemens Test Panel",
-	              "Kein knoten zum Testen ausgewählt");
+	              "Kein knoten zum Testen ausgewï¿½hlt");
 	        }
 	      }
 	    });

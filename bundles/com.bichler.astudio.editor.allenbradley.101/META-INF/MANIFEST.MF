@@ -29,4 +29,4 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Automatic-Module-Name: com.bichler.astudio.editor.allenbradley.1.0.0
+Automatic-Module-Name: com.bichler.astudio.editor.allenbradley.1.0.1
