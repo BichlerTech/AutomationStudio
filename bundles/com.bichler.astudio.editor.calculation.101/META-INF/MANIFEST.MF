@@ -7,8 +7,7 @@ Bundle-Vendor: Bichler Technologies GmbH
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
- libs/com.hbsoft.driver.calculation.jar,
- bundles/com.bichler.astudio.editor.calculation.101/
+ libs/com.bichler.opc.driver.calculation.jar
 Bundle-Activator: com.bichler.astudio.editor.calculation.CalculationActivator
 Export-Package: com.bichler.astudio.editor.calculation
 Require-Bundle: org.eclipse.ui;bundle-version="3.7.0",
