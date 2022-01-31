@@ -51,7 +51,7 @@ import com.bichler.astudio.opcua.widget.NodeToTrigger;
 import com.bichler.astudio.utils.internationalization.CustomString;
 import com.bichler.astudio.view.drivermodel.handler.util.DriverBrowserUtil;
 import com.bichler.opc.comdrv.ComDRVManager;
-import com.hbsoft.driver.calculation.CalculationDP;
+import com.bichler.opc.driver.calculation.CalculationDP;
 import com.bichler.astudio.editor.calculation.model.CalculationDPEditorImporter;
 import com.bichler.astudio.editor.calculation.model.CalculationModelNode;
 
