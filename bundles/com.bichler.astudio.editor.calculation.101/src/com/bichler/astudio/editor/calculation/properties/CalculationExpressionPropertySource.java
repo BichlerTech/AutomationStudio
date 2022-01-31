@@ -3,7 +3,7 @@ package com.bichler.astudio.editor.calculation.properties;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
 
-import com.hbsoft.driver.calculation.CalculationExpression;
+import com.bichler.opc.driver.calculation.CalculationExpression;
 
 public class CalculationExpressionPropertySource extends
 		AbstractCalculationPropertySource {

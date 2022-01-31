@@ -7,8 +7,8 @@ import java.util.Map;
 
 import org.opcfoundation.ua.builtintypes.NodeId;
 
-import com.hbsoft.driver.calculation.CalculationDP;
-import com.hbsoft.driver.calculation.targets.CalculationTarget;
+import com.bichler.opc.driver.calculation.CalculationDP;
+import com.bichler.opc.driver.calculation.targets.CalculationTarget;
 import com.bichler.astudio.editor.calculation.model.CalculationDPEditorImporter;
 import com.bichler.astudio.editor.calculation.model.CalculationModelNode;
 import com.bichler.astudio.opcua.handlers.events.AbstractOPCUADPReaderHandler;

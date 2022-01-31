@@ -39,16 +39,16 @@ import org.opcfoundation.ua.core.Attributes;
 import org.opcfoundation.ua.core.ReadValueId;
 import org.opcfoundation.ua.core.TimestampsToReturn;
 
-import com.hbsoft.driver.calculation.CalcEvent;
-import com.hbsoft.driver.calculation.CalculationExpression;
-import com.hbsoft.driver.calculation.CalculationNode;
-import com.hbsoft.driver.calculation.CalculationObject;
-import com.hbsoft.driver.calculation.targets.CalculationBooleanTarget;
-import com.hbsoft.driver.calculation.targets.CalculationByteTarget;
-import com.hbsoft.driver.calculation.targets.CalculationDoubleTarget;
-import com.hbsoft.driver.calculation.targets.CalculationIntTarget;
-import com.hbsoft.driver.calculation.targets.CalculationLongTarget;
-import com.hbsoft.driver.calculation.targets.CalculationStringTarget;
+import com.bichler.opc.driver.calculation.CalcEvent;
+import com.bichler.opc.driver.calculation.CalculationExpression;
+import com.bichler.opc.driver.calculation.CalculationNode;
+import com.bichler.opc.driver.calculation.CalculationObject;
+import com.bichler.opc.driver.calculation.targets.CalculationBooleanTarget;
+import com.bichler.opc.driver.calculation.targets.CalculationByteTarget;
+import com.bichler.opc.driver.calculation.targets.CalculationDoubleTarget;
+import com.bichler.opc.driver.calculation.targets.CalculationIntTarget;
+import com.bichler.opc.driver.calculation.targets.CalculationLongTarget;
+import com.bichler.opc.driver.calculation.targets.CalculationStringTarget;
 
 import opc.sdk.core.node.Node;
 import opc.sdk.core.node.UAVariableNode;

@@ -3,9 +3,9 @@ package com.bichler.astudio.editor.calculation.adapter;
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.ui.views.properties.IPropertySource;
 
-import com.hbsoft.driver.calculation.CalculationDP;
-import com.hbsoft.driver.calculation.CalculationExpression;
-import com.hbsoft.driver.calculation.CalculationNode;
+import com.bichler.opc.driver.calculation.CalculationDP;
+import com.bichler.opc.driver.calculation.CalculationExpression;
+import com.bichler.opc.driver.calculation.CalculationNode;
 import com.bichler.astudio.editor.calculation.properties.CalculationExpressionPropertySource;
 import com.bichler.astudio.editor.calculation.properties.CalculationNodePropertySource;
 import com.bichler.astudio.editor.calculation.properties.CalculationTargetPropertySource;

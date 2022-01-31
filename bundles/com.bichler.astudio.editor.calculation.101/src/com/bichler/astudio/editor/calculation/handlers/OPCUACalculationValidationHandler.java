@@ -13,11 +13,11 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.opcfoundation.ua.builtintypes.NodeId;
 
-import com.hbsoft.driver.calculation.CalculationDP;
-import com.hbsoft.driver.calculation.CalculationExpression;
-import com.hbsoft.driver.calculation.CalculationNode;
-import com.hbsoft.driver.calculation.CalculationObject;
-import com.hbsoft.driver.calculation.targets.CalculationTarget;
+import com.bichler.opc.driver.calculation.CalculationDP;
+import com.bichler.opc.driver.calculation.CalculationExpression;
+import com.bichler.opc.driver.calculation.CalculationNode;
+import com.bichler.opc.driver.calculation.CalculationObject;
+import com.bichler.opc.driver.calculation.targets.CalculationTarget;
 import com.bichler.astudio.editor.calculation.model.CalculationDPEditorImporter;
 import com.bichler.astudio.opcua.handlers.events.OPCUAValidationDriverParameter;
 import com.bichler.astudio.opcua.handlers.validation.AbstractOPCUAValidationHandler;

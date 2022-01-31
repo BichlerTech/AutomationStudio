@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.Path;
 
-import com.hbsoft.driver.calculation.CalculationDP;
+import com.bichler.opc.driver.calculation.CalculationDP;
 import com.bichler.astudio.opcua.opcmodeler.commands.NamespaceTableChangeParameter;
 import com.bichler.astudio.components.file.ASUpdateable;
 import com.bichler.astudio.editor.calculation.model.CalculationDPEditorImporter;

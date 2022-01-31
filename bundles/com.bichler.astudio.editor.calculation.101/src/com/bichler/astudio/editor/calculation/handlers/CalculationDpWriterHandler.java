@@ -9,9 +9,9 @@ import java.util.logging.Logger;
 import org.opcfoundation.ua.builtintypes.NodeId;
 import org.opcfoundation.ua.common.NamespaceTable;
 
-import com.hbsoft.driver.calculation.CalculationExpression;
-import com.hbsoft.driver.calculation.CalculationNode;
-import com.hbsoft.driver.calculation.CalculationObject;
+import com.bichler.opc.driver.calculation.CalculationExpression;
+import com.bichler.opc.driver.calculation.CalculationNode;
+import com.bichler.opc.driver.calculation.CalculationObject;
 import com.bichler.astudio.editor.calculation.model.CalculationModelNode;
 import com.bichler.astudio.filesystem.IFileSystem;
 import com.bichler.astudio.opcua.handlers.events.AbstractOPCUADPWriterHandler;

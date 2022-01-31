@@ -11,10 +11,10 @@ import org.eclipse.core.runtime.Path;
 import org.opcfoundation.ua.builtintypes.NodeId;
 import org.opcfoundation.ua.common.NamespaceTable;
 
-import com.hbsoft.driver.calculation.CalculationDP;
-import com.hbsoft.driver.calculation.CalculationExpression;
-import com.hbsoft.driver.calculation.CalculationNode;
-import com.hbsoft.driver.calculation.CalculationObject;
+import com.bichler.opc.driver.calculation.CalculationDP;
+import com.bichler.opc.driver.calculation.CalculationExpression;
+import com.bichler.opc.driver.calculation.CalculationNode;
+import com.bichler.opc.driver.calculation.CalculationObject;
 import com.bichler.astudio.opcua.opcmodeler.commands.OPCUAUpdateNodeIdEvent;
 import com.bichler.astudio.components.file.ASUpdateable;
 import com.bichler.astudio.editor.calculation.model.CalculationDPEditorImporter;

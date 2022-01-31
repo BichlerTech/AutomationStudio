@@ -1,6 +1,6 @@
 package com.bichler.astudio.editor.calculation.properties;
 
-import com.hbsoft.driver.calculation.CalculationDP;
+import com.bichler.opc.driver.calculation.CalculationDP;
 
 public class CalculationTargetPropertySource extends
 		AbstractCalculationNodePropertySource {

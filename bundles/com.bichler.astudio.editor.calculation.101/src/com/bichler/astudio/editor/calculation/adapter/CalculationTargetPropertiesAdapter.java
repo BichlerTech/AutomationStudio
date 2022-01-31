@@ -3,7 +3,7 @@ package com.bichler.astudio.editor.calculation.adapter;
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.ui.views.properties.IPropertySource;
 
-import com.hbsoft.driver.calculation.CalculationDP;
+import com.bichler.opc.driver.calculation.CalculationDP;
 import com.bichler.astudio.editor.calculation.properties.CalculationTargetPropertySource;
 
 public class CalculationTargetPropertiesAdapter implements IAdapterFactory {

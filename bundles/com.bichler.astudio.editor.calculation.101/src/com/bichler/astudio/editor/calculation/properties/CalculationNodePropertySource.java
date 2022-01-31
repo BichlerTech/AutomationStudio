@@ -2,7 +2,7 @@ package com.bichler.astudio.editor.calculation.properties;
 
 import org.opcfoundation.ua.builtintypes.NodeId;
 
-import com.hbsoft.driver.calculation.CalculationNode;
+import com.bichler.opc.driver.calculation.CalculationNode;
 
 public class CalculationNodePropertySource extends
 		AbstractCalculationNodePropertySource {

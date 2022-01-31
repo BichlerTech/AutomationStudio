@@ -2,7 +2,7 @@ package com.bichler.astudio.editor.calculation.model;
 
 import org.opcfoundation.ua.builtintypes.NodeId;
 
-import com.hbsoft.driver.calculation.CalculationDP;
+import com.bichler.opc.driver.calculation.CalculationDP;
 import com.bichler.astudio.opcua.properties.driver.IDriverNode;
 
 public class CalculationModelNode implements IDriverNode {
