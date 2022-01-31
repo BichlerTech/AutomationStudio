@@ -1,0 +1,18 @@
+## Treiber Beschreibung, 
+#drvdescription
+Kalkulations Treiber OPC UA um Berechnungen und Wertsimulationen im OPC UA Server zu tätigen.
+
+## webseite mit zusaetzlichen infos ueber den treiber, kann auch eine komplette Treiberkonfiguration und online Hilfe sein.
+#drvweb
+http://www.hb-sofltsolution.com/comet/treiber/calculation_v_1_0_rev_0_1
+
+## version des installierten Teibers
+#drvversion
+v.1.0.1
+
+## Erstellungsdatum im Format yyyy-MM-dd 
+#drvbuilddate
+2021-01-01
+
+#drvrevision
+rev.0.1
