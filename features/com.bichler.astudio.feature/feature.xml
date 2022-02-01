@@ -288,6 +288,13 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+      
+   <plugin
+         id="com.bichler.astudio.editor.calculation.1.0.1"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="com.bichler.astudio.editor.siemens.1.0.0"
