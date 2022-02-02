@@ -167,6 +167,12 @@ public class ComDRV extends com.bichler.opc.comdrv.ComDRV
     drvManager.addReadListener((long) drvId, readHandler);
     writeHandler.setDrvId(drvId);
     drvManager.addWriteListener((long) drvId, writeHandler);
+    try {
+		engine.eval("importPackage(org.opcfoundation.ua.builtintypes);\nimportPackage(org.opcfoundation.ua.common);\nimportPackage(java.lang);\nimportPackage(com.bichler.opc.comdrv);\nimportPackage(org.opcfoundation.ua.core);");
+	} catch (ScriptException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
     // monitoring is not supported from underlying system
     // CometDRVManager.getDRVManager().addMonitoringListener(monitoringHandler);
    // utils.writeLED_Status(ComStatusUtils.RUNNING);
@@ -212,7 +218,7 @@ public class ComDRV extends com.bichler.opc.comdrv.ComDRV
           DataValue dv = new DataValue();
           // long starteval = System.currentTimeMillis();
           long starteval = System.nanoTime();
-          System.out.println(script);
+        //  System.out.println(script);
           Object ret = engine.eval(script);
           if (this.drvManager.getResourceManager().isActivatedebug()
               && (this.drvManager.getResourceManager().getDebug() & 8) == 8)
