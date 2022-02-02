@@ -62,6 +62,10 @@
             id="com.bichler.astudio.editor.calculation.1.0.1.update.nodeid"
             name="Update nodeid">
       </command>
+      <command
+            id="com.bichler.astudio.editor.calculation.1.0.1.upgradedrivercommand"
+            name="Upgrade Driver">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -92,6 +96,10 @@
       <handler
             class="com.bichler.astudio.editor.calculation.handlers.OPCUACalculationUpdateNodeIdHandler"
             commandId="com.bichler.astudio.editor.calculation.1.0.1.update.nodeid">
+      </handler>
+      <handler
+            class="com.bichler.astudio.editor.calculation.handlers.UpgradeOPCUADriverHandler"
+            commandId="com.bichler.astudio.editor.calculation.1.0.1.upgradedrivercommand">
       </handler>
    </extension>
    <extension
