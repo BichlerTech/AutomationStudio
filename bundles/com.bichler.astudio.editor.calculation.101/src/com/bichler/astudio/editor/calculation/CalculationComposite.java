@@ -359,6 +359,7 @@ public class CalculationComposite extends Composite
         {
           txtTimeout.setEnabled(false);
         }
+        dpItem.getDp().setEvent(combo.getText());
         ((CalculationDPEditor) editor).setDirty(true);
       }
     });

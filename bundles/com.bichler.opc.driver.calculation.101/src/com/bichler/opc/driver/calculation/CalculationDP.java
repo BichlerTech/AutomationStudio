@@ -46,6 +46,11 @@ public class CalculationDP
   {
     this.event = event;
   }
+  
+  public void setEvent(String event)
+  {
+    this.event = CalcEvent.valueOf(event);
+  }
 
   public long getLastcalc()
   {
