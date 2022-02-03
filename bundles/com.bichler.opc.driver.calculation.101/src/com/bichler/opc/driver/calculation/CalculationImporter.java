@@ -81,8 +81,6 @@ public class CalculationImporter {
 				if (name.compareTo("calc") == 0) {
 					// now add and semicolon to end a calculation instruction
 					actNode.getScript().append("\n");
-					// actNode.getScript().append(actNode.getTarget().getCreateDV()
-					// + actNode.getTarget());
 				}
 			}
 		}
@@ -191,16 +189,6 @@ public class CalculationImporter {
 						/**
 						 * set target string for evaluation
 						 */
-//						actNode.getTarget().getTarget()
-//								.append("ComDRVManager.getDRVManager().writeFromDriver(NodeId.parseNodeId(\"ns=" + index
-//										+ ";" + targetId + "\"),Attributes.Value, null, null, val, new Long(" + drvId
-//										+ "));");
-						// actNode.getScript().append("importPackage(java.lang);\nvar
-						// value;\n");
-						// // + actNode.getTarget().getValueString());
-						//actNode.getScript().append(
-						//		"importPackage(org.opcfoundation.ua.builtintypes);\nimportPackage(org.opcfoundation.ua.common);\nimportPackage(java.lang);\nimportPackage(com.bichler.opc.comdrv);\nimportPackage(org.opcfoundation.ua.core);\nvar value;\n"); // +
-						// actNode.getTarget().getValueString());
 						actNode.getTarget().setTargetId(nodeid);
 					}
 				}
@@ -238,20 +226,6 @@ public class CalculationImporter {
 											+ "\", null, new Long(" + drvId
 											+ "), new Double(0.0), TimestampsToReturn.Both).getValue().getValue())[0])"
 											+ dt[1]);
-							// Object obj = ((Boolean))
-							// Object obj =
-							// ((Boolean)((Object[])CometDRVManager.getDRVManager().readFromDriver(id,
-							// org.opcfoundation.ua.core.Attributes.Value,
-							// null, null, new Long(drvId), 0.0,
-							// TimestampsToReturn.Both).getValue().getValue())[arrayIndex]).booleanValue();
-							// actNode.getScript()
-							// .append("(("+dt[0]+")((Object)CometDRVManager.getDRVManager().readFromDriver(NodeId.parseNodeId(\""
-							// + id.toString()
-							// + "\"), Attributes.Value, null, null, new Long("
-							// + drvId
-							// + "), new Double(0.0),
-							// TimestampsToReturn.Both).getValue().getValue())["+arrayIndex+"])"
-							// + dt[1]);
 						} else {
 							actNode.getScript()
 									.append("ComDRVManager.getDRVManager().readFromDriver(NodeId.parseNodeId(\""
