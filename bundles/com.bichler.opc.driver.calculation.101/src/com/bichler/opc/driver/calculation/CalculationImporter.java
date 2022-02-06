@@ -25,7 +25,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import com.bichler.opc.comdrv.ComDRVManager;
 import com.bichler.opc.driver.calculation.targets.CalculationBooleanTarget;
-import com.bichler.opc.driver.calculation.targets.CalculationByteTarget;
+import com.bichler.opc.driver.calculation.targets.CalculationSByteTarget;
 import com.bichler.opc.driver.calculation.targets.CalculationDoubleTarget;
 import com.bichler.opc.driver.calculation.targets.CalculationFloatTarget;
 import com.bichler.opc.driver.calculation.targets.CalculationIntTarget;
@@ -158,7 +158,7 @@ public class CalculationImporter {
 						} else if (type.equals(UnsignedByte.class)) {
 							actNode.setTarget(new CalculationUnsignedByteTarget());
 						} else if (type.equals(byte[].class)) {
-							actNode.setTarget(new CalculationByteTarget());
+							actNode.setTarget(new CalculationSByteTarget());
 						} else if (type.equals(Double.class)) {
 							actNode.setTarget(new CalculationDoubleTarget());
 						} else if (type.equals(Float.class)) {
@@ -170,7 +170,7 @@ public class CalculationImporter {
 						} else if (type.equals(Long.class)) {
 							actNode.setTarget(new CalculationLongTarget());
 						} else if (type.equals(Byte.class)) {
-							actNode.setTarget(new CalculationByteTarget());
+							actNode.setTarget(new CalculationSByteTarget());
 						} else if (type.equals(String.class)) {
 							actNode.setTarget(new CalculationStringTarget());
 						} else if (type.equals(UnsignedByte.class)) {
@@ -235,7 +235,7 @@ public class CalculationImporter {
 						if (actNode.getEvent() == CalcEvent.VALUECHANGE) {
 							// add nodes to all events
 							if (manager != null) {
-								manager.getCalcInstructionsValueChange().put(id, actNode);
+								manager.addCalcInstructionValueChange(id, actNode);
 							}
 						}
 					} catch (NumberFormatException ex) {
@@ -294,8 +294,8 @@ public class CalculationImporter {
 					ret[0] = "Integer";
 					ret[1] = ".intValue()";
 				} else if (type.equals(UnsignedInteger.class)) {
-					ret[0] = "Integer";
-					ret[1] = ".intValue()";
+					ret[0] = "Long";
+					ret[1] = ".longValue()";
 				} else if (type.equals(UnsignedLong.class)) {
 					ret[0] = "Long";
 					ret[1] = ".longValue()";

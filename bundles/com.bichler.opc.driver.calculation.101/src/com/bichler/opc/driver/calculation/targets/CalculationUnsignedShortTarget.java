@@ -63,9 +63,37 @@ public class CalculationUnsignedShortTarget extends CalculationTarget
         throw new IllegalArgumentException("Illegal value");
       ret = new UnsignedShort(d.intValue());
     }
+    else if (val instanceof Float)
+    {
+    	Float d = (Float) val;
+      if (d < UnsignedShort.MIN_VALUE.doubleValue() || d > UnsignedShort.MAX_VALUE.doubleValue())
+        throw new IllegalArgumentException("Illegal value");
+      ret = new UnsignedShort(d.intValue());
+    }
+    else if (val instanceof Long)
+    {
+    	Long d = (Long) val;
+      if (d < UnsignedShort.MIN_VALUE.intValue() || d > UnsignedShort.MAX_VALUE.intValue())
+        throw new IllegalArgumentException("Illegal value");
+      ret = new UnsignedShort(d.intValue());
+    }
     else if (val instanceof Integer)
     {
       Integer d = (Integer) val;
+      if (d < UnsignedShort.MIN_VALUE.intValue() || d > UnsignedShort.MAX_VALUE.intValue())
+        throw new IllegalArgumentException("Illegal value");
+      ret = new UnsignedShort(d.intValue());
+    }
+    else if (val instanceof Short)
+    {
+    	Short d = (Short) val;
+      if (d < UnsignedShort.MIN_VALUE.intValue() || d > UnsignedShort.MAX_VALUE.intValue())
+        throw new IllegalArgumentException("Illegal value");
+      ret = new UnsignedShort(d.intValue());
+    }
+    else if (val instanceof Byte)
+    {
+    	Byte d = (Byte) val;
       if (d < UnsignedShort.MIN_VALUE.intValue() || d > UnsignedShort.MAX_VALUE.intValue())
         throw new IllegalArgumentException("Illegal value");
       ret = new UnsignedShort(d.intValue());
