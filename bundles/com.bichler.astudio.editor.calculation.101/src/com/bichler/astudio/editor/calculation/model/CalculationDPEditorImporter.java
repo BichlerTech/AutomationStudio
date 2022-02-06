@@ -326,7 +326,12 @@ public class CalculationDPEditorImporter {
 						if (actNode.getEvent() == CalcEvent.VALUECHANGE) {
 							// add nodes to all events
 							if (manager != null) {
-								manager.getCalcInstructionsValueChange().put(id, actNode);
+								List<CalculationDP> dpList = manager.getCalcInstructionsValueChange().get(id);
+								if (dpList == null) {
+									dpList = new ArrayList<CalculationDP>();
+									manager.getCalcInstructionsValueChange().put(id, dpList);
+								}
+								dpList.add(actNode);
 							}
 						}
 					} catch (NumberFormatException ex) {
