@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: OPC UA Calculation Editor
 Bundle-SymbolicName: com.bichler.astudio.editor.calculation.1.0.1;singleton:=true
-Bundle-Version: 1.0.1.20151012
+Bundle-Version: 1.0.1.20220101
 Bundle-Vendor: Bichler Technologies GmbH
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

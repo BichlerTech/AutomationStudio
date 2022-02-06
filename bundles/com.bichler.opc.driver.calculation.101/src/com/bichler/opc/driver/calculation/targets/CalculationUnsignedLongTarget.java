@@ -60,13 +60,25 @@ public class CalculationUnsignedLongTarget extends CalculationTarget
     {
       ret = new UnsignedLong(((Double) val).longValue());
     }
-    else if (val instanceof Integer)
+    else if (val instanceof Float)
     {
-      ret = new UnsignedLong(((Integer) val).intValue());
+      ret = new UnsignedLong(((Float) val).longValue());
     }
     else if (val instanceof Long)
     {
       ret = new UnsignedLong(((Long) val).longValue());
+    }
+    else if (val instanceof Integer)
+    {
+      ret = new UnsignedLong(((Integer) val).intValue());
+    }
+    else if (val instanceof Short)
+    {
+      ret = new UnsignedLong(((Short) val).longValue());
+    }
+    else if (val instanceof Byte)
+    {
+      ret = new UnsignedLong(((Byte) val).longValue());
     }
     else if (val instanceof Boolean)
     {

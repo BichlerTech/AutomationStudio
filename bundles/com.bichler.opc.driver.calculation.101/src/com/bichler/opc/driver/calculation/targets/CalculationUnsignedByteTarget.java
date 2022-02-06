@@ -11,7 +11,7 @@ public class CalculationUnsignedByteTarget extends CalculationTarget
 {
   public CalculationUnsignedByteTarget()
   {
-    valueFromNode = ".byteValue()";
+    valueFromNode = ".shortValue()";
   }
 
   @Override
@@ -59,16 +59,44 @@ public class CalculationUnsignedByteTarget extends CalculationTarget
     else if (val instanceof Double)
     {
       Double d = (Double) val;
-      if (d < UnsignedByte.MIN_VALUE.doubleValue() || d > UnsignedByte.MAX_VALUE.doubleValue())
+      if (d < UnsignedByte.MIN_VALUE.doubleValue() || d > UnsignedByte.MAX_VALUE.shortValue())
         throw new IllegalArgumentException("Illegal value");
-      ret = new UnsignedByte(d.intValue());
+      ret = new UnsignedByte(d.shortValue());
+    }
+    else if (val instanceof Float)
+    {
+    	Float d = (Float) val;
+      if (d < UnsignedByte.MIN_VALUE.doubleValue() || d > UnsignedByte.MAX_VALUE.shortValue())
+        throw new IllegalArgumentException("Illegal value");
+      ret = new UnsignedByte(d.shortValue());
+    }
+    else if (val instanceof Long)
+    {
+    	Long d = (Long) val;
+      if (d < UnsignedByte.MIN_VALUE.intValue() || d > UnsignedByte.MAX_VALUE.shortValue())
+        throw new IllegalArgumentException("Illegal value");
+      ret = new UnsignedByte(d.shortValue());
     }
     else if (val instanceof Integer)
     {
       Integer d = (Integer) val;
-      if (d < UnsignedByte.MIN_VALUE.intValue() || d > UnsignedByte.MAX_VALUE.intValue())
+      if (d < UnsignedByte.MIN_VALUE.intValue() || d > UnsignedByte.MAX_VALUE.shortValue())
         throw new IllegalArgumentException("Illegal value");
-      ret = new UnsignedByte(d.intValue());
+      ret = new UnsignedByte(d.shortValue());
+    }
+    else if (val instanceof Short)
+    {
+    	Short d = (Short) val;
+      if (d < UnsignedByte.MIN_VALUE.intValue() || d > UnsignedByte.MAX_VALUE.shortValue())
+        throw new IllegalArgumentException("Illegal value");
+      ret = new UnsignedByte(d.shortValue());
+    }
+    else if (val instanceof Byte)
+    {
+    	Byte d = (Byte) val;
+      if (d < UnsignedByte.MIN_VALUE.intValue() || d > UnsignedByte.MAX_VALUE.shortValue())
+        throw new IllegalArgumentException("Illegal value");
+      ret = new UnsignedByte(d.shortValue());
     }
     else if (val instanceof Boolean)
     {

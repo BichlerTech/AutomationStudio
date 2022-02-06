@@ -59,9 +59,25 @@ public class CalculationLongTarget extends CalculationTarget
     {
       ret = ((Double) val).longValue();
     }
+    else if (val instanceof Float)
+    {
+      ret = ((Float) val).longValue();
+    }
+    else if (val instanceof Long)
+    {
+      ret = ((Long) val).longValue();
+    }
     else if (val instanceof Integer)
     {
       ret = ((Integer) val).longValue();
+    }
+    else if (val instanceof Short)
+    {
+      ret = ((Short) val).longValue();
+    }
+    else if (val instanceof Byte)
+    {
+      ret = ((Byte) val).longValue();
     }
     else if (val instanceof Boolean)
     {

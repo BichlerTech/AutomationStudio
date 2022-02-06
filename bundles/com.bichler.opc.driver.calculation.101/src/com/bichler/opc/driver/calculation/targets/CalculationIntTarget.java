@@ -60,11 +60,34 @@ public class CalculationIntTarget extends CalculationTarget
       Double d = (Double) val;
       if (d < Integer.MIN_VALUE || d > Integer.MAX_VALUE)
         throw new IllegalArgumentException("Illegal value");
-      ret = ((Double) val).intValue();
+      ret = d.intValue();
     }
+    else if (val instanceof Float)
+    {
+    	Float d = (Float) val;
+      if (d < Integer.MIN_VALUE || d > Integer.MAX_VALUE)
+        throw new IllegalArgumentException("Illegal value");
+      ret = d.intValue();
+    }
+    else if (val instanceof Long)
+    {
+    	Long d = (Long) val;
+      if (d < Integer.MIN_VALUE || d > Integer.MAX_VALUE)
+        throw new IllegalArgumentException("Illegal value");
+      ret = d.intValue();
+    }
+   
     else if (val instanceof Integer)
     {
-      ret = ((Integer) val).intValue();
+        ret = ((Integer) val).intValue();
+    }
+    else if (val instanceof Short)
+    {
+        ret = ((Short) val).intValue();
+    }
+    else if (val instanceof Byte)
+    {
+        ret = ((Byte) val).intValue();
     }
     else if (val instanceof Boolean)
     {

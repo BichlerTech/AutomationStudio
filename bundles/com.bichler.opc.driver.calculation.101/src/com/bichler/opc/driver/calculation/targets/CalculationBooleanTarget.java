@@ -44,9 +44,37 @@ public class CalculationBooleanTarget extends CalculationTarget
       else
         ret = false;
     }
+    else if (val instanceof Float)
+    {
+      if (((Float) val) == 1)
+        ret = true;
+      else
+        ret = false;
+    }
+    else if (val instanceof Long)
+    {
+      if (((Long) val) == 1)
+        ret = true;
+      else
+        ret = false;
+    }
     else if (val instanceof Integer)
     {
       if (((Integer) val) == 1)
+        ret = true;
+      else
+        ret = false;
+    }
+    else if (val instanceof Short)
+    {
+      if (((Short) val) == 1)
+        ret = true;
+      else
+        ret = false;
+    }
+    else if (val instanceof Byte)
+    {
+      if (((Byte) val) == 1)
         ret = true;
       else
         ret = false;
