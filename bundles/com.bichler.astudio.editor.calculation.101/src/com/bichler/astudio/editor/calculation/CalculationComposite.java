@@ -44,7 +44,7 @@ import com.bichler.opc.driver.calculation.CalculationExpression;
 import com.bichler.opc.driver.calculation.CalculationNode;
 import com.bichler.opc.driver.calculation.CalculationObject;
 import com.bichler.opc.driver.calculation.targets.CalculationBooleanTarget;
-import com.bichler.opc.driver.calculation.targets.CalculationByteTarget;
+import com.bichler.opc.driver.calculation.targets.CalculationSByteTarget;
 import com.bichler.opc.driver.calculation.targets.CalculationDoubleTarget;
 import com.bichler.opc.driver.calculation.targets.CalculationIntTarget;
 import com.bichler.opc.driver.calculation.targets.CalculationLongTarget;
@@ -295,7 +295,7 @@ public class CalculationComposite extends Composite
             }
             else if (type.equals(Byte.class))
             {
-              dpItem.getDp().setTarget(new CalculationByteTarget());
+              dpItem.getDp().setTarget(new CalculationSByteTarget());
             }
             else if (type.equals(String.class))
             {

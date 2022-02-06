@@ -28,7 +28,7 @@ import com.bichler.opc.driver.calculation.CalculationExpression;
 import com.bichler.opc.driver.calculation.CalculationNode;
 import com.bichler.opc.driver.calculation.CalculationResourceManager;
 import com.bichler.opc.driver.calculation.targets.CalculationBooleanTarget;
-import com.bichler.opc.driver.calculation.targets.CalculationByteTarget;
+import com.bichler.opc.driver.calculation.targets.CalculationSByteTarget;
 import com.bichler.opc.driver.calculation.targets.CalculationDoubleTarget;
 import com.bichler.opc.driver.calculation.targets.CalculationFloatTarget;
 import com.bichler.opc.driver.calculation.targets.CalculationIntTarget;
@@ -195,7 +195,7 @@ public class CalculationDPEditorImporter {
 							} else if (type.equals(UnsignedByte.class)) {
 								actNode.setTarget(new CalculationUnsignedByteTarget());
 							} else if (type.equals(byte[].class)) {
-								actNode.setTarget(new CalculationByteTarget());
+								actNode.setTarget(new CalculationSByteTarget());
 							} else if (type.equals(Double.class)) {
 								actNode.setTarget(new CalculationDoubleTarget());
 							} else if (type.equals(Float.class)) {
@@ -207,7 +207,7 @@ public class CalculationDPEditorImporter {
 							} else if (type.equals(Long.class)) {
 								actNode.setTarget(new CalculationLongTarget());
 							} else if (type.equals(Byte.class)) {
-								actNode.setTarget(new CalculationByteTarget());
+								actNode.setTarget(new CalculationSByteTarget());
 							} else if (type.equals(String.class)) {
 								actNode.setTarget(new CalculationStringTarget());
 							} else if (type.equals(UnsignedByte.class)) {
@@ -326,7 +326,12 @@ public class CalculationDPEditorImporter {
 						if (actNode.getEvent() == CalcEvent.VALUECHANGE) {
 							// add nodes to all events
 							if (manager != null) {
-								manager.getCalcInstructionsValueChange().put(id, actNode);
+								List<CalculationDP> dpList = manager.getCalcInstructionsValueChange().get(id);
+								if (dpList == null) {
+									dpList = new ArrayList<CalculationDP>();
+									manager.getCalcInstructionsValueChange().put(id, dpList);
+								}
+								dpList.add(actNode);
 							}
 						}
 					} catch (NumberFormatException ex) {
