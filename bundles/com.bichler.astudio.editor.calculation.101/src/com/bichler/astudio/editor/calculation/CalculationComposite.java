@@ -126,7 +126,7 @@ public class CalculationComposite extends Composite
     {
       if (obj instanceof CalculationExpression)
       {
-        buffer.append("      <operation value=\"" + obj.getContent().replace("<", "$lower$").replace(">", "$greater$")
+        buffer.append("      <operation value=\"" + obj.getContent().replaceAll("<", "$lower$").replaceAll(">", "$greater$").replaceAll("&", "&amp;").replaceAll("'", "&#39;").replaceAll("\"", "&#34;")
             + "\" />\n");
       }
       else if (obj instanceof CalculationNode)
