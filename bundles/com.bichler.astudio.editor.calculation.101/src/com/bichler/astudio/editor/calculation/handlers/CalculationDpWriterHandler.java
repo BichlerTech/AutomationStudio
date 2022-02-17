@@ -80,7 +80,7 @@ public class CalculationDpWriterHandler extends AbstractOPCUADPWriterHandler {
 		for (CalculationObject obj : dpItem.getDp().getCalculationExpressions()) {
 			if (obj instanceof CalculationExpression) {
 				buffer.append("      <operation value=\""
-						+ obj.getContent().replace("<", "$lower$").replace(">", "$greater$") + "\" />\n");
+						+ obj.getContent().replaceAll("<", "$lower$").replaceAll(">", "$greater$").replaceAll("&", "&amp;").replaceAll("'", "&#39;").replaceAll("\"", "&#34;") + "\" />\n");
 			} else if (obj instanceof CalculationNode) {
 				// String[] txtDisplay = obj.getContent().split(" ");
 				// NodeId nodeid = NodeId
