@@ -2,6 +2,8 @@
 <?NLS TYPE="org.eclipse.help.toc"?>
 
 <toc label="Treiber">
-   <topic href="nl/de/html/config/driver/siemens_S7.htm" label="Siemens S7">
+	<topic label="Treiber">
+	   <topic href="nl/de/html/driver/siemens_S7.htm" label="Siemens S7">
+	   </topic>
    </topic>
 </toc>
