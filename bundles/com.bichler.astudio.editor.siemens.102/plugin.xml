@@ -134,7 +134,7 @@
       <toc
             category="Automation Studio"
             file="toc.xml"
-            primary="false">
+            primary="true">
       </toc>
    </extension>
 </plugin>
