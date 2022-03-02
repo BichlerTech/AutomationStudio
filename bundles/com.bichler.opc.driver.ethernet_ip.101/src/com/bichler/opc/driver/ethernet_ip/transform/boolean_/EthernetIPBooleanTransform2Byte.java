@@ -1,10 +1,9 @@
 package com.bichler.opc.driver.ethernet_ip.transform.boolean_;
 
+import java.util.logging.Level;
 import org.opcfoundation.ua.builtintypes.Variant;
-
 import com.bichler.opc.comdrv.utils.ValueOutOfRangeException;
 import com.bichler.opc.driver.ethernet_ip.transform.EthernetIPTransform2Byte;
-
 import etherip.types.CIPData;
 import etherip.types.CIPData.Type;
 
@@ -41,10 +40,12 @@ public class EthernetIPBooleanTransform2Byte extends EthernetIPTransform2Byte {
 		try {
 			val = value.getNumber(index);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ValueOutOfRangeException("Value from plc is out of OPC UA range!");
 		}
-
-		return val.intValue() == -1;
+		
+		logger.log(Level.FINE, "Transform Bool to Byte - value: " + val.byteValue());
+		if (val.byteValue() == -1)
+			return (byte)1.0;
+		return val.byteValue();
 	}
 }

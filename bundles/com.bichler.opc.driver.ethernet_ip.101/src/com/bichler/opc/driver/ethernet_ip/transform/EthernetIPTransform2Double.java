@@ -2,16 +2,12 @@ package com.bichler.opc.driver.ethernet_ip.transform;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.opcfoundation.ua.builtintypes.Variant;
-
 import com.bichler.opc.comdrv.utils.ValueOutOfRangeException;
-import com.bichler.opc.driver.ethernet_ip.transform.EthernetIPTransformation;
-
 import etherip.types.CIPData;
 
 public abstract class EthernetIPTransform2Double implements EthernetIPTransformation {
-	private Logger logger = Logger.getLogger(getClass().getName());
+	protected Logger logger = Logger.getLogger(getClass().getName());
 
 	@Override
 	public Object[] createInternArray(int arrayLength) {
@@ -31,9 +27,12 @@ public abstract class EthernetIPTransform2Double implements EthernetIPTransforma
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "{0} | transform index {1}",
 					new String[] { e.getMessage(), Integer.toString(index) });
+			return 0.0d;
 		}
 		if (val == null || val.doubleValue() > Double.MAX_VALUE)
 			throw new ValueOutOfRangeException("Value from plc is out of OPC UA range!");
+		
+		logger.log(Level.FINE, "Transform to Double - value: " + val);
 		return val.doubleValue();
 	}
 }

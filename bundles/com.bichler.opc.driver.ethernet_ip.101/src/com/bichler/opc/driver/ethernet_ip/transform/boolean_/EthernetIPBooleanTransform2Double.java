@@ -1,8 +1,9 @@
 package com.bichler.opc.driver.ethernet_ip.transform.boolean_;
 
+import java.util.logging.Level;
+
 import com.bichler.opc.comdrv.utils.ValueOutOfRangeException;
 import com.bichler.opc.driver.ethernet_ip.transform.EthernetIPTransform2Double;
-
 import etherip.types.CIPData;
 import etherip.types.CIPData.Type;
 
@@ -40,8 +41,9 @@ public class EthernetIPBooleanTransform2Double extends EthernetIPTransform2Doubl
 		if (val.doubleValue() > Double.MAX_VALUE || val.doubleValue() < Double.MIN_VALUE)
 			throw new ValueOutOfRangeException("Value from plc is out of OPC UA range!");
 
+		logger.log(Level.FINE, "Transform Bool to Double - value: " + val.doubleValue());
 		if (val.doubleValue() == -1)
-			return 1;
+			return 1.0d;
 		return val.doubleValue();
 	}
 }
