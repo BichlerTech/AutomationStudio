@@ -931,13 +931,6 @@
          unpack="false"/>
 
    <plugin
-         id="com.bichler.opc.driver.ethernet_ip.101"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="com.bichler.astudio.editor.siemens.1.0.2"
          download-size="0"
          install-size="0"
