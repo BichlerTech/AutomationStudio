@@ -24,9 +24,9 @@ Require-Bundle: org.eclipse.ui,
  com.bichler.opc.comdrv,
  org.eclipse.ui.editors;bundle-version="3.11.500",
  com.bichler.astudio.components;bundle-version="1.0.0",
- com.bichler.astudio.utils.ui;bundle-version="1.0.0",
- com.bichler.opc.driver.ethernet_ip.101;bundle-version="1.0.0"
+ com.bichler.astudio.utils.ui;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ libs/com.bichler.opc.driver.ethernet_ip.jar
 Automatic-Module-Name: com.bichler.astudio.editor.allenbradley.1.0.1
