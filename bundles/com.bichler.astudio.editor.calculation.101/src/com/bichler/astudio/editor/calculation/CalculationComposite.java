@@ -507,6 +507,14 @@ public class CalculationComposite extends Composite
     }
     txtTimeout.setText(dpItem.getDp().getTimeout() + "");
     combo.setText(dpItem.getDp().getEvent().name());
+    if (combo.getText().compareTo(CalcEvent.CYCLIC.name()) == 0)
+    {
+      txtTimeout.setEnabled(true);
+    }
+    else
+    {
+      txtTimeout.setEnabled(false);
+    }
   }
 
   private void setHandlers()

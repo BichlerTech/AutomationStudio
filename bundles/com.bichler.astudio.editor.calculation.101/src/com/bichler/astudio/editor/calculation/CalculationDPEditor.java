@@ -521,10 +521,6 @@ public class CalculationDPEditor extends AbstractOPCDPDriverViewLinkEditorPart
     // no trigger nodes
   }
 
-  // @Override
-  // public void hookDPContextMenu() {
-  // OPCUAUtil.registerContextMenuOnDPEditor(this);
-  // }
   @Override
   public Control getDPControl()
   {
@@ -551,19 +547,4 @@ public class CalculationDPEditor extends AbstractOPCDPDriverViewLinkEditorPart
     }
     ((PropertySheetPage) this.propertyPage).refresh();
   }
-  // @Override
-  // public void onDisposeRemoteView() {
-  // IWorkbenchWindow window = PlatformUI.getWorkbench()
-  // .getActiveWorkbenchWindow();
-  //
-  // if (window != null) {
-  // IWorkbenchPage page = window.getActivePage();
-  // if (page != null) {
-  // IEditorReference[] references = page.getEditorReferences();
-  // if (references == null || references.length == 0) {
-  // DriverBrowserUtil.openEmptyDriverModelView();
-  // }
-  // }
-  // }
-  // }
 }
