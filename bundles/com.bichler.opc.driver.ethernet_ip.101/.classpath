@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Users/hbich/Documents/Econnect/runtime/OPC_Server_lib/axis.jar"/>
 	<classpathentry kind="lib" path="C:/Users/hbich/Documents/Econnect/runtime/OPC_Server_lib/bcpkix-jdk15on-164.jar"/>

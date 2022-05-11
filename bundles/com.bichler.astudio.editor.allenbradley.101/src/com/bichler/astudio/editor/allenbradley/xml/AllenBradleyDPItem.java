@@ -330,9 +330,9 @@ public class AllenBradleyDPItem extends ComDP
       // now verify range by transformation object
       return this.transform.verifyValueRange(value.getValue().getValue());
     }
-    else if (this.mapping == ALLENBRADLEY_MAPPING_TYPE.ARRAY_ARRAY)
-    {
-    }
+//    else if (this.mapping == ALLENBRADLEY_MAPPING_TYPE.ARRAY_ARRAY)
+//    {
+//    }
     return false;
   }
 

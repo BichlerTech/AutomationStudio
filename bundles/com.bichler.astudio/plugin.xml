@@ -218,7 +218,7 @@
          </property>
          <property
                name="aboutText"
-               value="Automation Studio v3.0.0&#x0A;&#x0A;(c) Copyright Bichler Technologies GmbH 2018. All rights reserved.&#x0A;For further information visit http://www.bichler.tech">
+               value="Automation Studio v3.0.1&#x0A;&#x0A;Revision v0.0.1&#x0A;Date 2022-04-04(c) Copyright Bichler Technologies GmbH 2022. All rights reserved.&#x0A;For further information visit http://www.bichler.tech">
          </property>
          <property
                name="aboutImage"

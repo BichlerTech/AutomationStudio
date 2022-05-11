@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?NLS TYPE="org.eclipse.help.toc"?>
 
-<toc label="OPC UA Datenserver">
+<toc label="Automation Studio">
    <topic label="Automation Studio, Einstieg in OPC UA">
       <topic label="Ansichten">
          <topic href="nl/de/html/gettingstarted/documentation.htm" label="Dokumentation">

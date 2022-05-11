@@ -1,8 +1,9 @@
 package com.bichler.opc.driver.ethernet_ip.transform.boolean_;
 
+import java.util.logging.Level;
+
 import com.bichler.opc.comdrv.utils.ValueOutOfRangeException;
 import com.bichler.opc.driver.ethernet_ip.transform.EthernetIPTransform2Float;
-
 import etherip.types.CIPData;
 import etherip.types.CIPData.Type;
 
@@ -40,8 +41,9 @@ public class EthernetIPBooleanTransform2Float extends EthernetIPTransform2Float 
 		if (val.floatValue() > Float.MAX_VALUE)
 			throw new ValueOutOfRangeException("Value from plc is out of OPC UA range!");
 
+		logger.log(Level.FINE, "Transform Bool to Float - value: " + val.floatValue());
 		if (val.floatValue() == -1)
-			return 1;
-		return val.intValue();
+			return 1.0f;
+		return val.floatValue();
 	}
 }

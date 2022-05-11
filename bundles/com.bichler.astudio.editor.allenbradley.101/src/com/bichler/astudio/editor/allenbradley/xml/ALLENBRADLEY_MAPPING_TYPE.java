@@ -9,19 +9,19 @@ public enum ALLENBRADLEY_MAPPING_TYPE {
 	/**
 	 * OPC UA and XML-DA values are scalars
 	 */
-	SCALAR,
+	SCALAR//,
 	/**
 	 * OPC UA is a scalar XML-DA is an array
 	 */
-	SCALAR_ARRAY,
+	//SCALAR_ARRAY,
 	/**
 	 * OPC UA is an array XML-DA is a scalar
 	 */
-	ARRAY_SCALAR,
+	//ARRAY_SCALAR,
 	/**
 	 * OPC UA and XML-DA values are arrays
 	 */
-	ARRAY_ARRAY,
+	//ARRAY_ARRAY,
 	/**
 	 * OPC UA Alarm values
 	 */

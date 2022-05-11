@@ -129,4 +129,12 @@
          </adapter>
       </factory>
    </extension>
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            category="Automation Studio"
+            file="toc.xml"
+            primary="true">
+      </toc>
+   </extension>
 </plugin>

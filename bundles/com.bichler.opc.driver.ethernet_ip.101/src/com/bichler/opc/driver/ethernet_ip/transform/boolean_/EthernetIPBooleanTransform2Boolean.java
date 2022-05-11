@@ -1,10 +1,9 @@
 package com.bichler.opc.driver.ethernet_ip.transform.boolean_;
 
+import java.util.logging.Level;
 import org.opcfoundation.ua.builtintypes.Variant;
-
 import com.bichler.opc.comdrv.utils.ValueOutOfRangeException;
 import com.bichler.opc.driver.ethernet_ip.transform.EthernetIPTransform2Boolean;
-
 import etherip.types.CIPData;
 import etherip.types.CIPData.Type;
 
@@ -16,7 +15,7 @@ import etherip.types.CIPData.Type;
  *
  */
 public class EthernetIPBooleanTransform2Boolean extends EthernetIPTransform2Boolean {
-
+	
 	@Override
 	public void transToDevice(CIPData data, Object value, int index) throws IndexOutOfBoundsException, Exception {
 		boolean val = (Boolean) value;
@@ -53,7 +52,7 @@ public class EthernetIPBooleanTransform2Boolean extends EthernetIPTransform2Bool
 		} catch (Exception e) {
 			throw new ValueOutOfRangeException("Value can not be transformed into boolean represenation");
 		}
-
-		return val.intValue() == -1;
+		logger.log(Level.FINE, "Transform Bool to Bool - value: " + val.intValue());
+		return val.intValue() != 0;
 	}
 }

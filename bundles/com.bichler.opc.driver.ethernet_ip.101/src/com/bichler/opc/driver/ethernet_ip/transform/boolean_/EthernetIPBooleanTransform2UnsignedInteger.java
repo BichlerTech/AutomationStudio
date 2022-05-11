@@ -1,10 +1,10 @@
 package com.bichler.opc.driver.ethernet_ip.transform.boolean_;
 
-import org.opcfoundation.ua.builtintypes.UnsignedInteger;
+import java.util.logging.Level;
 
+import org.opcfoundation.ua.builtintypes.UnsignedInteger;
 import com.bichler.opc.comdrv.utils.ValueOutOfRangeException;
 import com.bichler.opc.driver.ethernet_ip.transform.EthernetIPTransform2UnsignedInteger;
-
 import etherip.types.CIPData;
 import etherip.types.CIPData.Type;
 
@@ -42,6 +42,7 @@ public class EthernetIPBooleanTransform2UnsignedInteger extends EthernetIPTransf
 		if (val.longValue() > UnsignedInteger.L_MAX_VALUE || val.longValue() < UnsignedInteger.L_MIN_VALUE)
 			throw new ValueOutOfRangeException("Value from plc is out of OPC UA range!");
 
+		logger.log(Level.FINE, "Transform Bool to UnsignedInteger - value: " + val.shortValue());
 		if (val.longValue() == -1)
 			return new UnsignedInteger(1);
 		return new UnsignedInteger(val.longValue());
