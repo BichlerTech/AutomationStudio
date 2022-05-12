@@ -89,6 +89,7 @@ public class CalculationComposite extends Composite
 
   public String plainString()
   {
+	  StringBuffer buffer = new StringBuffer();
 	  for (CalculationObject obj : this.dpItem.getDp().getCalculationExpressions())
 	  {
 	      if (obj instanceof CalculationExpression)
