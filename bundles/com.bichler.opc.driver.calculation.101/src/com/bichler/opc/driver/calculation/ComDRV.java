@@ -100,12 +100,13 @@ public class ComDRV extends com.bichler.opc.comdrv.ComDRV {
 			// all nodes to map nodeid to datapoint
 			int index = 0;
 			for (CalculationDP dp : dps) {
-				calcUtils.addScript("function exec" + index + "() {" + dp.getScript() + "}");
-				dp.setFuncCall("exec" + index);
-				index ++;
+				
 				if (!dp.isActive()) {
 					continue;
 				}
+				calcUtils.addScript("function exec" + index + "() {" + dp.getScript() + "}");
+				dp.setFuncCall("exec" + index);
+				index ++;
 				switch (dp.getEvent()) {
 				case CYCLIC:
 					manager.addCalcInstructionCyclic(dp);
