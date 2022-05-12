@@ -119,4 +119,12 @@
          </adapter>
       </factory>
    </extension>
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            category="Treiber"
+            file="toc.xml"
+            primary="true">
+      </toc>
+   </extension>
 </plugin>
