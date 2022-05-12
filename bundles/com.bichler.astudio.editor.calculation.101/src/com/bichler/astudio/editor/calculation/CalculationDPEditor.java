@@ -188,7 +188,7 @@ public class CalculationDPEditor extends AbstractOPCDPDriverViewLinkEditorPart
   private void preview() {
 	  for (CalculationComposite comp : this.composits)
 	  {
-	      System.out.println(comp.toString());
+	      System.out.println(comp.plainString());
 	  }
   }
 

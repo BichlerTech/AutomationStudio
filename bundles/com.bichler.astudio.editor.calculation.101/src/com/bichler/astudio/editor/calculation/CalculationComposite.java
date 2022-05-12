@@ -87,6 +87,22 @@ public class CalculationComposite extends Composite
     return dpItem;
   }
 
+  public String plainString()
+  {
+	  for (CalculationObject obj : this.dpItem.getDp().getCalculationExpressions())
+	  {
+	      if (obj instanceof CalculationExpression)
+	      {
+	        buffer.append(obj.getContent() + " ");
+	      }
+	      else if (obj instanceof CalculationNode)
+	      {
+	        buffer.append(((CalculationNode) obj).getContent() + " ");
+	      }
+	  }
+	  return buffer.toString();
+  }
+  
   @Override
   public String toString()
   {
