@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Siemens Editor
 Bundle-SymbolicName: com.bichler.astudio.editor.siemens.1.0.2;singleton:=true
-Bundle-Version: 1.0.2.20210108
+Bundle-Version: 1.0.2
 Bundle-Activator: com.bichler.astudio.editor.siemens.SiemensActivator
 Bundle-Vendor: Bichler Technologies GmbH
 Require-Bundle: org.eclipse.ui,
