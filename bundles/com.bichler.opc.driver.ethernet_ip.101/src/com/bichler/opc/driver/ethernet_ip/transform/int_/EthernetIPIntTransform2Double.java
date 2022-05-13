@@ -13,7 +13,7 @@ public class EthernetIPIntTransform2Double extends EthernetIPTransform2Double {
 		long val = ((Double) value).longValue();
 
 		if (val > Short.MAX_VALUE || val < Short.MIN_VALUE)
-			throw new ValueOutOfRangeException("Value from OPC UA is out of plc range!");
+			throw new ValueOutOfRangeException("Value from opc ('" + val + "') is out of plc range ('" + Short.MIN_VALUE + "|"+Short.MAX_VALUE+"')!");
 
 		data.set(index, new Short((short) val));
 		return;

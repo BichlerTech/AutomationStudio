@@ -25,8 +25,10 @@ public class EthernetIPBooleanTransform2UnsignedLong extends EthernetIPTransform
 
 		if (val == 1)
 			data.set(index, 0xFF);
-		else
+		else if (val == 0)
 			data.set(index, 0);
+		else
+			throw new ValueOutOfRangeException("Value from opc ('" + val + "') is out of plc range ('0|1')!");
 		return;
 	}
 
@@ -39,7 +41,7 @@ public class EthernetIPBooleanTransform2UnsignedLong extends EthernetIPTransform
 			throw new ValueOutOfRangeException("Value from plc is out of OPC UA range!");
 		}
 
-		if (val.longValue() > UnsignedLong.MAX_VALUE.longValue()
+		if (val.longValue() > Long.MAX_VALUE
 				|| val.longValue() < UnsignedLong.MIN_VALUE.longValue())
 			throw new ValueOutOfRangeException("Value from plc is out of OPC UA range!");
 

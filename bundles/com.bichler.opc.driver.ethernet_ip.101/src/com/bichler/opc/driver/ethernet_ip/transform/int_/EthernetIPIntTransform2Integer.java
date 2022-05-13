@@ -13,7 +13,7 @@ public class EthernetIPIntTransform2Integer extends EthernetIPTransform2Integer 
 		int val = (Integer) value;
 
 		if (val > Short.MAX_VALUE || val < Short.MIN_VALUE)
-			throw new ValueOutOfRangeException("Value from OPC UA is out of plc range!");
+			throw new ValueOutOfRangeException("Value from opc ('" + val + "') is out of plc range ('" + Short.MIN_VALUE + "|"+Short.MAX_VALUE+"')!");
 
 		data.set(index, (short) val);
 		return;

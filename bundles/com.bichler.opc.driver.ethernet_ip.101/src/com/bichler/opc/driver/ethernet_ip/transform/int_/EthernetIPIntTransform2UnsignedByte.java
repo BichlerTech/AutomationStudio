@@ -1,13 +1,11 @@
 package com.bichler.opc.driver.ethernet_ip.transform.int_;
 
 import org.opcfoundation.ua.builtintypes.UnsignedByte;
-
-import com.bichler.opc.driver.ethernet_ip.transform.EthernetIPTransform2Byte;
-
+import com.bichler.opc.driver.ethernet_ip.transform.EthernetIPTransform2UnsignedByte;
 import etherip.types.CIPData;
 import etherip.types.CIPData.Type;
 
-public class EthernetIPIntTransform2UnsignedByte extends EthernetIPTransform2Byte {
+public class EthernetIPIntTransform2UnsignedByte extends EthernetIPTransform2UnsignedByte {
 
 	@Override
 	public void transToDevice(CIPData data, Object value, int index) throws IndexOutOfBoundsException, Exception {

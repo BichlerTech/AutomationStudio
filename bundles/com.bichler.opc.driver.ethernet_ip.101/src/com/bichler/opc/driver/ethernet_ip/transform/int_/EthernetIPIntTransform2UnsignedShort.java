@@ -14,8 +14,8 @@ public class EthernetIPIntTransform2UnsignedShort extends EthernetIPTransform2Un
 	public void transToDevice(CIPData data, Object value, int index) throws IndexOutOfBoundsException, Exception {
 		int val = ((UnsignedShort) value).intValue();
 
-		if (val > Short.MAX_VALUE || val < Short.MIN_VALUE)
-			throw new ValueOutOfRangeException("Value from OPC UA is out of plc range!");
+		if (val > UnsignedShort.L_MAX_VALUE || val < UnsignedShort.L_MIN_VALUE)
+			throw new ValueOutOfRangeException("Value from opc ('" + val + "') is out of plc range ('" + Short.MIN_VALUE + "|"+Short.MAX_VALUE+"')!");
 
 		data.set(index, new Short((short) val));
 		return;

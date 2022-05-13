@@ -24,8 +24,10 @@ public class EthernetIPBooleanTransform2Double extends EthernetIPTransform2Doubl
 
 		if (val == 1)
 			data.set(index, 0xFF);
-		else
+		else if(val == 0)
 			data.set(index, 0);
+		else 
+			throw new ValueOutOfRangeException("Value from opc ('" + val + "') is out of plc range ('0|1')!");
 		return;
 	}
 
@@ -38,7 +40,7 @@ public class EthernetIPBooleanTransform2Double extends EthernetIPTransform2Doubl
 			throw new ValueOutOfRangeException("Value from plc is out of OPC UA range!");
 		}
 
-		if (val.doubleValue() > Double.MAX_VALUE || val.doubleValue() < Double.MIN_VALUE)
+		if (val.doubleValue() > Double.MAX_VALUE || val.doubleValue() < -Double.MAX_VALUE)
 			throw new ValueOutOfRangeException("Value from plc is out of OPC UA range!");
 
 		logger.log(Level.FINE, "Transform Bool to Double - value: " + val.doubleValue());

@@ -10,6 +10,7 @@ import org.opcfoundation.ua.core.StatusCodes;
 
 import com.bichler.opc.comdrv.IWriteListener;
 import com.bichler.opc.comdrv.importer.Com_TriggerDpItem;
+import com.bichler.opc.comdrv.utils.ValueOutOfRangeException;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPDPItem;
 
 import etherip.types.CIPData;
@@ -119,7 +120,11 @@ public class EthernetIPWriteHandler implements IWriteListener {
 				if (this.manager.getDevice().write(dp.getTagname(), data) != 0) {
 					return StatusCode.BAD;
 				}
+			} catch (ValueOutOfRangeException e) {
+				logger.log(Level.SEVERE, e.getMessage() + " | Opc-Node: '" + dp.getDisplayName() + "' | AB-Tag: '" + dp.getTagname() + "'");
+				return new StatusCode(StatusCodes.Bad_OutOfRange);
 			} catch (Exception e) {
+				logger.log(Level.SEVERE, e.getMessage(), e);
 				return StatusCode.BAD;
 			}
 			return StatusCode.GOOD;

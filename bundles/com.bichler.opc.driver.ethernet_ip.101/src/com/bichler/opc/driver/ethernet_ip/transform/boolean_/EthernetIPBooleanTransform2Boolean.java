@@ -19,7 +19,6 @@ public class EthernetIPBooleanTransform2Boolean extends EthernetIPTransform2Bool
 	@Override
 	public void transToDevice(CIPData data, Object value, int index) throws IndexOutOfBoundsException, Exception {
 		boolean val = (Boolean) value;
-
 		if (val)
 			data.set(index, 0xFF);
 		else
