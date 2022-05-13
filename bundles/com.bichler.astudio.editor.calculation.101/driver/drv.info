@@ -1,10 +1,10 @@
-## Treiber Beschreibung, 
+## driver description 
 #drvdescription
-Calculation engine to simulate any value changed.
+Calculation engine to simulate any value change behavior.
 
 ## webseite mit zusaetzlichen infos ueber den treiber, kann auch eine komplette Treiberkonfiguration und online Hilfe sein.
 #drvweb
-http://www.hb-sofltsolution.com/comet/driver/calculation_v100
+https://www.bichler.tech/produkte-opc-au-calculation/
 
 ## version des installierten Teibers
 #drvversion
@@ -12,7 +12,7 @@ v.1.0.1
 
 ## Erstellungsdatum im Format yyyy-MM-dd 
 #drvbuilddate
-2021-01-01 11:59:59.000
+2022-05-13 11:59:59.000
 
 #drvrevision
-1
+002
