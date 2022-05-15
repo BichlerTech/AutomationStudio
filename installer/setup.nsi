@@ -3,11 +3,11 @@
 
 !include LogicLib.nsh
 
-Name "AutomationStudio"
+Name "AutomationStudio v3.0.1"
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION "2.0.0.1"
+!define VERSION "3.0.1"
 !define COMPANY "Bichler Technologies GmbH"
 !define URL "www.bichler.tech"
 !define ARP "Software\Microsoft\Windows\CurrentVersion\Uninstall\BTech\AutomationStudio"
