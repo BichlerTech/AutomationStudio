@@ -132,9 +132,9 @@
    <extension
          point="org.eclipse.help.toc">
       <toc
-            category="Automation Studio"
+            category="Treiber"
             file="toc.xml"
-            primary="true">
+            primary="false">
       </toc>
    </extension>
 </plugin>

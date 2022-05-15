@@ -29,9 +29,9 @@ public abstract class EthernetIPTransform2Float implements EthernetIPTransformat
 					new String[] { e.getMessage(), Integer.toString(index) });
 			return 0.0f;
 		}
+		
 		if (val == null || val.floatValue() > Float.MAX_VALUE) {
-			logger.log(Level.INFO, "Value out of range exception {0}", Float.toString(val.floatValue()));
-			throw new ValueOutOfRangeException("Value from plc is out of OPC UA range!");
+			throw new ValueOutOfRangeException("Value from plc ('" + val + "') is out of opc range ('"+Float.MIN_VALUE+"|" + Float.MAX_VALUE + "')!");
 		}
 		
 		logger.log(Level.FINE, "Transform to Float - value: " + val);

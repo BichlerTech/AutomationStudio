@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -26,9 +28,14 @@ import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPDPItem;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPDataType;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPIntItem;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPLIntItem;
+import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPLRealItem;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPRealItem;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPSIntItem;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPStringItem;
+import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPUDIntItem;
+import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPUIntItem;
+import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPULIntItem;
+import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPUSIntItem;
 import com.bichler.opc.driver.ethernet_ip.transform.ETHERNETIP_MAPPING_TYPE;
 
 public class ComEthernetIPImporter extends Com_Importer {
@@ -51,15 +58,8 @@ public class ComEthernetIPImporter extends Com_Importer {
 			is.setEncoding("UTF-8");
 
 			parser.parse(is, dpparser);
-		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SAXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (IOException | ParserConfigurationException | SAXException e) {
+			Logger.getLogger(getClass().getName()).log(Level.SEVERE, e.getMessage(), e);
 		}
 		return dps;
 	}
@@ -151,33 +151,39 @@ public class ComEthernetIPImporter extends Com_Importer {
 				case BOOL:
 					actNode = new EthernetIPBooleanItem();
 					break;
-				// case BYTE:
-				// actNode = new EthernetIPByteItem();
-				// break;
+				case SINT:
+					actNode = new EthernetIPSIntItem();
+					break;
+				case INT:
+					actNode = new EthernetIPIntItem();
+					break;
 				case DINT:
 					actNode = new EthernetIPDIntItem();
 					break;
 				case LINT:
 					actNode = new EthernetIPLIntItem();
 					break;
-				case SINT:
-					actNode = new EthernetIPSIntItem();
+				case USINT:
+					actNode = new EthernetIPUSIntItem();
 					break;
-				// case DWORD:
-				// actNode = new EthernetIPDWordItem();
-				// break;
-				case INT:
-					actNode = new EthernetIPIntItem();
+				case UINT:
+					actNode = new EthernetIPUIntItem();
+					break;
+				case UDINT:
+					actNode = new EthernetIPUDIntItem();
+					break;
+				case ULINT:
+					actNode = new EthernetIPULIntItem();
 					break;
 				case REAL:
 					actNode = new EthernetIPRealItem();
 					break;
+				case LREAL:
+					actNode = new EthernetIPLRealItem();
+					break;
 				case STRING:
 					actNode = new EthernetIPStringItem();
 					break;
-				// case WORD:
-				// actNode = new EthernetIPWordItem();
-				// break;
 				default:
 					actNode = new EthernetIPDPItem();
 					break;

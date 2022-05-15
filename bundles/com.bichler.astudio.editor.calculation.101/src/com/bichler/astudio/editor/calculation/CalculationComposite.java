@@ -87,6 +87,23 @@ public class CalculationComposite extends Composite
     return dpItem;
   }
 
+  public String plainString()
+  {
+	  StringBuffer buffer = new StringBuffer();
+	  for (CalculationObject obj : this.dpItem.getDp().getCalculationExpressions())
+	  {
+	      if (obj instanceof CalculationExpression)
+	      {
+	        buffer.append(obj.getContent() + " ");
+	      }
+	      else if (obj instanceof CalculationNode)
+	      {
+	        buffer.append(((CalculationNode) obj).getContent() + " ");
+	      }
+	  }
+	  return buffer.toString();
+  }
+  
   @Override
   public String toString()
   {
@@ -126,7 +143,7 @@ public class CalculationComposite extends Composite
     {
       if (obj instanceof CalculationExpression)
       {
-        buffer.append("      <operation value=\"" + obj.getContent().replaceAll("<", "$lower$").replaceAll(">", "$greater$").replaceAll("&", "&amp;").replaceAll("'", "&#39;").replaceAll("\"", "&#34;")
+        buffer.append("      <operation value=\"" + obj.getContent().replaceAll("<", "\\$lower\\$").replaceAll(">", "\\$greater\\$").replaceAll("&", "&amp;").replaceAll("'", "&#39;").replaceAll("\"", "&#34;")
             + "\" />\n");
       }
       else if (obj instanceof CalculationNode)

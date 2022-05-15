@@ -9,6 +9,8 @@ package etherip.types;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
+import org.opcfoundation.ua.builtintypes.UnsignedLong;
+
 import etherip.protocol.Connection;
 
 /**
@@ -25,8 +27,9 @@ import etherip.protocol.Connection;
  */
 final public class CIPData {
 	public static enum Type {
-		BOOL(0x00C1, 1), SINT(0x00C2, 1), INT(0x00C3, 2), DINT(0x00C4, 4), REAL(0x00CA, 4), BITS(0x00D3, 4),
-		LINT(0x00C5, 8),
+		BOOL(0x00C1, 1), SINT(0x00C2, 1), INT(0x00C3, 2), DINT(0x00C4, 4), LINT(0x00C5, 8),
+		USINT(0x00C6, 1), UINT(0x00C7, 2), UDINT(0x00C8, 4), ULINT(0x00C9, 8), 
+		REAL(0x00CA, 4), BITS(0x00D3, 4), LREAL(0x00CB, 8),
 		// Order of enums matter: BITS is the last numeric type (not-string)
 		STRUCT(0x02A0, 0),
 		/**
@@ -78,8 +81,13 @@ final public class CIPData {
 		case INT:
 		case DINT:
 		case LINT:
+		case USINT:
+		case UINT:
+		case UDINT:
+		case ULINT:
 		case BITS:
 		case REAL:
+		case LREAL:
 			this.data = ByteBuffer.allocate(type.element_size * elements);
 			this.data.order(Connection.BYTE_ORDER);
 			this.type = type;
@@ -117,9 +125,14 @@ final public class CIPData {
 		case SINT:
 		case INT:
 		case DINT:
-		case BITS:
 		case LINT:
+		case USINT:
+		case UINT:
+		case UDINT:
+		case ULINT:
+		case BITS:
 		case REAL:
+		case LREAL:
 			return (short) (data.capacity() / type.element_size);
 		case STRUCT: {
 			final Type el_type = Type.forCode(data.getShort(0));
@@ -174,15 +187,42 @@ final public class CIPData {
 		case BOOL:
 		case SINT:
 			return new Byte(data.get(type.element_size * index));
+		case USINT: {
+			int value = data.get(type.element_size * index);
+			if(value < 0)
+				value = 256 + value;
+			return value;
+		}
 		case INT:
 			return new Short(data.getShort(type.element_size * index));
 		case DINT:
 			// case BITS:
 			return new Integer(data.getInt(type.element_size * index));
-		case REAL:
-			return new Float(data.getFloat(type.element_size * index));
+		case UINT: {
+			// case BITS:
+			int value = data.getShort(type.element_size * index);
+			if(value < 0)
+				value = 65536 + value;
+			return value;
+		}
 		case LINT:
 			return new Long(data.getLong(type.element_size * index));
+		case UDINT: {
+			long value = data.getInt(type.element_size * index);
+			if(value < 0)
+				value = 4294967296l + value;
+			return value;
+		}
+		case ULINT: {
+			long value =  data.getLong(type.element_size * index);
+			if(value < 0)
+				return UnsignedLong.MAX_VALUE.subtract((-1l)*(value+1));
+			return value;
+		}
+		case REAL:
+			return new Float(data.getFloat(type.element_size * index));
+		case LREAL:
+			return new Double(data.getDouble(type.element_size * index));
 		default:
 			throw new Exception("Cannot retrieve Number from " + type);
 		}
@@ -245,15 +285,26 @@ final public class CIPData {
 		case INT:
 			data.putShort(type.element_size * index, value.shortValue());
 			break;
+		case USINT:
+			data.put(type.element_size * index, value.byteValue());
+			break;
+		case UINT:
 		case DINT:
 		case BITS:
 			data.putInt(type.element_size * index, value.intValue());
 			break;
+		case UDINT:
+			data.putInt(type.element_size * index, value.intValue());
+			break;
+		case ULINT:
 		case LINT:
 			data.putLong(type.element_size * index, value.longValue());
 			break;
 		case REAL:
 			data.putFloat(type.element_size * index, value.floatValue());
+			break;
+		case LREAL:
+			data.putDouble(type.element_size * index, value.doubleValue());
 			break;
 		default:
 			throw new Exception("Cannot set type " + type + " to a number");
@@ -297,6 +348,7 @@ final public class CIPData {
 			result.append(Arrays.toString(values));
 			break;
 		}
+		case USINT:
 		case INT: {
 			final short[] values = new short[elements];
 			for (int i = 0; i < elements; ++i)
@@ -304,6 +356,7 @@ final public class CIPData {
 			result.append(Arrays.toString(values));
 			break;
 		}
+		case UINT:
 		case DINT:
 		case BITS: {
 			final int[] values = new int[elements];
@@ -312,6 +365,8 @@ final public class CIPData {
 			result.append(Arrays.toString(values));
 			break;
 		}
+		case ULINT:
+		case UDINT:
 		case LINT: {
 			final long[] values = new long[elements];
 			for (int i = 0; i < elements; ++i)
@@ -323,6 +378,13 @@ final public class CIPData {
 			final float[] values = new float[elements];
 			for (int i = 0; i < elements; ++i)
 				values[i] = buf.getFloat();
+			result.append(Arrays.toString(values));
+			break;
+		}
+		case LREAL: {
+			final double[] values = new double[elements];
+			for (int i = 0; i < elements; ++i)
+				values[i] = buf.getDouble();
 			result.append(Arrays.toString(values));
 			break;
 		}

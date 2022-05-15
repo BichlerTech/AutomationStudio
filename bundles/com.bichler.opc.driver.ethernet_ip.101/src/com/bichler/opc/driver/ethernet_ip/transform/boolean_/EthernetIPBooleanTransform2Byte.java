@@ -11,12 +11,14 @@ public class EthernetIPBooleanTransform2Byte extends EthernetIPTransform2Byte {
 
 	@Override
 	public void transToDevice(CIPData data, Object value, int index) throws IndexOutOfBoundsException, Exception {
-		boolean val = (Boolean) value;
+		byte val = (Byte) value;
 
-		if (val)
+		if (val == 1)
 			data.set(index, 0xFF);
-		else
+		else if(val == 0)
 			data.set(index, 0);
+		else
+			throw new ValueOutOfRangeException("Value from opc ('" + val + "') is out of plc range ('0|1')!");
 		return;
 	}
 

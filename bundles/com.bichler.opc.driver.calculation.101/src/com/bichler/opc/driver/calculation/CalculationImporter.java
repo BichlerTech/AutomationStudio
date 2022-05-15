@@ -199,9 +199,9 @@ public class CalculationImporter {
 			else if (name.compareTo("operation") == 0) {
 				if (actNode != null) {
 					actNode.getScript()
-							.append(attrs.getValue("value").replaceAll("$lower$", "<").replaceAll("$greater$", ">").replaceAll("&amp;", "&").replaceAll("&#39;", "'").replaceAll("&#34;", "\""));
+							.append(attrs.getValue("value").replaceAll("\\$lower\\$", "<").replaceAll("\\$greater\\$", ">").replaceAll("&amp;", "&").replaceAll("&#39;", "'").replaceAll("&#34;", "\""));
 					actNode.getCalculationExpressions().add(new CalculationExpression(
-							attrs.getValue("value").replaceAll("$lower$", "<").replaceAll("$greater$", ">").replaceAll("&amp;", "&").replaceAll("&#39;", "'").replaceAll("&#34;", "\"")));
+							attrs.getValue("value").replaceAll("\\$lower\\$", "<").replaceAll("\\$greater\\$", ">").replaceAll("&amp;", "&").replaceAll("&#39;", "'").replaceAll("&#34;", "\"")));
 				}
 			} else if (name.compareTo("node") == 0) {
 				if (actNode != null) {

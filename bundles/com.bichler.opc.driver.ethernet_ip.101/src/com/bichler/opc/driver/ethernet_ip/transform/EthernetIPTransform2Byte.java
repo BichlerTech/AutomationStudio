@@ -1,7 +1,10 @@
 package com.bichler.opc.driver.ethernet_ip.transform;
 
+import java.math.BigInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.opcfoundation.ua.builtintypes.UnsignedLong;
 import org.opcfoundation.ua.builtintypes.Variant;
 import com.bichler.opc.comdrv.utils.ValueOutOfRangeException;
 import etherip.types.CIPData;
@@ -9,7 +12,7 @@ import etherip.types.CIPData;
 public abstract class EthernetIPTransform2Byte implements EthernetIPTransformation {
 
 	protected Logger logger = Logger.getLogger(getClass().getName());
-	
+
 	@Override
 	public Object[] createInternArray(int arrayLength) {
 		return new Byte[arrayLength];
@@ -28,12 +31,22 @@ public abstract class EthernetIPTransform2Byte implements EthernetIPTransformati
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "{0} | transform index {1}",
 					new String[] { e.getMessage(), Integer.toString(index) });
-			return (byte)0;
+			return (byte) 0;
 		}
 
-		if (val.intValue() > Byte.MAX_VALUE || val.intValue() < Byte.MIN_VALUE)
-			throw new ValueOutOfRangeException("Value from plc is out of OPC UA range!");
-		logger.log(Level.FINE, "Transform to Byte - value: " + val);
-		return val.byteValue();
+		if (val instanceof UnsignedLong) {
+			BigInteger big = ((UnsignedLong) val).bigIntegerValue();
+			int greater = big.compareTo(BigInteger.valueOf(Byte.MAX_VALUE));
+			int lower = big.compareTo(BigInteger.valueOf(Byte.MIN_VALUE));
+			if (greater == 1 || lower == -1)
+				throw new ValueOutOfRangeException("Value from plc ('" + val + "') is out of opc range ('"+Byte.MIN_VALUE+"|" + Byte.MAX_VALUE + "')!");
+			return (UnsignedLong) val;
+		} else {
+			long tempVal = val.longValue();
+			if (tempVal > Byte.MAX_VALUE || tempVal < Byte.MIN_VALUE)
+				throw new ValueOutOfRangeException("Value from plc ('" + val + "') is out of opc range ('"+Byte.MIN_VALUE+"|" + Byte.MAX_VALUE + "')!");
+			logger.log(Level.FINE, "Transform to Byte - value: " + val);
+			return val.byteValue();
+		}
 	}
 }

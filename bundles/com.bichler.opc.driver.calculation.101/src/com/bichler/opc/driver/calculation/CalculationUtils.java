@@ -60,7 +60,7 @@ public class CalculationUtils {
 		try {
 			engine.eval(
 					"importPackage(org.opcfoundation.ua.builtintypes);\nimportPackage(org.opcfoundation.ua.common);\nimportPackage(java.lang);\nimportPackage(com.bichler.opc.comdrv);\nimportPackage(org.opcfoundation.ua.core);");
-		} catch (ScriptException e) {
+		} catch (Exception e) {
 			LOGGER.log(Level.SEVERE, e.getMessage(), e);
 		}
 	}

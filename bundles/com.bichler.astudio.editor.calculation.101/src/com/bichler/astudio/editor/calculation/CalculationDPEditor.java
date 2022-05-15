@@ -76,6 +76,7 @@ public class CalculationDPEditor extends AbstractOPCDPDriverViewLinkEditorPart
   private ScrolledComposite scrolledComposite_1;
   private Button btn_add;
   private Button btn_delete;
+  private Button btn_preview;
   private ScrolledComposite scrolledComposite;
 
   public CalculationDPEditor()
@@ -129,6 +130,14 @@ public class CalculationDPEditor extends AbstractOPCDPDriverViewLinkEditorPart
     gd_btn_delete.widthHint = 60;
     btn_delete.setLayoutData(gd_btn_delete);
     btn_delete.setImage(CalculationSharedImages.getImage(CalculationSharedImages.ICON_DELETE));
+    btn_preview = new Button(composite, SWT.NONE);
+    btn_preview.setToolTipText(CustomString.getString(CalculationActivator.getDefault().RESOURCE_BUNDLE,
+        "com.bichler.astudio.editor.calculation.editor.dp.preview"));
+    GridData gd_btn_preview = new GridData(SWT.LEFT, SWT.FILL, false, false, 1, 1);
+    gd_btn_preview.widthHint = 60;
+    gd_btn_preview.heightHint = 60;
+    btn_preview.setLayoutData(gd_btn_preview);
+    btn_preview.setImage(CalculationSharedImages.getImage(CalculationSharedImages.ICON_IMPORT));
     new Label(composite, SWT.NONE);
     scrolledComposite.setContent(composite);
     scrolledComposite.setMinSize(new Point(200, 200));
@@ -166,6 +175,21 @@ public class CalculationDPEditor extends AbstractOPCDPDriverViewLinkEditorPart
         setDirty(true);
       }
     });
+    btn_preview.addSelectionListener(new SelectionAdapter()
+    {
+      @Override
+      public void widgetSelected(SelectionEvent e)
+      {
+    	  preview();
+      }
+    });
+  }
+  
+  private void preview() {
+	  for (CalculationComposite comp : this.composits)
+	  {
+	      System.out.println(comp.plainString());
+	  }
   }
 
   @Override

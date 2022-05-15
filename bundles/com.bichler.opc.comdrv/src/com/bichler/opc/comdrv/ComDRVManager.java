@@ -444,6 +444,7 @@ public class ComDRVManager {
 					continue;
 				}
 				if (drv.isDirectory() && drv.getName().compareTo(".") != 0 && drv.getName().compareTo("..") != 0) {
+					logger.log(Level.INFO, "Load driver '" + drv.getName() + "'!");
 					config = drv.getAbsolutePath() + "/driver.com";
 					driverId = 0;
 					String deviceAddr = "";
@@ -1218,6 +1219,7 @@ public class ComDRVManager {
 			// iterate over all drivers to start
 			for (ComDRV driver : drivers) {
 				// now try to start that driver
+				logger.log(Level.INFO, "Start driver '" + driver.getDriverName() + "' with id '" + driver.getDriverId() + "'!");
 				this.startDriver(driver.getDriverId());
 			}
 			/* now start the driver scheduler */

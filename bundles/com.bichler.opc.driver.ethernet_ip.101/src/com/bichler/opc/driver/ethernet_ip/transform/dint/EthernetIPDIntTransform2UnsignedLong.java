@@ -15,7 +15,7 @@ public class EthernetIPDIntTransform2UnsignedLong extends EthernetIPTransform2Un
 		long val = ((UnsignedLong) value).longValue();
 
 		if (val > Integer.MAX_VALUE || val < Integer.MIN_VALUE)
-			throw new ValueOutOfRangeException("Value from OPC UA is out of plc range!");
+			throw new ValueOutOfRangeException("Value from opc ('" + val + "') is out of plc range ('" + Integer.MIN_VALUE + "|"+Integer.MAX_VALUE+"')!");
 
 		data.set(index, new Integer((byte) val));
 		return;

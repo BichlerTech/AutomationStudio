@@ -30,7 +30,7 @@ public abstract class EthernetIPTransform2Double implements EthernetIPTransforma
 			return 0.0d;
 		}
 		if (val == null || val.doubleValue() > Double.MAX_VALUE)
-			throw new ValueOutOfRangeException("Value from plc is out of OPC UA range!");
+			throw new ValueOutOfRangeException("Value from plc ('" + val + "') is out of opc range ('"+Double.MIN_VALUE+"|" + Double.MAX_VALUE + "')!");
 		
 		logger.log(Level.FINE, "Transform to Double - value: " + val);
 		return val.doubleValue();

@@ -188,8 +188,8 @@ public class EthernetIPDPItem extends ComDP {
 		} catch (ClassCastException ex) {
 			logger.log(Level.SEVERE, "Couldn't cast Ethernet IP value to OPC UA Value! Node: " + this.displayName);
 			dv.setStatusCode(StatusCodes.Bad_TypeMismatch);
-		} catch (ValueOutOfRangeException e) {
-			logger.log(Level.SEVERE, e.getMessage() + " Node: " + this.displayName);
+		} catch (ValueOutOfRangeException e) {				
+			logger.log(Level.SEVERE, e.getMessage() + " | Opc-Node: '" + this.nodeId + " - " + this.displayName + "' | AB-Tag: '"+ this.tag + "'");
 			dv.setStatusCode(StatusCodes.Bad_OutOfRange);
 			dv.setValue(this.transform.getDefaultValue());
 		}

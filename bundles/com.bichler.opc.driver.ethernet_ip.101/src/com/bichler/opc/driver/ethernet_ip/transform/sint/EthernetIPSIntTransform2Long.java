@@ -13,7 +13,7 @@ public class EthernetIPSIntTransform2Long extends EthernetIPTransform2Long {
 		long val = (Long) value;
 
 		if (val > Byte.MAX_VALUE || val < Byte.MIN_VALUE)
-			throw new ValueOutOfRangeException("Value from OPC UA is out of plc range!");
+			throw new ValueOutOfRangeException("Value from opc ('" + val + "') is out of plc range ('" + Byte.MIN_VALUE + "|"+Byte.MAX_VALUE+"')!");
 
 		data.set(index, ((Long) value).byteValue());
 		return;

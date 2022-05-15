@@ -13,9 +13,14 @@ import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPDIntItem;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPDPItem;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPIntItem;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPLIntItem;
+import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPLRealItem;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPRealItem;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPSIntItem;
 import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPStringItem;
+import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPUDIntItem;
+import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPUIntItem;
+import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPULIntItem;
+import com.bichler.opc.driver.ethernet_ip.dp.EthernetIPUSIntItem;
 import com.bichler.opc.driver.ethernet_ip.transform.boolean_.EthernetIPBooleanTransform2Boolean;
 import com.bichler.opc.driver.ethernet_ip.transform.boolean_.EthernetIPBooleanTransform2Byte;
 import com.bichler.opc.driver.ethernet_ip.transform.boolean_.EthernetIPBooleanTransform2Double;
@@ -60,6 +65,17 @@ import com.bichler.opc.driver.ethernet_ip.transform.lint_.EthernetIPLIntTransfor
 import com.bichler.opc.driver.ethernet_ip.transform.lint_.EthernetIPLIntTransform2UnsignedInteger;
 import com.bichler.opc.driver.ethernet_ip.transform.lint_.EthernetIPLIntTransform2UnsignedLong;
 import com.bichler.opc.driver.ethernet_ip.transform.lint_.EthernetIPLIntTransform2UnsignedShort;
+import com.bichler.opc.driver.ethernet_ip.transform.lreal.EthernetIPLRealTransform2Boolean;
+import com.bichler.opc.driver.ethernet_ip.transform.lreal.EthernetIPLRealTransform2Byte;
+import com.bichler.opc.driver.ethernet_ip.transform.lreal.EthernetIPLRealTransform2Double;
+import com.bichler.opc.driver.ethernet_ip.transform.lreal.EthernetIPLRealTransform2Float;
+import com.bichler.opc.driver.ethernet_ip.transform.lreal.EthernetIPLRealTransform2Integer;
+import com.bichler.opc.driver.ethernet_ip.transform.lreal.EthernetIPLRealTransform2Long;
+import com.bichler.opc.driver.ethernet_ip.transform.lreal.EthernetIPLRealTransform2Short;
+import com.bichler.opc.driver.ethernet_ip.transform.lreal.EthernetIPLRealTransform2UnsignedByte;
+import com.bichler.opc.driver.ethernet_ip.transform.lreal.EthernetIPLRealTransform2UnsignedInteger;
+import com.bichler.opc.driver.ethernet_ip.transform.lreal.EthernetIPLRealTransform2UnsignedLong;
+import com.bichler.opc.driver.ethernet_ip.transform.lreal.EthernetIPLRealTransform2UnsignedShort;
 import com.bichler.opc.driver.ethernet_ip.transform.real.EthernetIPRealTransform2Boolean;
 import com.bichler.opc.driver.ethernet_ip.transform.real.EthernetIPRealTransform2Byte;
 import com.bichler.opc.driver.ethernet_ip.transform.real.EthernetIPRealTransform2Double;
@@ -94,6 +110,39 @@ import com.bichler.opc.driver.ethernet_ip.transform.string.EthernetIPStringTrans
 import com.bichler.opc.driver.ethernet_ip.transform.string.EthernetIPStringTransform2UnsignedInteger;
 import com.bichler.opc.driver.ethernet_ip.transform.string.EthernetIPStringTransform2UnsignedLong;
 import com.bichler.opc.driver.ethernet_ip.transform.string.EthernetIPStringTransform2UnsignedShort;
+import com.bichler.opc.driver.ethernet_ip.transform.udint.EthernetIPUDIntTransform2Boolean;
+import com.bichler.opc.driver.ethernet_ip.transform.udint.EthernetIPUDIntTransform2Byte;
+import com.bichler.opc.driver.ethernet_ip.transform.udint.EthernetIPUDIntTransform2Double;
+import com.bichler.opc.driver.ethernet_ip.transform.udint.EthernetIPUDIntTransform2Float;
+import com.bichler.opc.driver.ethernet_ip.transform.udint.EthernetIPUDIntTransform2Integer;
+import com.bichler.opc.driver.ethernet_ip.transform.udint.EthernetIPUDIntTransform2Long;
+import com.bichler.opc.driver.ethernet_ip.transform.udint.EthernetIPUDIntTransform2Short;
+import com.bichler.opc.driver.ethernet_ip.transform.udint.EthernetIPUDIntTransform2UnsignedByte;
+import com.bichler.opc.driver.ethernet_ip.transform.udint.EthernetIPUDIntTransform2UnsignedInteger;
+import com.bichler.opc.driver.ethernet_ip.transform.udint.EthernetIPUDIntTransform2UnsignedLong;
+import com.bichler.opc.driver.ethernet_ip.transform.udint.EthernetIPUDIntTransform2UnsignedShort;
+import com.bichler.opc.driver.ethernet_ip.transform.ulint.EthernetIPULIntTransform2Boolean;
+import com.bichler.opc.driver.ethernet_ip.transform.ulint.EthernetIPULIntTransform2Byte;
+import com.bichler.opc.driver.ethernet_ip.transform.ulint.EthernetIPULIntTransform2Double;
+import com.bichler.opc.driver.ethernet_ip.transform.ulint.EthernetIPULIntTransform2Float;
+import com.bichler.opc.driver.ethernet_ip.transform.ulint.EthernetIPULIntTransform2Integer;
+import com.bichler.opc.driver.ethernet_ip.transform.ulint.EthernetIPULIntTransform2Long;
+import com.bichler.opc.driver.ethernet_ip.transform.ulint.EthernetIPULIntTransform2Short;
+import com.bichler.opc.driver.ethernet_ip.transform.ulint.EthernetIPULIntTransform2UnsignedByte;
+import com.bichler.opc.driver.ethernet_ip.transform.ulint.EthernetIPULIntTransform2UnsignedInteger;
+import com.bichler.opc.driver.ethernet_ip.transform.ulint.EthernetIPULIntTransform2UnsignedLong;
+import com.bichler.opc.driver.ethernet_ip.transform.ulint.EthernetIPULIntTransform2UnsignedShort;
+import com.bichler.opc.driver.ethernet_ip.transform.usint.EthernetIPUSIntTransform2Boolean;
+import com.bichler.opc.driver.ethernet_ip.transform.usint.EthernetIPUSIntTransform2Byte;
+import com.bichler.opc.driver.ethernet_ip.transform.usint.EthernetIPUSIntTransform2Double;
+import com.bichler.opc.driver.ethernet_ip.transform.usint.EthernetIPUSIntTransform2Float;
+import com.bichler.opc.driver.ethernet_ip.transform.usint.EthernetIPUSIntTransform2Integer;
+import com.bichler.opc.driver.ethernet_ip.transform.usint.EthernetIPUSIntTransform2Long;
+import com.bichler.opc.driver.ethernet_ip.transform.usint.EthernetIPUSIntTransform2Short;
+import com.bichler.opc.driver.ethernet_ip.transform.usint.EthernetIPUSIntTransform2UnsignedByte;
+import com.bichler.opc.driver.ethernet_ip.transform.usint.EthernetIPUSIntTransform2UnsignedInteger;
+import com.bichler.opc.driver.ethernet_ip.transform.usint.EthernetIPUSIntTransform2UnsignedLong;
+import com.bichler.opc.driver.ethernet_ip.transform.usint.EthernetIPUSIntTransform2UnsignedShort;
 
 public class EthernetIPTransformFactory {
 
@@ -103,11 +152,16 @@ public class EthernetIPTransformFactory {
 	public static Map<Class<?>, EthernetIPTransformation> TRANS_COUNTER_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
 	public static Map<Class<?>, EthernetIPTransformation> TRANS_DATEANDTIME_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
 	public static Map<Class<?>, EthernetIPTransformation> TRANS_DATE_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
-	public static Map<Class<?>, EthernetIPTransformation> TRANS_DINT_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
 	public static Map<Class<?>, EthernetIPTransformation> TRANS_SINT_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
 	public static Map<Class<?>, EthernetIPTransformation> TRANS_INT_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
+	public static Map<Class<?>, EthernetIPTransformation> TRANS_DINT_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
 	public static Map<Class<?>, EthernetIPTransformation> TRANS_LINT_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
+	public static Map<Class<?>, EthernetIPTransformation> TRANS_USINT_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
+	public static Map<Class<?>, EthernetIPTransformation> TRANS_UINT_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
+	public static Map<Class<?>, EthernetIPTransformation> TRANS_UDINT_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
+	public static Map<Class<?>, EthernetIPTransformation> TRANS_ULINT_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
 	public static Map<Class<?>, EthernetIPTransformation> TRANS_REAL_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
+	public static Map<Class<?>, EthernetIPTransformation> TRANS_LREAL_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
 	public static Map<Class<?>, EthernetIPTransformation> TRANS_STRING_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
 	public static Map<Class<?>, EthernetIPTransformation> TRANS_TIME_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
 	public static Map<Class<?>, EthernetIPTransformation> TRANS_TIMEOFDAY_MAP = new HashMap<Class<?>, EthernetIPTransformation>();
@@ -143,34 +197,6 @@ public class EthernetIPTransformFactory {
 	}
 
 	static {
-		TRANS_DINT_MAP.put(Boolean.class, new EthernetIPDIntTransform2Boolean());
-		TRANS_DINT_MAP.put(Byte.class, new EthernetIPDIntTransform2Byte());
-		TRANS_DINT_MAP.put(UnsignedByte.class, new EthernetIPDIntTransform2UnsignedByte());
-		TRANS_DINT_MAP.put(Short.class, new EthernetIPDIntTransform2Short());
-		TRANS_DINT_MAP.put(UnsignedShort.class, new EthernetIPDIntTransform2UnsignedShort());
-		TRANS_DINT_MAP.put(Integer.class, new EthernetIPDIntTransform2Integer());
-		TRANS_DINT_MAP.put(UnsignedInteger.class, new EthernetIPDIntTransform2UnsignedInteger());
-		TRANS_DINT_MAP.put(Long.class, new EthernetIPDIntTransform2Long());
-		TRANS_DINT_MAP.put(UnsignedLong.class, new EthernetIPDIntTransform2UnsignedLong());
-		TRANS_DINT_MAP.put(Double.class, new EthernetIPDIntTransform2Double());
-		TRANS_DINT_MAP.put(Float.class, new EthernetIPDIntTransform2Float());
-	}
-
-	static {
-		TRANS_LINT_MAP.put(Boolean.class, new EthernetIPLIntTransform2Boolean());
-		TRANS_LINT_MAP.put(Byte.class, new EthernetIPLIntTransform2Byte());
-		TRANS_LINT_MAP.put(UnsignedByte.class, new EthernetIPLIntTransform2UnsignedByte());
-		TRANS_LINT_MAP.put(Short.class, new EthernetIPLIntTransform2Short());
-		TRANS_LINT_MAP.put(UnsignedShort.class, new EthernetIPLIntTransform2UnsignedShort());
-		TRANS_LINT_MAP.put(Integer.class, new EthernetIPLIntTransform2Integer());
-		TRANS_LINT_MAP.put(UnsignedInteger.class, new EthernetIPLIntTransform2UnsignedInteger());
-		TRANS_LINT_MAP.put(Long.class, new EthernetIPLIntTransform2Long());
-		TRANS_LINT_MAP.put(UnsignedLong.class, new EthernetIPLIntTransform2UnsignedLong());
-		TRANS_LINT_MAP.put(Double.class, new EthernetIPLIntTransform2Double());
-		TRANS_LINT_MAP.put(Float.class, new EthernetIPLIntTransform2Float());
-	}
-
-	static {
 		TRANS_SINT_MAP.put(Boolean.class, new EthernetIPSIntTransform2Boolean());
 		TRANS_SINT_MAP.put(Byte.class, new EthernetIPSIntTransform2Byte());
 		TRANS_SINT_MAP.put(UnsignedByte.class, new EthernetIPSIntTransform2UnsignedByte());
@@ -197,6 +223,92 @@ public class EthernetIPTransformFactory {
 		TRANS_INT_MAP.put(Double.class, new EthernetIPIntTransform2Double());
 		TRANS_INT_MAP.put(Float.class, new EthernetIPIntTransform2Float());
 	}
+	
+	static {
+		TRANS_DINT_MAP.put(Boolean.class, new EthernetIPDIntTransform2Boolean());
+		TRANS_DINT_MAP.put(Byte.class, new EthernetIPDIntTransform2Byte());
+		TRANS_DINT_MAP.put(UnsignedByte.class, new EthernetIPDIntTransform2UnsignedByte());
+		TRANS_DINT_MAP.put(Short.class, new EthernetIPDIntTransform2Short());
+		TRANS_DINT_MAP.put(UnsignedShort.class, new EthernetIPDIntTransform2UnsignedShort());
+		TRANS_DINT_MAP.put(Integer.class, new EthernetIPDIntTransform2Integer());
+		TRANS_DINT_MAP.put(UnsignedInteger.class, new EthernetIPDIntTransform2UnsignedInteger());
+		TRANS_DINT_MAP.put(Long.class, new EthernetIPDIntTransform2Long());
+		TRANS_DINT_MAP.put(UnsignedLong.class, new EthernetIPDIntTransform2UnsignedLong());
+		TRANS_DINT_MAP.put(Double.class, new EthernetIPDIntTransform2Double());
+		TRANS_DINT_MAP.put(Float.class, new EthernetIPDIntTransform2Float());
+	}
+
+	static {
+		TRANS_LINT_MAP.put(Boolean.class, new EthernetIPLIntTransform2Boolean());
+		TRANS_LINT_MAP.put(Byte.class, new EthernetIPLIntTransform2Byte());
+		TRANS_LINT_MAP.put(UnsignedByte.class, new EthernetIPLIntTransform2UnsignedByte());
+		TRANS_LINT_MAP.put(Short.class, new EthernetIPLIntTransform2Short());
+		TRANS_LINT_MAP.put(UnsignedShort.class, new EthernetIPLIntTransform2UnsignedShort());
+		TRANS_LINT_MAP.put(Integer.class, new EthernetIPLIntTransform2Integer());
+		TRANS_LINT_MAP.put(UnsignedInteger.class, new EthernetIPLIntTransform2UnsignedInteger());
+		TRANS_LINT_MAP.put(Long.class, new EthernetIPLIntTransform2Long());
+		TRANS_LINT_MAP.put(UnsignedLong.class, new EthernetIPLIntTransform2UnsignedLong());
+		TRANS_LINT_MAP.put(Double.class, new EthernetIPLIntTransform2Double());
+		TRANS_LINT_MAP.put(Float.class, new EthernetIPLIntTransform2Float());
+	}
+	
+	//-----------------------
+	static {
+		TRANS_USINT_MAP.put(Boolean.class, new EthernetIPUSIntTransform2Boolean());
+		TRANS_USINT_MAP.put(Byte.class, new EthernetIPUSIntTransform2Byte());
+		TRANS_USINT_MAP.put(UnsignedByte.class, new EthernetIPUSIntTransform2UnsignedByte());
+		TRANS_USINT_MAP.put(Short.class, new EthernetIPUSIntTransform2Short());
+		TRANS_USINT_MAP.put(UnsignedShort.class, new EthernetIPUSIntTransform2UnsignedShort());
+		TRANS_USINT_MAP.put(Integer.class, new EthernetIPUSIntTransform2Integer());
+		TRANS_USINT_MAP.put(UnsignedInteger.class, new EthernetIPUSIntTransform2UnsignedInteger());
+		TRANS_USINT_MAP.put(Long.class, new EthernetIPUSIntTransform2Long());
+		TRANS_USINT_MAP.put(UnsignedLong.class, new EthernetIPUSIntTransform2UnsignedLong());
+		TRANS_USINT_MAP.put(Double.class, new EthernetIPUSIntTransform2Double());
+		TRANS_USINT_MAP.put(Float.class, new EthernetIPUSIntTransform2Float());
+	}
+
+	static {
+		TRANS_UINT_MAP.put(Boolean.class, new EthernetIPIntTransform2Boolean());
+		TRANS_UINT_MAP.put(Byte.class, new EthernetIPIntTransform2Byte());
+		TRANS_UINT_MAP.put(UnsignedByte.class, new EthernetIPIntTransform2UnsignedByte());
+		TRANS_UINT_MAP.put(Short.class, new EthernetIPIntTransform2Short());
+		TRANS_UINT_MAP.put(UnsignedShort.class, new EthernetIPIntTransform2UnsignedShort());
+		TRANS_UINT_MAP.put(Integer.class, new EthernetIPIntTransform2Integer());
+		TRANS_UINT_MAP.put(UnsignedInteger.class, new EthernetIPIntTransform2UnsignedInteger());
+		TRANS_UINT_MAP.put(Long.class, new EthernetIPIntTransform2Long());
+		TRANS_UINT_MAP.put(UnsignedLong.class, new EthernetIPIntTransform2UnsignedLong());
+		TRANS_UINT_MAP.put(Double.class, new EthernetIPIntTransform2Double());
+		TRANS_UINT_MAP.put(Float.class, new EthernetIPIntTransform2Float());
+	}
+	
+	static {
+		TRANS_UDINT_MAP.put(Boolean.class, new EthernetIPUDIntTransform2Boolean());
+		TRANS_UDINT_MAP.put(Byte.class, new EthernetIPUDIntTransform2Byte());
+		TRANS_UDINT_MAP.put(UnsignedByte.class, new EthernetIPUDIntTransform2UnsignedByte());
+		TRANS_UDINT_MAP.put(Short.class, new EthernetIPUDIntTransform2Short());
+		TRANS_UDINT_MAP.put(UnsignedShort.class, new EthernetIPUDIntTransform2UnsignedShort());
+		TRANS_UDINT_MAP.put(Integer.class, new EthernetIPUDIntTransform2Integer());
+		TRANS_UDINT_MAP.put(UnsignedInteger.class, new EthernetIPUDIntTransform2UnsignedInteger());
+		TRANS_UDINT_MAP.put(Long.class, new EthernetIPUDIntTransform2Long());
+		TRANS_UDINT_MAP.put(UnsignedLong.class, new EthernetIPUDIntTransform2UnsignedLong());
+		TRANS_UDINT_MAP.put(Double.class, new EthernetIPUDIntTransform2Double());
+		TRANS_UDINT_MAP.put(Float.class, new EthernetIPUDIntTransform2Float());
+	}
+
+	static {
+		TRANS_ULINT_MAP.put(Boolean.class, new EthernetIPULIntTransform2Boolean());
+		TRANS_ULINT_MAP.put(Byte.class, new EthernetIPULIntTransform2Byte());
+		TRANS_ULINT_MAP.put(UnsignedByte.class, new EthernetIPULIntTransform2UnsignedByte());
+		TRANS_ULINT_MAP.put(Short.class, new EthernetIPULIntTransform2Short());
+		TRANS_ULINT_MAP.put(UnsignedShort.class, new EthernetIPULIntTransform2UnsignedShort());
+		TRANS_ULINT_MAP.put(Integer.class, new EthernetIPULIntTransform2Integer());
+		TRANS_ULINT_MAP.put(UnsignedInteger.class, new EthernetIPULIntTransform2UnsignedInteger());
+		TRANS_ULINT_MAP.put(Long.class, new EthernetIPULIntTransform2Long());
+		TRANS_ULINT_MAP.put(UnsignedLong.class, new EthernetIPULIntTransform2UnsignedLong());
+		TRANS_ULINT_MAP.put(Double.class, new EthernetIPULIntTransform2Double());
+		TRANS_ULINT_MAP.put(Float.class, new EthernetIPULIntTransform2Float());
+	}
+	//-----------------------
 
 	static {
 		TRANS_REAL_MAP.put(Boolean.class, new EthernetIPRealTransform2Boolean());
@@ -211,22 +323,46 @@ public class EthernetIPTransformFactory {
 		TRANS_REAL_MAP.put(Double.class, new EthernetIPRealTransform2Double());
 		TRANS_REAL_MAP.put(Float.class, new EthernetIPRealTransform2Float());
 	}
+	
+	static {
+		TRANS_LREAL_MAP.put(Boolean.class, new EthernetIPLRealTransform2Boolean());
+		TRANS_LREAL_MAP.put(Byte.class, new EthernetIPLRealTransform2Byte());
+		TRANS_LREAL_MAP.put(UnsignedByte.class, new EthernetIPLRealTransform2UnsignedByte());
+		TRANS_LREAL_MAP.put(Short.class, new EthernetIPLRealTransform2Short());
+		TRANS_LREAL_MAP.put(UnsignedShort.class, new EthernetIPLRealTransform2UnsignedShort());
+		TRANS_LREAL_MAP.put(Integer.class, new EthernetIPLRealTransform2Integer());
+		TRANS_LREAL_MAP.put(UnsignedInteger.class, new EthernetIPLRealTransform2UnsignedInteger());
+		TRANS_LREAL_MAP.put(Long.class, new EthernetIPLRealTransform2Long());
+		TRANS_LREAL_MAP.put(UnsignedLong.class, new EthernetIPLRealTransform2UnsignedLong());
+		TRANS_LREAL_MAP.put(Double.class, new EthernetIPLRealTransform2Double());
+		TRANS_LREAL_MAP.put(Float.class, new EthernetIPLRealTransform2Float());
+	}
 
 	public void createTransform(EthernetIPDPItem dp, Class<?> class_) {
 		if (dp instanceof EthernetIPBooleanItem) {
 			dp.setTransform(TRANS_BOOLEAN_MAP.get(class_));
-		} else if (dp instanceof EthernetIPDIntItem) {
-			dp.setTransform(TRANS_DINT_MAP.get(class_));
-		} else if (dp instanceof EthernetIPSIntItem) {
+		}  else if (dp instanceof EthernetIPSIntItem) {
 			dp.setTransform(TRANS_SINT_MAP.get(class_));
 		} else if (dp instanceof EthernetIPIntItem) {
 			dp.setTransform(TRANS_INT_MAP.get(class_));
-		} else if (dp instanceof EthernetIPRealItem) {
-			dp.setTransform(TRANS_REAL_MAP.get(class_));
-		} else if (dp instanceof EthernetIPStringItem) {
-			dp.setTransform(TRANS_STRING_MAP.get(class_));
+		} else if (dp instanceof EthernetIPDIntItem) {
+			dp.setTransform(TRANS_DINT_MAP.get(class_));
 		} else if (dp instanceof EthernetIPLIntItem) {
 			dp.setTransform(TRANS_LINT_MAP.get(class_));
-		}
+		} else if (dp instanceof EthernetIPUSIntItem) {
+			dp.setTransform(TRANS_USINT_MAP.get(class_));
+		} else if (dp instanceof EthernetIPUIntItem) {
+			dp.setTransform(TRANS_UINT_MAP.get(class_));
+		} else if (dp instanceof EthernetIPUDIntItem) {
+			dp.setTransform(TRANS_UDINT_MAP.get(class_));
+		} else if (dp instanceof EthernetIPULIntItem) {
+			dp.setTransform(TRANS_ULINT_MAP.get(class_));
+		} else if (dp instanceof EthernetIPRealItem) {
+			dp.setTransform(TRANS_REAL_MAP.get(class_));
+		} else if (dp instanceof EthernetIPLRealItem) {
+			dp.setTransform(TRANS_LREAL_MAP.get(class_));
+		} else if (dp instanceof EthernetIPStringItem) {
+			dp.setTransform(TRANS_STRING_MAP.get(class_));
+		} 
 	}
 }
