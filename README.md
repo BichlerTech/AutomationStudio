@@ -85,3 +85,4 @@ Download toolchain.zip file from https://www.bichler.tech/
 Menu -> Help -> Install toolchain
 
 Select path of the toolchain.zip file
+
