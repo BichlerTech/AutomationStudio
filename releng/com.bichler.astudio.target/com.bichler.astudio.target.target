@@ -43,7 +43,7 @@
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 			<repository location="http://download.eclipse.org/nebula/releases/latest"/>
-			<unit id="org.eclipse.nebula.widgets.tablecombo" version="1.2.0.202011020719"/>
+			<unit id="org.eclipse.nebula.widgets.tablecombo" version="1.2.0.202208171809"/>
 		</location>
 	</locations>
 </target>
